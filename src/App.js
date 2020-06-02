@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {ThemeProvider} from 'styled-components';
 import ReactGA from 'react-ga';
 
-import Home from './Home/Home';
+import Home from './components/Home/Home';
 
 //Google Analytics code
 const ANALYTICS_KEY = process.env.REACT_APP_ANALYTICS_KEY; // Google analytics API key
