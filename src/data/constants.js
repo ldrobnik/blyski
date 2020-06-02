@@ -1,1 +1,1 @@
-export const WORDPRESS_URL = 'wp-json/wp/v2/posts?per_page=100';
+export const WP_URL_FRAGMENT = 'wp-json/wp/v2/posts?per_page=100';
