@@ -5,7 +5,7 @@ import {Redirect} from 'react-router';
 import {connect} from 'react-redux';
 import {createGlobalStyle} from 'styled-components';
 
-import Issues from '../Issues/Issues';
+import IssueList from '../IssueList/IssueList';
 
 /* STYLED COMPONENTS */
 const GlobalStyle = createGlobalStyle`
@@ -33,7 +33,7 @@ const Home = (props) => {
     return (
         <React.Fragment>
             <GlobalStyle />
-            <Issues />
+            <IssueList />
         </React.Fragment>
     );
 };

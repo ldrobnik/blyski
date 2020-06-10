@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import { WP_URL_FRAGMENT } from '../../data/constants';
 
-const IssueList = styled.div`
+const List = styled.div`
 
 `;
 
-const Issues = (props) => {
+const IssueList = (props) => {
 
     //Wordpress API URL
     const WP_API_URL = process.env.REACT_APP_WP_API_URL;
@@ -28,10 +28,10 @@ const Issues = (props) => {
     }, [WP_API_URL]);
 
     return (
-        <IssueList>
+        <List>
             Issues
-        </IssueList>
+        </List>
     );
 };
 
-export default Issues;
+export default IssueList;
