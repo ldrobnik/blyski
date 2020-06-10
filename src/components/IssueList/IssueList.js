@@ -12,10 +12,12 @@ const IssueList = (props) => {
     //Wordpress API URL
     const WP_API_URL = process.env.REACT_APP_WP_API_URL;
 
+
+
     useEffect(() => {
 
-        //loads blog posts
-        async function loadPosts() {
+        //fetches texts from the Worpdress blog
+        async function loadTexts() {
             fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
                 return response.json();
             }).then(issues => {
@@ -24,7 +26,7 @@ const IssueList = (props) => {
             });
         }
 
-        loadPosts();
+        loadTexts();
     }, [WP_API_URL]);
 
     return (
