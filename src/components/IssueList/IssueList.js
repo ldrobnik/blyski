@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-import { WP_URL_FRAGMENT } from '../../data/constants';
+import {WP_URL_FRAGMENT} from '../../data/constants';
 
 const List = styled.div`
 
@@ -11,6 +11,33 @@ const IssueList = (props) => {
 
     //Wordpress API URL
     const WP_API_URL = process.env.REACT_APP_WP_API_URL;
+
+    //Compiles an object containing all issue data based on an array of data of individual texts
+    const compileIssue = (issueNo, issueTexts) => {
+        //Retrieve issue publication date from the publication date of the first text
+        const issueDate = issueTexts[0].date;
+
+        //Retrieve author's name from the title of the last text of an issue,
+        //which always contains the author bio
+        const author = issueTexts[issueTexts.length - 1].title;
+
+        //Retrieve author bio from the the last text of the previous issue
+        const bio = issueTexts[issueTexts.length - 1];
+
+        //Retrieve issue texts by removing the last item (bio)
+        const textsWithoutBio = issueTexts.slice(0, -1);
+
+        //Add issue data (issue number, publication date, author name, texts & author bio)
+        //to the issue array
+        return {
+            issue: issueNo.toString(),
+            date: issueDate,
+            author: author,
+            texts: textsWithoutBio,
+            bio: bio
+        };
+    };
+
 
     //Processes fetched Wordpress data into an array containing texts devided into issues
     const processTexts = (texts) => {
@@ -28,7 +55,7 @@ const IssueList = (props) => {
         let currentIssue = 1;
 
         //loop through the text array and retrieve necessary data and content
-        for (let i = 0; i <= texts.length; i++) {
+        for (let i = 0; i < texts.length; i++) {
             // Split the Wordpress post title which has the format:
             // X_Some text, at "_" and retrieve
             // the issue number (X) and text title (Some text)
@@ -44,38 +71,22 @@ const IssueList = (props) => {
             const slug = texts[i].slug;
 
 
-            //if the current text belongs to a new issue or if this is the last of the fetched texts,
-            // update the issue template with the previous issue data
-            if (issue > currentIssue) {
-                //Retrieve issue publication date from the publication date of the first text
-                const issueDate = temporaryTexts[0].date;
-
-                //Retrieve author's name from the title of the last text of an issue,
-                //which always contains the author bio
-                const author = temporaryTexts[temporaryTexts.length - 1].title;
-
-                //Retrieve author bio from the the last text of the previous issue
-                const bio = temporaryTexts[temporaryTexts.length - 1];
+            //if the current text belongs to a new issue
+            if (Number(issue) > currentIssue) {
 
                 //Add issue data (issue number, publication date, author name, texts & author bio)
                 //to the issue array
-                issues.push(
-                    {
-                        issue: issue,
-                        date: issueDate,
-                        author: author,
-                        texts: temporaryTexts,
-                        bio: bio
-                    }
-                );
-                //replace the content temporary text array with the last item (containing the text from the new issue
+                issues.push(compileIssue(currentIssue, temporaryTexts));
 
+
+                //replace the content temporary text array with the last item (containing the text from the new issue
                 temporaryTexts = [];
 
                 //update the issue counter with the next issue number
                 currentIssue = issue;
             }
 
+            //add the text title, content, slug and date to the temporary text list
             temporaryTexts.push(
                 {
                     title,
@@ -84,11 +95,16 @@ const IssueList = (props) => {
                     date
                 }
             );
+
+            //if this is the last of the fetched texts,
+            // update the issue template with the issue data
+            if (i === texts.length - 1) {
+                issues.push(compileIssue(currentIssue, temporaryTexts));
+            }
         }
 
-        //add the text title, content, slug and date to the temporary text list
+        return issues;
 
-      console.log(issues);
     };
 
     useEffect(() => {
@@ -98,7 +114,7 @@ const IssueList = (props) => {
             fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
                 return response.json();
             }).then(texts => {
-                processTexts(texts);
+                console.log(processTexts(texts));
             }).catch(err => {
             });
         }
