@@ -13,9 +13,7 @@ const IssueList = (props) => {
     const WP_API_URL = process.env.REACT_APP_WP_API_URL;
 
     //Compiles an object containing all issue data based on an array of data of individual texts
-    const compileIssue = (issueNo, issueTexts) => {
-        //Retrieve issue publication date from the publication date of the first text
-        const issueDate = issueTexts[0].date;
+    const compileIssue = (issueNo, date, issueTexts) => {
 
         //Retrieve author's name from the title of the last text of an issue,
         //which always contains the author bio
@@ -31,7 +29,7 @@ const IssueList = (props) => {
         //to the issue array
         return {
             issue: issueNo.toString(),
-            date: issueDate,
+            date: date,
             author: author,
             texts: textsWithoutBio,
             bio: bio
@@ -64,9 +62,6 @@ const IssueList = (props) => {
             //content of the text
             const content = texts[i].content.rendered;
 
-            //date of publication
-            const date = texts[i].date;
-
             //slug pointing to the text
             const slug = texts[i].slug;
 
@@ -74,9 +69,12 @@ const IssueList = (props) => {
             //if the current text belongs to a new issue
             if (Number(issue) > currentIssue) {
 
+                //retrive date of publication from the last text belonging to the previous issue
+                const date = texts[i - 1].date;
+
                 //Add issue data (issue number, publication date, author name, texts & author bio)
                 //to the issue array
-                issues.push(compileIssue(currentIssue, temporaryTexts));
+                issues.push(compileIssue(currentIssue, date, temporaryTexts));
 
 
                 //replace the content temporary text array with the last item (containing the text from the new issue
@@ -91,15 +89,17 @@ const IssueList = (props) => {
                 {
                     title,
                     content,
-                    slug,
-                    date
+                    slug
                 }
             );
 
             //if this is the last of the fetched texts,
             // update the issue template with the issue data
             if (i === texts.length - 1) {
-                issues.push(compileIssue(currentIssue, temporaryTexts));
+                //date of publication
+                const date = texts[i].date;
+
+                issues.push(compileIssue(currentIssue, date, temporaryTexts));
             }
         }
 
