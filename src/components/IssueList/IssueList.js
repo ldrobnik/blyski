@@ -27,33 +27,68 @@ const IssueList = (props) => {
         //variable specifying the current issue while looping through texts
         let currentIssue = 1;
 
-        for (const text of texts) {
-            //Retrieve issue number and text title from
+        //loop through the text array and retrieve necessary data and content
+        for (let i = 0; i <= texts.length; i++) {
             // Split the Wordpress post title which has the format:
             // X_Some text, at "_" and retrieve
             // the issue number (X) and text title (Some text)
-            const [issueNo, title] = text.title.rendered.split("_");
+            const [issue, title] = texts[i].title.rendered.split("_");
 
             //content of the text
-            const content = text.content.rendered;
+            const content = texts[i].content.rendered;
 
             //date of publication
-            const date = text.date;
+            const date = texts[i].date;
 
             //slug pointing to the text
-            const slug = text.slug;
+            const slug = texts[i].slug;
 
-            //add text data to the temporary text template
+
+            //if the current text belongs to a new issue or if this is the last of the fetched texts,
+            // update the issue template with the previous issue data
+            if (issue > currentIssue) {
+                //Retrieve issue publication date from the publication date of the first text
+                const issueDate = temporaryTexts[0].date;
+
+                //Retrieve author's name from the title of the last text of an issue,
+                //which always contains the author bio
+                const author = temporaryTexts[temporaryTexts.length - 1].title;
+
+                //Retrieve author bio from the the last text of the previous issue
+                const bio = temporaryTexts[temporaryTexts.length - 1];
+
+                //Add issue data (issue number, publication date, author name, texts & author bio)
+                //to the issue array
+                issues.push(
+                    {
+                        issue: issue,
+                        date: issueDate,
+                        author: author,
+                        texts: temporaryTexts,
+                        bio: bio
+                    }
+                );
+                //replace the content temporary text array with the last item (containing the text from the new issue
+
+                temporaryTexts = [];
+
+                //update the issue counter with the next issue number
+                currentIssue = issue;
+            }
+
             temporaryTexts.push(
                 {
                     title,
                     content,
-                    slug
+                    slug,
+                    date
                 }
             );
         }
 
-      console.log(temporaryTexts);
+        //add the text title, content, slug and date to the temporary text list
+
+      console.log(issues);
     };
 
     useEffect(() => {
