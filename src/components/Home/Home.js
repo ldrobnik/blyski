@@ -8,7 +8,7 @@ import {createGlobalStyle} from 'styled-components';
 import IssueList from '../IssueList/IssueList';
 
 import {WP_URL_FRAGMENT} from '../../data/constants';
-import {setPageLoaded, setIssues} from '../../actions/index';
+import {setPageLoaded, setError, setIssues} from '../../actions/index';
 
 /* STYLED COMPONENTS */
 const GlobalStyle = createGlobalStyle`
@@ -44,6 +44,11 @@ const Home = (props) => {
     //updates loading status as loaded
     const setAsLoaded = () => {
       props.setPageLoaded(true);
+    };
+
+    //updates error status to true
+    const setError = () => {
+        props.setError(true);
     };
 
     //Compiles an object containing all issue data based on an array of data of individual texts
@@ -159,6 +164,8 @@ const Home = (props) => {
 
                 console.log(issueData);
             }).catch(err => {
+                //Change error status in the Redux store
+                setError();
 
                 //set the page as loaded to turn off spinner
                 setAsLoaded();
@@ -185,6 +192,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         setPageLoaded,
+        setError,
         setIssues
     }, dispatch);
 };
