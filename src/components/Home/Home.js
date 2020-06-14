@@ -8,6 +8,7 @@ import {createGlobalStyle} from 'styled-components';
 import IssueList from '../IssueList/IssueList';
 
 import {WP_URL_FRAGMENT} from '../../data/constants';
+import {setPageLoaded, setIssues} from '../../actions/index';
 
 /* STYLED COMPONENTS */
 const GlobalStyle = createGlobalStyle`
@@ -34,6 +35,16 @@ const Home = (props) => {
 
     //Wordpress API URL
     const WP_API_URL = process.env.REACT_APP_WP_API_URL;
+
+    //updates store with the fetched issues
+    const updateIssues = (issues) => {
+        props.setIssues(issues);
+    };
+
+    //updates loading status as loaded
+    const setAsLoaded = () => {
+      props.pageLoaded(true);
+    };
 
     //Compiles an object containing all issue data based on an array of data of individual texts
     const compileIssue = (issueNo, date, issueTexts) => {
@@ -153,4 +164,17 @@ const Home = (props) => {
     );
 };
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        loaded: state.pageLoaded
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        setPageLoaded,
+        setIssues
+    }, dispatch);
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps())(Home));
