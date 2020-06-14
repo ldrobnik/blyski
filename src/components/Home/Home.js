@@ -43,7 +43,7 @@ const Home = (props) => {
 
     //updates loading status as loaded
     const setAsLoaded = () => {
-      props.pageLoaded(true);
+      props.setPageLoaded(true);
     };
 
     //Compiles an object containing all issue data based on an array of data of individual texts
@@ -148,8 +148,20 @@ const Home = (props) => {
             fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
                 return response.json();
             }).then(texts => {
-                console.log(processTexts(texts));
+                //process the data to organise texts into issues
+                const issueData = processTexts(texts);
+
+                //update the store with the organised issue data
+                updateIssues(issueData);
+
+                //set the page as loaded to turn off spinner
+                setAsLoaded();
+
+                console.log(issueData);
             }).catch(err => {
+
+                //set the page as loaded to turn off spinner
+                setAsLoaded();
             });
         }
 
@@ -177,4 +189,4 @@ const mapDispatchToProps = dispatch => {
     }, dispatch);
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps())(Home));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));
