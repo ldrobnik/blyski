@@ -11,8 +11,27 @@ const IssueList = (props) => {
     return (
         <List>
             {
-                !props.pageLoaded &&
-                <div>Issues</div>
+                props.pageLoaded &&
+                props.issues.map((issue) => {
+                    return (
+                        <div key={issue.issue}>
+                            <h1>Numer {issue.issue}</h1>
+                            <h2>{issue.author}</h2>
+                            <h4>{issue.date}</h4>
+                            <div>
+                                {issue.texts.map((text) => {
+                                    return(
+                                        <div key={text.title}>
+                                            <h3>{text.title}</h3>
+                                        </div>
+                                    )
+                                    }
+
+                                )}
+                            </div>
+                        </div>
+                    )
+            })
             }
         </List>
     );

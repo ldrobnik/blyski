@@ -23,17 +23,17 @@ const reducer = (state = initialState, action) => {
         case actionTypes.SET_PAGE_LOADED:
             return {
                 ...state,
-                pageLoaded: action.pageLoaded
+                pageLoaded: action.payload
             };
         case actionTypes.SET_ISSUES:
             return {
                 ...state,
-                issues: action.issues
+                issues: action.payload
             };
         case actionTypes.SET_ERROR:
             return {
                 ...state,
-                error: action.error
+                error: action.payload
             };
         default:
             return state;

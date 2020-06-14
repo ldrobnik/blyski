@@ -161,8 +161,6 @@ const Home = (props) => {
 
                 //set the page as loaded to turn off spinner
                 setAsLoaded();
-                console.log(props.issues);
-
                 console.log(issueData);
             }).catch(err => {
                 //Change error status in the Redux store
@@ -175,6 +173,7 @@ const Home = (props) => {
 
         loadTexts();
     }, [WP_API_URL]);
+
 
     return (
         <React.Fragment>

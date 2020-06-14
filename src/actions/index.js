@@ -4,7 +4,7 @@ import * as actionTypes from './constants';
 export const setPageLoaded = (pageLoaded) => {
     return {
         type: actionTypes.SET_PAGE_LOADED,
-        pageLoaded
+        payload: pageLoaded
     }
 };
 
@@ -12,7 +12,7 @@ export const setPageLoaded = (pageLoaded) => {
 export const setIssues = (issues) => {
     return {
         type: actionTypes.SET_ISSUES,
-        issues
+        payload: issues
     }
 };
 
@@ -20,6 +20,6 @@ export const setIssues = (issues) => {
 export const setError = (error) => {
     return {
         type: actionTypes.SET_ERROR,
-        error
+        payload: error
     }
 };
