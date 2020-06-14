@@ -9,10 +9,17 @@ export const setPageLoaded = (pageLoaded) => {
 };
 
 //Updates issue data fetched from the Worpdress API
-
 export const setIssues = (issues) => {
     return {
         type: actionTypes.SET_ISSUES,
         issues
+    }
+};
+
+//Specifies whether there was an error fetching Wordpress data
+export const setError = (error) => {
+    return {
+        type: actionTypes.SET_ERROR,
+        error
     }
 };
