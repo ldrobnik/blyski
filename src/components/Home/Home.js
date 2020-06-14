@@ -75,7 +75,11 @@ const Home = (props) => {
         };
     };
 
-
+    //Adds missing attributes to links so that they open in a new tab
+    const addLinkAttributes = (str) => {
+        return str.replace(new RegExp('\">', 'g'), '\" target=\"_blank\" rel=\"noopener noreferrer\">');
+        return str.replace('">', '" target="_blank" rel="noopener noreferrer">');
+    };
     //Processes fetched Wordpress data into an array containing texts devided into issues
     const processTexts = (texts) => {
 
@@ -99,7 +103,7 @@ const Home = (props) => {
             const [issue, title] = texts[i].title.rendered.split("_");
 
             //content of the text
-            const content = texts[i].content.rendered;
+            const content = addLinkAttributes(texts[i].content.rendered);
 
             //slug pointing to the text
             const slug = texts[i].slug;
@@ -161,7 +165,6 @@ const Home = (props) => {
 
                 //set the page as loaded to turn off spinner
                 setAsLoaded();
-                console.log(issueData);
             }).catch(err => {
                 //Change error status in the Redux store
                 setError();
