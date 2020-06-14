@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import moment from 'moment';
+import 'moment/locale/pl';
 
 const List = styled.div`
 
@@ -17,7 +19,7 @@ const IssueList = (props) => {
                         <div key={issue.issue}>
                             <h1>Numer {issue.issue}</h1>
                             <h2>{issue.author}</h2>
-                            <h4>{issue.date}</h4>
+                            <h4>{moment(issue.date).locale('pl').format('MMMM YYYY')}</h4>
                             <div>
                                 {issue.texts.map((text) => {
                                     return(
