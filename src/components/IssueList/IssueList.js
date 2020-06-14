@@ -23,6 +23,9 @@ const IssueList = (props) => {
                                     return(
                                         <div key={text.title}>
                                             <h3>{text.title}</h3>
+                                            <div
+                                                dangerouslySetInnerHTML={{__html: text.content}}
+                                            />
                                         </div>
                                     )
                                     }
