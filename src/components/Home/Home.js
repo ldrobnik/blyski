@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
 import {Route, Switch, withRouter} from 'react-router-dom';
 import {Redirect} from 'react-router';
-import {connect} from 'react-redux';
 import {createGlobalStyle} from 'styled-components';
 
 import IssueList from '../IssueList/IssueList';
