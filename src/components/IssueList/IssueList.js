@@ -18,8 +18,8 @@ const IssueList = (props) => {
                     return (
                         <div key={issue.issue}>
                             <h1>Numer {issue.issue}</h1>
-                            <h2>{issue.author}</h2>
                             <h4>{moment(issue.date).locale('pl').format('MMMM YYYY')}</h4>
+                            <h2>{issue.author}</h2>
                             <div>
                                 {issue.texts.map((text) => {
                                     return(
@@ -34,6 +34,10 @@ const IssueList = (props) => {
 
                                 )}
                             </div>
+                            <h3>{issue.bio.title}</h3>
+                            <div
+                                dangerouslySetInnerHTML={{__html: issue.bio.content}}
+                            />
                         </div>
                     )
             })
