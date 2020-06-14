@@ -161,6 +161,7 @@ const Home = (props) => {
 
                 //set the page as loaded to turn off spinner
                 setAsLoaded();
+                console.log(props.issues);
 
                 console.log(issueData);
             }).catch(err => {
@@ -185,7 +186,7 @@ const Home = (props) => {
 
 const mapStateToProps = state => {
     return {
-        loaded: state.pageLoaded
+        pageLoaded: state.pageLoaded
     }
 };
 

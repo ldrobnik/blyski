@@ -1,17 +1,29 @@
 import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
 import styled from 'styled-components';
+
 const List = styled.div`
 
 `;
 
 const IssueList = (props) => {
 
-    const [issues, updateIssues] = useState();
     return (
         <List>
-            Issues
+            {
+                !props.pageLoaded &&
+                <div>Issues</div>
+            }
         </List>
     );
 };
 
-export default IssueList;
+const mapStateToProps = state => {
+    return {
+        pageLoaded: state.pageLoaded,
+        error: state.error,
+        issues: state.issues
+    }
+};
+
+export default connect(mapStateToProps)(IssueList);
