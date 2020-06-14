@@ -9,6 +9,8 @@ const List = styled.div`
 
 const IssueList = (props) => {
 
+    const [issues, updateIssues] = useState();
+
     //Wordpress API URL
     const WP_API_URL = process.env.REACT_APP_WP_API_URL;
 
