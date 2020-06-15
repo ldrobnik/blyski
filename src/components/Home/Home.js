@@ -6,6 +6,7 @@ import {Redirect} from 'react-router';
 import {createGlobalStyle} from 'styled-components';
 
 import IssueList from '../IssueList/IssueList';
+import Spinner from '../UI/Spinner/Spinner';
 
 import {WP_URL_FRAGMENT} from '../../data/constants';
 import {setPageLoaded, setError, setIssues} from '../../actions/index';
@@ -182,6 +183,7 @@ const Home = (props) => {
         <React.Fragment>
             <GlobalStyle />
             <IssueList />
+            {!props.pageLoaded && <Spinner />}
         </React.Fragment>
     );
 };
