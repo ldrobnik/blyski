@@ -1,13 +1,16 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Globally used classes specifying element rotation */
+
+/* Rotate by 90 degrees */
+.rotateBy90 {
+  transform: rotate(90deg);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Rotate by 180 degrees */
+.rotateBy180 {
+  transform: rotate(180deg);
+}
+
+/* Rotate by 270 degrees */
+.rotateBy270 {
+  transform: rotate(270deg);
 }
