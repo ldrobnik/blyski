@@ -14,7 +14,7 @@ const SpinnerWrapper = styled.div`
   transform: translate(-50%, -50%);
   
   img {
-    height: 110px;
+    height: 150px;
   }
 `;
 
