@@ -44,7 +44,7 @@ const Home = (props) => {
 
     //updates loading status as loaded
     const setAsLoaded = () => {
-      props.setPageLoaded(true);
+        setTimeout(() => props.setPageLoaded(true), 800);
     };
 
     //updates error status to true
