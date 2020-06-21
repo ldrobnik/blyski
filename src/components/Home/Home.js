@@ -6,6 +6,7 @@ import {Redirect} from 'react-router';
 import {createGlobalStyle} from 'styled-components';
 
 import IssueList from '../IssueList/IssueList';
+import Text from '../Text/Text';
 import Spinner from '../UI/Spinner/Spinner';
 
 import {WP_URL_FRAGMENT} from '../../data/constants';
@@ -182,7 +183,11 @@ const Home = (props) => {
     return (
         <React.Fragment>
             <GlobalStyle />
-            <IssueList />
+            <Switch>
+                <Route path="/" exact component={IssueList} key="home"/>
+                <Route path="/:issue/:slug" exact component={Text} key="text"/>
+                <Route render={() => (<Redirect to="/"/>)} key="default"/>
+            </Switch>
             {!props.pageLoaded && <Spinner />}
         </React.Fragment>
     );
