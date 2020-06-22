@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
 import styled from 'styled-components';
 
 
@@ -6,9 +7,15 @@ const Text = (props) => {
 
     return (
         <React.Fragment>
-            Text
+            {props.pageLoaded && <div>Text</div>}
         </React.Fragment>
     );
 };
 
-export default Text;
+const mapStateToProps = state => {
+    return {
+        pageLoaded: state.pageLoaded
+    }
+};
+
+export default connect(mapStateToProps)(Text);
