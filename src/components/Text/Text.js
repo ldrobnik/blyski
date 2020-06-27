@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 
@@ -44,12 +44,13 @@ const Text = (props) => {
     return (
         <React.Fragment>
             {props.pageLoaded &&
-            <div>
+            <React.Fragment>
                 <h3>{props.issues[issueNumber - 1].texts[textID].title}</h3>
                 <div
                     dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].texts[textID].content}}
                 />
-            </div>}
+                <Link to='/'>strona główna</Link>
+            </React.Fragment>}
         </React.Fragment>
     );
 };
