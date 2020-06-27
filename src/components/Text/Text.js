@@ -11,13 +11,16 @@ const Text = (props) => {
     //based on the url, checks which text from which issue should be displayed
     const checkTextID = (issue, slug) => {
 
-        console.log (issue, slug, props.issues.length);
-            //loop through the text of a given issue and return its idea if there's a match
-            for (let i = 0; i < props.issues[issue - 1].texts.length; i++) {
-                if (props.issues[issue - 1].texts[i].slug === slug) {
-                    return i;
-                }
+        //if slug is 'bio', return '-2'
+        if (slug === 'bio') return -2;
+
+        //loop through the text of a given issue and return its idea if there's a match
+        for (let i = 0; i < props.issues[issue - 1].texts.length; i++) {
+            if (props.issues[issue - 1].texts[i].slug === slug) {
+                return i;
             }
+        }
+
 
         //if there's no match, return '-1'
         return -1;
@@ -47,11 +50,19 @@ const Text = (props) => {
 
     return (
         <React.Fragment>
-            {(props.pageLoaded && (textID !== -1)) &&
+            {(props.pageLoaded && (textID !== -1) && (textID !== -2)) &&
             <React.Fragment>
                 <h3>{props.issues[issueNumber - 1].texts[textID].title}</h3>
                 <div
                     dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].texts[textID].content}}
+                />
+                <Link to='/'>strona główna</Link>
+            </React.Fragment>}
+            {(props.pageLoaded && (textID === -2)) &&
+            <React.Fragment>
+                <h3>{props.issues[issueNumber - 1].bio.title}</h3>
+                <div
+                    dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].bio.content}}
                 />
                 <Link to='/'>strona główna</Link>
             </React.Fragment>}
