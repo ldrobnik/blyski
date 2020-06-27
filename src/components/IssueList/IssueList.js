@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import moment from 'moment';
@@ -23,16 +23,14 @@ const IssueList = (props) => {
                             <h2>{issue.author}</h2>
                             <div>
                                 {issue.texts.map((text) => {
-                                    return(
-                                        <div key={text.title}>
-                                            <h3>{text.title}</h3>
-                                            <div
-                                                dangerouslySetInnerHTML={{__html: text.content}}
-                                            />
-                                        </div>
-                                    )
+                                        return (
+                                            <p key={text.title}>
+                                                <Link to={`${issue.issue}/${text.slug}`}>
+                                                    {text.title}
+                                                </Link>
+                                            </p>
+                                        )
                                     }
-
                                 )}
                             </div>
                             <h3>{issue.bio.title}</h3>
@@ -41,7 +39,7 @@ const IssueList = (props) => {
                             />
                         </div>
                     )
-            })
+                })
             }
         </List>
     );
