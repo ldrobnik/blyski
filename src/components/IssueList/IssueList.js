@@ -33,10 +33,7 @@ const IssueList = (props) => {
                                     }
                                 )}
                             </div>
-                            <h3>{issue.bio.title}</h3>
-                            <div
-                                dangerouslySetInnerHTML={{__html: issue.bio.content}}
-                            />
+                            <Link to={`${issue.issue}/bio`}>bio</Link>
                         </div>
                     )
                 })
