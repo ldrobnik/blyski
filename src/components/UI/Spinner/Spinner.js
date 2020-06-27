@@ -38,7 +38,7 @@ const Spinner = () => {
                     <img
                         src={animatedLogo}
                         alt='loading spinner'
-                        class={getRandomRotationClass()}
+                        className={getRandomRotationClass()}
                     />
             </SpinnerWrapper>
             <Backdrop/>
