@@ -43,7 +43,13 @@ const Text = (props) => {
 
     return (
         <React.Fragment>
-            {props.pageLoaded && <div>Text</div>}
+            {props.pageLoaded &&
+            <div>
+                <h3>{props.issues[issueNumber - 1].texts[textID].title}</h3>
+                <div
+                    dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].texts[textID].content}}
+                />
+            </div>}
         </React.Fragment>
     );
 };
