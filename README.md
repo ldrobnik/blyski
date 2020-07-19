@@ -11,7 +11,7 @@ The website is a **work in progress**. It uses a **React-based frontend** and **
 
 * **the main page** showing an expandable list of issues with links to individual texts;
 * **the text page** displaying a chosen piece from a given issue or the author's bio;
-* **the 'About' section** in the form of a modal.
+* **the about section** in the form of a modal.
 
 ## Technicalities
 
