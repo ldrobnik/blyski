@@ -18,6 +18,4 @@ The website is a **work in progress**. It uses a **React-based frontend** and **
 * a single-page app created with **React.js**;
 * app state controlled with **Redux**;
 * routes managed with **React-Router**;
-* neat styles thanks to **styled-components**;
-* a blog section utilising **Wordpress API**;
-* **Pose** to add extra oomph to animations.
+* a blog section utilising **Wordpress API**.
