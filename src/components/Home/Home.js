@@ -48,6 +48,12 @@ const Home = (props) => {
         setTimeout(() => props.setPageLoaded(true), 400);
     };
 
+    //updates loading status as not loaded, then changes it back to loaded
+    const setTempAsNotLoaded = () => {
+        props.setPageLoaded(false);
+        setTimeout(() => props.setPageLoaded(true), 400);
+    };
+
     //updates error status to true
     const setError = () => {
         props.setError(true);
@@ -152,33 +158,37 @@ const Home = (props) => {
 
     };
 
+    //fetches texts from the Worpdress blog
+    async function loadTexts() {
+        fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
+            return response.json();
+        }).then(texts => {
+            //process the data to organise texts into issues
+            const issueData = processTexts(texts);
+
+            //update the store with the organised issue data
+            updateIssues(issueData);
+
+            //set the page as loaded to turn off spinner
+            setAsLoaded();
+        }).catch(err => {
+            //Change error status in the Redux store
+            setError();
+
+            //set the page as loaded to turn off spinner
+            setAsLoaded();
+        });
+    }
+
     useEffect(() => {
-
-        //fetches texts from the Worpdress blog
-        async function loadTexts() {
-            fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
-                return response.json();
-            }).then(texts => {
-                //process the data to organise texts into issues
-                const issueData = processTexts(texts);
-
-                //update the store with the organised issue data
-                updateIssues(issueData);
-
-                //set the page as loaded to turn off spinner
-                setAsLoaded();
-            }).catch(err => {
-                //Change error status in the Redux store
-                setError();
-
-                //set the page as loaded to turn off spinner
-                setAsLoaded();
-            });
-        }
-
         loadTexts();
+        console.log(props.match.params);
     }, [WP_API_URL]);
 
+    useEffect(() => {
+        //show spinner temporarily when URL changes
+        setTempAsNotLoaded();
+    }, [props.match.params]);
 
     return (
         <React.Fragment>
