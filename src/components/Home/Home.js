@@ -181,13 +181,13 @@ const Home = (props) => {
     }
 
     useEffect(() => {
+        //load texts from Wordpress blog
         loadTexts();
-        console.log(props.match.params);
     }, [WP_API_URL]);
 
     useEffect(() => {
-        //show spinner temporarily when URL changes
-        setTempAsNotLoaded();
+        //once texts are loaded, show spinner temporarily when URL changes
+        if (props.issues.length > 1) setTempAsNotLoaded();
     }, [props.match.params]);
 
     return (
@@ -205,7 +205,8 @@ const Home = (props) => {
 
 const mapStateToProps = state => {
     return {
-        pageLoaded: state.pageLoaded
+        pageLoaded: state.pageLoaded,
+        issues: state.issues
     }
 };
 
