@@ -3,7 +3,6 @@ import {useHistory, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 
-
 const Text = (props) => {
 
     let history = useHistory();
@@ -42,10 +41,7 @@ const Text = (props) => {
             if (textID === -1) {
                 history.push('/');
             }
-
         }
-
-
     });
 
     return (
@@ -56,7 +52,7 @@ const Text = (props) => {
                 <div
                     dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].texts[textID].content}}
                 />
-                <Link to='/'>strona główna</Link>
+                <Link to='/'><strong>strona główna</strong></Link>
             </React.Fragment>}
             {(props.pageLoaded && (textID === -2)) &&
             <React.Fragment>
@@ -64,7 +60,7 @@ const Text = (props) => {
                 <div
                     dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].bio.content}}
                 />
-                <Link to='/'>strona główna</Link>
+                <Link to='/'><strong>strona główna</strong></Link>
             </React.Fragment>}
         </React.Fragment>
     );
