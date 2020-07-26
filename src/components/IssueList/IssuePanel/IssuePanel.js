@@ -16,14 +16,14 @@ const IssuePanel = props => {
 
     return (
         <IssueWrapper>
-                <h1>Numer {props.issue.issue}</h1>
-                <h4>{moment(props.issue.date).locale('pl').format('MMMM YYYY')}</h4>
-                <h2>{props.issue.author}</h2>
+                <h1>Numer {props.issue}</h1>
+                <h4>{moment(props.date).locale('pl').format('MMMM YYYY')}</h4>
+                <h2>{props.author}</h2>
                 <div>
-                    {props.issue.texts.map((text) => {
+                    {props.texts.map((text) => {
                             return (
                                 <p key={text.title}>
-                                    <Link to={`${props.issue.issue}/${text.slug}`}>
+                                    <Link to={`${props.issue}/${text.slug}`}>
                                         {text.title}
                                     </Link>
                                 </p>
@@ -31,7 +31,7 @@ const IssuePanel = props => {
                         }
                     )}
                 </div>
-                <Link to={`${props.issue.issue}/bio`}>bio</Link>
+                <Link to={`${props.issue}/bio`}>bio</Link>
         </IssueWrapper>
     );
 };

@@ -25,7 +25,10 @@ const IssueList = (props) => {
                     return (
                         <IssuePanel
                             key={issue.issue}
-                            issue={issue}
+                            issue={issue.issue}
+                            author={issue.author}
+                            date={issue.date}
+                            texts={issue.texts}
                         />
                     )
                 })
