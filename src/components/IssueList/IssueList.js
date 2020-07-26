@@ -5,8 +5,13 @@ import styled from 'styled-components';
 import moment from 'moment';
 import 'moment/locale/pl';
 
+import IssuePanel from './IssuePanel/IssuePanel';
+
 const List = styled.div`
-display: flex;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
 
 `;
 
@@ -18,24 +23,10 @@ const IssueList = (props) => {
                 props.pageLoaded &&
                 props.issues.map((issue) => {
                     return (
-                        <div key={issue.issue}>
-                            <h1>Numer {issue.issue}</h1>
-                            <h4>{moment(issue.date).locale('pl').format('MMMM YYYY')}</h4>
-                            <h2>{issue.author}</h2>
-                            <div>
-                                {issue.texts.map((text) => {
-                                        return (
-                                            <p key={text.title}>
-                                                <Link to={`${issue.issue}/${text.slug}`}>
-                                                    {text.title}
-                                                </Link>
-                                            </p>
-                                        )
-                                    }
-                                )}
-                            </div>
-                            <Link to={`${issue.issue}/bio`}>bio</Link>
-                        </div>
+                        <IssuePanel
+                            key={issue.issue}
+                            issue={issue}
+                        />
                     )
                 })
             }
