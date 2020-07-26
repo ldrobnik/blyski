@@ -6,6 +6,7 @@ import moment from 'moment';
 import 'moment/locale/pl';
 
 const List = styled.div`
+display: flex;
 
 `;
 
