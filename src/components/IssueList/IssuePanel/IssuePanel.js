@@ -8,7 +8,7 @@ import 'moment/locale/pl';
 const IssueWrapper = styled.div`
  border: 2px solid ${props => props.theme.themeColor};
  margin: 30px;
- padding: 20px;
+ padding: 40px;
  width: 80%;
  box-shadow: 20px 20px ${props => props.theme.themeColor}; 
 `;

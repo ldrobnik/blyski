@@ -28,8 +28,8 @@ const GlobalStyle = createGlobalStyle`
     }
      
      ::selection {
-        color: ${props => props.theme.color1};
-        background-color: ${props => props.theme.darkColor};
+        color: ${props => props.theme.darkColor};
+        background-color: ${props => props.theme.themeColor};
      }
 `;
 
