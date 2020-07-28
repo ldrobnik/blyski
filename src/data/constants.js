@@ -1,3 +1,5 @@
+import React from 'react';
+
 //Url fragment used for fetching data from Wodpress API
 export const WP_URL_FRAGMENT = 'wp-json/wp/v2/posts?per_page=100';
 
@@ -27,7 +29,8 @@ export const getRandomRotationClass = () => {
 //Text used on the website
 export const WEBSITE_TEXT = {
   issueList: {
-      issue: 'numer',
+      magazineName: 'błyski',
+      magazineSubtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
       bio: 'bio'
   }
 };

@@ -26,7 +26,7 @@ const Backdrop = styled.div`
   z-index: 80;
   width: 100%;
   height: 100%;
-  background: linear-gradient(145deg, ${props => props.theme.color1}, ${props => props.theme.color2});
+  background: ${props => props.theme.lightColor};
 `;
 
 const Spinner = () => {

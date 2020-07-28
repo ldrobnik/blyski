@@ -17,7 +17,7 @@ function App() {
     const theme = {
         //colours
         darkColor: '#0f0f0f',
-        lightColor: '#bbbbbb',
+        lightColor: '#fff',
         themeColor: '#f04b23',
         background: 'rgba(40,40,40,0.1)',
 

@@ -7,26 +7,18 @@ import {getRotationClass} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
 const LogoWrapper = styled.div`
-  position: absolute;
-  z-index: 90;
-  top: 50%;
-  left: 50%;
+  z-index: 80;
+  position: relative;
+  left: 50px;
+  top: 50px;
+  width: 100px;
+  height: 100px;
   transform: translate(-50%, -50%);
+  border: 2px solid ${props => props.theme.themeColor};
   
   img {
     height: 100px;
   }
-`;
-
-
-const Backdrop = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 80;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(145deg, ${props => props.theme.color1}, ${props => props.theme.color2});
 `;
 
 const Logo = props => {
@@ -41,7 +33,6 @@ const Logo = props => {
                     className={getRotationClass(props.position)}
                 />
             </LogoWrapper>
-            <Backdrop/>
         </React.Fragment>
     );
 };
