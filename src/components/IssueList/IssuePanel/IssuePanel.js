@@ -6,10 +6,11 @@ import 'moment/locale/pl';
 
 /* STYLED COMPONENTS */
 const IssueWrapper = styled.div`
- border: 1px solid ${props => props.theme.themeColor};
- margin: 20px;
+ border: 2px solid ${props => props.theme.themeColor};
+ margin: 30px;
  padding: 20px;
  width: 80%;
+ box-shadow: 20px 20px ${props => props.theme.themeColor}; 
 `;
 
 const IssuePanel = props => {
