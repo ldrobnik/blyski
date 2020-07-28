@@ -26,8 +26,8 @@ const GlobalStyle = createGlobalStyle`
         color: ${props => props.theme.darkColor};
 
     }
-     
-     ::selection {
+    
+    ::selection {
         color: ${props => props.theme.darkColor};
         background-color: ${props => props.theme.themeColor};
      }

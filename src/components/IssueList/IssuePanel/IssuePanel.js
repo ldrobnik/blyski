@@ -32,10 +32,7 @@ const IssuePanel = props => {
             <IssueTitle
                 issue={props.issue}
                 date={moment(props.date).locale('pl').format('MMMM YYYY')}
-                author={props.author}
             />
-                <h1>Numer {props.issue}</h1>
-                <h4>{moment(props.date).locale('pl').format('MMMM YYYY')}</h4>
                 <h2>{props.author}</h2>
                 <div>
                     {props.texts.map((text) => {

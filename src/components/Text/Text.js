@@ -3,6 +3,10 @@ import {useHistory, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 
+const TextWrapper = styled.div`
+
+`;
+
 const Text = (props) => {
 
     let history = useHistory();
@@ -45,7 +49,7 @@ const Text = (props) => {
     });
 
     return (
-        <React.Fragment>
+        <TextWrapper>
             {(props.pageLoaded && (textID !== -1) && (textID !== -2)) &&
             <React.Fragment>
                 <h3>{props.issues[issueNumber - 1].texts[textID].title}</h3>
@@ -62,7 +66,7 @@ const Text = (props) => {
                 />
                 <Link to='/'><strong>strona główna</strong></Link>
             </React.Fragment>}
-        </React.Fragment>
+        </TextWrapper>
     );
 };
 

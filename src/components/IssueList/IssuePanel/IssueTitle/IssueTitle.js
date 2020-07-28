@@ -10,7 +10,6 @@ padding: 10px;
 display: flex;
 align-items: center;
 justify-content: center;
-
 `;
 
 const IssueName = styled.div`
@@ -19,8 +18,24 @@ const IssueName = styled.div`
   color: ${props => props.theme.themeColor};
   padding-left: 20px;
   transform: translateY(-8px);
+  
+  @media all and (max-width: 1000px) {
+  font-size: 4em;
+  }
+  
+  @media all and (max-width: 700px) {
+  font-size: 3em;
+  }
 `;
 
+const IssueDate = styled.div`
+  text-align: right;
+  padding-right: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  color: ${props => props.theme.themeColor};
+  transform: translateY(-20px);
+`;
 const IssueTitle = (props) => {
 
     //adds 0 for issue numbers below 10
@@ -37,11 +52,16 @@ const IssueTitle = (props) => {
         <React.Fragment>
             <Title>
                 <Logo
-                    position={props.issue % 4}
+                    position={(props.issue - 1) % 4}
                 />
-                <IssueName>
-                    {formatIssueNumber(props.issue)}
-                </IssueName>
+                <div>
+                    <IssueName>
+                        {formatIssueNumber(props.issue)}
+                    </IssueName>
+                    <IssueDate>
+                        {props.date}
+                    </IssueDate>
+                </div>
             </Title>
         </React.Fragment>
     );
