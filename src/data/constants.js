@@ -23,3 +23,11 @@ export const getRandomRotationClass = () => {
 
     return getRotationClass(randomNumber);
 };
+
+//Text used on the website
+export const WEBSITE_TEXT = {
+  issueList: {
+      issue: 'numer',
+      bio: 'bio'
+  }
+};
