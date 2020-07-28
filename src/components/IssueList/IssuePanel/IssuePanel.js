@@ -9,8 +9,13 @@ const IssueWrapper = styled.div`
  border: 2px solid ${props => props.theme.themeColor};
  margin: 30px;
  padding: 40px;
- width: 80%;
- box-shadow: 20px 20px ${props => props.theme.themeColor}; 
+ width: 60%;
+ box-shadow: 20px 20px ${props => props.theme.themeColor};
+ 
+ @media all and (max-width: 1000px) {
+  width: 80%;
+  padding:30px;
+ } 
 `;
 
 const IssuePanel = props => {
