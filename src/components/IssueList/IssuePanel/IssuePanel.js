@@ -13,6 +13,7 @@ const IssueWrapper = styled.div`
  padding: 40px;
  width: 50%;
  box-shadow: 20px 20px ${props => props.theme.themeColor};
+ text-align: center;
  
  @media all and (max-width: 1000px) {
   width: 80%;
@@ -25,6 +26,17 @@ const IssueWrapper = styled.div`
  } 
 `;
 
+const AuthorName = styled.div`
+  padding-top: 20px;
+  font-size: 3em;
+  font-weight: bold;
+  color: ${props => props.theme.darkColor};
+`;
+
+const Texts = styled.div`
+  padding: 20px 0;
+`;
+
 const IssuePanel = props => {
 
     return (
@@ -33,8 +45,8 @@ const IssuePanel = props => {
                 issue={props.issue}
                 date={moment(props.date).locale('pl').format('MMMM YYYY')}
             />
-                <h2>{props.author}</h2>
-                <div>
+                <AuthorName>{props.author}</AuthorName>
+                <Texts>
                     {props.texts.map((text) => {
                             return (
                                 <p key={text.title}>
@@ -45,7 +57,7 @@ const IssuePanel = props => {
                             )
                         }
                     )}
-                </div>
+                </Texts>
                 <Link to={`${props.issue}/bio`}>bio</Link>
         </IssueWrapper>
     );

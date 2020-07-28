@@ -9,7 +9,7 @@ import {getRotationClass} from "../../../data/constants";
 const LogoWrapper = styled.div`
   z-index: 80;
   position: relative;
-  left: 50px;
+  left: 25px;
   top: 50px;
   width: 100px;
   height: 100px;

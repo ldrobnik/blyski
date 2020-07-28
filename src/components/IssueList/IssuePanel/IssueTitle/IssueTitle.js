@@ -16,7 +16,7 @@ const IssueName = styled.div`
   font-size: 6em;
   font-weight: bold;
   color: ${props => props.theme.themeColor};
-  padding-left: 20px;
+  padding-left: 10px;
   transform: translateY(-8px);
   
   @media all and (max-width: 1000px) {
