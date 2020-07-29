@@ -25,14 +25,27 @@ const IssueName = styled.div`
   
   @media all and (max-width: 1000px) {
   font-size: 4em;
+  padding-left: 8px;
   }
   
   @media all and (max-width: 700px) {
   font-size: 3em;
+  padding-left: 6px;
   }
   
   @media all and (max-width: 552px) {
       font-size: 2em;
+      padding-left: 4px;
+    }
+    
+  @media all and (max-width: 380px) {
+      font-size: 1.5em;
+      padding-left: 4px;
+    }
+    
+  @media all and (max-width: 350px) {
+      font-size: 1em;
+      padding-left: 4px;
     }
 `;
 
