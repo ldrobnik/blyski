@@ -9,11 +9,11 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 /* STYLED COMPONENTS */
 const IssueWrapper = styled.div`
  border: 2px solid ${props => props.theme.themeColor};
+ box-shadow: 20px 20px ${props => props.theme.themeColor};
+ text-align: center;
  margin: 30px;
  padding: 40px;
  width: 50%;
- box-shadow: 20px 20px ${props => props.theme.themeColor};
- text-align: center;
  
  @media all and (max-width: 552px) {
       width: 95%;
@@ -36,6 +36,24 @@ const AuthorName = styled.div`
   font-size: 3em;
   font-weight: bold;
   color: ${props => props.theme.darkColor};
+  
+ 
+  @media all and (max-width: 700px) {
+  font-size: 2.5em;
+  }
+  
+  @media all and (max-width: 552px) {
+      font-size: 2em;
+    }
+
+  @media all and (max-width: 350px) {
+      font-size: 1.5em;
+    }
+    
+   @media all and (max-width: 250px) {
+      font-size: 1em;
+    }
+  
 `;
 
 const Texts = styled.div`
