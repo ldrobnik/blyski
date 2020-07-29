@@ -57,8 +57,18 @@ const IssueDate = styled.div`
   color: ${props => props.theme.themeColor};
   transform: translateY(-20px);
   
+  @media all and (max-width: 700px) {
+  font-size: 0.8em;
+  transform: translateY(-10px);
+  }
+  
   @media all and (max-width: 552px) {
-      font-size: 1em;
+      font-size: 0.6em;
+      transform: translateY(-10px);
+    }
+    
+  @media all and (max-width: 350px) {
+      font-size: 0.5em;
       transform: translateY(-10px);
     }
   

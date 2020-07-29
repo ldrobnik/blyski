@@ -15,6 +15,11 @@ const LogoWrapper = styled.div`
       height: 60px;
       width: 60px;
     }
+    
+  @media all and (max-width: 350px) {
+      height: 40px;
+      width: 40px;
+    }
   
   img {
     height: 100px;
@@ -23,6 +28,11 @@ const LogoWrapper = styled.div`
     @media all and (max-width: 552px) {
       height: 60px;
       width: 60px;
+    }
+    
+    @media all and (max-width: 350px) {
+      height: 40px;
+      width: 40px;
     }
   }
 `;
