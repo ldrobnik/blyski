@@ -11,8 +11,19 @@ const LogoWrapper = styled.div`
   height: 100px;
   border: 2px solid ${props => props.theme.themeColor};
   
+  @media all and (max-width: 552px) {
+      height: 60px;
+      width: 60px;
+    }
+  
   img {
     height: 100px;
+    width: 100px;
+    
+    @media all and (max-width: 552px) {
+      height: 60px;
+      width: 60px;
+    }
   }
 `;
 

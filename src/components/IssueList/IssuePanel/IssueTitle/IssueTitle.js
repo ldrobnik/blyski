@@ -10,6 +10,10 @@ padding: 10px;
 display: flex;
 align-items: center;
 justify-content: center;
+
+@media all and (max-width: 552px) {
+      padding: 5px;
+    }
 `;
 
 const IssueName = styled.div`
@@ -26,6 +30,10 @@ const IssueName = styled.div`
   @media all and (max-width: 700px) {
   font-size: 3em;
   }
+  
+  @media all and (max-width: 552px) {
+      font-size: 2em;
+    }
 `;
 
 const IssueDate = styled.div`
@@ -35,6 +43,12 @@ const IssueDate = styled.div`
   font-weight: bold;
   color: ${props => props.theme.themeColor};
   transform: translateY(-20px);
+  
+  @media all and (max-width: 552px) {
+      font-size: 1em;
+      transform: translateY(-10px);
+    }
+  
 `;
 const IssueTitle = (props) => {
 

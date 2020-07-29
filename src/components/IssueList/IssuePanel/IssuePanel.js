@@ -15,6 +15,11 @@ const IssueWrapper = styled.div`
  box-shadow: 20px 20px ${props => props.theme.themeColor};
  text-align: center;
  
+ @media all and (max-width: 552px) {
+      width: 95%;
+      padding: 15px;
+    }
+ 
  @media all and (max-width: 1000px) {
   width: 80%;
   padding:30px;
