@@ -7,13 +7,8 @@ import {getRotationClass} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
 const LogoWrapper = styled.div`
-  z-index: 80;
-  position: relative;
-  left: 25px;
-  top: 50px;
   width: 100px;
   height: 100px;
-  transform: translate(-50%, -50%);
   border: 2px solid ${props => props.theme.themeColor};
   
   img {
