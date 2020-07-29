@@ -63,7 +63,7 @@ const IssuePanel = props => {
                         }
                     )}
                 </Texts>
-                <Link to={`${props.issue}/bio`}>bio</Link>
+                <Link to={`${props.issue}/bio`}>{WEBSITE_TEXT.issueList.bio}</Link>
         </IssueWrapper>
     );
 };
