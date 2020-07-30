@@ -5,19 +5,37 @@ import styled from 'styled-components';
 const ButtonWrapper = styled.div`
 
 border: 2px solid ${props => props.theme.themeColor};
+font-weight: bold;
+font-size: 1.2em;
 display: inline-block;
 position: relative;
 margin: 5px 0;
 padding: 10px 45px;
 overflow: hidden;
 cursor: pointer;
-font-weight: bold;
+transition: all 0.5s;
 
+&:hover {
+color: ${props => props.theme.lightColor};
+}
 
 &:before {
   content: '';
   background-color: ${props => props.theme.themeColor};
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  left: -10%;
+  top: -10%;
+  z-index: -10;
+  transform: translateY(100%);
+  transition: all 0.3s;
 }
+
+  &:hover:before {
+  transform: translateY(-5%);
+  }
+
 
   a, Link {
     width: 100%;

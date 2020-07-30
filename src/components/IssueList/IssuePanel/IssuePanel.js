@@ -80,7 +80,7 @@ const IssuePanel = props => {
                             return (
                                 <HoverableButton
                                     key={text.title}
-                                    path={`${props.issue}/${text.slug}`}
+                                    path={`/${props.issue}/${text.slug}`}
                                     message={text.title}
                                 />
                             )
@@ -88,7 +88,7 @@ const IssuePanel = props => {
                     )}
                 </Texts>
                 <HoverableButton
-                    path={`${props.issue}/bio`}
+                    path={`/${props.issue}/bio`}
                     message={WEBSITE_TEXT.issueList.bio}
                 />
         </IssueWrapper>
