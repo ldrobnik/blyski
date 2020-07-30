@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import moment from 'moment';
 import 'moment/locale/pl';
 import IssueTitle from './IssueTitle/IssueTitle';
+import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import {WEBSITE_TEXT} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -72,16 +73,19 @@ const IssuePanel = props => {
                 <Texts>
                     {props.texts.map((text) => {
                             return (
-                                <p key={text.title}>
-                                    <Link to={`${props.issue}/${text.slug}`}>
-                                        {text.title}
-                                    </Link>
-                                </p>
+                                <HoverableButton
+                                    key={text.title}
+                                    path={`${props.issue}/${text.slug}`}
+                                    message={text.title}
+                                />
                             )
                         }
                     )}
                 </Texts>
-                <Link to={`${props.issue}/bio`}>{WEBSITE_TEXT.issueList.bio}</Link>
+                <HoverableButton
+                    path={`${props.issue}/bio`}
+                    message={WEBSITE_TEXT.issueList.bio}
+                />
         </IssueWrapper>
     );
 };
