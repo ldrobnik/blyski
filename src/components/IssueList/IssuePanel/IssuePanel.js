@@ -34,6 +34,7 @@ const IssueWrapper = styled.div`
 
 const AuthorName = styled.div`
   padding-top: 20px;
+  margin-bottom: 15px;
   font-size: 3em;
   font-weight: bold;
   color: ${props => props.theme.darkColor};
