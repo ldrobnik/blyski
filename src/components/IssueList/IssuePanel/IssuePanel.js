@@ -37,6 +37,7 @@ const AuthorName = styled.div`
   font-size: 3em;
   font-weight: bold;
   color: ${props => props.theme.darkColor};
+  text-decoration: underline ${props => props.theme.themeColor};
   
  
   @media all and (max-width: 700px) {
@@ -58,7 +59,11 @@ const AuthorName = styled.div`
 `;
 
 const Texts = styled.div`
-  padding: 20px 0;
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const IssuePanel = props => {

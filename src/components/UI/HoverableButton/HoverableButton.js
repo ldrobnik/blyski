@@ -5,11 +5,14 @@ import styled from 'styled-components';
 const ButtonWrapper = styled.div`
 
 border: 2px solid ${props => props.theme.themeColor};
-cursor: pointer;
-position: relative;
-overflow: hidden;
-margin: 10px 0;
 display: inline-block;
+position: relative;
+margin: 5px 0;
+padding: 10px 45px;
+overflow: hidden;
+cursor: pointer;
+font-weight: bold;
+
 
 &:before {
   content: '';
@@ -19,7 +22,6 @@ display: inline-block;
   a, Link {
     width: 100%;
     height: 100%;
-    padding: 10px;
   }
 `;
 
