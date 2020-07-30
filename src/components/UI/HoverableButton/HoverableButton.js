@@ -10,13 +10,15 @@ font-size: 1.2em;
 display: inline-block;
 position: relative;
 margin: 5px 0;
-padding: 10px 45px;
+padding: 10px 30px;
 overflow: hidden;
 cursor: pointer;
-transition: all 0.5s;
+transition: all 0.2s ease-in;
+z-index: 50;
 
 &:hover {
 color: ${props => props.theme.lightColor};
+background-color: ${props => props.theme.themeColor};
 }
 
 &:before {
@@ -25,15 +27,15 @@ color: ${props => props.theme.lightColor};
   position: absolute;
   width: 120%;
   height: 120%;
-  left: -10%;
-  top: -10%;
-  z-index: -10;
+  left: 0;
+  top: 0;
+  z-index: -20;
   transform: translateY(100%);
-  transition: all 0.3s;
+  transition: all 0.2s ease-in;
 }
 
   &:hover:before {
-  transform: translateY(-5%);
+  transform: translateY(-2px);
   }
 
 
