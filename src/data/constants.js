@@ -31,6 +31,7 @@ export const WEBSITE_TEXT = {
   issueList: {
       magazineName: 'błyski',
       magazineSubtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
+      translator: <React.Fragment>w&nbsp;przekładzie Łukasza Drobnika</React.Fragment>,
       bio: 'biogram'
   }
 };

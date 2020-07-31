@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import moment from 'moment';
 import 'moment/locale/pl';
 import IssueTitle from './IssueTitle/IssueTitle';
+import AuthorCredits from './AuthorCredits/AuthorCredits';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import {WEBSITE_TEXT} from "../../../data/constants";
 
@@ -32,33 +33,6 @@ const IssueWrapper = styled.div`
  } 
 `;
 
-const AuthorName = styled.div`
-  padding-top: 20px;
-  margin-bottom: 15px;
-  font-size: 3em;
-  font-weight: bold;
-  color: ${props => props.theme.darkColor};
-  text-decoration: underline ${props => props.theme.themeColor};
-  
- 
-  @media all and (max-width: 700px) {
-  font-size: 2.5em;
-  }
-  
-  @media all and (max-width: 552px) {
-      font-size: 2em;
-    }
-
-  @media all and (max-width: 350px) {
-      font-size: 1.5em;
-    }
-    
-   @media all and (max-width: 250px) {
-      font-size: 1em;
-    }
-  
-`;
-
 const Texts = styled.div`
   padding: 25px 0;
   display: flex;
@@ -75,7 +49,9 @@ const IssuePanel = props => {
                 issue={props.issue}
                 date={moment(props.date).locale('pl').format('MMMM YYYY')}
             />
-                <AuthorName>{props.author}</AuthorName>
+                <AuthorCredits
+                    author={props.author}
+                />
                 <Texts>
                     {props.texts.map((text) => {
                             return (
