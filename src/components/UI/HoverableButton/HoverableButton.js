@@ -38,11 +38,14 @@ background-color: ${props => props.theme.themeColor};
   transform: translateY(-2px);
   }
 
-
-  a, Link {
-    width: 100%;
-    height: 100%;
+  @media all and (max-width: 700px) {
+  font-size: 1em;
   }
+  
+  @media all and (max-width: 552px) {
+      font-size: 0.8em;
+    }
+
 `;
 
 const HoverableButton = (props) => {
