@@ -19,6 +19,7 @@ function App() {
         darkColor: '#0f0f0f',
         lightColor: '#fff',
         themeColor: '#f04b23',
+        lightThemeColor: '#fcd8cf',
         background: 'rgba(40,40,40,0.1)',
 
         //fonts
