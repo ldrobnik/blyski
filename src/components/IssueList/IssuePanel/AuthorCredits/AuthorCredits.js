@@ -8,7 +8,7 @@ const CreditsWrapper = styled.div`
 `;
 
 const AuthorName = styled.div`
-  font-size: 3em;
+  font-size: 3.2em;
   font-weight: bold;
   color: ${props => props.theme.themeColor};
   
