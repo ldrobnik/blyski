@@ -158,8 +158,8 @@ const Home = (props) => {
 
     };
 
-    //fetches texts from the Worpdress blog
-    async function loadTexts() {
+    //fetches texts from the Wordpress blog
+    const loadTexts = () => {
         fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
             return response.json();
         }).then(texts => {
@@ -178,7 +178,7 @@ const Home = (props) => {
             //set the page as loaded to turn off spinner
             setAsLoaded();
         });
-    }
+    };
 
     useEffect(() => {
         //load texts from Wordpress blog
