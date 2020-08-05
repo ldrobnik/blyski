@@ -10,7 +10,7 @@ font-size: 1.2em;
 color: ${props => props.theme.themeColor};
 display: inline-block;
 position: relative;
-margin: 5px 0;
+margin: 1px 0;
 padding: 10px 30px;
 overflow: hidden;
 cursor: pointer;
