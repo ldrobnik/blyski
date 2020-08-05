@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 const ButtonWrapper = styled.div`
 
-border: 2px solid ${props => props.theme.themeColor};
+
 font-weight: bold;
 font-size: 1.2em;
+color: ${props => props.theme.themeColor};
 display: inline-block;
 position: relative;
 margin: 5px 0;
@@ -18,7 +19,6 @@ z-index: 50;
 
 &:hover {
 color: ${props => props.theme.lightColor};
-background-color: ${props => props.theme.themeColor};
 }
 
 &:before {
