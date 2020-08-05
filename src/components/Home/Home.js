@@ -154,7 +154,7 @@ const Home = (props) => {
             }
         }
 
-        return issues;
+        return issues.reverse();
 
     };
 
