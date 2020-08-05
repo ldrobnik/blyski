@@ -9,7 +9,7 @@ import {getRotationClass} from "../../../data/constants";
 const LogoWrapper = styled.div`
   width: 100px;
   height: 100px;
-  border: 2px solid ${props => props.theme.themeColor};
+  border: 6px solid ${props => props.theme.themeColor};
   
   @media all and (max-width: 552px) {
       height: 60px;
