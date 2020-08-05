@@ -11,7 +11,6 @@ const AuthorName = styled.div`
   font-size: 3em;
   font-weight: bold;
   color: ${props => props.theme.themeColor};
-  text-decoration: underline ${props => props.theme.themeColor};
   
   @media all and (max-width: 700px) {
   font-size: 2.5em;

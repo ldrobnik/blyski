@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 
 const TextWrapper = styled.div`
-  border: 2px solid ${props => props.theme.themeColor};
-  box-shadow: 20px 20px ${props => props.theme.themeColor};
+  border: 10px solid ${props => props.theme.themeColor};
+  padding: 10px;
 `;
 
 const Text = (props) => {

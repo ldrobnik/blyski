@@ -10,8 +10,7 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
 const IssueWrapper = styled.div`
- border: 2px solid ${props => props.theme.themeColor};
- box-shadow: 20px 20px ${props => props.theme.themeColor};
+ border: 10px solid ${props => props.theme.themeColor};
  text-align: center;
  margin: 30px;
  padding: 40px;
