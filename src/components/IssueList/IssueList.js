@@ -26,7 +26,7 @@ const IssueList = (props) => {
         <List>
             {
                 props.pageLoaded &&
-                props.issues.map((issue) => {
+                props.issues.slice(0).reverse().map((issue) => {
                     return (
                         <IssuePanel
                             key={issue.issue}
