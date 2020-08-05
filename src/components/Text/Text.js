@@ -49,6 +49,11 @@ const Text = (props) => {
         }
     });
 
+    useEffect(() => {
+        //Scroll to top
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <TextWrapper>
             {(props.pageLoaded && (textID !== -1) && (textID !== -2)) &&

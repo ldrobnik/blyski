@@ -17,6 +17,11 @@ const List = styled.div`
 
 const IssueList = (props) => {
 
+    useEffect(() => {
+        //Scroll to top
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <List>
             {
