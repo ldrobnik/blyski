@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import HoverableButton from '../UI/HoverableButton/HoverableButton';
 
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
@@ -62,7 +63,6 @@ const Text = (props) => {
                 <div
                     dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].texts[textID].content}}
                 />
-                <Link to='/'><strong>strona główna</strong></Link>
             </React.Fragment>}
             {(props.pageLoaded && (textID === -2)) &&
             <React.Fragment>
@@ -70,8 +70,11 @@ const Text = (props) => {
                 <div
                     dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].bio.content}}
                 />
-                <Link to='/'><strong>strona główna</strong></Link>
             </React.Fragment>}
+            <HoverableButton
+                path="/"
+                message="strona główna"
+            />
         </TextWrapper>
     );
 };
