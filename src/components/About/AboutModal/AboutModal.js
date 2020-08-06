@@ -34,7 +34,9 @@ const AboutPanel = styled.div`
     &:active {
       color: ${props => props.theme.themeColor};
     }
+  }
   
+
 `;
 
 const AboutModal = (props) => {

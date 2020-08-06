@@ -41,7 +41,7 @@ export const WEBSITE_TEXT = {
             <p><strong>błyski</strong> to niereguralnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi i składa się z&nbsp;pięciu jego tekstów oraz biogramu — i&nbsp;tyle.</p>
         </React.Fragment>,
         credits: <React.Fragment>red. nacz. — ja, dobór tekstów — ja, przekłady — ja, projekt strony — ja*</React.Fragment>,
-        footnote: <React.Fragment>ja = <a href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">Łukasz Drobnik</a></React.Fragment>,
+        footnote: <React.Fragment>*ja = <a href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">Łukasz Drobnik</a></React.Fragment>,
         button: 'zamknij'
     }
 };

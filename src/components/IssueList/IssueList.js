@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import moment from 'moment';
 import 'moment/locale/pl';
 
+import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
 import About from '../About/About';
 
@@ -38,6 +39,7 @@ const IssueList = (props) => {
 
     return (
         <React.Fragment>
+            <MainNavbar />
             <List>
                 {
                     props.pageLoaded &&
