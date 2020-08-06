@@ -1,4 +1,13 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {
+    faTwitterSquare,
+    faFacebookSquare,
+    faInstagram
+} from '@fortawesome/free-brands-svg-icons';
+import {
+    faInfoCircle
+} from '@fortawesome/free-solid-svg-icons';
 
 //Url fragment used for fetching data from Wodpress API
 export const WP_URL_FRAGMENT = 'wp-json/wp/v2/posts?per_page=100';
@@ -28,6 +37,24 @@ export const getRandomRotationClass = () => {
 
 //Text used on the website
 export const WEBSITE_TEXT = {
+    mainNavbar: [
+        {
+            message: <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>,
+            path: '/info'
+        },
+        {
+            message: <FontAwesomeIcon icon={faTwitterSquare}></FontAwesomeIcon>,
+            path: 'https://twitter.com/'
+        },
+        {
+            message: <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>,
+            path: 'https://www.instagram.com/'
+        },
+        {
+            message: <FontAwesomeIcon icon={faFacebookSquare}></FontAwesomeIcon>,
+            path: 'https://www.facebook.com/'
+        }
+    ],
     issueList: {
         magazineName: 'błyski',
         translator: <React.Fragment>w&nbsp;przekładzie Łukasza Drobnika</React.Fragment>,
