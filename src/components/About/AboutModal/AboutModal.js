@@ -5,7 +5,7 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
 const AboutPanel = styled.div`
-  z-index: 800;
+  z-index: 50;
   position: absolute;
   top: 50%;
   left: 50%;

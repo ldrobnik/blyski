@@ -19,19 +19,6 @@ const List = styled.div`
 
 const IssueList = (props) => {
 
-    //specifies whether the about modal should be visible
-    const [aboutVisible, setAboutVisible] = useState(false);
-
-    useEffect(() => {
-        //if the path is '/info', show about modal; otherwise, hide it
-        if (props.match.path === '/info') {
-            setAboutVisible(true);
-        } else {
-            setAboutVisible(false);
-        }
-
-    });
-
     useEffect(() => {
         //Scroll to top
         window.scrollTo(0, 0);
@@ -56,7 +43,6 @@ const IssueList = (props) => {
                     })
                 }
             </List>
-            {props.pageLoaded && aboutVisible && <About/>}
         </React.Fragment>
     );
 };

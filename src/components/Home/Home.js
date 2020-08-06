@@ -7,6 +7,7 @@ import {createGlobalStyle} from 'styled-components';
 
 import IssueList from '../IssueList/IssueList';
 import Text from '../Text/Text';
+import About from '../About/About';
 import Spinner from '../UI/Spinner/Spinner';
 
 import {WP_URL_FRAGMENT} from '../../data/constants';
@@ -194,7 +195,7 @@ const Home = (props) => {
             <GlobalStyle />
             <Switch>
                 <Route path="/" exact component={IssueList} key="home"/>
-                <Route path="/info" exact component={IssueList} key="about"/>
+                <Route path="/info" exact component={About} key="about"/>
                 <Route path="/:issue/:slug" exact component={Text} key="text"/>
                 <Route render={() => (<Redirect to="/"/>)} key="default"/>
             </Switch>
