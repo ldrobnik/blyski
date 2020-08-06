@@ -39,7 +39,7 @@ const IssueList = (props) => {
 
     return (
         <React.Fragment>
-            <MainNavbar />
+            {props.pageLoaded && <MainNavbar />}
             <List>
                 {
                     props.pageLoaded &&

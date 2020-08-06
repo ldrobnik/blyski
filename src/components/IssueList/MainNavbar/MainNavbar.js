@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import HoverableButton from '../../UI/HoverableButton/HoverableButton';
+import {WEBSITE_TEXT} from "../../../data/constants";
 
 const NavbarWrapper = styled.div`
   display: flex;
@@ -8,7 +10,6 @@ const NavbarWrapper = styled.div`
 `;
 
 const Navbar = styled.div`
-border: 10px solid ${props => props.theme.themeColor};
   margin: 5px;
   padding: 10px;
   display: inline-block;
@@ -19,7 +20,15 @@ const MainNavbar = (props) => {
     return (
         <NavbarWrapper>
             <Navbar>
-                navbar
+                {WEBSITE_TEXT.mainNavbar.map((navlink) => {
+                    return (
+                        <HoverableButton
+                            key={navlink.path}
+                            path={navlink.path}
+                            message={navlink.message}
+                        />
+                    )
+                })}
             </Navbar>
         </NavbarWrapper>
     );
