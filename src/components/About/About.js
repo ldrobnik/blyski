@@ -1,10 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
-
-const AboutWrapper = styled.div`
-
-`;
+import AboutModal from './AboutModal/AboutModal';
 
 const Backdrop = styled.div`
   position: fixed;
@@ -22,14 +19,14 @@ const About = (props) => {
 
     //redirect to home page
     const goHome = () => {
-       history.push('/');
+        history.push('/');
     };
 
     //if certain keys are pressed, go to home page
     const handleKeyPress = useCallback((event) => {
 
         //checks whether esc, space or enter have been pressed
-        if ((event.keyCode === 27) || (event.keyCode === 32) ||(event.keyCode === 13))   {
+        if ((event.keyCode === 27) || (event.keyCode === 32) || (event.keyCode === 13)) {
             goHome(); //redirects to homepage
         }
     }, []);
@@ -45,9 +42,7 @@ const About = (props) => {
 
     return (
         <React.Fragment>
-            <AboutWrapper>
-                Info
-            </AboutWrapper>
+            <AboutModal/>
             <Backdrop onClick={() => goHome()}/>
         </React.Fragment>
     );
