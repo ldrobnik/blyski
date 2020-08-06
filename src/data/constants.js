@@ -28,10 +28,19 @@ export const getRandomRotationClass = () => {
 
 //Text used on the website
 export const WEBSITE_TEXT = {
-  issueList: {
-      magazineName: 'błyski',
-      magazineSubtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
-      translator: <React.Fragment>w&nbsp;przekładzie Łukasza Drobnika</React.Fragment>,
-      bio: 'biogram'
-  }
+    issueList: {
+        magazineName: 'błyski',
+        translator: <React.Fragment>w&nbsp;przekładzie Łukasza Drobnika</React.Fragment>,
+        bio: 'biogram'
+    },
+    about: {
+        title: "błyski",
+        subtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
+        content: <React.Fragment>
+            <p>Flash fiction to bardzo krótkie prozy mieszczące się — zależnie od definicji — w&nbsp;1000 lub 1500 słowach. W&nbsp;przeciwieństwie do prozy poetyckiej zawsze mają fabułę.</p>
+            <p><em>błyski</em> to niereguralnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej popularnej w&nbsp;świecie anglosaskim formy. W&nbsp;duchu minimalizmu każdy numer jest poświęcony jednemu autorowi i składa się z&nbsp;pięciu jego tekstów oraz biogramu — i&nbsp;tyle.</p>
+        </React.Fragment>,
+        credits: <React.Fragment>red. nacz. — ja, dobór tekstów — ja, przekłady — ja, projekt strony — ja*</React.Fragment>,
+        footnote: <React.Fragment>ja = <a href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">Łukasz Drobnik</a></React.Fragment>
+    }
 };
