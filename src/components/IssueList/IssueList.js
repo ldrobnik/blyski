@@ -6,6 +6,7 @@ import moment from 'moment';
 import 'moment/locale/pl';
 
 import IssuePanel from './IssuePanel/IssuePanel';
+import About from '../About/About';
 
 const List = styled.div`
  display: flex;
@@ -17,28 +18,44 @@ const List = styled.div`
 
 const IssueList = (props) => {
 
+    //specifies whether the about modal should be visible
+    const [aboutVisible, setAboutVisible] = useState(false);
+
+    useEffect(() => {
+        //if the path is '/info', show about modal; otherwise, hide it
+        if (props.match.path === '/info') {
+            setAboutVisible(true);
+        } else {
+            setAboutVisible(false);
+        }
+
+    });
+
     useEffect(() => {
         //Scroll to top
         window.scrollTo(0, 0);
     }, []);
 
     return (
-        <List>
-            {
-                props.pageLoaded &&
-                [...props.issues].reverse().map((issue) => {
-                    return (
-                        <IssuePanel
-                            key={issue.issue}
-                            issue={issue.issue}
-                            author={issue.author}
-                            date={issue.date}
-                            texts={issue.texts}
-                        />
-                    )
-                })
-            }
-        </List>
+        <React.Fragment>
+            <List>
+                {
+                    props.pageLoaded &&
+                    [...props.issues].reverse().map((issue) => {
+                        return (
+                            <IssuePanel
+                                key={issue.issue}
+                                issue={issue.issue}
+                                author={issue.author}
+                                date={issue.date}
+                                texts={issue.texts}
+                            />
+                        )
+                    })
+                }
+            </List>
+            {props.pageLoaded && aboutVisible && <About/>}
+        </React.Fragment>
     );
 };
 
