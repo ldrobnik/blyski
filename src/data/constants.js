@@ -6,7 +6,8 @@ import {
     faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 import {
-    faInfoCircle
+    faInfoCircle,
+    faHome
 } from '@fortawesome/free-solid-svg-icons';
 
 //Url fragment used for fetching data from Wodpress API
@@ -76,7 +77,8 @@ export const WEBSITE_TEXT = {
     text: {
         navbar: {
             textNumbers: ['i', 'ii', 'iii', 'iv', 'v'],
-            bio: 'bio'
+            bio: 'bio',
+            home: <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>
         },
         nextButton: 'następny tekst',
         bioButton: 'biogram',

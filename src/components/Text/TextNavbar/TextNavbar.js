@@ -32,6 +32,16 @@ const TextNavbar = props => {
                 <IssueTitle>
                     {`${formatIssueNumber(props.issueNumber)}:`}
                 </IssueTitle>
+                {WEBSITE_TEXT.text.navbar.textNumbers.map((navlink, index) => {
+                    return (
+                        <HoverableButton
+                            key={index}
+                            path={`/${props.issueNumber}/${props.texts[index].slug}`}
+                            message={navlink}
+                            className={(props.textID === index) && 'active'}
+                        />
+                    )
+                })}
             </Navbar>
 
         </NavbarWrapper>

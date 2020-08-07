@@ -63,9 +63,11 @@ const Text = (props) => {
 
     return (
         <React.Fragment>
-            <TextNavbar
+            {(props.pageLoaded) && <TextNavbar
                 issueNumber={issueNumber}
-            />
+                textID={textID}
+                texts={props.issues[issueNumber - 1].texts}
+            />}
             <TextWrapper>
                 {(props.pageLoaded && (textID !== -1) && (textID !== -2)) &&
                 <React.Fragment>
