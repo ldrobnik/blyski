@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
+import InactiveButton from '../../UI/InactiveButton/InactiveButton';
 import {WEBSITE_TEXT, formatIssueNumber} from "../../../data/constants";
 
 const NavbarWrapper = styled.div`
@@ -12,7 +13,7 @@ const NavbarWrapper = styled.div`
 const Navbar = styled.div`
   margin: 5px;
   padding: 10px;
-  display: inline-block;
+  display: flex;
  
   .active {
     background-color: ${props => props.theme.themeColor};
@@ -34,12 +35,18 @@ const TextNavbar = props => {
                 </IssueTitle>
                 {WEBSITE_TEXT.text.navbar.textNumbers.map((navlink, index) => {
                     return (
-                        <HoverableButton
-                            key={index}
-                            path={`/${props.issueNumber}/${props.texts[index].slug}`}
-                            message={navlink}
-                            className={(props.textID === index) && 'active'}
-                        />
+                        <div key={index}>
+                            {(index === props.textID) ?
+
+                                <InactiveButton
+                                    message={navlink}
+                                />
+                                :
+                                <HoverableButton
+                                    path={`/${props.issueNumber}/${props.texts[index].slug}`}
+                                    message={navlink}
+                                />}
+                        </div>
                     )
                 })}
             </Navbar>

@@ -11,7 +11,6 @@ position: relative;
 margin: 1px 0;
 padding: 10px 20px;
 overflow: hidden;
-cursor: pointer;
 transition: all 0.2s ease-in;
 z-index: 50;
 
