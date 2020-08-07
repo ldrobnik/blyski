@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const ButtonWrapper = styled.div`
-
+height: 25px;
 font-weight: bold;
 font-size: 1.2em;
 color: ${props => props.theme.themeColor};
@@ -39,7 +39,7 @@ color: ${props => props.theme.lightColor};
 `;
 
 const InvertedButtonWrapper = styled.div`
-
+height: 25px;
 font-weight: bold;
 font-size: 1.2em;
 color: ${props => props.theme.themeColor};
