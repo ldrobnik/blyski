@@ -4,7 +4,7 @@ import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import {WEBSITE_TEXT} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
-const AboutPanel = styled.div`
+const AboutBox = styled.div`
   z-index: 50;
   position: absolute;
   top: 50%;
@@ -39,10 +39,10 @@ const AboutPanel = styled.div`
 
 `;
 
-const AboutModal = (props) => {
+const AboutPanel = (props) => {
 
     return (
-        <AboutPanel>
+        <AboutBox>
             <h1>{WEBSITE_TEXT.about.title}</h1>
             <h3>{WEBSITE_TEXT.about.subtitle}</h3>
             {WEBSITE_TEXT.about.content}
@@ -53,8 +53,8 @@ const AboutModal = (props) => {
                 message={WEBSITE_TEXT.about.button}
                 inverted={true}
             />
-        </AboutPanel>
+        </AboutBox>
     );
 };
 
-export default AboutModal;
+export default AboutPanel;
