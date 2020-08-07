@@ -13,6 +13,10 @@ const Navbar = styled.div`
   margin: 5px;
   padding: 10px;
   display: inline-block;
+  
+  div, a {
+  max-height: 30px;
+  }
 `;
 
 const MainNavbar = (props) => {
