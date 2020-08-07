@@ -45,6 +45,20 @@ const TextNavbar = props => {
                         </div>
                     )
                 })}
+                {(props.textID === -2) ?
+
+                    <InactiveButton
+                        message={WEBSITE_TEXT.text.navbar.bio}
+                    />
+                    :
+                    <HoverableButton
+                        path={`/${props.issueNumber}/bio`}
+                        message={WEBSITE_TEXT.text.navbar.bio}
+                    />}
+                <HoverableButton
+                    path="/"
+                    message={WEBSITE_TEXT.text.navbar.home}
+                />
             </Navbar>
 
         </NavbarWrapper>
