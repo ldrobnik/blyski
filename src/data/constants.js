@@ -71,6 +71,15 @@ export const WEBSITE_TEXT = {
         desclaimer: <React.Fragment>Jako że <strong>błyski</strong> składają się wyłącznie z&nbsp;tekstów napisanych pierwotnie po angielsku, nie przyjmujemy propozycji wydawniczych.</React.Fragment>,
         credits: <React.Fragment>red. nacz. — ja, dobór tekstów — ja, przekłady — ja, projekt strony — ja*</React.Fragment>,
         footnote: <React.Fragment>*ja = <a href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">Łukasz Drobnik</a></React.Fragment>,
-        button: 'zamknij'
+        button: 'strona główna'
+    },
+    text: {
+        navbar: {
+            textNumbers: ['i', 'ii', 'iii', 'iv', 'v'],
+            bio: 'bio'
+        },
+        nextButton: 'następny tekst',
+        bioButton: 'biogram',
+        homeButton: 'strona główna'
     }
 };

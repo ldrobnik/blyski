@@ -3,6 +3,7 @@ import {useHistory, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
+import {WEBSITE_TEXT} from "../../data/constants";
 
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
@@ -52,6 +53,8 @@ const Text = (props) => {
                 history.push('/');
             }
         }
+
+        console.log(props.issues);
     });
 
     useEffect(() => {
@@ -76,10 +79,21 @@ const Text = (props) => {
                 />
             </React.Fragment>}
             <ButtonWrapper>
+                {(props.pageLoaded && (textID < 4) && (textID !== -2)) &&
+                <HoverableButton
+                    path={`/${issueNumber}/${props.issues[issueNumber - 1].texts[textID + 1].slug}`}
+                    message={WEBSITE_TEXT.text.nextButton}
+                />}
+                {(props.pageLoaded && (textID === 4)) &&
+                <HoverableButton
+                    path={`/${issueNumber}/bio`}
+                    message={WEBSITE_TEXT.text.bioButton}
+                />}
+                {(props.pageLoaded && (textID === -2)) &&
                 <HoverableButton
                     path="/"
-                    message="strona główna"
-                />
+                    message={WEBSITE_TEXT.text.homeButton}
+                />}
             </ButtonWrapper>
         </TextWrapper>
     );
