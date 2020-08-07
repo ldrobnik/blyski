@@ -14,9 +14,9 @@ const Navbar = styled.div`
   margin: 5px;
   padding: 10px;
   display: flex;
- 
-  .active {
-    background-color: ${props => props.theme.themeColor};
+  
+  div, a {
+  max-height: 30px;
   }
 `;
 
@@ -31,7 +31,7 @@ const TextNavbar = props => {
                 />
                 {WEBSITE_TEXT.text.navbar.textNumbers.map((navlink, index) => {
                     return (
-                        <div key={index}>
+                        <React.Fragment key={index}>
                             {(index === props.textID) ?
 
                                 <InactiveButton
@@ -42,7 +42,7 @@ const TextNavbar = props => {
                                     path={`/${props.issueNumber}/${props.texts[index].slug}`}
                                     message={navlink}
                                 />}
-                        </div>
+                        </React.Fragment>
                     )
                 })}
                 {(props.textID === -2) ?
