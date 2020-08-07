@@ -83,3 +83,13 @@ export const WEBSITE_TEXT = {
         homeButton: 'strona główna'
     }
 };
+
+//adds 0 for issue numbers below 10
+export const formatIssueNumber = (issueNumber) => {
+    let issueName = WEBSITE_TEXT.issueList.magazineName + " ";
+    if (issueNumber < 10) {
+        return issueName + "0" + issueNumber;
+    } else {
+        return issueName + issueNumber;
+    }
+};

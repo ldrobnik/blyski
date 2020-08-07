@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Logo from '../../../UI/Logo/Logo';
-import {WEBSITE_TEXT} from "../../../../data/constants";
+import {formatIssueNumber} from "../../../../data/constants";
 
 const Title = styled.div`
 
@@ -74,16 +74,6 @@ const IssueDate = styled.div`
   
 `;
 const IssueTitle = (props) => {
-
-    //adds 0 for issue numbers below 10
-    const formatIssueNumber = (issueNumber) => {
-        let issueName = WEBSITE_TEXT.issueList.magazineName + " ";
-        if (issueNumber < 10) {
-            return issueName + "0" + issueNumber;
-        } else {
-            return issueName + issueNumber;
-        }
-    };
 
     return (
         <React.Fragment>

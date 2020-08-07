@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import TextNavbar from './TextNavbar/TextNavbar';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
 import {WEBSITE_TEXT} from "../../data/constants";
 
@@ -53,8 +54,6 @@ const Text = (props) => {
                 history.push('/');
             }
         }
-
-        console.log(props.issues);
     });
 
     useEffect(() => {
@@ -63,39 +62,44 @@ const Text = (props) => {
     }, []);
 
     return (
-        <TextWrapper>
-            {(props.pageLoaded && (textID !== -1) && (textID !== -2)) &&
-            <React.Fragment>
-                <h3>{props.issues[issueNumber - 1].texts[textID].title}</h3>
-                <div
-                    dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].texts[textID].content}}
-                />
-            </React.Fragment>}
-            {(props.pageLoaded && (textID === -2)) &&
-            <React.Fragment>
-                <h3>{props.issues[issueNumber - 1].bio.title}</h3>
-                <div
-                    dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].bio.content}}
-                />
-            </React.Fragment>}
-            <ButtonWrapper>
-                {(props.pageLoaded && (textID < 4) && (textID !== -2)) &&
-                <HoverableButton
-                    path={`/${issueNumber}/${props.issues[issueNumber - 1].texts[textID + 1].slug}`}
-                    message={WEBSITE_TEXT.text.nextButton}
-                />}
-                {(props.pageLoaded && (textID === 4)) &&
-                <HoverableButton
-                    path={`/${issueNumber}/bio`}
-                    message={WEBSITE_TEXT.text.bioButton}
-                />}
+        <React.Fragment>
+            <TextNavbar
+                issueNumber={issueNumber}
+            />
+            <TextWrapper>
+                {(props.pageLoaded && (textID !== -1) && (textID !== -2)) &&
+                <React.Fragment>
+                    <h3>{props.issues[issueNumber - 1].texts[textID].title}</h3>
+                    <div
+                        dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].texts[textID].content}}
+                    />
+                </React.Fragment>}
                 {(props.pageLoaded && (textID === -2)) &&
-                <HoverableButton
-                    path="/"
-                    message={WEBSITE_TEXT.text.homeButton}
-                />}
-            </ButtonWrapper>
-        </TextWrapper>
+                <React.Fragment>
+                    <h3>{props.issues[issueNumber - 1].bio.title}</h3>
+                    <div
+                        dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].bio.content}}
+                    />
+                </React.Fragment>}
+                <ButtonWrapper>
+                    {(props.pageLoaded && (textID < 4) && (textID !== -2)) &&
+                    <HoverableButton
+                        path={`/${issueNumber}/${props.issues[issueNumber - 1].texts[textID + 1].slug}`}
+                        message={WEBSITE_TEXT.text.nextButton}
+                    />}
+                    {(props.pageLoaded && (textID === 4)) &&
+                    <HoverableButton
+                        path={`/${issueNumber}/bio`}
+                        message={WEBSITE_TEXT.text.bioButton}
+                    />}
+                    {(props.pageLoaded && (textID === -2)) &&
+                    <HoverableButton
+                        path="/"
+                        message={WEBSITE_TEXT.text.homeButton}
+                    />}
+                </ButtonWrapper>
+            </TextWrapper>
+        </React.Fragment>
     );
 };
 
