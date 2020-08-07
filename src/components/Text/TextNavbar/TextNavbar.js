@@ -20,19 +20,15 @@ const Navbar = styled.div`
   }
 `;
 
-const IssueTitle = styled.div`
-  color: ${props => props.theme.themeColor};
-  font-size: 1.5em;
-  font-weight: bold;
-`;
 const TextNavbar = props => {
 
     return (
         <NavbarWrapper>
             <Navbar>
-                <IssueTitle>
-                    {`${formatIssueNumber(props.issueNumber)}:`}
-                </IssueTitle>
+                <InactiveButton
+                    message={formatIssueNumber(props.issueNumber)}
+                    inverted={true}
+                />
                 {WEBSITE_TEXT.text.navbar.textNumbers.map((navlink, index) => {
                     return (
                         <div key={index}>

@@ -6,8 +6,7 @@ import {
     faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 import {
-    faInfoCircle,
-    faHome
+    faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 //Url fragment used for fetching data from Wodpress API
