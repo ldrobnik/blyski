@@ -3,14 +3,15 @@ import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 import AboutPanel from './AboutModal/AboutPanel';
 
+/* STYLED COMPONENTS */
+
 const Backdrop = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: ${props => props.theme.themeColor};
-  }
 `;
 
 const About = (props) => {

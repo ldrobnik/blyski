@@ -9,6 +9,10 @@ const TextWrapper = styled.div`
   padding: 10px;
 `;
 
+const ButtonWrapper = styled.div`
+  text-align: center;
+`;
+
 const Text = (props) => {
 
     let history = useHistory();
@@ -71,10 +75,12 @@ const Text = (props) => {
                     dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].bio.content}}
                 />
             </React.Fragment>}
-            <HoverableButton
-                path="/"
-                message="strona główna"
-            />
+            <ButtonWrapper>
+                <HoverableButton
+                    path="/"
+                    message="strona główna"
+                />
+            </ButtonWrapper>
         </TextWrapper>
     );
 };
