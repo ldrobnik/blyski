@@ -67,6 +67,8 @@ export const WEBSITE_TEXT = {
             <p>Flash fiction to bardzo krótkie prozy mieszczące się — zależnie od definicji — w&nbsp;1000 lub 1500 słowach. W&nbsp;przeciwieństwie do prozy poetyckiej zawsze mają fabułę.</p>
             <p><strong>błyski</strong> to niereguralnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi i składa się z&nbsp;pięciu jego tekstów oraz biogramu — i&nbsp;tyle.</p>
         </React.Fragment>,
+        contact: <React.Fragment>Kontakt z&nbsp;redakcją: blyski [at] gmail [dot] com.</React.Fragment>,
+        desclaimer: <React.Fragment>Jako że <em>błyski</em> składają się wyłącznie z&nbsp;tekstów napisanych pierwotnie po angielsku, nie przyjmujemy propozycji wydawniczych.</React.Fragment>,
         credits: <React.Fragment>red. nacz. — ja, dobór tekstów — ja, przekłady — ja, projekt strony — ja*</React.Fragment>,
         footnote: <React.Fragment>*ja = <a href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">Łukasz Drobnik</a></React.Fragment>,
         button: 'zamknij'

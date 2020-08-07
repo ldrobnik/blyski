@@ -46,6 +46,8 @@ const AboutPanel = (props) => {
             <h1>{WEBSITE_TEXT.about.title}</h1>
             <h3>{WEBSITE_TEXT.about.subtitle}</h3>
             {WEBSITE_TEXT.about.content}
+            <p>{WEBSITE_TEXT.about.contact}</p>
+            <p>{WEBSITE_TEXT.about.desclaimer}</p>
             <p>{WEBSITE_TEXT.about.credits}</p>
             <p>{WEBSITE_TEXT.about.footnote}</p>
             <HoverableButton
