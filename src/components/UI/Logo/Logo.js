@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import animatedLogo from '../../../assets/images/animatedGlider.png';
-
-import {getRotationClass} from "../../../data/constants";
+import {ReactComponent as LogoFrame1} from '../../../assets/images/glider1.svg';
+import {ReactComponent as LogoFrame2} from '../../../assets/images/glider2.svg';
+import {ReactComponent as LogoFrame3} from '../../../assets/images/glider3.svg';
+import {ReactComponent as LogoFrame4} from '../../../assets/images/glider4.svg';
 
 /* STYLED COMPONENTS */
 const LogoWrapper = styled.div`
   width: 100px;
   height: 100px;
-  border: 6px solid ${props => props.theme.themeColor};
   
   @media all and (max-width: 552px) {
       height: 60px;
@@ -39,17 +39,12 @@ const LogoWrapper = styled.div`
 
 const Logo = props => {
 
+    //array containing all logo components
+    const logo = [<LogoFrame1/>, <LogoFrame2/>, <LogoFrame3/>, <LogoFrame4/>];
     return (
-        <React.Fragment>
             <LogoWrapper>
-
-                <img
-                    src={animatedLogo}
-                    alt='loading spinner'
-                    className={getRotationClass(props.position)}
-                />
+                {logo[props.logoFrame]}
             </LogoWrapper>
-        </React.Fragment>
     );
 };
 

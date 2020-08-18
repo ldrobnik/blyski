@@ -79,7 +79,7 @@ const IssueTitle = (props) => {
         <React.Fragment>
             <Title>
                 <Logo
-                    position={(props.issue - 1) % 4}
+                    logoFrame={(props.issue - 1) % 4}
                 />
                 <div>
                     <IssueName>
