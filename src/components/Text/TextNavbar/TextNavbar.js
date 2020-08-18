@@ -4,6 +4,20 @@ import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import InactiveButton from '../../UI/InactiveButton/InactiveButton';
 import {WEBSITE_TEXT, formatIssueNumber} from "../../../data/constants";
 
+const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Title = styled.div`
+  color: ${props => props.theme.themeColor};
+  font-weight: bold;
+  font-size: 1.5em;
+  border-bottom: solid 10px ${props => props.theme.themeColor};
+  padding-bottom: 15px;
+`;
+
 const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -23,45 +37,47 @@ const Navbar = styled.div`
 const TextNavbar = props => {
 
     return (
-        <NavbarWrapper>
-            <Navbar>
-                <InactiveButton
-                    message={formatIssueNumber(props.issueNumber)}
-                    inverted={true}
-                />
-                {WEBSITE_TEXT.text.navbar.textNumbers.map((navlink, index) => {
-                    return (
-                        <React.Fragment key={index}>
-                            {(index === props.textID) ?
+        <React.Fragment>
+            <TitleWrapper>
+                <Title>
+                    {formatIssueNumber(props.issueNumber)}
+                </Title>
+            </TitleWrapper>
+            <NavbarWrapper>
+                <Navbar>
+                    {WEBSITE_TEXT.text.navbar.textNumbers.map((navlink, index) => {
+                        return (
+                            <React.Fragment key={index}>
+                                {(index === props.textID) ?
 
-                                <InactiveButton
-                                    message={navlink}
-                                />
-                                :
-                                <HoverableButton
-                                    path={`/${props.issueNumber}/${props.texts[index].slug}`}
-                                    message={navlink}
-                                />}
-                        </React.Fragment>
-                    )
-                })}
-                {(props.textID === -2) ?
+                                    <InactiveButton
+                                        message={navlink}
+                                    />
+                                    :
+                                    <HoverableButton
+                                        path={`/${props.issueNumber}/${props.texts[index].slug}`}
+                                        message={navlink}
+                                    />}
+                            </React.Fragment>
+                        )
+                    })}
+                    {(props.textID === -2) ?
 
-                    <InactiveButton
-                        message={WEBSITE_TEXT.text.navbar.bio}
-                    />
-                    :
+                        <InactiveButton
+                            message={WEBSITE_TEXT.text.navbar.bio}
+                        />
+                        :
+                        <HoverableButton
+                            path={`/${props.issueNumber}/bio`}
+                            message={WEBSITE_TEXT.text.navbar.bio}
+                        />}
                     <HoverableButton
-                        path={`/${props.issueNumber}/bio`}
-                        message={WEBSITE_TEXT.text.navbar.bio}
-                    />}
-                <HoverableButton
-                    path="/"
-                    message={WEBSITE_TEXT.text.navbar.home}
-                />
-            </Navbar>
-
-        </NavbarWrapper>
+                        path="/"
+                        message={WEBSITE_TEXT.text.navbar.home}
+                    />
+                </Navbar>
+            </NavbarWrapper>
+        </React.Fragment>
     );
 };
 
