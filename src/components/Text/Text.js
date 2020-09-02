@@ -8,7 +8,8 @@ import {WEBSITE_TEXT} from "../../data/constants";
 
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
-  padding: 10px;
+  padding: 15px 25px;
+  font-size: 1.2em;
 `;
 
 const ButtonWrapper = styled.div`
@@ -17,14 +18,21 @@ const ButtonWrapper = styled.div`
 
 const TextTitle = styled.div`
  color: ${props => props.theme.themeColor};
- font-size: 2.2em;
+ font-size: 1.8em;
  font-weight: bold;
+ padding: 5px 0;
 `;
 
 const Author = styled.div`
- font-size: 1.4em;
+ font-size: 1.2em;
  font-weight: bold;
 `;
+
+const TranslatedBy = styled.div`
+ font-style: italic;
+ font-size: 0.8em;
+`;
+
 const Text = (props) => {
 
     let history = useHistory();
@@ -91,6 +99,7 @@ const Text = (props) => {
                 <React.Fragment>
                     {(textID !== -2) && <Author>{props.issues[issueNumber - 1].author}</Author>}
                     <TextTitle>{textTitle}</TextTitle>
+                    {(textID !== -2) && <TranslatedBy>{WEBSITE_TEXT.issueList.translator}</TranslatedBy>}
                     <div
                         dangerouslySetInnerHTML={{__html: textContent}}
                     />
