@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 import TextNavbar from './TextNavbar/TextNavbar';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
-import {WEBSITE_TEXT} from "../../data/constants";
+import {WEBSITE_TEXT, formatIssueNumber} from "../../data/constants";
 
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
@@ -71,6 +71,16 @@ const Text = (props) => {
             if (textID === -1) {
                 history.push('/');
             }
+
+            //update document title
+            if (textID === -2) {
+                //title for bio
+                document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author+ " – biogram";
+            } else {
+                //title for literary pieces
+                document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author+ " – " + props.issues[issueNumber - 1].texts[textID].title;
+            }
+
         }
     });
 
