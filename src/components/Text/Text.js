@@ -15,10 +15,16 @@ const ButtonWrapper = styled.div`
   text-align: center;
 `;
 
-const TextTitle = styled.h1`
+const TextTitle = styled.div`
  color: ${props => props.theme.themeColor};
+ font-size: 2.2em;
+ font-weight: bold;
 `;
 
+const Author = styled.div`
+ font-size: 1.4em;
+ font-weight: bold;
+`;
 const Text = (props) => {
 
     let history = useHistory();
@@ -83,6 +89,7 @@ const Text = (props) => {
             <TextWrapper>
                 {(props.pageLoaded && (textID !== -1)) &&
                 <React.Fragment>
+                    {(textID !== -2) && <Author>{props.issues[issueNumber - 1].author}</Author>}
                     <TextTitle>{textTitle}</TextTitle>
                     <div
                         dangerouslySetInnerHTML={{__html: textContent}}

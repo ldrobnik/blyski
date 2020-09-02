@@ -154,6 +154,7 @@ const Home = (props) => {
             }
         }
 
+        console.log(issues);
         return issues;
 
     };
