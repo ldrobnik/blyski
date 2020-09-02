@@ -15,6 +15,10 @@ const ButtonWrapper = styled.div`
   text-align: center;
 `;
 
+const TextTitle = styled.h1`
+ color: ${props => props.theme.themeColor};
+`;
+
 const Text = (props) => {
 
     let history = useHistory();
@@ -61,6 +65,14 @@ const Text = (props) => {
         window.scrollTo(0, 0);
     }, []);
 
+    //text title to be displayed - author name for bio, text title for pieces
+    let textTitle = "";
+    if (props.pageLoaded) textTitle = (textID === -2) ? props.issues[issueNumber - 1].bio.title : props.issues[issueNumber - 1].texts[textID].title;
+
+    //content to be displayed - different for bio
+    let textContent = "";
+    if (props.pageLoaded) textContent = (textID === -2) ? props.issues[issueNumber - 1].bio.content : props.issues[issueNumber - 1].texts[textID].content;
+
     return (
         <React.Fragment>
             {(props.pageLoaded) && <TextNavbar
@@ -69,18 +81,11 @@ const Text = (props) => {
                 texts={props.issues[issueNumber - 1].texts}
             />}
             <TextWrapper>
-                {(props.pageLoaded && (textID !== -1) && (textID !== -2)) &&
+                {(props.pageLoaded && (textID !== -1)) &&
                 <React.Fragment>
-                    <h3>{props.issues[issueNumber - 1].texts[textID].title}</h3>
+                    <TextTitle>{textTitle}</TextTitle>
                     <div
-                        dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].texts[textID].content}}
-                    />
-                </React.Fragment>}
-                {(props.pageLoaded && (textID === -2)) &&
-                <React.Fragment>
-                    <h3>{props.issues[issueNumber - 1].bio.title}</h3>
-                    <div
-                        dangerouslySetInnerHTML={{__html: props.issues[issueNumber - 1].bio.content}}
+                        dangerouslySetInnerHTML={{__html: textContent}}
                     />
                 </React.Fragment>}
                 <ButtonWrapper>
