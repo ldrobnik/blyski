@@ -77,18 +77,6 @@ const InactiveButton = (props) => {
     //constant holding the button content
     const buttonMessage = props.message;
 
-    //the content of the button; for inverted button switch colors
-    const buttonContent = props.inverted ? (
-            <InvertedButtonWrapper>
-                {buttonMessage}
-            </InvertedButtonWrapper>
-        ) : (
-            <ButtonWrapper>
-                {buttonMessage}
-            </ButtonWrapper>
-        )
-    ;
-
     return (
         <React.Fragment>
             {(props.inverted) ? (
