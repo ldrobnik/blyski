@@ -38,6 +38,10 @@ export const getRandomRotationClass = () => {
 
 //Text used on the website
 export const WEBSITE_TEXT = {
+    title: {
+        main: "błyski – flash fiction w przekładzie",
+        about: " – informacje"
+    },
     mainNavbar: [
         {
             message: <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>,
