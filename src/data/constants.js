@@ -116,4 +116,4 @@ export const AnimatedContent = posed.div({
 });
 
 //timeout used for fade-in animation
-export const fadeTimeout = 500;
+export const fadeTimeout = 800;
