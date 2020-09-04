@@ -9,6 +9,7 @@ import {
     faInfoCircle,
     faAngleDoubleLeft
 } from '@fortawesome/free-solid-svg-icons';
+import posed from 'react-pose';
 
 //Url fragment used for fetching data from Wodpress API
 export const WP_URL_FRAGMENT = 'wp-json/wp/v2/posts?per_page=100';
@@ -99,3 +100,17 @@ export const formatIssueNumber = (issueNumber) => {
         return issueName + issueNumber;
     }
 };
+
+//Reusable posed component specifying the basic fade-in animation
+export const AnimatedContent = posed.div({
+    visible: {
+        opacity: 1,
+        transition: {
+            ease: 'easeInOut',
+            duration: 800
+        }
+    },
+    hidden: {
+        opacity: 0
+    }
+});

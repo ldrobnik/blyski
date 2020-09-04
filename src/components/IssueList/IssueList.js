@@ -8,7 +8,7 @@ import 'moment/locale/pl';
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
 import About from '../About/About';
-import {WEBSITE_TEXT} from "../../data/constants";
+import {WEBSITE_TEXT, AnimatedContent} from "../../data/constants";
 
 const List = styled.div`
  display: flex;
@@ -20,6 +20,9 @@ const List = styled.div`
 
 const IssueList = (props) => {
 
+    //specifies whether the content should be shown
+    const [contentVisible, setContentVisible] = useState(false);
+
     useEffect(() => {
         //Scroll to top
         window.scrollTo(0, 0);
@@ -29,8 +32,15 @@ const IssueList = (props) => {
 
     }, []);
 
+    useEffect(() => {
+        if (props.pageLoaded) {
+          setTimeout(() => setContentVisible(true), 1000);
+        }
+    }, [props.pageLoaded]);
+
     return (
-        <React.Fragment>
+        <AnimatedContent
+            pose={contentVisible ? 'visible' : 'hidden'}>
             {props.pageLoaded && <MainNavbar />}
             <List>
                 {
@@ -48,7 +58,7 @@ const IssueList = (props) => {
                     })
                 }
             </List>
-        </React.Fragment>
+        </AnimatedContent>
     );
 };
 
