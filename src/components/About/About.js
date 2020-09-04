@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {useHistory} from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
 import styled from 'styled-components';
 import AboutPanel from './AboutModal/AboutPanel';
-import {WEBSITE_TEXT} from "../../data/constants";
+import {WEBSITE_TEXT, AnimatedContent} from "../../data/constants";
 
 /* STYLED COMPONENTS */
 
@@ -17,7 +17,8 @@ const Backdrop = styled.div`
 
 const About = (props) => {
 
-
+    //specifies whether the content should be shown
+    const [contentVisible, setContentVisible] = useState(false);
 
     useEffect(() => {
         //Scroll to top
@@ -27,14 +28,28 @@ const About = (props) => {
         document.title = WEBSITE_TEXT.title.main + WEBSITE_TEXT.title.about;
     }, []);
 
-
+    useEffect(() => {
+        //when page loads, trigger fade-in animation after a while
+        if (props.pageLoaded) {
+            setTimeout(() => setContentVisible(true), 1000);
+        }
+    }, [props.pageLoaded]);
 
     return (
         <React.Fragment>
-            <AboutPanel />
-            <Backdrop />
+            <AnimatedContent
+                pose={contentVisible ? 'visible' : 'hidden'}>
+                <AboutPanel/>
+            </AnimatedContent>
+            <Backdrop/>
         </React.Fragment>
     );
 };
 
-export default About;
+const mapStateToProps = state => {
+    return {
+        pageLoaded: state.pageLoaded
+    }
+};
+
+export default connect(mapStateToProps)(About);

@@ -1,13 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import moment from 'moment';
 import 'moment/locale/pl';
 
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
-import About from '../About/About';
 import {WEBSITE_TEXT, AnimatedContent} from "../../data/constants";
 
 const List = styled.div`
@@ -33,6 +30,7 @@ const IssueList = (props) => {
     }, []);
 
     useEffect(() => {
+        //when page loads, trigger fade-in animation after a while
         if (props.pageLoaded) {
           setTimeout(() => setContentVisible(true), 1000);
         }
