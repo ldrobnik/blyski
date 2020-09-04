@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 import TextNavbar from './TextNavbar/TextNavbar';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
-import {WEBSITE_TEXT, formatIssueNumber} from "../../data/constants";
+import {WEBSITE_TEXT, AnimatedContent, formatIssueNumber} from "../../data/constants";
 
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
@@ -34,6 +34,9 @@ const TranslatedBy = styled.div`
 `;
 
 const Text = (props) => {
+
+    //specifies whether the content should be shown
+    const [contentVisible, setContentVisible] = useState(false);
 
     let history = useHistory();
 
@@ -89,6 +92,14 @@ const Text = (props) => {
         window.scrollTo(0, 0);
     }, []);
 
+
+    useEffect(() => {
+        //when page loads, trigger fade-in animation after a while
+        if (props.pageLoaded) {
+            setTimeout(() => setContentVisible(true), 1000);
+        }
+    }, [props.pageLoaded]);
+
     //text title to be displayed - author name for bio, text title for pieces
     let textTitle = "";
     if (props.pageLoaded) textTitle = (textID === -2) ? props.issues[issueNumber - 1].bio.title : props.issues[issueNumber - 1].texts[textID].title;
@@ -98,7 +109,8 @@ const Text = (props) => {
     if (props.pageLoaded) textContent = (textID === -2) ? props.issues[issueNumber - 1].bio.content : props.issues[issueNumber - 1].texts[textID].content;
 
     return (
-        <React.Fragment>
+        <AnimatedContent
+            pose={contentVisible ? 'visible' : 'hidden'}>
             {(props.pageLoaded) && <TextNavbar
                 issueNumber={issueNumber}
                 textID={textID}
@@ -132,7 +144,7 @@ const Text = (props) => {
                     />}
                 </ButtonWrapper>
             </TextWrapper>
-        </React.Fragment>
+        </AnimatedContent>
     );
 };
 
