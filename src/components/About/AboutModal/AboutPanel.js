@@ -14,7 +14,6 @@ const AboutBox = styled.div`
   border: 10px solid ${props => props.theme.lightColor};
   color: ${props => props.theme.lightColor};
   text-align: center;
-  
     a {
     color: ${props => props.theme.lightColor};
     transition: all 0.2s ease-in;
@@ -28,18 +27,16 @@ const AboutBox = styled.div`
     }
     
     &:hover {
-      color: ${props => props.theme.lightThemeColor};
+      color: ${props => props.theme.themeColor};
     }
     
     &:active {
-      color: ${props => props.theme.themeColor};
+      color: ${props => props.theme.themeColor}};
     }
   }
-  
-
 `;
 
-const AboutPanel = (props) => {
+const AboutPanel = props => {
 
     return (
         <AboutBox>
