@@ -107,7 +107,7 @@ export const AnimatedContent = posed.div({
         opacity: 1,
         transition: {
             ease: 'easeIn',
-            duration: 200
+            duration: 500
         }
     },
     hidden: {

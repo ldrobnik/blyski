@@ -36,13 +36,11 @@ const About = (props) => {
     });
 
     return (
-        <React.Fragment>
-            <AnimatedContent
-                pose={contentVisible ? 'visible' : 'hidden'}>
-                <AboutPanel/>
-            </AnimatedContent>
+        <AnimatedContent
+            pose={contentVisible ? 'visible' : 'hidden'}>
+            <AboutPanel/>
             <Backdrop/>
-        </React.Fragment>
+        </AnimatedContent>
     );
 };
 
