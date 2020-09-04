@@ -5,7 +5,7 @@ import 'moment/locale/pl';
 
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
-import {WEBSITE_TEXT, AnimatedContent} from "../../data/constants";
+import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
 
 const List = styled.div`
  display: flex;
@@ -32,9 +32,9 @@ const IssueList = (props) => {
     useEffect(() => {
         //when page loads, trigger fade-in animation after a while
         if (props.pageLoaded) {
-          setTimeout(() => setContentVisible(true), 1000);
+          setTimeout(() => setContentVisible(true), fadeTimeout);
         }
-    }, [props.pageLoaded]);
+    });
 
     return (
         <AnimatedContent

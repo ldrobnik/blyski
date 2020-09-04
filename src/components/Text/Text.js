@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 import TextNavbar from './TextNavbar/TextNavbar';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
-import {WEBSITE_TEXT, AnimatedContent, formatIssueNumber} from "../../data/constants";
+import {WEBSITE_TEXT, AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
 
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
@@ -96,9 +96,18 @@ const Text = (props) => {
     useEffect(() => {
         //when page loads, trigger fade-in animation after a while
         if (props.pageLoaded) {
-            setTimeout(() => setContentVisible(true), 1000);
+            setTimeout(() => setContentVisible(true), fadeTimeout);
         }
-    }, [props.pageLoaded]);
+    });
+
+    useEffect(() => {
+        //when path changes, make content invisible, then turn it on
+        setContentVisible(false);
+
+        if (props.pageLoaded) {
+            setTimeout(() => setContentVisible(true), fadeTimeout);
+        }
+    }, [props.match.params]);
 
     //text title to be displayed - author name for bio, text title for pieces
     let textTitle = "";

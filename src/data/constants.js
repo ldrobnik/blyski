@@ -104,9 +104,16 @@ export const formatIssueNumber = (issueNumber) => {
 //Reusable posed component specifying the basic fade-in animation
 export const AnimatedContent = posed.div({
     visible: {
-        opacity: 1
+        opacity: 1,
+        transition: {
+            ease: 'easeIn',
+            duration: 200
+        }
     },
     hidden: {
         opacity: 0
     }
 });
+
+//timeout used for fade-in animation
+export const fadeTimeout = 500;

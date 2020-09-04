@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import AboutPanel from './AboutModal/AboutPanel';
-import {WEBSITE_TEXT, AnimatedContent} from "../../data/constants";
+import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
 
 /* STYLED COMPONENTS */
 
@@ -31,9 +31,9 @@ const About = (props) => {
     useEffect(() => {
         //when page loads, trigger fade-in animation after a while
         if (props.pageLoaded) {
-            setTimeout(() => setContentVisible(true), 1000);
+            setTimeout(() => setContentVisible(true), fadeTimeout);
         }
-    }, [props.pageLoaded]);
+    });
 
     return (
         <React.Fragment>
