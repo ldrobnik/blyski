@@ -7,6 +7,11 @@ import logoFrame2 from '../../../assets/images/glider2.svg';
 import logoFrame3 from '../../../assets/images/glider3.svg';
 import logoFrame4 from '../../../assets/images/glider4.svg';
 
+import invLogoFrame1 from '../../../assets/images/inv-glider1.svg';
+import invLogoFrame2 from '../../../assets/images/inv-glider2.svg';
+import invLogoFrame3 from '../../../assets/images/inv-glider3.svg';
+import invLogoFrame4 from '../../../assets/images/inv-glider4.svg';
+
 /* STYLED COMPONENTS */
 const LogoWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
@@ -56,11 +61,6 @@ const Logo = props => {
         handleResize();
     }, []);
 
-    //shows content after a random time
-    const showContent = () => {
-      setTimeout(() => setContentVisible(true), 5000)
-    };
-
     //adds/removes event listener for resize
     useEffect(() => {
         window.addEventListener("resize", handleResize, false);
@@ -71,8 +71,11 @@ const Logo = props => {
     }, []);
 
 
-    //array containing all logo components
-    const logo = [logoFrame1, logoFrame2, logoFrame3, logoFrame4];
+    //array containing all logo frames - colour depending on the 'inverted' prop setting
+    const logo = props.inverted ? [invLogoFrame1, invLogoFrame2, invLogoFrame3, invLogoFrame4] : [logoFrame1, logoFrame2, logoFrame3, logoFrame4];
+
+    //array containing all inverted logo frames
+    const invertedLogo = [];
     return (
         <AnimatedLogo
             pose={contentVisible ? 'visible' : 'hidden'}>
@@ -81,7 +84,9 @@ const Logo = props => {
                     data={logo[props.logoFrame]}
                     width={logoWidth}
                     height={logoWidth}
-                    type="image/svg+xml">
+                    type="image/svg+xml"
+                    onLoad={() => setContentVisible(true)}
+                >
                     błyski – logo
                 </object>
             </LogoWrapper>
