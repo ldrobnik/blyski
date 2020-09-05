@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
+import {AnimatedContent} from "../../../data/constants";
 
 import logoFrame1 from '../../../assets/images/glider1.svg';
 import logoFrame2 from '../../../assets/images/glider2.svg';
@@ -16,6 +17,9 @@ const Logo = props => {
 
     // Specifies the current window width
     const [logoWidth, setLogoWidth] = useState("100px");
+
+    //specifies whether the content should be shown
+    const [contentVisible, setContentVisible] = useState(false);
 
     //updates window width
     const handleResize = () => {
@@ -46,11 +50,14 @@ const Logo = props => {
     //array containing all logo components
     const logo = [logoFrame1, logoFrame2, logoFrame3, logoFrame4];
     return (
-        <LogoWrapper>
-            <object data={logo[props.logoFrame]} width={logoWidth} height={logoWidth} type="image/svg+xml">
-                błyski – logo
-            </object>
-        </LogoWrapper>
+        <AnimatedContent
+            pose={contentVisible ? 'visible' : 'hidden'}>
+            <LogoWrapper>
+                <object data={logo[props.logoFrame]} width={logoWidth} height={logoWidth} type="image/svg+xml" onLoad={() => setContentVisible(true)}>
+                    błyski – logo
+                </object>
+            </LogoWrapper>
+        </AnimatedContent>
     );
 };
 
