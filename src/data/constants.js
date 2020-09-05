@@ -139,7 +139,7 @@ export const AnimatedContent = posed.div({
         opacity: 1,
         transition: {
             ease: 'easeIn',
-            duration: 200
+            duration: 400
         }
     },
     hidden: {
@@ -148,4 +148,4 @@ export const AnimatedContent = posed.div({
 });
 
 //timeout used for fade-in animation
-export const fadeTimeout = 500;
+export const fadeTimeout = 700;

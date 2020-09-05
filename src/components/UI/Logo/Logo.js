@@ -47,7 +47,7 @@ const Logo = props => {
     const logo = [logoFrame1, logoFrame2, logoFrame3, logoFrame4];
     return (
         <LogoWrapper>
-            <object data={logo[props.logoFrame]} width={logoWidth} type="image/svg+xml">
+            <object data={logo[props.logoFrame]} width={logoWidth} height={logoWidth} type="image/svg+xml">
                 błyski – logo
             </object>
         </LogoWrapper>
