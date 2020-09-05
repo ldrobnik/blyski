@@ -6,6 +6,17 @@ import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
 
 /* STYLED COMPONENTS */
 
+const AboutPanelWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 const Backdrop = styled.div`
   position: fixed;
   left: 0;
@@ -38,7 +49,9 @@ const About = (props) => {
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
-            <AboutPanel/>
+            <AboutPanelWrapper>
+                <AboutPanel/>
+            </AboutPanelWrapper>
             <Backdrop/>
         </AnimatedContent>
     );

@@ -8,9 +8,7 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 const AboutBox = styled.div`
   z-index: 50;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 50vw;
   padding: 20px;
   border: 10px solid ${props => props.theme.lightColor};
   color: ${props => props.theme.lightColor};
@@ -35,6 +33,27 @@ const AboutBox = styled.div`
       color: ${props => props.theme.themeColor}};
     }
   }
+  
+  @media all and (max-width: 1000px) {
+  max-width: 70vw;
+  }
+  
+  @media all and (max-width: 700px) {
+  max-width: 75vw;
+  }
+  
+  @media all and (max-width: 552px) {
+      max-width: 85vw;
+    }
+    
+  @media all and (max-width: 380px) {
+      max-width: 90vw;
+    }
+    
+  @media all and (max-width: 350px) {
+      max-width: 95vw;
+    }
+  
 `;
 
 const Title = styled.div`
@@ -50,7 +69,7 @@ justify-content: center;
     }
 `;
 
-const IssueName = styled.div`
+const JournalName = styled.div`
   font-size: 6em;
   font-weight: bold;
   padding-left: 10px;
@@ -82,6 +101,27 @@ const IssueName = styled.div`
     }
 `;
 
+const JournalSubtitle = styled.div`
+  text-align: center;
+font-weight: bold;
+  padding: 12px;
+  font-size: 1em;
+  transform: translateY(-20px);
+  
+  @media all and (max-width: 700px) {
+  font-size: 0.8em;
+  }
+  
+  @media all and (max-width: 552px) {
+      font-size: 0.6em;
+    }
+    
+  @media all and (max-width: 350px) {
+      font-size: 0.5em;
+    }
+  
+`;
+
 const AboutPanel = props => {
 
     return (
@@ -90,12 +130,15 @@ const AboutPanel = props => {
                 <Logo
                     logoFrame={0}
                     inverted={true}/>
-                    <IssueName>
+                <div>
+                    <JournalName>
                         {WEBSITE_TEXT.about.title}
-                    </IssueName>
+                    </JournalName>
+                    <JournalSubtitle>
+                        {WEBSITE_TEXT.about.subtitle}
+                    </JournalSubtitle>
+                </div>
             </Title>
-
-            <h3>{WEBSITE_TEXT.about.subtitle}</h3>
             {WEBSITE_TEXT.about.content}
             <p>{WEBSITE_TEXT.about.contact}</p>
             <p>{WEBSITE_TEXT.about.desclaimer}</p>
