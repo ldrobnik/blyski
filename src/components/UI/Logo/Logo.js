@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {AnimatedContent} from '../../../data/constants';
 import posed from 'react-pose';
 
 import logoFrame1 from '../../../assets/images/glider1.svg';
@@ -18,14 +17,13 @@ const LogoWrapper = styled.div`
 
 const AnimatedLogo = posed.div({
     visible: {
-        transformOrigin: 'bottom',
         transform: 'scale(1, 1)',
         opacity: 1,
         duration: 200,
-        delay: 800,
+        delay: 500,
         transition: {
             type: 'spring',
-            stiffness: 80
+            stiffness: 100
         }
     },
     hidden: {
@@ -58,6 +56,11 @@ const Logo = props => {
         handleResize();
     }, []);
 
+    //shows content after a random time
+    const showContent = () => {
+      setTimeout(() => setContentVisible(true), 5000)
+    };
+
     //adds/removes event listener for resize
     useEffect(() => {
         window.addEventListener("resize", handleResize, false);
@@ -78,8 +81,7 @@ const Logo = props => {
                     data={logo[props.logoFrame]}
                     width={logoWidth}
                     height={logoWidth}
-                    type="image/svg+xml"
-                    onLoad={() => setContentVisible(true)}>
+                    type="image/svg+xml">
                     błyski – logo
                 </object>
             </LogoWrapper>
