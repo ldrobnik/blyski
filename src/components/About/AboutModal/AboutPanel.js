@@ -88,7 +88,7 @@ const AboutPanel = props => {
         <AboutBox>
             <Title>
                 <Logo
-                    logoFrame={1}
+                    logoFrame={0}
                     inverted={true}/>
                     <IssueName>
                         {WEBSITE_TEXT.about.title}
