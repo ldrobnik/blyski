@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {AnimatedContent} from "../../../data/constants";
+import {AnimatedContent} from '../../../data/constants';
+import posed from 'react-pose';
 
 import logoFrame1 from '../../../assets/images/glider1.svg';
 import logoFrame2 from '../../../assets/images/glider2.svg';
@@ -12,6 +13,26 @@ const LogoWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
   padding: 12px;
 `;
+
+/* POSE */
+
+const AnimatedLogo = posed.div({
+    visible: {
+        transformOrigin: 'bottom',
+        transform: 'scale(1, 1)',
+        opacity: 1,
+        duration: 200,
+        delay: 800,
+        transition: {
+            type: 'spring',
+            stiffness: 80
+        }
+    },
+    hidden: {
+        transform: 'scale(1, 0)',
+        opacity: 0
+    }
+});
 
 const Logo = props => {
 
@@ -50,14 +71,19 @@ const Logo = props => {
     //array containing all logo components
     const logo = [logoFrame1, logoFrame2, logoFrame3, logoFrame4];
     return (
-        <AnimatedContent
+        <AnimatedLogo
             pose={contentVisible ? 'visible' : 'hidden'}>
             <LogoWrapper>
-                <object data={logo[props.logoFrame]} width={logoWidth} height={logoWidth} type="image/svg+xml" onLoad={() => setContentVisible(true)}>
+                <object
+                    data={logo[props.logoFrame]}
+                    width={logoWidth}
+                    height={logoWidth}
+                    type="image/svg+xml"
+                    onLoad={() => setContentVisible(true)}>
                     błyski – logo
                 </object>
             </LogoWrapper>
-        </AnimatedContent>
+        </AnimatedLogo>
     );
 };
 
