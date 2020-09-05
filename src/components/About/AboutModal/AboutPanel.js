@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
+import Logo from '../../UI/Logo/Logo';
 import {WEBSITE_TEXT} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -40,6 +41,7 @@ const AboutPanel = props => {
 
     return (
         <AboutBox>
+            <Logo inverted={true}/>
             <h1>{WEBSITE_TEXT.about.title}</h1>
             <h3>{WEBSITE_TEXT.about.subtitle}</h3>
             {WEBSITE_TEXT.about.content}
