@@ -27,10 +27,6 @@ const GlobalStyle = createGlobalStyle`
 
     }
     
-    ::selection {
-        color: ${props => props.theme.lightColor};
-        background-color: ${props => props.theme.themeColor};
-     }
 `;
 
 const Home = (props) => {

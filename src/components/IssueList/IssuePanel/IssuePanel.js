@@ -16,6 +16,11 @@ const IssueWrapper = styled.div`
  padding: 40px;
  width: 50%;
  
+ *::selection {
+        color: ${props => props.theme.lightColor};
+        background-color: ${props => props.theme.themeColor};
+     }
+ 
  @media all and (max-width: 552px) {
       width: 95%;
       padding: 15px;

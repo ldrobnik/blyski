@@ -12,6 +12,11 @@ const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
   padding: 15px 25px;
   font-size: 1.2em;
+  
+  *::selection {
+        color: ${props => props.theme.lightColor};
+        background-color: ${props => props.theme.themeColor};
+     }
 `;
 
 const Text = (props) => {

@@ -15,6 +15,11 @@ const AboutPanelWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  
+   *::selection {
+        color: ${props => props.theme.themeColor};
+        background-color: ${props => props.theme.lightColor};
+     }
 `;
 
 const Backdrop = styled.div`
