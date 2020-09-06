@@ -3,6 +3,8 @@ import {useHistory, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import TextNavbar from './TextNavbar/TextNavbar';
+import Story from './Story/Story';
+import Bio from './Bio/Bio';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
 import {WEBSITE_TEXT, AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
 

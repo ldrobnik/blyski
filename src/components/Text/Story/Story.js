@@ -1,16 +1,36 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import {WEBSITE_TEXT} from "../../../data/constants";
 
-const StyledWrapper = styled.div`
-
+/* STYLED COMPONENTS */
+const TextTitle = styled.div`
+ color: ${props => props.theme.themeColor};
+ font-size: 1.8em;
+ font-weight: bold;
+ padding: 5px 0;
 `;
 
-const Story = (props) => {
+const Author = styled.div`
+ font-size: 1.2em;
+ font-weight: bold;
+`;
+
+const TranslatedBy = styled.div`
+ font-style: italic;
+ font-size: 0.8em;
+`;
+
+const Story = props => {
 
     return (
-        <StyledWrapper>
-
-        </StyledWrapper>
+        <React.Fragment>
+                <Author>{props.author}</Author>
+                <TextTitle>{props.textTitle}</TextTitle>
+                <TranslatedBy>{WEBSITE_TEXT.issueList.translator}</TranslatedBy>
+                <div
+                    dangerouslySetInnerHTML={{__html: props.textContent}}
+                />
+        </React.Fragment>
     );
 };
 
