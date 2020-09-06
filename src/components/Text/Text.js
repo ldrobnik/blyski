@@ -6,7 +6,7 @@ import TextNavbar from './TextNavbar/TextNavbar';
 import Story from './Story/Story';
 import Bio from './Bio/Bio';
 import TextButton from './TextButton/TextButton';
-import {WEBSITE_TEXT, AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
+import {AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
 
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
