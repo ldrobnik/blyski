@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {WEBSITE_TEXT} from "../../../data/constants";
+import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
 
 /* STYLED COMPONENTS */
 const Author = styled.div`
@@ -20,6 +20,9 @@ const Bio = (props) => {
     return (
         <React.Fragment>
             <Author>{props.author}</Author>
+            <AuthorPhoto
+                issueNumber={props.issueNumber}
+            />
             <TextBody
                 dangerouslySetInnerHTML={{__html: props.textContent}}
             />

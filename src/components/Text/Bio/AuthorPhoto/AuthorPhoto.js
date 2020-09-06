@@ -15,13 +15,26 @@ const Wrapper = styled.div`
 `;
 
 const Photo = styled.div`
-  height: 12em;
-  opacity: ${props => props.theme.slightlyTranslucent};
+  height: 420px;
   z-index: 60;
   
   img {
       height: 100%;
   }
+  
+  
+  @media all and (max-width: 700px) {
+   height: 300px;
+  }
+  
+  @media all and (max-width: 552px) {
+      height: 240px;
+    }
+    
+  @media all and (max-width: 380px) {
+      height: 180px;
+    }
+  
 `;
 
 /* POSE */
