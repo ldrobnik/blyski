@@ -69,6 +69,13 @@ color: ${props => props.theme.themeColor};
   }
 `;
 
+//Fontawesome icons
+const infoIcon = <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>;
+const twitterIcon = <FontAwesomeIcon icon={faTwitterSquare}></FontAwesomeIcon>;
+const instagramIcon = <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>;
+const facebookIcon = <FontAwesomeIcon icon={faFacebookSquare}></FontAwesomeIcon>;
+const backIcon = <FontAwesomeIcon icon={faAngleDoubleLeft}></FontAwesomeIcon>;
+
 //Text used on the website
 export const WEBSITE_TEXT = {
     title: {
@@ -77,19 +84,19 @@ export const WEBSITE_TEXT = {
     },
     mainNavbar: [
         {
-            message: <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>,
+            message: infoIcon,
             path: '/info'
         },
         {
-            message: <FontAwesomeIcon icon={faTwitterSquare}></FontAwesomeIcon>,
+            message: twitterIcon,
             path: 'https://twitter.com/'
         },
         {
-            message: <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>,
+            message: instagramIcon,
             path: 'https://www.instagram.com/'
         },
         {
-            message: <FontAwesomeIcon icon={faFacebookSquare}></FontAwesomeIcon>,
+            message: facebookIcon,
             path: 'https://www.facebook.com/'
         }
     ],
@@ -102,20 +109,26 @@ export const WEBSITE_TEXT = {
         title: "błyski",
         subtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
         content: <React.Fragment>
-            <p>Flash fiction to bardzo krótkie prozy mieszczące się — zależnie od definicji — w&nbsp;1000 lub 1500 słowach. W&nbsp;przeciwieństwie do prozy poetyckiej zawsze mają fabułę.</p>
-            <p><strong>błyski</strong> to niereguralnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi i składa się z&nbsp;pięciu jego tekstów oraz biogramu — i&nbsp;tyle.</p>
+            <p>Flash fiction to bardzo krótkie prozy mieszczące się — zależnie od definicji — w&nbsp;1000 lub 1500
+                słowach. W&nbsp;przeciwieństwie do prozy poetyckiej zawsze mają fabułę.</p>
+            <p><strong>błyski</strong> to niereguralnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej
+                popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi i składa się
+                z&nbsp;pięciu jego tekstów oraz biogramu — i&nbsp;tyle.</p>
         </React.Fragment>,
         contact: <React.Fragment>Kontakt z&nbsp;redakcją: blyski [at] gmail [dot] com.</React.Fragment>,
-        desclaimer: <React.Fragment>Jako że <strong>błyski</strong> składają się wyłącznie z&nbsp;tekstów napisanych pierwotnie po angielsku, nie przyjmujemy propozycji wydawniczych.</React.Fragment>,
-        credits: <React.Fragment>red. nacz. — ja, dobór tekstów — ja, przekłady — ja, projekt strony — ja*</React.Fragment>,
-        footnote: <React.Fragment><HoverableLink href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja = Łukasz Drobnik</HoverableLink></React.Fragment>,
+        desclaimer: <React.Fragment>Jako że <strong>błyski</strong> składają się wyłącznie z&nbsp;tekstów napisanych
+            pierwotnie po angielsku, nie przyjmujemy propozycji wydawniczych.</React.Fragment>,
+        credits: <React.Fragment>red. nacz. — ja, dobór tekstów — ja, przekłady — ja, projekt strony —
+            ja*</React.Fragment>,
+        footnote: <React.Fragment><HoverableLink href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja
+            = Łukasz Drobnik</HoverableLink></React.Fragment>,
         button: 'strona główna'
     },
     text: {
         navbar: {
             textNumbers: ['i', 'ii', 'iii', 'iv', 'v'],
             bio: 'bio',
-            home: <FontAwesomeIcon icon={faAngleDoubleLeft}></FontAwesomeIcon>
+            home: backIcon
         },
         nextButton: 'następny tekst',
         bioButton: 'biogram',
