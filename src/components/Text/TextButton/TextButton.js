@@ -1,16 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import HoverableButton from "../../UI/HoverableButton/HoverableButton";
+import {WEBSITE_TEXT} from "../../../data/constants";
 
-const StyledWrapper = styled.div`
-
+const ButtonWrapper = styled.div`
+  text-align: center;
 `;
 
-const TextButton = (props) => {
+const TextButton = props => {
 
     return (
-        <StyledWrapper>
-
-        </StyledWrapper>
+        <ButtonWrapper>
+            {((props.textID < 4) && (props.textID !== -2)) &&
+            <HoverableButton
+                path={`/${props.issueNumber}/${props.slug}`}
+                message={WEBSITE_TEXT.text.nextButton}
+            />}
+            {(props.textID === 4) &&
+            <HoverableButton
+                path={`/${props.issueNumber}/bio`}
+                message={WEBSITE_TEXT.text.bioButton}
+            />}
+            {(props.textID === -2) &&
+            <HoverableButton
+                path="/"
+                message={WEBSITE_TEXT.text.homeButton}
+            />}
+        </ButtonWrapper>
     );
 };
 

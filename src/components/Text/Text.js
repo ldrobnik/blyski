@@ -5,34 +5,13 @@ import styled from 'styled-components';
 import TextNavbar from './TextNavbar/TextNavbar';
 import Story from './Story/Story';
 import Bio from './Bio/Bio';
-import HoverableButton from '../UI/HoverableButton/HoverableButton';
+import TextButton from './TextButton/TextButton';
 import {WEBSITE_TEXT, AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
 
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
   padding: 15px 25px;
   font-size: 1.2em;
-`;
-
-const ButtonWrapper = styled.div`
-  text-align: center;
-`;
-
-const TextTitle = styled.div`
- color: ${props => props.theme.themeColor};
- font-size: 1.8em;
- font-weight: bold;
- padding: 5px 0;
-`;
-
-const Author = styled.div`
- font-size: 1.2em;
- font-weight: bold;
-`;
-
-const TranslatedBy = styled.div`
- font-style: italic;
- font-size: 0.8em;
 `;
 
 const Text = (props) => {
@@ -137,25 +116,14 @@ const Text = (props) => {
                 {(props.pageLoaded) && (textID === -2) &&
                 <Bio
                     author={props.issues[issueNumber - 1].author}
+                    issueNumber={issueNumber}
                     textContent={textContent}
                 />}
-                <ButtonWrapper>
-                    {(props.pageLoaded && (textID < 4) && (textID !== -2)) &&
-                    <HoverableButton
-                        path={`/${issueNumber}/${props.issues[issueNumber - 1].texts[textID + 1].slug}`}
-                        message={WEBSITE_TEXT.text.nextButton}
-                    />}
-                    {(props.pageLoaded && (textID === 4)) &&
-                    <HoverableButton
-                        path={`/${issueNumber}/bio`}
-                        message={WEBSITE_TEXT.text.bioButton}
-                    />}
-                    {(props.pageLoaded && (textID === -2)) &&
-                    <HoverableButton
-                        path="/"
-                        message={WEBSITE_TEXT.text.homeButton}
-                    />}
-                </ButtonWrapper>
+                {(props.pageLoaded) && <TextButton
+                    textID={textID}
+                    issueNumber={issueNumber}
+                    slug={((textID < 4) && (textID !== -2)) ? props.issues[issueNumber - 1].texts[textID + 1].slug : null}
+                />}
             </TextWrapper>
         </AnimatedContent>
     );
