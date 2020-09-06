@@ -20,16 +20,17 @@ const TranslatedBy = styled.div`
  font-size: 0.8em;
 `;
 
+const TextBody = styled.div`
+
+`;
 const Story = props => {
 
     return (
         <React.Fragment>
-                <Author>{props.author}</Author>
-                <TextTitle>{props.textTitle}</TextTitle>
-                <TranslatedBy>{WEBSITE_TEXT.issueList.translator}</TranslatedBy>
-                <div
-                    dangerouslySetInnerHTML={{__html: props.textContent}}
-                />
+            <Author>{props.author}</Author>
+            <TextTitle>{props.textTitle}</TextTitle>
+            <TranslatedBy>{WEBSITE_TEXT.issueList.translator}</TranslatedBy>
+            <TextBody dangerouslySetInnerHTML={{__html: props.textContent}}/>
         </React.Fragment>
     );
 };

@@ -80,10 +80,10 @@ const Text = (props) => {
             //update document title
             if (textID === -2) {
                 //title for bio
-                document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author+ " – biogram";
+                document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author + " – biogram";
             } else {
                 //title for literary pieces
-                document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author+ " – " + props.issues[issueNumber - 1].texts[textID].title;
+                document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author + " – " + props.issues[issueNumber - 1].texts[textID].title;
             }
 
         }
@@ -128,15 +128,17 @@ const Text = (props) => {
                 texts={props.issues[issueNumber - 1].texts}
             />}
             <TextWrapper>
-                {(props.pageLoaded && (textID !== -1)) &&
-                <React.Fragment>
-                    {(textID !== -2) && <Author>{props.issues[issueNumber - 1].author}</Author>}
-                    <TextTitle>{textTitle}</TextTitle>
-                    {(textID !== -2) && <TranslatedBy>{WEBSITE_TEXT.issueList.translator}</TranslatedBy>}
-                    <div
-                        dangerouslySetInnerHTML={{__html: textContent}}
-                    />
-                </React.Fragment>}
+                {(props.pageLoaded && (textID !== -1)) && (textID !== -2) &&
+                <Story
+                    author={props.issues[issueNumber - 1].author}
+                    textTitle={textTitle}
+                    textContent={textContent}
+                />}
+                {(props.pageLoaded) && (textID === -2) &&
+                <Bio
+                    author={props.issues[issueNumber - 1].author}
+                    textContent={textContent}
+                />}
                 <ButtonWrapper>
                     {(props.pageLoaded && (textID < 4) && (textID !== -2)) &&
                     <HoverableButton
