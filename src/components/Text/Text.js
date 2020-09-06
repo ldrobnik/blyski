@@ -73,6 +73,11 @@ const Text = (props) => {
         window.scrollTo(0, 0);
     }, []);
 
+    useEffect(() => {
+        //Scroll to top when text ID changes
+        window.scrollTo(0, 0);
+    }, [textID]);
+
 
     useEffect(() => {
         //when page loads, trigger fade-in animation after a while
