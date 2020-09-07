@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
-import SocialLinks from './SocialLinks/SocialLinks'
+import SocialLinks from './SocialLinks/SocialLinks';
+import SelectedWorks from './SelectedWorks/SelectedWorks';
 import {WEBSITE_TEXT, AUTHOR_LINKS} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -38,6 +39,9 @@ const Bio = (props) => {
                 links={AUTHOR_LINKS[props.issueNumber - 1].social}
             />
             <Heading>{WEBSITE_TEXT.text.bio.selectedWorks}</Heading>
+            <SelectedWorks
+                works={AUTHOR_LINKS[props.issueNumber - 1].works}
+            />
         </React.Fragment>
     );
 };
