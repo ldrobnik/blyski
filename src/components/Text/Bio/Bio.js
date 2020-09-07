@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
-import SocialLinks from './SocialLinks/SocialLinks';
-import SelectedWorks from './SelectedWorks/SelectedWorks';
+import AuthorLinks from './SocialLinks/AuthorLinks';
+import AuthorWorks from './SelectedWorks/AuthorWorks';
 import {WEBSITE_TEXT, AUTHOR_LINKS} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -35,11 +35,11 @@ const Bio = (props) => {
                 dangerouslySetInnerHTML={{__html: props.textContent}}
             />
             <Heading>{WEBSITE_TEXT.text.bio.moreInfo}</Heading>
-            <SocialLinks
-                links={AUTHOR_LINKS[props.issueNumber - 1].social}
+            <AuthorLinks
+                links={AUTHOR_LINKS[props.issueNumber - 1].links}
             />
             <Heading>{WEBSITE_TEXT.text.bio.selectedWorks}</Heading>
-            <SelectedWorks
+            <AuthorWorks
                 works={AUTHOR_LINKS[props.issueNumber - 1].works}
             />
         </React.Fragment>

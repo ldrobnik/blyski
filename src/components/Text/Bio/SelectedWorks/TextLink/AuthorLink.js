@@ -47,7 +47,7 @@ color: ${props => props.theme.lightColor};
 `;
 
 
-const TextLink = props => {
+const AuthorLink = props => {
 
     return (
         <StyledLink
@@ -60,4 +60,4 @@ const TextLink = props => {
     );
 };
 
-export default TextLink;
+export default AuthorLink;

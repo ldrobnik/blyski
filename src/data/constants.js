@@ -214,7 +214,7 @@ export const WEBSITE_TEXT = {
 //constant containing authors' social media links and links to their work to be used in bio
 export const AUTHOR_LINKS = [
     {
-        social: [
+        links: [
             {
                 icon: websiteIcon,
                 url: 'https://drobnik.co'
@@ -264,7 +264,7 @@ export const AUTHOR_LINKS = [
         ]
     },
     {
-        social: [
+        links: [
             {
                 icon: websiteIcon,
                 url: 'https://drobnik.co'
@@ -314,7 +314,7 @@ export const AUTHOR_LINKS = [
         ]
     },
     {
-        social: [
+        links: [
             {
                 icon: twitterIcon,
                 url: 'https://twitter.com/drobnik'
@@ -352,7 +352,7 @@ export const AUTHOR_LINKS = [
         ]
     },
     {
-        social: [
+        links: [
             {
                 icon: websiteIcon,
                 url: 'https://drobnik.co'

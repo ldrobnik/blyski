@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextLink from './TextLink/TextLink';
+import AuthorLink from './TextLink/AuthorLink';
 
 const ListWrapper = styled.div`
   text-align: center;
@@ -11,7 +11,7 @@ const LinkList = styled.div`
   padding: 10px;
 `;
 
-const SocialLinks = props => {
+const AuthorWorks = props => {
 
     return (
         <ListWrapper>
@@ -19,7 +19,7 @@ const SocialLinks = props => {
                 {props.works.map((work) => {
                     return (
                         <div>
-                            <TextLink
+                            <AuthorLink
                                 key={work.url}
                                 url={work.url}
                                 title={work.title}
@@ -32,4 +32,4 @@ const SocialLinks = props => {
     );
 };
 
-export default SocialLinks;
+export default AuthorWorks;

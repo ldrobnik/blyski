@@ -18,7 +18,7 @@ const SocialIcons = styled.div`
   }
 `;
 
-const SocialLinks = props => {
+const AuthorLinks = props => {
 
     return (
         <MenuWrapper>
@@ -37,4 +37,4 @@ const SocialLinks = props => {
     );
 };
 
-export default SocialLinks;
+export default AuthorLinks;
