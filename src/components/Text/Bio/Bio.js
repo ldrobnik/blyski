@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
+import {WEBSITE_TEXT, AUTHOR_LINKS} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
 const Author = styled.div`
@@ -15,6 +16,11 @@ const TextBody = styled.div`
   text-align: center;
 `;
 
+const Heading = styled.div`
+  text-align: center;
+  padding: 5px;
+`;
+
 const Bio = (props) => {
 
     return (
@@ -26,6 +32,8 @@ const Bio = (props) => {
             <TextBody
                 dangerouslySetInnerHTML={{__html: props.textContent}}
             />
+            <Heading>{WEBSITE_TEXT.text.bio.moreInfo}</Heading>
+            <Heading>{WEBSITE_TEXT.text.bio.selectedWorks}</Heading>
         </React.Fragment>
     );
 };

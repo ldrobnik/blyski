@@ -203,12 +203,16 @@ export const WEBSITE_TEXT = {
         },
         nextButton: 'następny tekst',
         bioButton: 'biogram',
-        homeButton: 'strona główna'
+        homeButton: 'strona główna',
+        bio: {
+            moreInfo: 'Więcej informacji:',
+            selectedWorks: 'Wybrane teksty:'
+        }
     }
 };
 
 //constant containing authors' social media links and links to their work to be used in bio
-const BIO_LINKS = [
+export const AUTHOR_LINKS = [
     {
         social: [
             {
