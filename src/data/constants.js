@@ -7,7 +7,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import {
     faInfoCircle,
-    faAngleDoubleLeft
+    faAngleDoubleLeft,
+    faGlobe
 } from '@fortawesome/free-solid-svg-icons';
 import posed from 'react-pose';
 import styled from "styled-components";
@@ -119,6 +120,16 @@ const backIcon = (
             <span className="sr-only">Strona główna</span>
         </React.Fragment>
     );
+const websiteIcon = (
+    <React.Fragment>
+        <FontAwesomeIcon
+            icon={faGlobe}
+            aria-hidden="true"
+            title="Strona internetowa">
+        </FontAwesomeIcon>
+        <span className="sr-only">Strona internetowa</span>
+    </React.Fragment>
+);
 
 //Text used on the website
 export const WEBSITE_TEXT = {
