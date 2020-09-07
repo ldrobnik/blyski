@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -90,7 +90,7 @@ color: ${props => props.theme.themeColor};
 
 `;
 
-const HoverableButton = (props) => {
+const HoverableButton = props => {
 
     //constant holding the button content
     const buttonMessage = props.message;

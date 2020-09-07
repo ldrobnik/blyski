@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import TextLink from './TextLink/TextLink';
 
 const ListWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 `;
 
 const LinkList = styled.div`
   margin: 5px;
   padding: 10px;
-  display: inline-block;
 `;
 
 const SocialLinks = props => {
@@ -20,11 +18,13 @@ const SocialLinks = props => {
             <LinkList>
                 {props.works.map((work) => {
                     return (
-                        <a
-                            key={work.url}
-                            href={work.url}
-
-                        >{work.title}</a>
+                        <div>
+                            <TextLink
+                                key={work.url}
+                                url={work.url}
+                                title={work.title}
+                            />
+                        </div>
                     )
                 })}
             </LinkList>
