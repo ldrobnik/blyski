@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
+import SocialLinks from './SocialLinks/SocialLinks'
 import {WEBSITE_TEXT, AUTHOR_LINKS} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -33,6 +34,9 @@ const Bio = (props) => {
                 dangerouslySetInnerHTML={{__html: props.textContent}}
             />
             <Heading>{WEBSITE_TEXT.text.bio.moreInfo}</Heading>
+            <SocialLinks
+                links={AUTHOR_LINKS[props.issueNumber - 1].social}
+            />
             <Heading>{WEBSITE_TEXT.text.bio.selectedWorks}</Heading>
         </React.Fragment>
     );

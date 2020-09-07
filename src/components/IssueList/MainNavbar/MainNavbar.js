@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import {WEBSITE_TEXT} from "../../../data/constants";
@@ -19,7 +19,7 @@ const Navbar = styled.div`
   }
 `;
 
-const MainNavbar = (props) => {
+const MainNavbar = props => {
 
     return (
         <NavbarWrapper>
