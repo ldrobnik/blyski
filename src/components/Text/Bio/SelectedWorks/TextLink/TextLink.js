@@ -8,7 +8,7 @@ text-align: center;
 color: ${props => props.theme.themeColor};
 display: inline-block;
 position: relative;
-padding: 6px;
+padding: 6px 10px;
 margin: 3px 0;
 overflow: hidden;
 cursor: pointer;
