@@ -3,7 +3,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
     faTwitterSquare,
     faFacebookSquare,
-    faInstagram
+    faInstagram,
+    faMedium
 } from '@fortawesome/free-brands-svg-icons';
 import {
     faInfoCircle,
@@ -81,6 +82,7 @@ const infoIcon = (
         <span className="sr-only">Informacje</span>
     </React.Fragment>
 );
+
 const twitterIcon = (
     <React.Fragment>
         <FontAwesomeIcon
@@ -90,6 +92,7 @@ const twitterIcon = (
         </FontAwesomeIcon>
         <span className="sr-only">Twitter</span>
     </React.Fragment>);
+
 const instagramIcon = (
     <React.Fragment>
         <FontAwesomeIcon
@@ -100,6 +103,7 @@ const instagramIcon = (
         <span className="sr-only">Instagram</span>
     </React.Fragment>
 );
+
 const facebookIcon = (
     <React.Fragment>
         <FontAwesomeIcon
@@ -110,6 +114,17 @@ const facebookIcon = (
         <span className="sr-only">Facebook</span>
     </React.Fragment>
 );
+
+const mediumIcon = (
+    <React.Fragment>
+        <FontAwesomeIcon
+            icon={faMedium}
+            aria-hidden="true"
+            title="Medium">
+        </FontAwesomeIcon>
+        <span className="sr-only">Medium</span>
+    </React.Fragment>);
+
 const backIcon = (
         <React.Fragment>
             <FontAwesomeIcon
@@ -120,6 +135,7 @@ const backIcon = (
             <span className="sr-only">Strona główna</span>
         </React.Fragment>
     );
+
 const websiteIcon = (
     <React.Fragment>
         <FontAwesomeIcon
@@ -190,6 +206,186 @@ export const WEBSITE_TEXT = {
         homeButton: 'strona główna'
     }
 };
+
+//constant containing authors' social media links and links to their work to be used in bio
+const BIO_LINKS = [
+    {
+        social: [
+            {
+                icon: websiteIcon,
+                url: 'https://drobnik.co'
+            },
+            {
+                icon: twitterIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: instagramIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: facebookIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: mediumIcon,
+                url: 'https://medium.com/@drobnik'
+            }
+        ],
+        works: [
+            {
+                title: '„Cellulose” [FlashFlood]',
+                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
+            },
+            {
+                title: '„Nameless” [Akashic Books]',
+                url: 'http://www.akashicbooks.com/nameless-by-lukasz-drobnik/'
+            },
+            {
+                title: '„A very long and winding title, so long that it won’t probably fit into one line” [Pithead Chapel]',
+                url: 'https://pitheadchapel.com/entrails/'
+            },
+            {
+                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
+                url: 'https://atticusreview.org/treasures/'
+            },
+            {
+                title: '„Deadlines” [Storgy]',
+                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
+            },
+            {
+                title: '„Spores” [X-R-A-Y Literary Magazine]',
+                url: 'https://xraylitmag.com/spores-lukasz-drobnik/fiction/'
+            }
+        ]
+    },
+    {
+        social: [
+            {
+                icon: websiteIcon,
+                url: 'https://drobnik.co'
+            },
+            {
+                icon: twitterIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: instagramIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: facebookIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: mediumIcon,
+                url: 'https://medium.com/@drobnik'
+            }
+        ],
+        works: [
+            {
+                title: '„Cellulose” [FlashFlood]',
+                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
+            },
+            {
+                title: '„Nameless” [Akashic Books]',
+                url: 'http://www.akashicbooks.com/nameless-by-lukasz-drobnik/'
+            },
+            {
+                title: '„A very long and winding title, so long that it won’t probably fit into one line” [Pithead Chapel]',
+                url: 'https://pitheadchapel.com/entrails/'
+            },
+            {
+                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
+                url: 'https://atticusreview.org/treasures/'
+            },
+            {
+                title: '„Deadlines” [Storgy]',
+                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
+            },
+            {
+                title: '„Spores” [X-R-A-Y Literary Magazine]',
+                url: 'https://xraylitmag.com/spores-lukasz-drobnik/fiction/'
+            }
+        ]
+    },
+    {
+        social: [
+            {
+                icon: twitterIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: instagramIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: facebookIcon,
+                url: 'https://twitter.com/drobnik'
+            }
+        ],
+        works: [
+            {
+                title: '„Cellulose” [FlashFlood]',
+                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
+            },
+            {
+                title: '„Nameless” [Akashic Books]',
+                url: 'http://www.akashicbooks.com/nameless-by-lukasz-drobnik/'
+            },
+            {
+                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
+                url: 'https://atticusreview.org/treasures/'
+            },
+            {
+                title: '„Deadlines” [Storgy]',
+                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
+            },
+            {
+                title: '„Spores” [X-R-A-Y Literary Magazine]',
+                url: 'https://xraylitmag.com/spores-lukasz-drobnik/fiction/'
+            }
+        ]
+    },
+    {
+        social: [
+            {
+                icon: websiteIcon,
+                url: 'https://drobnik.co'
+            },
+            {
+                icon: twitterIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: facebookIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: mediumIcon,
+                url: 'https://medium.com/@drobnik'
+            }
+        ],
+        works: [
+            {
+                title: '„Cellulose” [FlashFlood]',
+                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
+            },
+            {
+                title: '„A very long and winding title, so long that it won’t probably fit into one line” [Pithead Chapel]',
+                url: 'https://pitheadchapel.com/entrails/'
+            },
+            {
+                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
+                url: 'https://atticusreview.org/treasures/'
+            },
+            {
+                title: '„Deadlines” [Storgy]',
+                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
+            }
+        ]
+    }
+];
 
 //adds 0 for issue numbers below 10
 export const formatIssueNumber = (issueNumber) => {
