@@ -70,11 +70,55 @@ color: ${props => props.theme.themeColor};
 `;
 
 //Fontawesome icons
-const infoIcon = <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>;
-const twitterIcon = <FontAwesomeIcon icon={faTwitterSquare}></FontAwesomeIcon>;
-const instagramIcon = <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>;
-const facebookIcon = <FontAwesomeIcon icon={faFacebookSquare}></FontAwesomeIcon>;
-const backIcon = <FontAwesomeIcon icon={faAngleDoubleLeft}></FontAwesomeIcon>;
+const infoIcon = (
+    <React.Fragment>
+        <FontAwesomeIcon
+            icon={faInfoCircle}
+            aria-hidden="true"
+            title="Informacje">
+        </FontAwesomeIcon>
+        <span className="sr-only">Informacje</span>
+    </React.Fragment>
+);
+const twitterIcon = (
+    <React.Fragment>
+        <FontAwesomeIcon
+            icon={faTwitterSquare}
+            aria-hidden="true"
+            title="Twitter">
+        </FontAwesomeIcon>
+        <span className="sr-only">Twitter</span>
+    </React.Fragment>);
+const instagramIcon = (
+    <React.Fragment>
+        <FontAwesomeIcon
+            icon={faInstagram}
+            aria-hidden="true"
+            title="Instagram">
+        </FontAwesomeIcon>
+        <span className="sr-only">Instagram</span>
+    </React.Fragment>
+);
+const facebookIcon = (
+    <React.Fragment>
+        <FontAwesomeIcon
+            icon={faFacebookSquare}
+            aria-hidden="true"
+            title="Facebook">
+        </FontAwesomeIcon>
+        <span className="sr-only">Facebook</span>
+    </React.Fragment>
+);
+const backIcon = (
+        <React.Fragment>
+            <FontAwesomeIcon
+                icon={faAngleDoubleLeft}
+                aria-hidden="true"
+                title="Strona główna">
+            </FontAwesomeIcon>
+            <span className="sr-only">Strona główna</span>
+        </React.Fragment>
+    );
 
 //Text used on the website
 export const WEBSITE_TEXT = {

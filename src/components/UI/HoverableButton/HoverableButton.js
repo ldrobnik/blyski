@@ -111,13 +111,15 @@ const HoverableButton = (props) => {
         <React.Fragment>
             {(props.path[0] === '/') ?
                 <Link
-                    to={props.path}>
+                    to={props.path}
+                >
                     {buttonContent}
                 </Link> :
                 <a
                     href={props.path}
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                >
                     {buttonContent}
                 </a>
             }
