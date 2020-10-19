@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import AboutPanel from './AboutModal/AboutPanel';
+import AboutPanel from './AboutPanel/AboutPanel';
 import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
 
 /* STYLED COMPONENTS */

@@ -38,10 +38,16 @@ color: ${props => props.theme.lightColor};
 
   @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 1em;
+  padding: 10px 10px;
   }
   
   @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 0.8em;
+      padding: 10px 6px;
+    }
+    @media all and (max-width: ${props => props.theme.tinyScr}) {
+      font-size: 0.8em;
+      padding: 6px 2px;
     }
 
 `;

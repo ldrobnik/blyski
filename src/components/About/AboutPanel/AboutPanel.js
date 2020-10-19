@@ -66,6 +66,7 @@ justify-content: center;
 
 @media all and (max-width: ${props => props.theme.smallScr}) {
       padding: 5px;
+      display: block;
     }
 `;
 
