@@ -39,7 +39,7 @@ const IssueWrapper = styled.div`
 `;
 
 const Texts = styled.div`
-  padding: 18px 0;
+  padding: 12px 0;
   display: flex;
   align-items: center;
   justify-content: center;
