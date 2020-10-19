@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import Logo from '../../UI/Logo/Logo';
+import Separator from '../../UI/Separator/Separator';
 import {WEBSITE_TEXT} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -141,8 +142,10 @@ const AboutPanel = props => {
                 </div>
             </Title>
             {WEBSITE_TEXT.about.content}
+            <Separator inverted={true}/>
             <p>{WEBSITE_TEXT.about.contact}</p>
             <p>{WEBSITE_TEXT.about.desclaimer}</p>
+            <Separator inverted={true}/>
             <p>{WEBSITE_TEXT.about.credits}</p>
             <p>{WEBSITE_TEXT.about.footnote}</p>
             <HoverableButton
