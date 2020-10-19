@@ -12,7 +12,7 @@ const AboutPanelWrapper = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-  position: absolute;
+
   top: 0;
   left: 0;
   

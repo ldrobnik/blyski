@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {Link} from "react-router-dom";
 import moment from 'moment';
 import 'moment/locale/pl';
 import IssueTitle from './IssueTitle/IssueTitle';

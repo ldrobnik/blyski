@@ -8,9 +8,9 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 /* STYLED COMPONENTS */
 const AboutBox = styled.div`
   z-index: 50;
-  position: absolute;
-  max-width: 50vw;
-  padding: 20px;
+  margin: 30px;
+  padding: 40px;
+  width: 50%;
   border: 10px solid ${props => props.theme.lightColor};
   color: ${props => props.theme.lightColor};
   text-align: center;
@@ -35,25 +35,20 @@ const AboutBox = styled.div`
     }
   }
   
-  @media all and (max-width: ${props => props.theme.largeScr}) {
-  max-width: 70vw;
-  }
-  
-  @media all and (max-width: ${props => props.theme.mediumScr}) {
-  max-width: 75vw;
-  }
-  
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      max-width: 85vw;
+      width: 95%;
+      padding: 15px;
     }
-    
-  @media all and (max-width: ${props => props.theme.extraSmallScr}) {
-      max-width: 90vw;
-    }
-    
-  @media all and (max-width: ${props => props.theme.tinyScr}) {
-      max-width: 95vw;
-    }
+ 
+ @media all and (max-width: ${props => props.theme.largeScr}) {
+  width: 80%;
+  padding:30px;
+ } 
+ 
+ @media all and (max-width: ${props => props.theme.extraLargeScr}) {
+  width: 60%;
+  padding:30px;
+ } 
   
 `;
 
