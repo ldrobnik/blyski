@@ -12,12 +12,12 @@ padding: 10px;
 align-items: center;
 justify-content: center;
 
-@media all and (min-width: 553px) {
+@media all and (min-width: 631px) {
       padding: 5px;
       display: flex;
     }
 
-@media all and (max-width: 552px) {
+@media all and (max-width: 630px) {
       padding: 5px;
     }
 `;
@@ -39,8 +39,8 @@ const IssueName = styled.div`
   padding-left: 6px;
   }
   
-  @media all and (max-width: 552px) {
-      font-size: 2em;
+  @media all and (max-width: 630px) {
+      font-size: 2.5em;
       padding-left: 4px;
     }
     
@@ -66,11 +66,13 @@ const IssueDate = styled.div`
   @media all and (max-width: 700px) {
   font-size: 0.8em;
   transform: translateY(-10px);
+  padding: 0;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       font-size: 0.6em;
       transform: translateY(-10px);
+      text-align: center;
     }
     
   @media all and (max-width: 350px) {

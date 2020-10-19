@@ -18,7 +18,7 @@ const LogoWrapper = styled.div`
   padding: 12px;
   z-index: 160;
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       display: inline-block;
       margin-bottom: 24px;
     }
@@ -62,8 +62,8 @@ const Logo = props => {
     const handleResize = () => {
         if (window.innerWidth < 350) {
             setLogoWidth("40px");
-        } else if (window.innerWidth < 552) {
-            setLogoWidth("60px");
+        } else if (window.innerWidth < 630) {
+            setLogoWidth("80px");
         } else {
             setLogoWidth("100px");
         }

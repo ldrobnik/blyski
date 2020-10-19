@@ -16,7 +16,7 @@ const AuthorName = styled.div`
   font-size: 2.5em;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       font-size: 2em;
     }
 
@@ -39,7 +39,7 @@ const TranslatorName = styled.div`
   font-size: 0.8em;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       font-size: 0.7em;
     }
 

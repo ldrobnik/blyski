@@ -27,7 +27,7 @@ const Photo = styled.div`
    height: 300px;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       height: 240px;
     }
     

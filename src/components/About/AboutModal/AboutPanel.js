@@ -42,7 +42,7 @@ const AboutBox = styled.div`
   max-width: 75vw;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       max-width: 85vw;
     }
     
@@ -64,7 +64,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 
-@media all and (max-width: 552px) {
+@media all and (max-width: 630px) {
       padding: 5px;
     }
 `;
@@ -85,7 +85,7 @@ const JournalName = styled.div`
   padding-left: 6px;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       font-size: 2em;
       padding-left: 4px;
     }
@@ -112,7 +112,7 @@ font-weight: bold;
   font-size: 0.8em;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       font-size: 0.6em;
     }
     

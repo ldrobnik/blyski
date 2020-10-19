@@ -32,7 +32,7 @@ color: ${props => props.theme.lightColor};
   font-size: 1em;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       font-size: 0.8em;
     }
 `;
@@ -66,7 +66,7 @@ z-index: 50;
   font-size: 1em;
   }
   
-  @media all and (max-width: 552px) {
+  @media all and (max-width: 630px) {
       font-size: 0.8em;
     }
 

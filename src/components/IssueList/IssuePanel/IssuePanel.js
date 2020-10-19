@@ -21,7 +21,7 @@ const IssueWrapper = styled.div`
         background-color: ${props => props.theme.themeColor};
      }
  
- @media all and (max-width: 552px) {
+ @media all and (max-width: 630px) {
       width: 95%;
       padding: 15px;
     }
