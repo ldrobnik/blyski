@@ -6,6 +6,7 @@ import 'moment/locale/pl';
 import IssueTitle from './IssueTitle/IssueTitle';
 import AuthorCredits from './AuthorCredits/AuthorCredits';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
+import Separator from '../../UI/Separator/Separator';
 import {WEBSITE_TEXT} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -38,7 +39,7 @@ const IssueWrapper = styled.div`
 `;
 
 const Texts = styled.div`
-  padding: 25px 0;
+  padding: 18px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,6 +57,7 @@ const IssuePanel = props => {
                 <AuthorCredits
                     author={props.author}
                 />
+                <Separator/>
                 <Texts>
                     {props.texts.map((text) => {
                             return (
@@ -68,6 +70,7 @@ const IssuePanel = props => {
                         }
                     )}
                 </Texts>
+                <Separator/>
                 <HoverableButton
                     path={`/${props.issue}/bio`}
                     message={WEBSITE_TEXT.issueList.bio}
