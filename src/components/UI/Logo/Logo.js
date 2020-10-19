@@ -18,7 +18,7 @@ const LogoWrapper = styled.div`
   padding: 12px;
   z-index: 160;
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       display: inline-block;
       margin-bottom: 24px;
     }
@@ -31,7 +31,7 @@ const InvertedLogoWrapper = styled.div`
   z-index: 160;
   
     
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       display: inline-block;
       margin-bottom: 24px;
     }

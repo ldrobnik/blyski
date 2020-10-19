@@ -23,15 +23,15 @@ const Photo = styled.div`
   }
   
   
-  @media all and (max-width: 700px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
    height: 300px;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       height: 240px;
     }
     
-  @media all and (max-width: 380px) {
+  @media all and (max-width: ${props => props.theme.extraSmallScr}) {
       height: 180px;
     }
   

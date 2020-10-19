@@ -13,7 +13,7 @@ align-items: center;
 justify-content: center;
 display: flex;
 
-@media all and (max-width: 630px) {
+@media all and (max-width: ${props => props.theme.smallScr}) {
       padding: 5px;
       display: block;
     }
@@ -26,27 +26,27 @@ const IssueName = styled.div`
   padding-left: 10px;
   transform: translateY(-8px);
   
-  @media all and (max-width: 1000px) {
+  @media all and (max-width: ${props => props.theme.largeScr}) {
   font-size: 4em;
   padding-left: 8px;
   }
   
-  @media all and (max-width: 750px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 3em;
   padding-left: 6px;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 2.5em;
       padding-left: 4px;
     }
     
-  @media all and (max-width: 380px) {
+  @media all and (max-width: ${props => props.theme.extraSmallScr}) {
       font-size: 1.5em;
       padding-left: 4px;
     }
     
-  @media all and (max-width: 350px) {
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 1em;
       padding-left: 4px;
     }
@@ -60,19 +60,19 @@ const IssueDate = styled.div`
   color: ${props => props.theme.themeColor};
   transform: translateY(-20px);
   
-  @media all and (max-width: 700px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 0.8em;
   transform: translateY(-10px);
   padding: 0;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 0.6em;
       transform: translateY(-10px);
       text-align: center;
     }
     
-  @media all and (max-width: 350px) {
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 0.5em;
       transform: translateY(-10px);
     }

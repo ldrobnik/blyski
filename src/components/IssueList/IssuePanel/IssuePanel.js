@@ -21,17 +21,17 @@ const IssueWrapper = styled.div`
         background-color: ${props => props.theme.themeColor};
      }
  
- @media all and (max-width: 630px) {
+ @media all and (max-width: ${props => props.theme.smallScr}) {
       width: 95%;
       padding: 15px;
     }
  
- @media all and (max-width: 1000px) {
+ @media all and (max-width: ${props => props.theme.largeScr}) {
   width: 80%;
   padding:30px;
  } 
  
- @media all and (max-width: 1600px) {
+ @media all and (max-width: ${props => props.theme.extraLargeScr}) {
   width: 60%;
   padding:30px;
  } 

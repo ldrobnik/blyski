@@ -36,11 +36,11 @@ color: ${props => props.theme.lightColor};
   transform: translateY(-2px);
   }
 
-  @media all and (max-width: 700px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 1em;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 0.8em;
     }
 

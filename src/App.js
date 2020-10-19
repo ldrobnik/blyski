@@ -35,11 +35,13 @@ function App() {
         smallCaptionSize: '0.8em',
 
         //breakpoints
-        extraSmallScr: '480px',
-        smallScr: '736px',
-        mediumScr: '980px',
-        largeScr: '1280px',
-        extraLargeScr: '1690px',
+        veryTinyScr: '250px',
+        tinyScr: '350px',
+        extraSmallScr: '380px',
+        smallScr: '630px',
+        mediumScr: '750px',
+        largeScr: '1000px',
+        extraLargeScr: '1600px',
 
         //opacity
         slightlyTranslucent: '0.7',

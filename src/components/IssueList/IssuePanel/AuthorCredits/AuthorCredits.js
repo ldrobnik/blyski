@@ -12,19 +12,19 @@ const AuthorName = styled.div`
   font-weight: bold;
   color: ${props => props.theme.themeColor};
   
-  @media all and (max-width: 700px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 2.5em;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 2em;
     }
 
-  @media all and (max-width: 350px) {
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 1.5em;
     }
     
-   @media all and (max-width: 250px) {
+   @media all and (max-width: ${props => props.veryTinyScr}) {
       font-size: 1em;
     }
   
@@ -35,15 +35,15 @@ const TranslatorName = styled.div`
   font-size: 1em;
   font-weight: bold;
   
-  @media all and (max-width: 700px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 0.8em;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 0.7em;
     }
 
-  @media all and (max-width: 350px) {
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 0.6em;
     }
 

@@ -34,23 +34,23 @@ const AboutBox = styled.div`
     }
   }
   
-  @media all and (max-width: 1000px) {
+  @media all and (max-width: ${props => props.theme.largeScr}) {
   max-width: 70vw;
   }
   
-  @media all and (max-width: 700px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
   max-width: 75vw;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       max-width: 85vw;
     }
     
-  @media all and (max-width: 380px) {
+  @media all and (max-width: ${props => props.theme.extraSmallScr}) {
       max-width: 90vw;
     }
     
-  @media all and (max-width: 350px) {
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
       max-width: 95vw;
     }
   
@@ -64,7 +64,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 
-@media all and (max-width: 630px) {
+@media all and (max-width: ${props => props.theme.smallScr}) {
       padding: 5px;
     }
 `;
@@ -75,27 +75,27 @@ const JournalName = styled.div`
   padding-left: 10px;
   transform: translateY(-8px);
   
-  @media all and (max-width: 1000px) {
+  @media all and (max-width: ${props => props.theme.largeScr}) {
   font-size: 4em;
   padding-left: 8px;
   }
   
-  @media all and (max-width: 700px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 3em;
   padding-left: 6px;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 2em;
       padding-left: 4px;
     }
     
-  @media all and (max-width: 380px) {
+  @media all and (max-width: ${props => props.theme.extraSmallScr}) {
       font-size: 1.5em;
       padding-left: 4px;
     }
     
-  @media all and (max-width: 350px) {
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 1em;
       padding-left: 4px;
     }
@@ -108,15 +108,15 @@ font-weight: bold;
   font-size: 1em;
   transform: translateY(-20px);
   
-  @media all and (max-width: 700px) {
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 0.8em;
   }
   
-  @media all and (max-width: 630px) {
+  @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 0.6em;
     }
     
-  @media all and (max-width: 350px) {
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 0.5em;
     }
   
