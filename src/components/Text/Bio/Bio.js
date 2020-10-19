@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
 import AuthorLinks from './SocialLinks/AuthorLinks';
 import AuthorWorks from './SelectedWorks/AuthorWorks';
+import Separator from '../../UI/Separator/Separator';
 import {WEBSITE_TEXT, AUTHOR_LINKS} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -34,14 +35,17 @@ const Bio = (props) => {
             <TextBody
                 dangerouslySetInnerHTML={{__html: props.textContent}}
             />
+            <Separator/>
             <Heading>{WEBSITE_TEXT.text.bio.moreInfo}</Heading>
             <AuthorLinks
                 links={AUTHOR_LINKS[props.issueNumber - 1].links}
             />
+            <Separator/>
             <Heading>{WEBSITE_TEXT.text.bio.selectedWorks}</Heading>
             <AuthorWorks
                 works={AUTHOR_LINKS[props.issueNumber - 1].works}
             />
+            <Separator/>
         </React.Fragment>
     );
 };
