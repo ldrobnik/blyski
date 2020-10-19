@@ -17,6 +17,12 @@ const LogoWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
   padding: 12px;
   z-index: 160;
+  
+  @media all and (max-width: 552px) {
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+  
 `;
 
 const InvertedLogoWrapper = styled.div`

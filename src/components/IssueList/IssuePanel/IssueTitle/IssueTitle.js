@@ -3,13 +3,19 @@ import styled from 'styled-components';
 import Logo from '../../../UI/Logo/Logo';
 import {formatIssueNumber} from "../../../../data/constants";
 
+/** STYLED COMPONENTS **/
+
 const Title = styled.div`
 
 width: 100%;
 padding: 10px;
-display: flex;
 align-items: center;
 justify-content: center;
+
+@media all and (min-width: 553px) {
+      padding: 5px;
+      display: flex;
+    }
 
 @media all and (max-width: 552px) {
       padding: 5px;
