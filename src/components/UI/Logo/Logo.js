@@ -29,6 +29,12 @@ const InvertedLogoWrapper = styled.div`
   border: 10px solid ${props => props.theme.lightColor};
   padding: 12px;
   z-index: 160;
+  
+    
+  @media all and (max-width: 630px) {
+      display: inline-block;
+      margin-bottom: 24px;
+    }
 `;
 
 /* POSE */

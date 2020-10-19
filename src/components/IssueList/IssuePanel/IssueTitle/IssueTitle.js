@@ -11,14 +11,11 @@ width: 100%;
 padding: 10px;
 align-items: center;
 justify-content: center;
-
-@media all and (min-width: 631px) {
-      padding: 5px;
-      display: flex;
-    }
+display: flex;
 
 @media all and (max-width: 630px) {
       padding: 5px;
+      display: block;
     }
 `;
 
@@ -34,7 +31,7 @@ const IssueName = styled.div`
   padding-left: 8px;
   }
   
-  @media all and (max-width: 700px) {
+  @media all and (max-width: 750px) {
   font-size: 3em;
   padding-left: 6px;
   }
