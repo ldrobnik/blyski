@@ -158,6 +158,9 @@ const Home = (props) => {
         fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
             return response.json();
         }).then(texts => {
+            //Change error status in the Redux store
+            props.setError(false);
+
             //process the data to organise texts into issues
             const issueData = processTexts(texts);
 
@@ -168,7 +171,7 @@ const Home = (props) => {
             setAsLoaded();
         }).catch(err => {
             //Change error status in the Redux store
-            setError();
+            props.setError(true);
 
             //in case of error, use the fallback issue data
             updateIssues(FALLBACK_ISSUE);

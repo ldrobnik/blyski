@@ -5,6 +5,7 @@ import 'moment/locale/pl';
 
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
+import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
 
 const List = styled.div`
@@ -56,6 +57,7 @@ const IssueList = (props) => {
                     })
                 }
             </List>
+            <ErrorMessage/>
         </AnimatedContent>
     );
 };

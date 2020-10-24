@@ -208,7 +208,8 @@ export const WEBSITE_TEXT = {
             moreInfo: 'Więcej informacji:',
             selectedWorks: 'Wybrane teksty:'
         }
-    }
+    },
+    error: 'Błąd połączenia. Starsze numery chwilowo niedostępne.'
 };
 
 //constant containing authors' social media links and links to their work to be used in bio
