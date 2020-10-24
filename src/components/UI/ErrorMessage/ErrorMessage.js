@@ -2,17 +2,30 @@ import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 
+import {WEBSITE_TEXT} from "../../../data/constants";
 
 const MessageWrapper = styled.div`
+  text-align: center;
 
+`;
+
+const MessageContent = styled.div`
+  display: inline-block;
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  border: 6px solid ${props => props.theme.themeColor};
+  color: ${props => props.theme.themeColor};
+  font-weight: bold;
 `;
 
 const ErrorMessage = (props) => {
 
     return (
-        props.error &&
+        props.error && props.pageLoaded && (props.issues.length > 1) &&
         <MessageWrapper>
-            ERROR
+            <MessageContent>
+                {WEBSITE_TEXT.error}
+            </MessageContent>
         </MessageWrapper>
     );
 };
