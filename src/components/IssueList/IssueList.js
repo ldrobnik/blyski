@@ -45,7 +45,7 @@ const IssueList = (props) => {
                     props.pageLoaded &&
                     [...props.issues].reverse().map((issue) => {
                         return (
-                            <IssuePanel
+                            issue && <IssuePanel
                                 key={issue.issue}
                                 issue={issue.issue}
                                 author={issue.author}

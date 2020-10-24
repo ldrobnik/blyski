@@ -10,7 +10,7 @@ import Text from '../Text/Text';
 import About from '../About/About';
 import Spinner from '../UI/Spinner/Spinner';
 
-import {WP_URL_FRAGMENT} from '../../data/constants';
+import {WP_URL_FRAGMENT, FALLBACK_ISSUE} from '../../data/constants';
 import {setPageLoaded, setError, setIssues} from '../../actions/index';
 
 /* STYLED COMPONENTS */
@@ -149,8 +149,6 @@ const Home = (props) => {
                 issues.push(compileIssue(currentIssue, date, temporaryTexts));
             }
         }
-
-        console.log(issues);
         return issues;
 
     };
@@ -171,6 +169,9 @@ const Home = (props) => {
         }).catch(err => {
             //Change error status in the Redux store
             setError();
+
+            //in case of error, use the fallback issue data
+            updateIssues(FALLBACK_ISSUE);
 
             //set the page as loaded to turn off spinner
             setAsLoaded();
