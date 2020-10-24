@@ -144,12 +144,12 @@ const AboutPanel = props => {
             <Separator inverted={true}/>
             <p>{WEBSITE_TEXT.about.credits}</p>
             <p>{WEBSITE_TEXT.about.footnote}</p>
+            <CopyrightNote/>
             <HoverableButton
                 path="/"
                 message={WEBSITE_TEXT.about.button}
                 inverted={true}
             />
-            <CopyrightNote/>
         </AboutBox>
     );
 };
