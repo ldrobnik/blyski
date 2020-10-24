@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import Logo from '../../UI/Logo/Logo';
 import Separator from '../../UI/Separator/Separator';
+import CopyrightNote from './CopyrightNote/CopyrightNote';
 import {WEBSITE_TEXT} from "../../../data/constants";
 
 /* STYLED COMPONENTS */
@@ -148,6 +149,7 @@ const AboutPanel = props => {
                 message={WEBSITE_TEXT.about.button}
                 inverted={true}
             />
+            <CopyrightNote/>
         </AboutBox>
     );
 };
