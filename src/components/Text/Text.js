@@ -29,6 +29,9 @@ const Text = (props) => {
     //based on the url, checks which text from which issue should be displayed
     const checkTextID = (issue, slug) => {
 
+        //if text data cannot be accessed (in case of connection error), return '-1'
+        if (!props.issues[issue - 1]) return -1;
+
         //if slug is 'bio', return '-2'
         if (slug === 'bio') return -2;
 
@@ -51,21 +54,21 @@ const Text = (props) => {
     //if issue number doesn't exceed array length get text id based on url parameters
     let textID = (issueNumber <= props.issues.length) ? checkTextID(issueNumber, props.match.params.slug) : -1;
 
-    useEffect(() => {
 
+    useEffect(() => {
 
         if (props.pageLoaded) {
 
-            //if the issue and slug don't match fetched data, redirect to home page
-            if (textID === -1) {
+            //if text data cannot be accessed (wrong slug or connection error), redirect to home page
+            if ((textID === -1) || (props.issues[issueNumber - 1] === null)) {
                 history.push('/');
             }
 
             //update document title
-            if (textID === -2) {
+            if ((textID === -2) && props.issues[issueNumber - 1]) {
                 //title for bio
                 document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author + " – biogram";
-            } else {
+            } else if (props.issues[issueNumber - 1]){
                 //title for literary pieces
                 document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author + " – " + props.issues[issueNumber - 1].texts[textID].title;
             }
@@ -102,34 +105,34 @@ const Text = (props) => {
 
     //text title to be displayed - author name for bio, text title for pieces
     let textTitle = "";
-    if (props.pageLoaded) textTitle = (textID === -2) ? props.issues[issueNumber - 1].bio.title : props.issues[issueNumber - 1].texts[textID].title;
+    if (props.pageLoaded && props.issues[issueNumber - 1]) textTitle = (textID === -2) ? props.issues[issueNumber - 1].bio.title : props.issues[issueNumber - 1].texts[textID].title;
 
     //content to be displayed - different for bio
     let textContent = "";
-    if (props.pageLoaded) textContent = (textID === -2) ? props.issues[issueNumber - 1].bio.content : props.issues[issueNumber - 1].texts[textID].content;
+    if (props.pageLoaded && props.issues[issueNumber - 1]) textContent = (textID === -2) ? props.issues[issueNumber - 1].bio.content : props.issues[issueNumber - 1].texts[textID].content;
 
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
-            {(props.pageLoaded) && <TextNavbar
+            {(props.pageLoaded && props.issues[issueNumber - 1]) && <TextNavbar
                 issueNumber={issueNumber}
                 textID={textID}
                 texts={props.issues[issueNumber - 1].texts}
             />}
             <TextWrapper>
-                {(props.pageLoaded && (textID !== -1)) && (textID !== -2) &&
+                {(props.pageLoaded && (textID !== -1) && props.issues[issueNumber - 1]) && (textID !== -2) &&
                 <Story
                     author={props.issues[issueNumber - 1].author}
                     textTitle={textTitle}
                     textContent={textContent}
                 />}
-                {(props.pageLoaded) && (textID === -2) &&
+                {(props.pageLoaded) && (textID === -2) && props.issues[issueNumber - 1] &&
                 <Bio
                     author={props.issues[issueNumber - 1].author}
                     issueNumber={issueNumber}
                     textContent={textContent}
                 />}
-                {(props.pageLoaded) && <TextButton
+                {(props.pageLoaded && props.issues[issueNumber - 1]) && <TextButton
                     textID={textID}
                     issueNumber={issueNumber}
                     slug={((textID < 4) && (textID !== -2)) ? props.issues[issueNumber - 1].texts[textID + 1].slug : null}
