@@ -13,7 +13,7 @@ const AuthorName = styled.div`
   color: ${props => props.theme.themeColor};
   
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 2.5em;
+  font-size: 2.7em;
   }
   
   @media all and (max-width: ${props => props.theme.smallScr}) {
@@ -21,11 +21,11 @@ const AuthorName = styled.div`
     }
 
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 1.5em;
+      font-size: 1.7em;
     }
     
    @media all and (max-width: ${props => props.veryTinyScr}) {
-      font-size: 1em;
+      font-size: 1.2em;
     }
   
 `;

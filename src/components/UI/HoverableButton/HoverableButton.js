@@ -37,19 +37,18 @@ color: ${props => props.theme.lightColor};
   }
 
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1em;
+  font-size: 1.1em;
   padding: 10px 10px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.8em;
+      font-size: 1em;
       padding: 10px 6px;
     }
     @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.8em;
+      font-size: 0.9em;
       padding: 6px 2px;
     }
-
 `;
 
 const InvertedButtonWrapper = styled.div`
@@ -86,12 +85,19 @@ color: ${props => props.theme.themeColor};
   transform: translateY(-2px);
   }
 
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1em;
+  font-size: 1.1em;
+  padding: 10px 10px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.8em;
+      font-size: 1em;
+      padding: 10px 6px;
+    }
+    @media all and (max-width: ${props => props.theme.tinyScr}) {
+      font-size: 0.9em;
+      padding: 6px 2px;
     }
 
 `;

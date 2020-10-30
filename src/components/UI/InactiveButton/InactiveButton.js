@@ -28,12 +28,19 @@ color: ${props => props.theme.lightColor};
   transition: all 0.2s ease-in;
 }
 
+ 
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1em;
+  font-size: 1.1em;
+  padding: 10px 10px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.8em;
+      font-size: 1em;
+      padding: 10px 6px;
+    }
+    @media all and (max-width: ${props => props.theme.tinyScr}) {
+      font-size: 0.9em;
+      padding: 6px 2px;
     }
 `;
 
@@ -62,12 +69,19 @@ z-index: 50;
   transition: all 0.2s ease-in;
 }
 
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1em;
+  font-size: 1.1em;
+  padding: 10px 10px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.8em;
+      font-size: 1em;
+      padding: 10px 6px;
+    }
+    @media all and (max-width: ${props => props.theme.tinyScr}) {
+      font-size: 0.9em;
+      padding: 6px 2px;
     }
 
 `;
