@@ -89,22 +89,28 @@ const JournalName = styled.div`
   }
   
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 3em;
+  font-size: 3.5em;
   padding-left: 6px;
   }
   
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 2em;
+      font-size: 3.5em;
       padding-left: 4px;
     }
     
   @media all and (max-width: ${props => props.theme.extraSmallScr}) {
-      font-size: 1.5em;
+      font-size: 3.5em;
       padding-left: 4px;
     }
     
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 1em;
+      font-size: 3em;
+      padding-left: 4px;
+    }
+    
+        
+  @media all and (max-width: ${props => props.theme.veryTinyScr}) {
+      font-size: 2.5em;
       padding-left: 4px;
     }
 `;
@@ -117,15 +123,15 @@ font-weight: bold;
   transform: translateY(-20px);
   
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 0.8em;
+  font-size: 1em;
   }
   
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.6em;
+      font-size: 0.8em;
     }
     
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.5em;
+      font-size: 0.7em;
     }
   
 `;
