@@ -187,8 +187,7 @@ export const WEBSITE_TEXT = {
         contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski [at] gmail [dot] com.</React.Fragment>,
         desclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich wyłącznie przekłady tekstów napisanych
             po angielsku, dlatego niestety nie rozpatruję propozycji wydawniczych, choć do samego pisania flash fiction gorąco zachęcam!</React.Fragment>,
-        credits: <React.Fragment>red. nacz. – ja, dobór tekstów – ja, przekłady – ja, projekt strony –
-            ja*</React.Fragment>,
+        credits: <React.Fragment>red. nacz. –&nbsp;ja, dobór tekstów –&nbsp;ja, przekłady –&nbsp;ja, projekt strony –&nbsp;ja*</React.Fragment>,
         footnote: <React.Fragment><HoverableLink href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja
             = Łukasz Drobnik</HoverableLink></React.Fragment>,
         button: 'strona główna',
