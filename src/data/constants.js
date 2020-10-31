@@ -180,16 +180,14 @@ export const WEBSITE_TEXT = {
         title: "błyski",
         subtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
         content: <React.Fragment>
-            <p>Flash fiction to bardzo krótkie prozy mieszczące się — zależnie od definicji — w&nbsp;1000 lub 1500
-                słowach. W&nbsp;przeciwieństwie do prozy poetyckiej zawsze mają fabułę.</p>
-            <p><strong>błyski</strong> to niereguralnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej
-                popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi i składa się
-                z&nbsp;pięciu jego tekstów oraz biogramu — i&nbsp;tyle.</p>
+            <p><strong>Flash fiction</strong> to bardzo krótkie prozy nieprzekraczające – zależnie od definicji – 1000 lub 1500&nbsp;słów objętości. W&nbsp;odróżnieniu od prozy poetyckiej zawsze mają fabułę.</p>
+            <p>Z&nbsp;kolei <strong>błyski</strong> to niereguralnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej
+                popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi: zawiera pięć jego tekstów plus biogram – i&nbsp;tyle.</p>
         </React.Fragment>,
-        contact: <React.Fragment>Kontakt z&nbsp;redakcją: blyski [at] gmail [dot] com.</React.Fragment>,
-        desclaimer: <React.Fragment>Jako że <strong>błyski</strong> składają się wyłącznie z&nbsp;tekstów napisanych
-            pierwotnie po angielsku, nie przyjmujemy propozycji wydawniczych.</React.Fragment>,
-        credits: <React.Fragment>red. nacz. — ja, dobór tekstów — ja, przekłady — ja, projekt strony —
+        contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski [at] gmail [dot] com.</React.Fragment>,
+        desclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich wyłącznie przekłady tekstów napisanych
+            po angielsku, dlatego niestety nie rozpatruję propozycji wydawniczych, choć do samego pisania flash fiction gorąco zachęcam!</React.Fragment>,
+        credits: <React.Fragment>red. nacz. – ja, dobór tekstów – ja, przekłady – ja, projekt strony –
             ja*</React.Fragment>,
         footnote: <React.Fragment><HoverableLink href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja
             = Łukasz Drobnik</HoverableLink></React.Fragment>,
