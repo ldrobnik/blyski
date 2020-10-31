@@ -15,6 +15,7 @@ const IssueWrapper = styled.div`
  margin: 30px;
  padding: 40px;
  width: 50%;
+ max-width: 800px;
  
  *::selection {
         color: ${props => props.theme.lightColor};
@@ -22,13 +23,22 @@ const IssueWrapper = styled.div`
      }
  
  @media all and (max-width: ${props => props.theme.smallScr}) {
-      width: 95%;
+     width: 98%;
       padding: 15px;
+      margin: 2px 30px;
     }
+
  
+ @media all and (max-width: ${props => props.theme.mediumScr}) {
+  width: 90%;
+  padding:30px 15px;
+ } 
+ 
+  
  @media all and (max-width: ${props => props.theme.largeScr}) {
-  width: 80%;
+  width: 70%;
   padding:30px;
+  margin: 10px 30px;
  } 
  
  @media all and (max-width: ${props => props.theme.extraLargeScr}) {
