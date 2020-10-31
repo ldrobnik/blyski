@@ -136,6 +136,43 @@ font-weight: bold;
   
 `;
 
+const MainContent = styled.div`
+
+font-size: 1.3em;
+
+@media all and (max-width: ${props => props.theme.mediumScr}) {
+  font-size: 1.2em;
+  }
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+      font-size: 1.1em;
+    }
+
+`;
+
+const SecondaryContent = styled.div`
+
+font-size: 1em;
+
+@media all and (max-width: ${props => props.theme.mediumScr}) {
+  font-size: 0.9em;
+  }
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+      font-size: 0.8em;
+    }
+`;
+
+const TernaryContent = styled.div`
+
+font-size: 0.8em;
+
+@media all and (max-width: ${props => props.theme.mediumScr}) {
+  font-size: 0.7em;
+  }
+
+`;
+
 const AboutPanel = props => {
 
     return (
@@ -153,14 +190,25 @@ const AboutPanel = props => {
                     </JournalSubtitle>
                 </div>
             </Title>
-            {WEBSITE_TEXT.about.content}
+            <MainContent>
+                {WEBSITE_TEXT.about.content}
+            </MainContent>
             <Separator inverted={true}/>
-            <p>{WEBSITE_TEXT.about.contact}</p>
-            <p>{WEBSITE_TEXT.about.desclaimer}</p>
+            <SecondaryContent>
+                <p>{WEBSITE_TEXT.about.contact}</p>
+            </SecondaryContent>
+            <TernaryContent>
+                <p>{WEBSITE_TEXT.about.desclaimer}</p>
+            </TernaryContent>
             <Separator inverted={true}/>
-            <p>{WEBSITE_TEXT.about.credits}</p>
-            <p>{WEBSITE_TEXT.about.footnote}</p>
+            <SecondaryContent>
+                <p>{WEBSITE_TEXT.about.credits}</p>
+            </SecondaryContent>
+            <TernaryContent>
+                <p>{WEBSITE_TEXT.about.footnote}</p>
+            </TernaryContent>
             <CopyrightNote/>
+            <Separator inverted={true}/>
             <HoverableButton
                 path="/"
                 message={WEBSITE_TEXT.about.button}
