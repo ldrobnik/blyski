@@ -8,15 +8,48 @@ import Bio from './Bio/Bio';
 import TextButton from './TextButton/TextButton';
 import {AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
 
+/** STYLED COMPONENTS **/
+const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
-  padding: 15px 25px;
+  padding: 20px 15px;
   font-size: 1.2em;
+  width: 85%;
+  
+  p {
+    margin-block-start: 0.8em;
+    margin-block-end: 0.8em;
+  }
   
   *::selection {
         color: ${props => props.theme.lightColor};
         background-color: ${props => props.theme.themeColor};
      }
+     
+  @media all and (min-width: ${props => props.theme.smallScr}) {
+  width: 90%;
+  padding:20px 15px;
+ } 
+ 
+  
+ @media all and (min-width: ${props => props.theme.mediumScr}) {
+  width: 80%;
+  padding: 20px;
+ } 
+ 
+ @media all and (min-width: ${props => props.theme.largeScr}) {
+  width: 70%;
+  padding:20px 25px;
+ } 
+ 
+ @media all and (min-width: ${props => props.theme.extraLargeScr}) {
+  width: 65%;
+  padding:20px 25px;
+ } 
 `;
 
 const Text = (props) => {
@@ -68,7 +101,7 @@ const Text = (props) => {
             if ((textID === -2) && props.issues[issueNumber - 1]) {
                 //title for bio
                 document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author + " – biogram";
-            } else if (props.issues[issueNumber - 1]){
+            } else if (props.issues[issueNumber - 1]) {
                 //title for literary pieces
                 document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author + " – " + props.issues[issueNumber - 1].texts[textID].title;
             }
@@ -119,25 +152,27 @@ const Text = (props) => {
                 textID={textID}
                 texts={props.issues[issueNumber - 1].texts}
             />}
-            <TextWrapper>
-                {(props.pageLoaded && (textID !== -1) && props.issues[issueNumber - 1]) && (textID !== -2) &&
-                <Story
-                    author={props.issues[issueNumber - 1].author}
-                    textTitle={textTitle}
-                    textContent={textContent}
-                />}
-                {(props.pageLoaded) && (textID === -2) && props.issues[issueNumber - 1] &&
-                <Bio
-                    author={props.issues[issueNumber - 1].author}
-                    issueNumber={issueNumber}
-                    textContent={textContent}
-                />}
-                {(props.pageLoaded && props.issues[issueNumber - 1]) && <TextButton
-                    textID={textID}
-                    issueNumber={issueNumber}
-                    slug={((textID < 4) && (textID !== -2)) ? props.issues[issueNumber - 1].texts[textID + 1].slug : null}
-                />}
-            </TextWrapper>
+            <ContentWrapper>
+                <TextWrapper>
+                    {(props.pageLoaded && (textID !== -1) && props.issues[issueNumber - 1]) && (textID !== -2) &&
+                    <Story
+                        author={props.issues[issueNumber - 1].author}
+                        textTitle={textTitle}
+                        textContent={textContent}
+                    />}
+                    {(props.pageLoaded) && (textID === -2) && props.issues[issueNumber - 1] &&
+                    <Bio
+                        author={props.issues[issueNumber - 1].author}
+                        issueNumber={issueNumber}
+                        textContent={textContent}
+                    />}
+                    {(props.pageLoaded && props.issues[issueNumber - 1]) && <TextButton
+                        textID={textID}
+                        issueNumber={issueNumber}
+                        slug={((textID < 4) && (textID !== -2)) ? props.issues[issueNumber - 1].texts[textID + 1].slug : null}
+                    />}
+                </TextWrapper>
+            </ContentWrapper>
         </AnimatedContent>
     );
 };
