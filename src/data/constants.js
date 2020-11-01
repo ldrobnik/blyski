@@ -166,15 +166,15 @@ export const WEBSITE_TEXT = {
         },
         {
             message: twitterIcon,
-            path: 'https://twitter.com/'
+            path: 'https://twitter.com/blyskipismo'
         },
         {
             message: instagramIcon,
-            path: 'https://www.instagram.com/'
+            path: 'https://www.instagram.com/blyskipismo'
         },
         {
             message: facebookIcon,
-            path: 'https://www.facebook.com/'
+            path: 'https://www.facebook.com/blyskipismo'
         }
     ],
     issueList: {
