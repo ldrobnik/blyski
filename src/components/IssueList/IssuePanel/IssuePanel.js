@@ -12,9 +12,9 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 const IssueWrapper = styled.div`
  border: 10px solid ${props => props.theme.themeColor};
  text-align: center;
- width: 90%;
+ width: 85%;
  padding: 15px;
- margin: 2px 30px;
+ margin: 30px 10px;
  max-width: 800px;
  
  *::selection {
