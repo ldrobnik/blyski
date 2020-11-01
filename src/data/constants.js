@@ -32,12 +32,18 @@ export const getRotationClass = (classNumber) => {
 
 };
 
-//Function returning random rotation class
+//Function returning 'random' rotation class
+//(actually the class isn't random but depends on current time)
 export const getRandomRotationClass = () => {
-    //Random number between 0 and 3
-    const randomNumber = Math.floor(Math.random() * 4);
+    let currentDate = new Date();
 
-    return getRotationClass(randomNumber);
+    //current value of seconds
+    let currentSeconds = currentDate.getSeconds();
+
+    //Number between 0 and 3 depending on the current seconds value
+    const classNumber = Math.floor(currentSeconds/15);
+
+    return getRotationClass(classNumber);
 };
 
 //hover text effect

@@ -16,6 +16,12 @@ const MessageContent = styled.div`
   border: 6px solid ${props => props.theme.themeColor};
   color: ${props => props.theme.themeColor};
   font-weight: bold;
+  
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+    margin: 0 20px;
+    font-size: 0.8em;
+    
+  }
 `;
 
 const ErrorMessage = (props) => {

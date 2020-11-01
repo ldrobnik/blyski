@@ -29,7 +29,7 @@ const Backdrop = styled.div`
   background: ${props => props.theme.lightColor};
 `;
 
-const Spinner = () => {
+const Spinner = props => {
 
     return (
         <React.Fragment>
@@ -38,7 +38,7 @@ const Spinner = () => {
                     <img
                         src={animatedLogo}
                         alt='loading spinner'
-                        className={getRandomRotationClass()}
+                        className={props.spinnerClass}
                     />
             </SpinnerWrapper>
             <Backdrop/>

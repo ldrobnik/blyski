@@ -10,8 +10,8 @@ import Text from '../Text/Text';
 import About from '../About/About';
 import Spinner from '../UI/Spinner/Spinner';
 
-import {WP_URL_FRAGMENT, FALLBACK_ISSUE} from '../../data/constants';
-import {setPageLoaded, setError, setIssues, setSuppressSpinner} from '../../actions/index';
+import {WP_URL_FRAGMENT, FALLBACK_ISSUE, getRandomRotationClass} from '../../data/constants';
+import {setPageLoaded, setIssues, setError} from '../../actions/index';
 
 /* STYLED COMPONENTS */
 const GlobalStyle = createGlobalStyle`
@@ -31,9 +31,8 @@ const GlobalStyle = createGlobalStyle`
 
 const Home = (props) => {
 
-    //specifies whether the spinner should be hidden
-    const [spinnerHidden, setSpinnerHidden] = useState(false);
-
+    //Class to be applied to the spinner depending on the current time
+    const [spinnerClass, setSpinnerClass] = useState(getRandomRotationClass());
     //Wordpress API URL
     const WP_API_URL = process.env.REACT_APP_WP_API_URL;
 
@@ -50,18 +49,12 @@ const Home = (props) => {
     //updates loading status as not loaded, then changes it back to loaded
     const setTempAsNotLoaded = () => {
         props.setPageLoaded(false);
-        setTimeout(() => props.setPageLoaded(true), 400);
+        setTimeout(() => {
+            props.setPageLoaded(true);
+            setSpinnerClass(getRandomRotationClass()); //update spinner class
+        }, 400);
     };
 
-    //temporarily suppresses the spinner (so that the glider doesn't change direction after data are fetched)
-    const tempSuppressSpinner = () => {
-        setSpinnerHidden(true);
-        setTimeout(() => setSpinnerHidden(false), 5000);
-    };
-    //updates error status to true
-    const setError = () => {
-        props.setError(true);
-    };
 
     //Compiles an object containing all issue data based on an array of data of individual texts
     const compileIssue = (issueNo, date, issueTexts) => {
@@ -166,8 +159,6 @@ const Home = (props) => {
         fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
             return response.json();
         }).then(texts => {
-            //Change error status in the Redux store
-            props.setError(false);
 
             //process the data to organise texts into issues
             const issueData = processTexts(texts);
@@ -178,8 +169,6 @@ const Home = (props) => {
             //set the page as loaded to turn off spinner
             setAsLoaded();
 
-            //temporarily suppress the spinner so that the glider doesn't change direction once data are fetched
-            tempSuppressSpinner();
         }).catch(err => {
             //Change error status in the Redux store
             props.setError(true);
@@ -211,7 +200,7 @@ const Home = (props) => {
                 <Route path="/:issue/:slug" exact component={Text} key="text"/>
                 <Route render={() => (<Redirect to="/"/>)} key="default"/>
             </Switch>
-            {!spinnerHidden && !props.pageLoaded && <Spinner />}
+            {!props.pageLoaded && <Spinner spinnerClass={spinnerClass}/>}
         </React.Fragment>
     );
 };
