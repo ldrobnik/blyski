@@ -190,7 +190,7 @@ export const WEBSITE_TEXT = {
             <p>Z&nbsp;kolei <strong>błyski</strong> to nieregularnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej
                 popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi: zawiera pięć jego tekstów plus biogram – i&nbsp;tyle.</p>
         </React.Fragment>,
-        contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski [at] gmail [dot] com.</React.Fragment>,
+        contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski.pismo [at] gmail [dot] com.</React.Fragment>,
         desclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich wyłącznie przekłady tekstów napisanych
             po angielsku, dlatego niestety nie rozpatruję propozycji wydawniczych, choć do samego pisania flash fiction gorąco zachęcam!</React.Fragment>,
         credits: <React.Fragment>red. nacz. –&nbsp;ja, dobór tekstów –&nbsp;ja, przekłady –&nbsp;ja, projekt strony –&nbsp;ja*</React.Fragment>,
