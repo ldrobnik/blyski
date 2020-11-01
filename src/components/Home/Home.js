@@ -11,7 +11,7 @@ import About from '../About/About';
 import Spinner from '../UI/Spinner/Spinner';
 
 import {WP_URL_FRAGMENT, FALLBACK_ISSUE} from '../../data/constants';
-import {setPageLoaded, setError, setIssues} from '../../actions/index';
+import {setPageLoaded, setError, setIssues, setSuppressSpinner} from '../../actions/index';
 
 /* STYLED COMPONENTS */
 const GlobalStyle = createGlobalStyle`
@@ -30,6 +30,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Home = (props) => {
+
+    //specifies whether the spinner should be hidden
+    const [spinnerHidden, setSpinnerHidden] = useState(false);
 
     //Wordpress API URL
     const WP_API_URL = process.env.REACT_APP_WP_API_URL;
@@ -50,6 +53,11 @@ const Home = (props) => {
         setTimeout(() => props.setPageLoaded(true), 400);
     };
 
+    //temporarily suppresses the spinner (so that the glider doesn't change direction after data are fetched)
+    const tempSuppressSpinner = () => {
+        setSpinnerHidden(true);
+        setTimeout(() => setSpinnerHidden(false), 5000);
+    };
     //updates error status to true
     const setError = () => {
         props.setError(true);
@@ -169,6 +177,9 @@ const Home = (props) => {
 
             //set the page as loaded to turn off spinner
             setAsLoaded();
+
+            //temporarily suppress the spinner so that the glider doesn't change direction once data are fetched
+            tempSuppressSpinner();
         }).catch(err => {
             //Change error status in the Redux store
             props.setError(true);
@@ -200,7 +211,7 @@ const Home = (props) => {
                 <Route path="/:issue/:slug" exact component={Text} key="text"/>
                 <Route render={() => (<Redirect to="/"/>)} key="default"/>
             </Switch>
-            {!props.pageLoaded && <Spinner />}
+            {!spinnerHidden && !props.pageLoaded && <Spinner />}
         </React.Fragment>
     );
 };
