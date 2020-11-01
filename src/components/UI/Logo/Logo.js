@@ -83,7 +83,6 @@ const Logo = props => {
     //adds/removes event listener for resize
     useEffect(() => {
 
-        console.log(props.inverted);
         window.addEventListener("resize", handleResize, false);
 
         return () => {
