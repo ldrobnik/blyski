@@ -17,6 +17,12 @@ const Navbar = styled.div`
   div, a {
   max-height: 30px;
   }
+  
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+    padding: 0;
+    margin: 2px;
+  }
+  
 `;
 
 const MainNavbar = props => {

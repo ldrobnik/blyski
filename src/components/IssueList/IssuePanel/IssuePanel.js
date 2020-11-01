@@ -14,7 +14,7 @@ const IssueWrapper = styled.div`
  text-align: center;
  width: 85%;
  padding: 15px;
- margin: 20px 0;
+ margin: 10px 0;
  max-width: 800px;
  
  *::selection {
@@ -25,7 +25,7 @@ const IssueWrapper = styled.div`
  @media all and (min-width: ${props => props.theme.smallScr}) {
   width: 90%;
   padding:30px 15px;
-  margin: 20px 0;
+  margin: 10px 0;
  } 
  
   
