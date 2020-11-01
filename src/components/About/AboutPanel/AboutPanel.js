@@ -38,7 +38,7 @@ const AboutBox = styled.div`
   }
   
   @media all and (max-width: ${props => props.theme.smallScr}) {
-     width: 98%;
+     width: 100%;
       padding: 15px;
       margin: 2px 30px;
     }

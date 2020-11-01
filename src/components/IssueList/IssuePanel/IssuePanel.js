@@ -12,9 +12,9 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 const IssueWrapper = styled.div`
  border: 10px solid ${props => props.theme.themeColor};
  text-align: center;
- margin: 30px;
- padding: 40px;
- width: 50%;
+ width: 90%;
+ padding: 15px;
+ margin: 2px 30px;
  max-width: 800px;
  
  *::selection {
@@ -22,28 +22,29 @@ const IssueWrapper = styled.div`
         background-color: ${props => props.theme.themeColor};
      }
  
- @media all and (max-width: ${props => props.theme.smallScr}) {
-     width: 98%;
-      padding: 15px;
-      margin: 2px 30px;
-    }
-
- 
- @media all and (max-width: ${props => props.theme.mediumScr}) {
+ @media all and (min-width: ${props => props.theme.smallScr}) {
   width: 90%;
   padding:30px 15px;
+  margin: 30px 5px;
  } 
  
   
- @media all and (max-width: ${props => props.theme.largeScr}) {
+ @media all and (min-width: ${props => props.theme.mediumScr}) {
   width: 70%;
-  padding:30px;
-  margin: 10px 30px;
+  padding: 30px;
+  margin: 30px 10px;
  } 
  
- @media all and (max-width: ${props => props.theme.extraLargeScr}) {
+ @media all and (min-width: ${props => props.theme.largeScr}) {
   width: 60%;
   padding:30px;
+  margin: 30px;
+ } 
+ 
+ @media all and (min-width: ${props => props.theme.extraLargeScr}) {
+  width: 50%;
+  padding:40px;
+  margin: 30px;
  } 
 `;
 
