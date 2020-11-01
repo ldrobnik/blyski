@@ -9,9 +9,9 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 /* STYLED COMPONENTS */
 const AboutBox = styled.div`
   z-index: 50;
-  margin: 30px;
-  padding: 40px;
-  width: 50%;
+  margin: 0;
+  padding: 15px;
+  width: 95%;
   max-width: 800px;
   border: 10px solid ${props => props.theme.lightColor};
   color: ${props => props.theme.lightColor};
@@ -37,28 +37,29 @@ const AboutBox = styled.div`
     }
   }
   
-  @media all and (max-width: ${props => props.theme.smallScr}) {
-     width: 100%;
-      padding: 15px;
-      margin: 2px 30px;
-    }
-
- 
- @media all and (max-width: ${props => props.theme.mediumScr}) {
+ @media all and (min-width: ${props => props.theme.smallScr}) {
   width: 90%;
   padding:30px 15px;
+  margin: 10px;
  } 
  
   
- @media all and (max-width: ${props => props.theme.largeScr}) {
+ @media all and (min-width: ${props => props.theme.mediumScr}) {
   width: 70%;
-  padding:30px;
-  margin: 10px 30px;
+  padding: 30px;
+  margin: 20px;
  } 
  
- @media all and (max-width: ${props => props.theme.extraLargeScr}) {
+ @media all and (min-width: ${props => props.theme.largeScr}) {
   width: 60%;
   padding:30px;
+  margin: 30px;
+ } 
+ 
+ @media all and (min-width: ${props => props.theme.extraLargeScr}) {
+  width: 50%;
+  padding:40px;
+  margin: 30px;
  } 
   
 `;
