@@ -21,8 +21,7 @@ const TextWrapper = styled.div`
   width: 85%;
   
   p {
-    margin-block-start: 0.8em;
-    margin-block-end: 0.8em;
+    margin: 0.8em 0;
   }
   
   *::selection {
