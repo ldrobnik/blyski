@@ -47,7 +47,7 @@ color: ${props => props.theme.lightColor};
     }
     @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 0.9em;
-      padding: 6px 2px;
+      padding: 6px 4px;
     }
 `;
 
@@ -97,7 +97,7 @@ color: ${props => props.theme.themeColor};
     }
     @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 0.9em;
-      padding: 6px 2px;
+      padding: 6px 4px;
     }
 
 `;
