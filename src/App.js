@@ -42,6 +42,7 @@ function App() {
         mediumScr: '750px',
         largeScr: '1000px',
         extraLargeScr: '1600px',
+        hugeScr: '2100px',
 
         //opacity
         slightlyTranslucent: '0.7',

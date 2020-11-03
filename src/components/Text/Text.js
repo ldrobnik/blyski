@@ -19,6 +19,7 @@ const TextWrapper = styled.div`
   padding: 20px 15px;
   font-size: 1.2em;
   width: 85%;
+  max-width: 750px;
   
   p {
     margin: 0.8em 0;
@@ -31,23 +32,28 @@ const TextWrapper = styled.div`
      
   @media all and (min-width: ${props => props.theme.smallScr}) {
   width: 90%;
-  padding:20px 15px;
+  padding:25px 45px;
  } 
  
   
  @media all and (min-width: ${props => props.theme.mediumScr}) {
   width: 80%;
-  padding: 20px;
+  padding: 40px 60px;
  } 
  
  @media all and (min-width: ${props => props.theme.largeScr}) {
-  width: 70%;
-  padding:20px 25px;
+  width: 60%;
+  padding:45px 10vw;
  } 
  
  @media all and (min-width: ${props => props.theme.extraLargeScr}) {
-  width: 65%;
-  padding:20px 25px;
+  width: 40%;
+  padding:45px 10vw;
+ } 
+ 
+ @media all and (min-width: ${props => props.theme.hugeScr}) {
+  width: 30vw;
+  padding:45px 10vw;
  } 
 `;
 
