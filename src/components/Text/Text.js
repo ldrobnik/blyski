@@ -17,7 +17,8 @@ const ContentWrapper = styled.div`
 const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
   padding: 20px 15px;
-  font-size: 1.2em;
+  font-size: 1em;
+  line-height: 1.5em;
   width: 85%;
   max-width: 750px;
   
@@ -39,21 +40,25 @@ const TextWrapper = styled.div`
  @media all and (min-width: ${props => props.theme.mediumScr}) {
   width: 80%;
   padding: 40px 60px;
+  font-size: 1.2em;
  } 
  
  @media all and (min-width: ${props => props.theme.largeScr}) {
   width: 60%;
   padding:45px 10vw;
+  font-size: 1.2em;
  } 
  
  @media all and (min-width: ${props => props.theme.extraLargeScr}) {
   width: 40%;
   padding:45px 10vw;
+  font-size: 1.2em;
  } 
  
  @media all and (min-width: ${props => props.theme.hugeScr}) {
   width: 30vw;
   padding:45px 10vw;
+  font-size: 1.2em;
  } 
 `;
 
