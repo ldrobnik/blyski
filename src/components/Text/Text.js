@@ -6,6 +6,7 @@ import TextNavbar from './TextNavbar/TextNavbar';
 import Story from './Story/Story';
 import Bio from './Bio/Bio';
 import TextButton from './TextButton/TextButton';
+import Separator from '../UI/Separator/Separator';
 import {AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
 
 /** STYLED COMPONENTS **/
@@ -176,11 +177,16 @@ const Text = (props) => {
                         issueNumber={issueNumber}
                         textContent={textContent}
                     />}
-                    {(props.pageLoaded && props.issues[issueNumber - 1]) && <TextButton
+                    {(props.pageLoaded && props.issues[issueNumber - 1]) &&
+                        <React.Fragment>
+                            <Separator/>
+                            <TextButton
                         textID={textID}
                         issueNumber={issueNumber}
                         slug={((textID < 4) && (textID !== -2)) ? props.issues[issueNumber - 1].texts[textID + 1].slug : null}
-                    />}
+                    />
+                        </React.Fragment>
+                    }
                 </TextWrapper>
             </ContentWrapper>
         </AnimatedContent>

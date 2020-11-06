@@ -47,7 +47,6 @@ const Bio = (props) => {
             <AuthorWorks
                 works={AUTHOR_LINKS[props.issueNumber - 1].works}
             />
-            <Separator/>
         </React.Fragment>
     );
 };
