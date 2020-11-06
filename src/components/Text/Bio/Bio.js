@@ -17,11 +17,13 @@ const Author = styled.div`
 
 const TextBody = styled.div`
   text-align: center;
+  font-family: ${props => props.theme.serif};
 `;
 
 const Heading = styled.div`
   text-align: center;
   padding: 5px;
+  font-family: ${props => props.theme.serif};
 `;
 
 const Bio = (props) => {

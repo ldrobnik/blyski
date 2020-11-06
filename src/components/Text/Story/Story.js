@@ -21,7 +21,7 @@ const TranslatedBy = styled.div`
 `;
 
 const TextBody = styled.div`
-
+font-family: ${props => props.theme.serif};
 `;
 const Story = props => {
 
