@@ -197,7 +197,7 @@ export const WEBSITE_TEXT = {
         footnote: <React.Fragment><HoverableLink href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja
             = Łukasz Drobnik</HoverableLink></React.Fragment>,
         button: 'strona główna',
-        copyright: <React.Fragment>&copy; 2020 Łukasz Drobnik; logo: <a href="https://en.wikipedia.org/wiki/File:Game_of_life_animated_glider_2.gif" target="_blank" rel="noopener noreferrer">Dhatfield</a> (z&nbsp;modyfikacjami, licencja: <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>)</React.Fragment>
+        copyright: <React.Fragment>&copy; 2020 Łukasz Drobnik</React.Fragment>
     },
     text: {
         navbar: {
