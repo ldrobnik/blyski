@@ -19,7 +19,7 @@ const TextWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
   padding: 20px 15px;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.8em;
   width: 85%;
   max-width: 750px;
   
