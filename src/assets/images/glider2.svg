@@ -1,3 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198" height="198" viewBox="0 0 198 198">
-  <image id="Warstwa_1" data-name="Warstwa 1" x="19" y="19" width="160" height="160" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAB6ElEQVR4nO3dsRGDMBAAQfDQictx/324A1wCAcHx1m4FD7r5QIn27+d9brPtw+e/a/T5vR4wAwsTICkBkhIgKQGSEiApAZISICkBkhIgKQGSEiApAZISICkBkhIgKQGSEiApAZISICkBkhIgKQGSEiApAZISICkBkhIgKQGSEiApAZISICkBkhIgKQGSEiApAZISICkBkhIgKQGSEiApAZISICkBkhIgKQGSOry3O97o87MBSQmQlABJCZCUAEkJkJQASR0L/P7zATPccXXPN/r7bEBSAiQlQFICJCVAUgIkJUBSAiQlQFICJCVAUgIkJUBSAiQlQFICJCVAUgIkJUBSAiQlQFICJCVAUgIkJUBSAiQlQFICJCVAUgIkJUBSAiQlQFICJCVAUgIkJUBSAiQlQFICJCVAUgIkJUBSAiQlQFICJCVAUiu8F3z13u50o7/PBiQlQFICJCVAUgIkJUBSAiS1wj3g+YAZ7vjre0wbkJQASQmQlABJCZCUAEkJkJQASQmQlABJCZCUAEkJkJQASQmQlABJCZCUAEkJkJQASQmQlABJCZCUAEkJkJQASQmQlABJCZCUAEkJkJQASQmQlABJCZCUAEkJkJQASQmQlABJCZCUAEkJkJQASQmQlABJCZDOtm0/EI0HqG/QSYIAAAAASUVORK5CYII="/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 210 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,70)">
+        <rect x="77" y="7" width="56" height="56" style="fill:rgb(240,75,35);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,0,-70)">
+        <rect x="147" y="77" width="56" height="56" style="fill:rgb(240,75,35);"/>
+    </g>
+    <g transform="matrix(1,0,0,1.06161,0,-79.0569)">
+        <rect x="147" y="147" width="56" height="52.75" style="fill:rgb(240,75,35);"/>
+    </g>
+    <rect x="77" y="147" width="56" height="56" style="fill:rgb(240,75,35);"/>
+    <g transform="matrix(1,0,0,1,0,-140)">
+        <rect x="7" y="147" width="56" height="56" style="fill:rgb(240,75,35);"/>
+    </g>
 </svg>
