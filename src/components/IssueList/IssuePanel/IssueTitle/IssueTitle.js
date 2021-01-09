@@ -24,7 +24,7 @@ const IssueName = styled.div`
   font-weight: bold;
   color: ${props => props.theme.themeColor};
   padding-left: 10px;
-  transform: translateY(-8px);
+  //transform: translateY(-4px);
   
   @media all and (max-width: ${props => props.theme.largeScr}) {
   font-size: 4em;
@@ -63,7 +63,7 @@ const IssueDate = styled.div`
   font-size: 1.2em;
   font-weight: bold;
   color: ${props => props.theme.themeColor};
-  transform: translateY(-20px);
+  transform: translateY(-14px);
   
   @media all and (max-width: ${props => props.theme.mediumScr}) {
   font-size: 1em;
