@@ -5,9 +5,15 @@ import {WEBSITE_TEXT} from "../../../data/constants";
 /* STYLED COMPONENTS */
 const TextTitle = styled.div`
  color: ${props => props.theme.themeColor};
- font-size: 1.8em;
+ font-size: 2.5em;
  font-weight: bold;
- padding: 5px 0;
+ padding: 10px 0;
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+    font-size: 1.8em;
+    line-height: 1em;
+ }
+  
 `;
 
 const Author = styled.div`
