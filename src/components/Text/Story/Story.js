@@ -8,10 +8,10 @@ const TextTitle = styled.div`
  font-size: 2.5em;
  font-weight: bold;
  padding: 10px 0;
+  line-height: 1em;
   
   @media all and (max-width: ${props => props.theme.smallScr}) {
     font-size: 1.8em;
-    line-height: 1em;
  }
   
 `;
