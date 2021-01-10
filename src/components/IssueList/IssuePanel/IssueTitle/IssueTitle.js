@@ -73,13 +73,13 @@ const IssueDate = styled.div`
   
   @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 0.8em;
-      transform: translateY(-10px);
+      transform: translateY(-2px);
       text-align: center;
     }
     
   @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 0.7em;
-      transform: translateY(-10px);
+      transform: translateY(-2px);
     }
   
 `;
