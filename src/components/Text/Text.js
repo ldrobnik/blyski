@@ -95,6 +95,7 @@ const Text = (props) => {
     //get issue number based on url parameter
     let issueNumber = props.match.params.issue;
 
+
     //if issue number doesn't exceed array length get text id based on url parameters
     let textID = (issueNumber <= props.issues.length) ? checkTextID(issueNumber, props.match.params.slug) : -1;
 

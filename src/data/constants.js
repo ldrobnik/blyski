@@ -221,6 +221,44 @@ export const AUTHOR_LINKS = [
     {
         links: [
             {
+                icon: twitterIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: instagramIcon,
+                url: 'https://twitter.com/drobnik'
+            },
+            {
+                icon: facebookIcon,
+                url: 'https://twitter.com/drobnik'
+            }
+        ],
+        works: [
+            {
+                title: '„Cellulose” [FlashFlood]',
+                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
+            },
+            {
+                title: '„Nameless” [Akashic Books]',
+                url: 'http://www.akashicbooks.com/nameless-by-lukasz-drobnik/'
+            },
+            {
+                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
+                url: 'https://atticusreview.org/treasures/'
+            },
+            {
+                title: '„Deadlines” [Storgy]',
+                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
+            },
+            {
+                title: '„Spores” [X-R-A-Y Literary Magazine]',
+                url: 'https://xraylitmag.com/spores-lukasz-drobnik/fiction/'
+            }
+        ]
+    },
+    {
+        links: [
+            {
                 icon: websiteIcon,
                 url: 'https://drobnik.co'
             },

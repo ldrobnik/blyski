@@ -6,6 +6,7 @@ import photo1 from '../../../../assets/images/authorPhotos/1.jpg';
 import photo2 from '../../../../assets/images/authorPhotos/2.jpg';
 import photo3 from '../../../../assets/images/authorPhotos/3.jpg';
 import photo4 from '../../../../assets/images/authorPhotos/4.jpg';
+import photo5 from '../../../../assets/images/authorPhotos/5.jpg';
 
 /*STYLED COMPONENTS*/
 const Wrapper = styled.div`
@@ -61,7 +62,7 @@ const AuthorPhoto = (props) => {
     const [visible, setVisible] = useState(false);
 
     //array with all photo sources
-    const authorPhotos = [photo1, photo2, photo3, photo4];
+    const authorPhotos = [photo1, photo2, photo3, photo4, photo5];
 
     //sets photo visibility to true
     const showPhoto = () => {
