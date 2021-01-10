@@ -28,6 +28,7 @@ const TranslatedBy = styled.div`
 
 const TextBody = styled.div`
   font-family: ${props => props.theme.serif};
+  font-size: 1.1em;
 `;
 const Story = props => {
 
