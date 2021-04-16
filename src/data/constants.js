@@ -284,7 +284,7 @@ export const AUTHOR_LINKS = [
                     url: 'https://triquarterly.org/issues/issue-159/water-blood'
                 },
                 {
-                    title: '„While The Men Go Hunt the Shark, Mrs. Brody Meets Her Lover” [SmokeLong Quarterly]',
+                    title: '„While The Men Go Hunt the Shark, Mrs. Brody Meets Her Lover” [Hobart]',
                     url: 'https://www.hobartpulp.com/web_features/while-the-men-go-hunt-the-shark-mrs-brody-meets-her-lover'
                 },
                 {
