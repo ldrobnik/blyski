@@ -43,11 +43,11 @@ color: ${props => props.theme.lightColor};
 
   @media all and (max-width: ${props => props.theme.smallScr}) {
       font-size: 1em;
-      padding: 10px 6px;
+      padding: 10px 8px;
     }
     @media all and (max-width: ${props => props.theme.tinyScr}) {
       font-size: 0.9em;
-      padding: 6px 4px;
+      padding: 6px 8px;
     }
 `;
 
