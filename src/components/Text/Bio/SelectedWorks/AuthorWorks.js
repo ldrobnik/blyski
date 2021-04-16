@@ -16,6 +16,7 @@ const Heading = styled.div`
   font-style: italic;
   padding: 5px;
   font-family: ${props => props.theme.serif};
+  margin-top: 0.5em;
 `;
 
 const AuthorWorks = props => {
