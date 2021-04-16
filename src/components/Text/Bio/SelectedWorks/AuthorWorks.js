@@ -6,9 +6,16 @@ const ListWrapper = styled.div`
   text-align: center;
 `;
 
-const LinkList = styled.div`
+const LinkWrapper = styled.div`
   margin: 5px;
   padding: 10px;
+`;
+
+const LinkList = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const Heading = styled.div`
@@ -28,7 +35,7 @@ const AuthorWorks = props => {
                     return (
                         <div key={selection.heading + '_key'}>
                             {selection.heading && <Heading>{selection.heading}</Heading>}
-                            <div>
+                            <LinkList>
                                 {selection.links.map((link) => {
                                 return (
                                 <AuthorLink
@@ -38,7 +45,7 @@ const AuthorWorks = props => {
                                 />
                                 );
                             })}
-                            </div>
+                            </LinkList>
 
                         </div>
                     )
