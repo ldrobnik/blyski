@@ -4,7 +4,8 @@ import {
     faTwitterSquare,
     faFacebookSquare,
     faInstagram,
-    faMedium
+    faMedium,
+    faPatreon
 } from '@fortawesome/free-brands-svg-icons';
 import {
     faInfoCircle,
@@ -153,6 +154,17 @@ const websiteIcon = (
     </React.Fragment>
 );
 
+const patreonIcon = (
+    <React.Fragment>
+        <FontAwesomeIcon
+            icon={faPatreon}
+            aria-hidden="true"
+            title="Patreon">
+        </FontAwesomeIcon>
+        <span className="sr-only">Patreon</span>
+    </React.Fragment>
+);
+
 //Text used on the website
 export const WEBSITE_TEXT = {
     title: {
@@ -232,6 +244,10 @@ export const AUTHOR_LINKS = [
                 url: 'https://www.meganpillow.com/'
             },
             {
+                icon: patreonIcon,
+                url: 'https://www.patreon.com/submergedarchive/'
+            },
+            {
                 icon: twitterIcon,
                 url: 'https://twitter.com/megpillow'
             }
@@ -258,6 +274,10 @@ export const AUTHOR_LINKS = [
                 {
                     title: '„Margo. Turn Left.” [Passages North]',
                     url: 'https://www.passagesnorth.com/passagesnorthcom/2019/9/13/margo-turn-left-by-megan-pillow-davis'
+                },
+                {
+                    title: '„Long Live The Girl Detective” [Electric Lit]',
+                    url: 'https://electricliterature.com/long-live-the-girl-detective-by-megan-pillow/'
                 },
                 {
                     title: '„Water in the Blood” [Triquarterly]',
