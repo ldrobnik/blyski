@@ -228,16 +228,12 @@ export const AUTHOR_LINKS = [
     {
         links: [
             {
+                icon: websiteIcon,
+                url: 'https://www.meganpillow.com/'
+            },
+            {
                 icon: twitterIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: instagramIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: facebookIcon,
-                url: 'https://twitter.com/drobnik'
+                url: 'https://twitter.com/megpillow'
             }
         ],
         works: [{
