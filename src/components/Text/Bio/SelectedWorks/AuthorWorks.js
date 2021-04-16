@@ -37,7 +37,6 @@ const AuthorWorks = props => {
                                 />
                                 );
                             })}
-                                }
                             </div>
 
                         </div>
