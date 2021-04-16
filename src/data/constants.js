@@ -197,7 +197,7 @@ export const WEBSITE_TEXT = {
         footnote: <React.Fragment><HoverableLink href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja
             = Łukasz Drobnik</HoverableLink></React.Fragment>,
         button: 'strona główna',
-        copyright: <React.Fragment>&copy; 2020 Łukasz Drobnik</React.Fragment>
+        copyright: <React.Fragment>&copy; 2021 Łukasz Drobnik</React.Fragment>
     },
     text: {
         navbar: {
