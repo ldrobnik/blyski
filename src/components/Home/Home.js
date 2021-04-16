@@ -190,7 +190,7 @@ const Home = (props) => {
 
     useEffect(() => {
         //once texts are loaded, show spinner temporarily when URL changes
-        if (props.issues.length > 1) setTempAsNotLoaded();
+        if (props.issues.length > 0) setTempAsNotLoaded();
     }, [props.match.params]);
 
     return (

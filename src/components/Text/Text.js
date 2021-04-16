@@ -139,14 +139,14 @@ const Text = (props) => {
         }
     });
 
-    // useEffect(() => {
-    //     //when path changes, make content invisible, then turn it on
-    //     setContentVisible(false);
-    //
-    //     if (props.pageLoaded) {
-    //         setTimeout(() => setContentVisible(true), fadeTimeout);
-    //     }
-    // }, [props.match.params]);
+    useEffect(() => {
+        //when path changes, make content invisible, then turn it on
+        setContentVisible(false);
+
+        if (props.pageLoaded) {
+            setTimeout(() => setContentVisible(true), fadeTimeout);
+        }
+    }, [props.match.params]);
 
     //text title to be displayed - author name for bio, text title for pieces
     let textTitle = "";
