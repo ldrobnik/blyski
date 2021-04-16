@@ -285,7 +285,7 @@ export const AUTHOR_LINKS = [
                 },
                 {
                     title: '„While The Men Go Hunt the Shark, Mrs. Brody Meets Her Lover” [SmokeLong Quarterly]',
-                    url: 'https://hobartpulp.com/web_features/while-the-men-go-hunt-the-shark-mrs-brody-meets-her-lover'
+                    url: 'https://www.hobartpulp.com/web_features/while-the-men-go-hunt-the-shark-mrs-brody-meets-her-lover'
                 },
                 {
                     title: '„Look What You Made Me Do” [BULL]',
@@ -318,7 +318,7 @@ export const AUTHOR_LINKS = [
                     },
                     {
                         title: '„Horror Lives In The Body” [Electric Lit]',
-                        url: ': https://electricliterature.com/horror-lives-in-the-body/'
+                        url: 'https://electricliterature.com/horror-lives-in-the-body/'
                     }
                 ]
             }
