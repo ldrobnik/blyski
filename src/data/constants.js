@@ -41,39 +41,39 @@ export const getRandomRotationClass = () => {
     let currentSeconds = currentDate.getSeconds();
 
     //Number between 0 and 3 depending on the current seconds value
-    const classNumber = Math.floor(currentSeconds/15);
+    const classNumber = Math.floor(currentSeconds / 15);
 
     return getRotationClass(classNumber);
 };
 
 //hover text effect
 const HoverableLink = styled.a`
-display: inline-block;
-position: relative;
-overflow: hidden;
-cursor: pointer;
-transition: all 0.2s ease-in;
-padding: 5px;
-
-&:hover {
-color: ${props => props.theme.themeColor};
-}
-
-&:before {
-  content: '';
-  background-color: ${props => props.theme.lightColor};
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  left: 0;
-  top: 0;
-  z-index: -20;
-  transform: translateY(100%);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
   transition: all 0.2s ease-in;
-}
+  padding: 5px;
+
+  &:hover {
+    color: ${props => props.theme.themeColor};
+  }
+
+  &:before {
+    content: '';
+    background-color: ${props => props.theme.lightColor};
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    left: 0;
+    top: 0;
+    z-index: -20;
+    transform: translateY(100%);
+    transition: all 0.2s ease-in;
+  }
 
   &:hover:before {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
   }
 `;
 
@@ -132,15 +132,15 @@ const mediumIcon = (
     </React.Fragment>);
 
 const backIcon = (
-        <React.Fragment>
-            <FontAwesomeIcon
-                icon={faAngleDoubleLeft}
-                aria-hidden="true"
-                title="Strona główna">
-            </FontAwesomeIcon>
-            <span className="sr-only">Strona główna</span>
-        </React.Fragment>
-    );
+    <React.Fragment>
+        <FontAwesomeIcon
+            icon={faAngleDoubleLeft}
+            aria-hidden="true"
+            title="Strona główna">
+        </FontAwesomeIcon>
+        <span className="sr-only">Strona główna</span>
+    </React.Fragment>
+);
 
 const websiteIcon = (
     <React.Fragment>
@@ -186,14 +186,21 @@ export const WEBSITE_TEXT = {
         title: "błyski",
         subtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
         content: <React.Fragment>
-            <p><strong>Flash fiction</strong> to bardzo krótkie prozy nieprzekraczające – zależnie od definicji – 1000 lub 1500&nbsp;słów objętości. W&nbsp;odróżnieniu od prozy poetyckiej zawsze mają fabułę.</p>
-            <p>Z&nbsp;kolei <strong>błyski</strong> to nieregularnik, który stawia sobie za cel przybliżenie polskim czytelnikom tej
-                popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi: zawiera pięć jego tekstów plus biogram – i&nbsp;tyle.</p>
+            <p><strong>Flash fiction</strong> to bardzo krótkie prozy nieprzekraczające – zależnie od definicji – 1000
+                lub 1500&nbsp;słów objętości. W&nbsp;odróżnieniu od prozy poetyckiej zawsze mają fabułę.</p>
+            <p>Z&nbsp;kolei <strong>błyski</strong> to nieregularnik, który stawia sobie za cel przybliżenie polskim
+                czytelnikom tej
+                popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi: zawiera pięć
+                jego tekstów plus biogram – i&nbsp;tyle.</p>
         </React.Fragment>,
-        contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski.pismo [at] gmail [dot] com.</React.Fragment>,
-        desclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich wyłącznie przekłady tekstów napisanych
-            po angielsku, dlatego niestety nie rozpatruję propozycji wydawniczych, choć do samego pisania flash fiction gorąco zachęcam!</React.Fragment>,
-        credits: <React.Fragment>red. nacz. –&nbsp;ja, dobór tekstów –&nbsp;ja, przekłady –&nbsp;ja, projekt strony –&nbsp;ja*</React.Fragment>,
+        contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski.pismo [at] gmail [dot]
+            com.</React.Fragment>,
+        desclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich wyłącznie przekłady
+            tekstów napisanych
+            po angielsku, dlatego niestety nie rozpatruję propozycji wydawniczych, choć do samego pisania flash fiction
+            gorąco zachęcam!</React.Fragment>,
+        credits: <React.Fragment>red. nacz. –&nbsp;ja, dobór tekstów –&nbsp;ja, przekłady –&nbsp;ja, projekt strony
+            –&nbsp;ja*</React.Fragment>,
         footnote: <React.Fragment><HoverableLink href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja
             = Łukasz Drobnik</HoverableLink></React.Fragment>,
         button: 'strona główna',
@@ -233,202 +240,71 @@ export const AUTHOR_LINKS = [
                 url: 'https://twitter.com/drobnik'
             }
         ],
-        works: [
+        works: [{
+            heading: "Proza",
+            links: [
+                {
+                    title: '„We All Know About Margo” [SmokeLong Quarterly]',
+                    url: 'http://www.smokelong.com/we-all-know-about-margo/'
+                },
+                {
+                    title: '„In the New World” [Longleaf Review]',
+                    url: 'http://longleafreview.com/in-the-new-world/'
+                },
+                {
+                    title: '„After the Wal-Mart Closes in Your Hometown” [Pithead Chapel]',
+                    url: 'https://pitheadchapel.com/after-the-wal-mart-closes-in-your-hometown/'
+                },
+                {
+                    title: '„Lily in the Light” [X-R-A-Y Literary Magazine]',
+                    url: 'http://x-r-a-y.com/lily-in-the-light-by-megan-pillow-davis-2/fiction/'
+                },
+                {
+                    title: '„Margo. Turn Left.” [Passages North]',
+                    url: 'https://www.passagesnorth.com/passagesnorthcom/2019/9/13/margo-turn-left-by-megan-pillow-davis'
+                },
+                {
+                    title: '„Water in the Blood” [Triquarterly]',
+                    url: 'https://triquarterly.org/issues/issue-159/water-blood'
+                },
+                {
+                    title: '„While The Men Go Hunt the Shark, Mrs. Brody Meets Her Lover” [SmokeLong Quarterly]',
+                    url: 'https://hobartpulp.com/web_features/while-the-men-go-hunt-the-shark-mrs-brody-meets-her-lover'
+                },
+                {
+                    title: '„Look What You Made Me Do” [BULL]',
+                    url: 'http://bullmensfiction.com/fiction/look-what-you-made-me-do/'
+                },
+                {
+                    title: '„Yell Louder” [Atticus Review]',
+                    url: 'https://atticusreview.org/yell-louder/'
+                }
+            ]
+        },
             {
-                title: '„Cellulose” [FlashFlood]',
-                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
-            },
-            {
-                title: '„Nameless” [Akashic Books]',
-                url: 'http://www.akashicbooks.com/nameless-by-lukasz-drobnik/'
-            },
-            {
-                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
-                url: 'https://atticusreview.org/treasures/'
-            },
-            {
-                title: '„Deadlines” [Storgy]',
-                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
-            },
-            {
-                title: '„Spores” [X-R-A-Y Literary Magazine]',
-                url: 'https://xraylitmag.com/spores-lukasz-drobnik/fiction/'
-            }
-        ]
-    },
-    {
-        links: [
-            {
-                icon: websiteIcon,
-                url: 'https://drobnik.co'
-            },
-            {
-                icon: twitterIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: instagramIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: facebookIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: mediumIcon,
-                url: 'https://medium.com/@drobnik'
-            }
-        ],
-        works: [
-            {
-                title: '„Cellulose” [FlashFlood]',
-                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
-            },
-            {
-                title: '„Nameless” [Akashic Books]',
-                url: 'http://www.akashicbooks.com/nameless-by-lukasz-drobnik/'
-            },
-            {
-                title: '„A very long and winding title, so long that it won’t probably fit into one line” [Pithead Chapel]',
-                url: 'https://pitheadchapel.com/entrails/'
-            },
-            {
-                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
-                url: 'https://atticusreview.org/treasures/'
-            },
-            {
-                title: '„Deadlines” [Storgy]',
-                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
-            },
-            {
-                title: '„Spores” [X-R-A-Y Literary Magazine]',
-                url: 'https://xraylitmag.com/spores-lukasz-drobnik/fiction/'
-            }
-        ]
-    },
-    {
-        links: [
-            {
-                icon: websiteIcon,
-                url: 'https://drobnik.co'
-            },
-            {
-                icon: twitterIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: instagramIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: facebookIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: mediumIcon,
-                url: 'https://medium.com/@drobnik'
-            }
-        ],
-        works: [
-            {
-                title: '„Cellulose” [FlashFlood]',
-                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
-            },
-            {
-                title: '„Nameless” [Akashic Books]',
-                url: 'http://www.akashicbooks.com/nameless-by-lukasz-drobnik/'
-            },
-            {
-                title: '„A very long and winding title, so long that it won’t probably fit into one line” [Pithead Chapel]',
-                url: 'https://pitheadchapel.com/entrails/'
-            },
-            {
-                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
-                url: 'https://atticusreview.org/treasures/'
-            },
-            {
-                title: '„Deadlines” [Storgy]',
-                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
-            },
-            {
-                title: '„Spores” [X-R-A-Y Literary Magazine]',
-                url: 'https://xraylitmag.com/spores-lukasz-drobnik/fiction/'
-            }
-        ]
-    },
-    {
-        links: [
-            {
-                icon: twitterIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: instagramIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: facebookIcon,
-                url: 'https://twitter.com/drobnik'
-            }
-        ],
-        works: [
-            {
-                title: '„Cellulose” [FlashFlood]',
-                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
-            },
-            {
-                title: '„Nameless” [Akashic Books]',
-                url: 'http://www.akashicbooks.com/nameless-by-lukasz-drobnik/'
-            },
-            {
-                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
-                url: 'https://atticusreview.org/treasures/'
-            },
-            {
-                title: '„Deadlines” [Storgy]',
-                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
-            },
-            {
-                title: '„Spores” [X-R-A-Y Literary Magazine]',
-                url: 'https://xraylitmag.com/spores-lukasz-drobnik/fiction/'
-            }
-        ]
-    },
-    {
-        links: [
-            {
-                icon: websiteIcon,
-                url: 'https://drobnik.co'
-            },
-            {
-                icon: twitterIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: facebookIcon,
-                url: 'https://twitter.com/drobnik'
-            },
-            {
-                icon: mediumIcon,
-                url: 'https://medium.com/@drobnik'
-            }
-        ],
-        works: [
-            {
-                title: '„Cellulose” [FlashFlood]',
-                url: 'http://flashfloodjournal.blogspot.com/2020/06/cellulose-by-ukasz-drobnik.html'
-            },
-            {
-                title: '„A very long and winding title, so long that it won’t probably fit into one line” [Pithead Chapel]',
-                url: 'https://pitheadchapel.com/entrails/'
-            },
-            {
-                title: '„Fake title alert! Fake title alert!” [Atticus Review]',
-                url: 'https://atticusreview.org/treasures/'
-            },
-            {
-                title: '„Deadlines” [Storgy]',
-                url: 'https://storgy.com/2020/02/21/deadlines-by-lukasz-drobnik/'
+                heading: "Non-fiction",
+                links: [
+                    {
+                        title: '„Instructions for Fucking Your Postpartum Wife” [Lost Balloon]',
+                        url: 'https://lost-balloon.com/2021/02/03/your-postpartum-wife-megan-pillow/'
+                    },
+                    {
+                        title: '„Once I Was An Animal” [JMWW]',
+                        url: 'https://jmwwblog.wordpress.com/2020/12/31/creative-nonfiction-once-i-was-an-animal-after-mary-oliver-by-megan-pillow/'
+                    },
+                    {
+                        title: '„The Settle Point” [Gay Magazine]',
+                        url: 'https://gay.medium.com/the-settle-point-a0c5dc767c4c'
+                    },
+                    {
+                        title: '„Whenever Men Think I’m Smiling” [Brevity]',
+                        url: 'https://brevitymag.com/nonfiction/whenever-men-think-im-smiling/'
+                    },
+                    {
+                        title: '„Horror Lives In The Body” [Electric Lit]',
+                        url: ': https://electricliterature.com/horror-lives-in-the-body/'
+                    }
+                ]
             }
         ]
     }
