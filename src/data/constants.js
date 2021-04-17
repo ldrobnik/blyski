@@ -207,7 +207,7 @@ export const WEBSITE_TEXT = {
         </React.Fragment>,
         contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski.pismo [at] gmail [dot]
             com.</React.Fragment>,
-        desclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich wyłącznie przekłady
+        desclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich przekłady
             tekstów napisanych
             po angielsku, dlatego niestety nie rozpatruję propozycji wydawniczych, choć do samego pisania flash fiction
             gorąco zachęcam!</React.Fragment>,
