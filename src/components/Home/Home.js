@@ -163,7 +163,7 @@ const Home = (props) => {
             //process the data to organise texts into issues
             const issueData = processTexts(texts);
 
-            console.log(issueData);
+            // console.log(issueData);
 
             //update the store with the organised issue data
             updateIssues(issueData);
