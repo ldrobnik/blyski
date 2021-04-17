@@ -229,7 +229,7 @@ export const WEBSITE_TEXT = {
         homeButton: 'strona główna',
         bio: {
             moreInfo: 'Więcej informacji:',
-            selectedWorks: 'Wybrane teksty:'
+            selectedWorks: 'Wybrane utwory:'
         }
     },
     error: 'Błąd połączenia. Starsze numery chwilowo niedostępne.'
@@ -252,29 +252,35 @@ export const AUTHOR_LINKS = [
                 url: 'https://twitter.com/megpillow'
             }
         ],
-        works: [{
-            heading: "Proza",
+        works: [
+            {
+                heading: "Teksty z numeru",
+                links: [
+                    {
+                        title: '„We All Know About Margo” [SmokeLong Quarterly]',
+                        url: 'http://www.smokelong.com/we-all-know-about-margo/'
+                    },
+                    {
+                        title: '„In the New World” [Longleaf Review]',
+                        url: 'http://longleafreview.com/in-the-new-world/'
+                    },
+                    {
+                        title: '„After the Wal-Mart Closes in Your Hometown” [Pithead Chapel]',
+                        url: 'https://pitheadchapel.com/after-the-wal-mart-closes-in-your-hometown/'
+                    },
+                    {
+                        title: '„Lily in the Light” [X-R-A-Y Literary Magazine]',
+                        url: 'http://x-r-a-y.com/lily-in-the-light-by-megan-pillow-davis-2/fiction/'
+                    },
+                    {
+                        title: '„Margo. Turn Left.” [Passages North]',
+                        url: 'https://www.passagesnorth.com/passagesnorthcom/2019/9/13/margo-turn-left-by-megan-pillow-davis'
+                    }
+                ]
+            },
+            {
+            heading: "Inna proza",
             links: [
-                {
-                    title: '„We All Know About Margo” [SmokeLong Quarterly]',
-                    url: 'http://www.smokelong.com/we-all-know-about-margo/'
-                },
-                {
-                    title: '„In the New World” [Longleaf Review]',
-                    url: 'http://longleafreview.com/in-the-new-world/'
-                },
-                {
-                    title: '„After the Wal-Mart Closes in Your Hometown” [Pithead Chapel]',
-                    url: 'https://pitheadchapel.com/after-the-wal-mart-closes-in-your-hometown/'
-                },
-                {
-                    title: '„Lily in the Light” [X-R-A-Y Literary Magazine]',
-                    url: 'http://x-r-a-y.com/lily-in-the-light-by-megan-pillow-davis-2/fiction/'
-                },
-                {
-                    title: '„Margo. Turn Left.” [Passages North]',
-                    url: 'https://www.passagesnorth.com/passagesnorthcom/2019/9/13/margo-turn-left-by-megan-pillow-davis'
-                },
                 {
                     title: '„Long Live The Girl Detective” [Electric Lit]',
                     url: 'https://electricliterature.com/long-live-the-girl-detective-by-megan-pillow/'
