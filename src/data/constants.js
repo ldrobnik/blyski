@@ -177,16 +177,16 @@ export const WEBSITE_TEXT = {
             path: '/info'
         },
         {
-            message: twitterIcon,
-            path: 'https://twitter.com/blyskipismo'
+            message: facebookIcon,
+            path: 'https://www.facebook.com/blyskipismo'
         },
         {
             message: instagramIcon,
             path: 'https://www.instagram.com/blyskipismo'
         },
         {
-            message: facebookIcon,
-            path: 'https://www.facebook.com/blyskipismo'
+            message: twitterIcon,
+            path: 'https://twitter.com/blyskipismo'
         }
     ],
     issueList: {
