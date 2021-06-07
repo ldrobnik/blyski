@@ -198,11 +198,11 @@ export const WEBSITE_TEXT = {
         title: "błyski",
         subtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
         content: <React.Fragment>
-            <p><strong>Flash fiction</strong> to bardzo krótkie prozy nieprzekraczające – zależnie od definicji – 1000
-                lub 1500&nbsp;słów objętości. W&nbsp;odróżnieniu od prozy poetyckiej zawsze mają fabułę.</p>
+            <p><strong>Flash fiction</strong> to bardzo krótkie opowiadania – takie do przeczytania w&nbsp;parę minut. W&nbsp;odróżnieniu od prozy poetyckiej zawsze mają fabułę.</p>
             <p>Z&nbsp;kolei <strong>błyski</strong> to nieregularnik, który stawia sobie za cel przybliżenie polskim
                 czytelnikom tej
-                popularnej w&nbsp;świecie anglosaskim formy. Każdy numer jest poświęcony jednemu autorowi: zawiera pięć
+                popularnej w&nbsp;świecie anglosaskim formy.</p>
+            <p>Każdy numer <strong>błysków</strong> jest poświęcony jednemu autorowi: zawiera pięć
                 jego tekstów plus biogram – i&nbsp;tyle.</p>
         </React.Fragment>,
         contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski.pismo [at] gmail [dot]
