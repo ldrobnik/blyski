@@ -5,6 +5,7 @@ import 'moment/locale/pl';
 
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
+import HoverableButton from "../UI/HoverableButton/HoverableButton";
 import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
 
@@ -13,6 +14,7 @@ const List = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 20px;
 
 `;
 
@@ -57,8 +59,6 @@ const IssueList = (props) => {
                         )
                     })
                 }
-            </List>
-            <List>
                 {
                     props.pageLoaded
                     && props.match.params.issue
@@ -69,6 +69,15 @@ const IssueList = (props) => {
                         author={props.issues[props.match.params.issue - 1].author}
                         date={props.issues[props.match.params.issue - 1].date}
                         texts={props.issues[props.match.params.issue - 1].texts}
+                    />
+                }
+                {
+                    props.pageLoaded
+                    && props.match.params.issue
+                    && props.issues[props.match.params.issue - 1]
+                    && <HoverableButton
+                        path='/'
+                        message={WEBSITE_TEXT.issueList.homeButton}
                     />
                 }
             </List>

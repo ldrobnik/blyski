@@ -192,7 +192,8 @@ export const WEBSITE_TEXT = {
     issueList: {
         magazineName: 'błyski',
         translator: <React.Fragment>w&nbsp;przekładzie Łukasza Drobnika</React.Fragment>,
-        bio: 'biogram'
+        bio: 'biogram',
+        homeButton: 'strona główna'
     },
     about: {
         title: "błyski",
