@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import InactiveButton from '../../UI/InactiveButton/InactiveButton';
+import IssueButton from "../IssueButton/IssueButton";
 import {WEBSITE_TEXT, formatIssueNumber} from "../../../data/constants";
 
 const TitleWrapper = styled.div`
@@ -40,7 +41,9 @@ const TextNavbar = props => {
         <React.Fragment>
             <TitleWrapper>
                 <Title>
-                    {formatIssueNumber(props.issueNumber)}
+                    <IssueButton
+                        path={`/${props.issueNumber}`}
+                        message={formatIssueNumber(props.issueNumber)}/>
                 </Title>
             </TitleWrapper>
             <NavbarWrapper>
