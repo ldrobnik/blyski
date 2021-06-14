@@ -39,6 +39,13 @@ const IssueList = (props) => {
         }
     });
 
+    /*The code below displays a list of all issues is the route is '/'
+    * and only a specific issue if the route is '/:issueNumber'.
+    * If there is more than one issue, a homepage button is displayed
+    * so that the user can go back to the list of all issues.
+    * The button is not showing if there is only one issue.
+    */
+
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
@@ -75,6 +82,7 @@ const IssueList = (props) => {
                     props.pageLoaded
                     && props.match.params.issue
                     && props.issues[props.match.params.issue - 1]
+                    && (props.issues.length > 1)
                     && <HoverableButton
                         path='/'
                         message={WEBSITE_TEXT.issueList.homeButton}
