@@ -12,11 +12,8 @@ const TitleWrapper = styled.div`
 `;
 
 const Title = styled.div`
-  color: ${props => props.theme.themeColor};
-  font-weight: bold;
-  font-size: 1.5em;
   border-bottom: solid 10px ${props => props.theme.themeColor};
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 `;
 
 const NavbarWrapper = styled.div`
