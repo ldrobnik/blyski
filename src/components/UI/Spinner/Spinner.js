@@ -12,6 +12,7 @@ const SpinnerWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  user-select: none;
   
   img {
     height: 150px;
