@@ -283,12 +283,12 @@ export const AUTHOR_LINKS = [
             heading: "Inna proza",
             links: [
                 {
-                    title: '„Margo on the Hunt” [Pithead Chapel]',
-                    url: 'https://pitheadchapel.com/margo-on-the-hunt/'
-                },
-                {
                     title: '„Long Live The Girl Detective” [Electric Lit]',
                     url: 'https://electricliterature.com/long-live-the-girl-detective-by-megan-pillow/'
+                },
+                {
+                    title: '„Margo on the Hunt” [Pithead Chapel]',
+                    url: 'https://pitheadchapel.com/margo-on-the-hunt/'
                 },
                 {
                     title: '„Water in the Blood” [Triquarterly]',
