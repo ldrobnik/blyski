@@ -283,7 +283,7 @@ export const AUTHOR_LINKS = [
             heading: "Inna proza",
             links: [
                 {
-                    title: '„Long Live The Girl Detective” [Electric Lit]',
+                    title: '„Long Live the Girl Detective” [Electric Lit]',
                     url: 'https://electricliterature.com/long-live-the-girl-detective-by-megan-pillow/'
                 },
                 {
@@ -295,7 +295,7 @@ export const AUTHOR_LINKS = [
                     url: 'https://triquarterly.org/issues/issue-159/water-blood'
                 },
                 {
-                    title: '„While The Men Go Hunt the Shark, Mrs. Brody Meets Her Lover” [Hobart]',
+                    title: '„While the Men Go Hunt the Shark, Mrs. Brody Meets Her Lover” [Hobart]',
                     url: 'https://www.hobartpulp.com/web_features/while-the-men-go-hunt-the-shark-mrs-brody-meets-her-lover'
                 },
                 {
@@ -316,7 +316,7 @@ export const AUTHOR_LINKS = [
                         url: 'https://lost-balloon.com/2021/02/03/your-postpartum-wife-megan-pillow/'
                     },
                     {
-                        title: '„Once I Was An Animal” [JMWW]',
+                        title: '„Once I Was an Animal” [JMWW]',
                         url: 'https://jmwwblog.wordpress.com/2020/12/31/creative-nonfiction-once-i-was-an-animal-after-mary-oliver-by-megan-pillow/'
                     },
                     {
@@ -328,7 +328,7 @@ export const AUTHOR_LINKS = [
                         url: 'https://brevitymag.com/nonfiction/whenever-men-think-im-smiling/'
                     },
                     {
-                        title: '„Horror Lives In The Body” [Electric Lit]',
+                        title: '„Horror Lives in the Body” [Electric Lit]',
                         url: 'https://electricliterature.com/horror-lives-in-the-body/'
                     }
                 ]
