@@ -1,2 +1,5 @@
+# Redirect default Netlify subdomain to primary domain
+https://blyski.netlify.app/* https://blyski.org/:splat 301!
+
 # Prevent errors when accessing routes other than '/'
 /*    /index.html   200
