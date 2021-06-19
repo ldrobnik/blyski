@@ -17,6 +17,7 @@ const LogoWrapper = styled.div`
   border: 10px solid ${props => props.theme.themeColor};
   padding: 12px;
   z-index: 160;
+  user-select: none;
   
   @media all and (max-width: ${props => props.theme.smallScr}) {
       display: inline-block;
