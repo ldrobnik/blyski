@@ -22,45 +22,45 @@ const TextWrapper = styled.div`
   line-height: 1.8em;
   width: 85%;
   max-width: 750px;
-  
+
   p {
     margin: 1em 0;
   }
-  
+
   *::selection {
-        color: ${props => props.theme.lightColor};
-        background-color: ${props => props.theme.themeColor};
-     }
-     
+    color: ${props => props.theme.lightColor};
+    background-color: ${props => props.theme.themeColor};
+  }
+
   @media all and (min-width: ${props => props.theme.smallScr}) {
-  width: 90%;
-  padding:25px 45px;
- } 
- 
-  
- @media all and (min-width: ${props => props.theme.mediumScr}) {
-  width: 80%;
-  padding: 40px 60px;
-  font-size: 1.2em;
- } 
- 
- @media all and (min-width: ${props => props.theme.largeScr}) {
-  width: 60%;
-  padding:45px 10vw;
-  font-size: 1.2em;
- } 
- 
- @media all and (min-width: ${props => props.theme.extraLargeScr}) {
-  width: 40%;
-  padding:45px 10vw;
-  font-size: 1.2em;
- } 
- 
- @media all and (min-width: ${props => props.theme.hugeScr}) {
-  width: 30vw;
-  padding:45px 10vw;
-  font-size: 1.2em;
- } 
+    width: 90%;
+    padding: 25px 45px;
+  }
+
+
+  @media all and (min-width: ${props => props.theme.mediumScr}) {
+    width: 80%;
+    padding: 40px 60px;
+    font-size: 1.2em;
+  }
+
+  @media all and (min-width: ${props => props.theme.largeScr}) {
+    width: 60%;
+    padding: 45px 10vw;
+    font-size: 1.2em;
+  }
+
+  @media all and (min-width: ${props => props.theme.extraLargeScr}) {
+    width: 40%;
+    padding: 45px 10vw;
+    font-size: 1.2em;
+  }
+
+  @media all and (min-width: ${props => props.theme.hugeScr}) {
+    width: 30vw;
+    padding: 45px 10vw;
+    font-size: 1.2em;
+  }
 `;
 
 const Text = (props) => {
@@ -179,14 +179,14 @@ const Text = (props) => {
                         textContent={textContent}
                     />}
                     {(props.pageLoaded && props.issues[issueNumber - 1]) &&
-                        <React.Fragment>
-                            <Separator/>
-                            <TextButton
-                        textID={textID}
-                        issueNumber={issueNumber}
-                        slug={((textID < 4) && (textID !== -2)) ? props.issues[issueNumber - 1].texts[textID + 1].slug : null}
-                    />
-                        </React.Fragment>
+                    <React.Fragment>
+                        <Separator/>
+                        <TextButton
+                            textID={textID}
+                            issueNumber={issueNumber}
+                            slug={((textID < 4) && (textID !== -2)) ? props.issues[issueNumber - 1].texts[textID + 1].slug : null}
+                        />
+                    </React.Fragment>
                     }
                 </TextWrapper>
             </ContentWrapper>

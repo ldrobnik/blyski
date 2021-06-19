@@ -5,15 +5,17 @@ import 'moment/locale/pl';
 
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
+import HoverableButton from "../UI/HoverableButton/HoverableButton";
 import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
 
 const List = styled.div`
- display: flex;
- align-items: center;
- justify-content: center;
- flex-direction: column;
- 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+
 `;
 
 const IssueList = (props) => {
@@ -33,18 +35,26 @@ const IssueList = (props) => {
     useEffect(() => {
         //when page loads, trigger fade-in animation after a while
         if (props.pageLoaded) {
-          setTimeout(() => setContentVisible(true), fadeTimeout);
+            setTimeout(() => setContentVisible(true), fadeTimeout);
         }
     });
+
+    /*The code below displays a list of all issues is the route is '/'
+    * and only a specific issue if the route is '/:issueNumber'.
+    * If there is more than one issue, a homepage button is displayed
+    * so that the user can go back to the list of all issues.
+    * The button is not showing if there is only one issue.
+    */
 
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
-            {props.pageLoaded && <MainNavbar />}
+            {props.pageLoaded && <MainNavbar/>}
             <List>
                 {
-                    props.pageLoaded &&
-                    [...props.issues].reverse().map((issue) => {
+                    props.pageLoaded
+                    && !props.issues[props.match.params.issue - 1]
+                    && [...props.issues].reverse().map((issue) => {
                         return (
                             issue && <IssuePanel
                                 key={issue.issue}
@@ -55,6 +65,28 @@ const IssueList = (props) => {
                             />
                         )
                     })
+                }
+                {
+                    props.pageLoaded
+                    && props.match.params.issue
+                    && props.issues[props.match.params.issue - 1]
+                    && <IssuePanel
+                        key={props.issues[props.match.params.issue - 1].issue}
+                        issue={props.issues[props.match.params.issue - 1].issue}
+                        author={props.issues[props.match.params.issue - 1].author}
+                        date={props.issues[props.match.params.issue - 1].date}
+                        texts={props.issues[props.match.params.issue - 1].texts}
+                    />
+                }
+                {
+                    props.pageLoaded
+                    && props.match.params.issue
+                    && props.issues[props.match.params.issue - 1]
+                    && (props.issues.length > 1)
+                    && <HoverableButton
+                        path='/'
+                        message={WEBSITE_TEXT.issueList.homeButton}
+                    />
                 }
             </List>
             <ErrorMessage/>

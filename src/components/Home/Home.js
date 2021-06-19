@@ -163,6 +163,8 @@ const Home = (props) => {
             //process the data to organise texts into issues
             const issueData = processTexts(texts);
 
+            // console.log(issueData);
+
             //update the store with the organised issue data
             updateIssues(issueData);
 
@@ -188,7 +190,7 @@ const Home = (props) => {
 
     useEffect(() => {
         //once texts are loaded, show spinner temporarily when URL changes
-        if (props.issues.length > 1) setTempAsNotLoaded();
+        if (props.issues.length > 0) setTempAsNotLoaded();
     }, [props.match.params]);
 
     return (
@@ -197,6 +199,7 @@ const Home = (props) => {
             <Switch>
                 <Route path="/" exact component={IssueList} key="home"/>
                 <Route path="/info" exact component={About} key="about"/>
+                <Route path="/:issue" exact component={IssueList} key="issue"/>
                 <Route path="/:issue/:slug" exact component={Text} key="text"/>
                 <Route render={() => (<Redirect to="/"/>)} key="default"/>
             </Switch>

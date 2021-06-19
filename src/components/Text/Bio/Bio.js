@@ -33,6 +33,7 @@ const Bio = (props) => {
             <Author>{props.author}</Author>
             <AuthorPhoto
                 issueNumber={props.issueNumber}
+                author={props.author}
             />
             <TextBody
                 dangerouslySetInnerHTML={{__html: props.textContent}}
