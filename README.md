@@ -1,6 +1,6 @@
 # błyski
 
-[**błyski**](https://blyski.org) (Polish for *flashes*) is an online literary magazine featuring flash fiction in Polish translation. It will be a minimalistic affair --- each issue will consist of five pieces by one author and their bio. 
+[**błyski**](https://blyski.org) (Polish for *flashes*) is an online literary magazine featuring flash fiction in Polish translation. It is a minimalistic affair --- each issue consists of five pieces by one author and their bio. 
 
 The website uses a **React-based frontend** and **Wordpress as a headless CMS**.
 
