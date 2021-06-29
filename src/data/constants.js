@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
     faTwitterSquare,
@@ -48,35 +49,41 @@ export const getRandomRotationClass = () => {
 };
 
 //hover text effect
-const HoverableLink = styled.a`
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  padding: 5px;
+const HoverableLink = styled.span`
+  a, Link {
 
-  &:hover {
-    color: ${props => props.theme.themeColor};
-  }
-
-  &:before {
-    content: '';
-    background-color: ${props => props.theme.lightColor};
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    left: 0;
-    top: 0;
-    z-index: -20;
-    transform: translateY(100%);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
     transition: all 0.2s ease-in;
-  }
+    padding: 5px 1px;
+    transform: translateY(10px);
 
-  &:hover:before {
-    transform: translateY(-2px);
+
+    &:hover {
+      color: ${props => props.theme.themeColor};
+    }
+
+    &:before {
+      content: '';
+      background-color: ${props => props.theme.lightColor};
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      left: 0;
+      top: 0;
+      z-index: -20;
+      transform: translateY(100%);
+      transition: all 0.2s ease-in;
+    }
+
+    &:hover:before {
+      transform: translateY(-2px);
+    }
   }
 `;
+
 
 //Fontawesome icons
 const infoIcon = (
@@ -199,12 +206,13 @@ export const WEBSITE_TEXT = {
         title: "błyski",
         subtitle: <React.Fragment>flash fiction w&nbsp;przekładzie</React.Fragment>,
         content: <React.Fragment>
-            <p><strong>Flash fiction</strong> to bardzo krótkie opowiadania – takie do przeczytania w&nbsp;parę minut. W&nbsp;odróżnieniu od prozy poetyckiej zawsze mają fabułę.</p>
-            <p>Z&nbsp;kolei <strong>błyski</strong> to nieregularnik, który stawia sobie za cel przybliżenie polskim
+            <p>Flash fiction to bardzo krótkie opowiadania – takie do przeczytania w&nbsp;parę minut. W&nbsp;odróżnieniu od prozy poetyckiej zawsze mają fabułę.</p>
+            <p>Z&nbsp;kolei <HoverableLink><Link to='/'><strong>błyski</strong></Link></HoverableLink> to nieregularnik, który stawia sobie za cel przybliżenie polskim
                 czytelnikom tej
                 popularnej w&nbsp;świecie anglosaskim formy.</p>
-            <p>Każdy numer <strong>błysków</strong> jest poświęcony jednemu autorowi: zawiera pięć
+            <p>Każdy numer <HoverableLink><Link to='/'><strong>błysków</strong></Link></HoverableLink> jest poświęcony jednemu autorowi: zawiera pięć
                 jego tekstów plus biogram – i&nbsp;tyle.</p>
+            <p>Bohaterką <HoverableLink><Link to='/1/wszyscy-wiemy-o-margo'><strong>pierwszego numeru </strong></Link></HoverableLink> jest <HoverableLink><Link to='/1/bio'><strong>Megan Pillow</strong></Link></HoverableLink>.</p>
         </React.Fragment>,
         contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski.pismo [at] gmail [dot]
             com.</React.Fragment>,
@@ -214,8 +222,8 @@ export const WEBSITE_TEXT = {
             gorąco zachęcam!</React.Fragment>,
         credits: <React.Fragment>red. nacz. –&nbsp;ja, dobór tekstów –&nbsp;ja, przekłady –&nbsp;ja, projekt strony
             –&nbsp;ja*</React.Fragment>,
-        footnote: <React.Fragment><HoverableLink href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja
-            = Łukasz Drobnik</HoverableLink></React.Fragment>,
+        footnote: <React.Fragment><HoverableLink><a href="https://drobnik.co/" target="_blank" rel="noopener noreferrer">*ja
+            = Łukasz Drobnik</a></HoverableLink></React.Fragment>,
         button: 'strona główna',
         copyright: <React.Fragment>&copy; 2021 Łukasz Drobnik</React.Fragment>
     },

@@ -5,7 +5,8 @@ import {WEBSITE_TEXT} from "../../../../data/constants";
 
 /** STYLED COMPONENTS **/
 const NoteWrapper = styled.div`
-padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 font-size: 10px;
 
 a {
