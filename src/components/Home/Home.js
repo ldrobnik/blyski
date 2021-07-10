@@ -156,6 +156,9 @@ const Home = (props) => {
 
     //fetches texts from the Wordpress blog
     const loadTexts = () => {
+        //start with using the fallback issue just in case
+        updateIssues(FALLBACK_ISSUE);
+
         fetch(WP_API_URL + WP_URL_FRAGMENT).then(response => {
             return response.json();
         }).then(texts => {

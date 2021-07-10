@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
 import AuthorLinks from './SocialLinks/AuthorLinks';
