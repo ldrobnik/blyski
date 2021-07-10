@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useHistory, Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import TextNavbar from './TextNavbar/TextNavbar';
