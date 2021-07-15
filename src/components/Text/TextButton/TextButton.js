@@ -1,16 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import HoverableButton from "../../UI/HoverableButton/HoverableButton";
-import {WEBSITE_TEXT} from "../../../data/constants";
 
-const ButtonWrapper = styled.div`
-  text-align: center;
-`;
+import HoverableButton from "../../UI/HoverableButton/HoverableButton";
+
+import {TextButtonWrapper} from "../../../styled";
+import {WEBSITE_TEXT} from "../../../data/constants";
 
 const TextButton = props => {
 
     return (
-        <ButtonWrapper>
+        <TextButtonWrapper>
             {((props.textID < 4) && (props.textID !== -2)) &&
             <HoverableButton
                 path={`/${props.issueNumber}/${props.slug}`}
@@ -26,7 +24,7 @@ const TextButton = props => {
                 path="/"
                 message={WEBSITE_TEXT.text.homeButton}
             />}
-        </ButtonWrapper>
+        </TextButtonWrapper>
     );
 };
 

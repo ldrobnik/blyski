@@ -758,3 +758,9 @@ export const StoryTextBody = styled.div`
   font-family: ${props => props.theme.serif};
   font-size: 1.1em;
 `;
+
+/* TextButton */
+
+export const TextButtonWrapper = styled.div`
+  text-align: center;
+`;
