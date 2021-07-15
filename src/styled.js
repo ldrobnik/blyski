@@ -432,3 +432,28 @@ export const IssueDate = styled.div`
     }
   
 `;
+
+/* MainNavbar.js */
+
+export const MainNavbarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+`;
+
+export const MainNavbarBody = styled.div`
+  margin: 5px;
+  padding: 10px;
+  display: inline-block;
+  
+  div, a {
+  max-height: 30px;
+  }
+  
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+    padding: 0;
+    margin: 2px;
+  }
+  
+`;
