@@ -1030,3 +1030,23 @@ export const InvertedLogoWrapper = styled.div`
     }
 `;
 
+/* Separator.js */
+
+export const SeparatorWrapper = styled.div`
+  text-align: center;
+  padding: 12px 0;
+`;
+
+export const SeparatorContent = styled.div`
+  display: inline-block;
+  background-color: ${props => props.theme.themeColor};
+  height: 6px;
+  width: 20px;
+`;
+
+export const InvertedSeparatorContent = styled.div`
+  display: inline-block;
+  background-color: ${props => props.theme.lightColor};
+  height: 6px;
+  width: 20px;
+`;
