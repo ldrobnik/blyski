@@ -795,3 +795,25 @@ export const TextNav = styled.div`
   max-height: 30px;
   }
 `;
+
+/* ErrorMessage.js */
+
+export const ErrorMessageWrapper = styled.div`
+  text-align: center;
+
+`;
+
+export const ErrorMessageContent = styled.div`
+  display: inline-block;
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  border: 6px solid ${props => props.theme.themeColor};
+  color: ${props => props.theme.themeColor};
+  font-weight: bold;
+  
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+    margin: 0 20px;
+    font-size: 0.8em;
+    
+  }
+`;
