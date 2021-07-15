@@ -728,3 +728,33 @@ export const IssueInvertedButtonWrapper = styled.div`
   }
 
 `;
+
+/* Story.js */
+
+export const StoryTextTitle = styled.div`
+ color: ${props => props.theme.themeColor};
+ font-size: 2.5em;
+ font-weight: bold;
+ padding: 10px 0;
+  line-height: 1em;
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+    font-size: 1.8em;
+ }
+  
+`;
+
+export const StoryAuthor = styled.div`
+ font-size: 1.2em;
+ font-weight: bold;
+`;
+
+export const StoryTranslatedBy = styled.div`
+ font-style: italic;
+ font-size: 0.8em;
+`;
+
+export const StoryTextBody = styled.div`
+  font-family: ${props => props.theme.serif};
+  font-size: 1.1em;
+`;
