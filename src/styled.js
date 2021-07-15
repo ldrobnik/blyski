@@ -564,3 +564,29 @@ export const AuthorPhotoContainer = styled.div`
     }
   
 `;
+
+/* AuthorWorks */
+
+export const WorksListWrapper = styled.div`
+  text-align: center;
+`;
+
+export const WorksLinkWrapper = styled.div`
+  margin: 5px;
+  padding: 10px;
+`;
+
+export const WorksLinkList = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+export const WorksHeading = styled.div`
+  text-align: center;
+  font-style: italic;
+  padding: 5px;
+  font-family: ${props => props.theme.serif};
+  margin-top: 0.5em;
+`;
