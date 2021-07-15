@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
-import {AboutPanelWrapper, Backdrop} from "../../styled";
+import {AnimatedContent, AboutPanelWrapper, AboutBackdrop} from "../../styled";
 import AboutPanel from './AboutPanel/AboutPanel';
-import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
+import {WEBSITE_TEXT, fadeTimeout} from "../../data/constants";
 
 const About = (props) => {
 
@@ -30,7 +30,7 @@ const About = (props) => {
             <AboutPanelWrapper>
                 <AboutPanel/>
             </AboutPanelWrapper>
-            <Backdrop/>
+            <AboutBackdrop/>
         </AnimatedContent>
     );
 };
