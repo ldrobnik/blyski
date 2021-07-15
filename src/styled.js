@@ -1003,3 +1003,30 @@ z-index: 50;
 
 `;
 
+/* Logo.js */
+
+export const LogoWrapper = styled.div`
+  border: 10px solid ${props => props.theme.themeColor};
+  padding: 12px;
+  z-index: 160;
+  user-select: none;
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+  
+`;
+
+export const InvertedLogoWrapper = styled.div`
+  border: 10px solid ${props => props.theme.lightColor};
+  padding: 12px;
+  z-index: 160;
+  
+    
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+`;
+
