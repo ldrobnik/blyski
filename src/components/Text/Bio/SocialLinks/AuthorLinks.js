@@ -1,28 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import HoverableButton from '../../../UI/HoverableButton/HoverableButton';
 
-const MenuWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const SocialIcons = styled.div`
-  margin: 5px;
-  padding: 10px;
-  display: inline-block;
-  
-  div, a {
-  max-height: 30px;
-  }
-`;
+import {AuthorMenuWrapper, AuthorSocialIcons} from "../../../../styled";
 
 const AuthorLinks = props => {
 
     return (
-        <MenuWrapper>
-            <SocialIcons>
+        <AuthorMenuWrapper>
+            <AuthorSocialIcons>
                 {props.links.map((link) => {
                     return (
                         <HoverableButton
@@ -32,8 +18,8 @@ const AuthorLinks = props => {
                         />
                     )
                 })}
-            </SocialIcons>
-        </MenuWrapper>
+            </AuthorSocialIcons>
+        </AuthorMenuWrapper>
     );
 };
 

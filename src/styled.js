@@ -637,3 +637,21 @@ color: ${props => props.theme.lightColor};
     }
 
 `;
+
+/* AuthorLinks.js */
+
+export const AuthorMenuWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const AuthorSocialIcons = styled.div`
+  margin: 5px;
+  padding: 10px;
+  display: inline-block;
+  
+  div, a {
+  max-height: 30px;
+  }
+`;
