@@ -1,52 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import InactiveButton from '../../UI/InactiveButton/InactiveButton';
 import IssueButton from "../IssueButton/IssueButton";
+
+import {TextNavTitleWrapper, TextNavTitle, TextNavWrapper, TextNav} from "../../../styled";
 import {WEBSITE_TEXT, formatIssueNumber} from "../../../data/constants";
-
-const TitleWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-`;
-
-const Title = styled.div`
-  border-bottom: solid 10px ${props => props.theme.themeColor};
-  padding-bottom: 5px;
-`;
-
-const NavbarWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-`;
-
-const Navbar = styled.div`
-  margin: 5px;
-  padding: 10px;
-  display: flex;
-  
-  div, a {
-  max-height: 30px;
-  }
-`;
 
 const TextNavbar = props => {
 
     return (
         <React.Fragment>
-            <TitleWrapper>
-                <Title>
+            <TextNavTitleWrapper>
+                <TextNavTitle>
                     <IssueButton
                         path={`/${props.issueNumber}`}
                         message={formatIssueNumber(props.issueNumber)}/>
-                </Title>
-            </TitleWrapper>
-            <NavbarWrapper>
-                <Navbar>
+                </TextNavTitle>
+            </TextNavTitleWrapper>
+            <TextNavWrapper>
+                <TextNav>
                     {WEBSITE_TEXT.text.navbar.textNumbers.map((navlink, index) => {
                         return (
                             <React.Fragment key={index}>
@@ -77,8 +50,8 @@ const TextNavbar = props => {
                         path="/"
                         message={WEBSITE_TEXT.text.navbar.home}
                     />
-                </Navbar>
-            </NavbarWrapper>
+                </TextNav>
+            </TextNavWrapper>
         </React.Fragment>
     );
 };

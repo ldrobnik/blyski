@@ -764,3 +764,34 @@ export const StoryTextBody = styled.div`
 export const TextButtonWrapper = styled.div`
   text-align: center;
 `;
+
+/* TextNavBar */
+
+export const TextNavTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+`;
+
+export const TextNavTitle = styled.div`
+  border-bottom: solid 10px ${props => props.theme.themeColor};
+  padding-bottom: 5px;
+`;
+
+export const TextNavWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+`;
+
+export const TextNav = styled.div`
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  
+  div, a {
+  max-height: 30px;
+  }
+`;
