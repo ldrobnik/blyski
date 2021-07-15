@@ -457,3 +457,79 @@ export const MainNavbarBody = styled.div`
   }
   
 `;
+
+/* Text.js */
+
+export const TextContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const TextWrapper = styled.div`
+  border: 10px solid ${props => props.theme.themeColor};
+  padding: 20px 15px;
+  font-size: 1em;
+  line-height: 1.8em;
+  width: 85%;
+  max-width: 750px;
+
+  p {
+    margin: 1em 0;
+  }
+
+  *::selection {
+    color: ${props => props.theme.lightColor};
+    background-color: ${props => props.theme.themeColor};
+  }
+
+  @media all and (min-width: ${props => props.theme.smallScr}) {
+    width: 90%;
+    padding: 25px 45px;
+  }
+
+
+  @media all and (min-width: ${props => props.theme.mediumScr}) {
+    width: 80%;
+    padding: 40px 60px;
+    font-size: 1.2em;
+  }
+
+  @media all and (min-width: ${props => props.theme.largeScr}) {
+    width: 60%;
+    padding: 45px 10vw;
+    font-size: 1.2em;
+  }
+
+  @media all and (min-width: ${props => props.theme.extraLargeScr}) {
+    width: 40%;
+    padding: 45px 10vw;
+    font-size: 1.2em;
+  }
+
+  @media all and (min-width: ${props => props.theme.hugeScr}) {
+    width: 30vw;
+    padding: 45px 10vw;
+    font-size: 1.2em;
+  }
+`;
+
+/* Bio.js */
+
+export const BioAuthor = styled.div`
+ text-align: center;
+ color: ${props => props.theme.themeColor};
+ font-size: 1.8em;
+ font-weight: bold;
+ padding: 5px 0;
+`;
+
+export const BioTextBody = styled.div`
+  text-align: center;
+  font-family: ${props => props.theme.serif};
+`;
+
+export const BioHeading = styled.div`
+  text-align: center;
+  padding: 5px;
+  font-family: ${props => props.theme.serif};
+`;
