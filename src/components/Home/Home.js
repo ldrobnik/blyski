@@ -3,31 +3,15 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
 import {Route, Switch, withRouter} from 'react-router-dom';
 import {Redirect} from 'react-router';
-import {createGlobalStyle} from 'styled-components';
 
 import IssueList from '../IssueList/IssueList';
 import Text from '../Text/Text';
 import About from '../About/About';
 import Spinner from '../UI/Spinner/Spinner';
 
+import {GlobalStyle} from "../../styled";
 import {WP_URL_FRAGMENT, FALLBACK_ISSUE, getRandomRotationClass} from '../../data/constants';
 import {setPageLoaded, setIssues, setError} from '../../actions/index';
-
-/* STYLED COMPONENTS */
-const GlobalStyle = createGlobalStyle`
-    body {
-        font-family: ${props => props.theme.sansSerif};
-        color: ${props => props.theme.darkColor};
-        background-color: ${props => props.theme.lightColor};
-        min-height: 100vh;
-        }
-        
-    a {
-        text-decoration: none;
-
-    }
-    
-`;
 
 const Home = (props) => {
 

@@ -1,22 +1,23 @@
 /* STYLED-COMPONENTS */
 
-import styled from 'styled-components';
-import posed from "react-pose";
+import styled, {createGlobalStyle} from 'styled-components';
 
-/* General */
+/* Global */
 
-export const AnimatedContent = posed.div({
-    visible: {
-        opacity: 1,
-        transition: {
-            ease: 'easeIn',
-            duration: 500
+export const GlobalStyle = createGlobalStyle`
+    body {
+        font-family: ${props => props.theme.sansSerif};
+        color: ${props => props.theme.darkColor};
+        background-color: ${props => props.theme.lightColor};
+        min-height: 100vh;
         }
-    },
-    hidden: {
-        opacity: 0
+        
+    a {
+        text-decoration: none;
+
     }
-});
+    
+`;
 
 /* About.js */
 
@@ -212,4 +213,32 @@ font-size: 0.8em;
   font-size: 0.7em;
   }
 
+`;
+
+/* CopyrightNote.js */
+
+export const CopyrightNoteWrapper = styled.div`
+  padding-top: 10px;
+  padding-bottom: 20px;
+font-size: 10px;
+
+a {
+    color: ${props => props.theme.lightColor};
+    transition: all 0.2s ease-in;
+    
+    &:link {
+      color: ${props => props.theme.lightColor};
+    }
+    
+    &:visited {
+      color: ${props => props.theme.lightColor};
+    }
+    
+    &:hover {
+      color: ${props => props.theme.lightColor} !important;
+    }
+    
+    &:active {
+      color: ${props => props.theme.lightColor}} !important;
+    }
 `;
