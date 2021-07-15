@@ -242,3 +242,14 @@ a {
       color: ${props => props.theme.lightColor}} !important;
     }
 `;
+
+/* IssueList.js */
+
+export const ListOfIssues = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+
+`;

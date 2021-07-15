@@ -1,22 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
-import styled from 'styled-components';
 import 'moment/locale/pl';
 
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
 import HoverableButton from "../UI/HoverableButton/HoverableButton";
 import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
+
+import {ListOfIssues} from "../../styled";
 import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
 
-const List = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding-bottom: 20px;
-
-`;
 
 const IssueList = (props) => {
 
@@ -50,7 +43,7 @@ const IssueList = (props) => {
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
             {props.pageLoaded && <MainNavbar/>}
-            <List>
+            <ListOfIssues>
                 {
                     props.pageLoaded
                     && !props.issues[props.match.params.issue - 1]
@@ -88,7 +81,7 @@ const IssueList = (props) => {
                         message={WEBSITE_TEXT.issueList.homeButton}
                     />
                 }
-            </List>
+            </ListOfIssues>
             <ErrorMessage/>
         </AnimatedContent>
     );
