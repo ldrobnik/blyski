@@ -66,9 +66,9 @@ const Home = (props) => {
 
     //Adds missing attributes to links so that they open in a new tab
     const addLinkAttributes = (str) => {
-        return str.replace(new RegExp('\">', 'g'), '\" target=\"_blank\" rel=\"noopener noreferrer\">');
         return str.replace('">', '" target="_blank" rel="noopener noreferrer">');
     };
+
     //Processes fetched Wordpress data into an array containing texts devided into issues
     const processTexts = (texts) => {
 

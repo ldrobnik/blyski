@@ -1050,3 +1050,29 @@ export const InvertedSeparatorContent = styled.div`
   height: 6px;
   width: 20px;
 `;
+
+/* Spinner.js */
+
+export const SpinnerWrapper = styled.div`
+  position: absolute;
+  z-index: 90;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  
+  img {
+    height: 150px;
+  }
+`;
+
+
+export const SpinnerBackdrop = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 80;
+  width: 100%;
+  height: 100%;
+  background: ${props => props.theme.lightColor};
+`;

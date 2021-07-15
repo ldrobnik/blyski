@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import Logo from '../../UI/Logo/Logo';
 import Separator from '../../UI/Separator/Separator';
 import CopyrightNote from './CopyrightNote/CopyrightNote';
+
 import {AboutBox, AboutTitle, AboutJournalName, AboutJournalSubtitle, AboutMainContent, AboutSecondaryContent, AboutTernaryContent} from "../../../styled";
 import {WEBSITE_TEXT} from "../../../data/constants";
 
