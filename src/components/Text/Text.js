@@ -1,67 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
-import styled from 'styled-components';
+
 import TextNavbar from './TextNavbar/TextNavbar';
 import Story from './Story/Story';
 import Bio from './Bio/Bio';
 import TextButton from './TextButton/TextButton';
 import Separator from '../UI/Separator/Separator';
+
+import {TextContentWrapper, TextWrapper} from "../../styled";
 import {AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
-
-/** STYLED COMPONENTS **/
-const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const TextWrapper = styled.div`
-  border: 10px solid ${props => props.theme.themeColor};
-  padding: 20px 15px;
-  font-size: 1em;
-  line-height: 1.8em;
-  width: 85%;
-  max-width: 750px;
-
-  p {
-    margin: 1em 0;
-  }
-
-  *::selection {
-    color: ${props => props.theme.lightColor};
-    background-color: ${props => props.theme.themeColor};
-  }
-
-  @media all and (min-width: ${props => props.theme.smallScr}) {
-    width: 90%;
-    padding: 25px 45px;
-  }
-
-
-  @media all and (min-width: ${props => props.theme.mediumScr}) {
-    width: 80%;
-    padding: 40px 60px;
-    font-size: 1.2em;
-  }
-
-  @media all and (min-width: ${props => props.theme.largeScr}) {
-    width: 60%;
-    padding: 45px 10vw;
-    font-size: 1.2em;
-  }
-
-  @media all and (min-width: ${props => props.theme.extraLargeScr}) {
-    width: 40%;
-    padding: 45px 10vw;
-    font-size: 1.2em;
-  }
-
-  @media all and (min-width: ${props => props.theme.hugeScr}) {
-    width: 30vw;
-    padding: 45px 10vw;
-    font-size: 1.2em;
-  }
-`;
 
 const Text = (props) => {
 
@@ -164,7 +112,7 @@ const Text = (props) => {
                 textID={textID}
                 texts={props.issues[issueNumber - 1].texts}
             />}
-            <ContentWrapper>
+            <TextContentWrapper>
                 <TextWrapper>
                     {(props.pageLoaded && (textID !== -1) && props.issues[issueNumber - 1]) && (textID !== -2) &&
                     <Story
@@ -189,7 +137,7 @@ const Text = (props) => {
                     </React.Fragment>
                     }
                 </TextWrapper>
-            </ContentWrapper>
+            </TextContentWrapper>
         </AnimatedContent>
     );
 };

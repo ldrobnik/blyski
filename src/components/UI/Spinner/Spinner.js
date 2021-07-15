@@ -1,34 +1,8 @@
-import React, {useState} from 'react';
-import styled from 'styled-components';
+import React from 'react';
+
+import {SpinnerWrapper, SpinnerBackdrop} from "../../../styled";
 
 import animatedLogo from '../../../assets/images/animatedGlider.png';
-
-import {getRandomRotationClass} from "../../../data/constants";
-
-/* STYLED COMPONENTS */
-const SpinnerWrapper = styled.div`
-  position: absolute;
-  z-index: 90;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  user-select: none;
-  
-  img {
-    height: 150px;
-  }
-`;
-
-
-const Backdrop = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 80;
-  width: 100%;
-  height: 100%;
-  background: ${props => props.theme.lightColor};
-`;
 
 const Spinner = props => {
 
@@ -42,7 +16,7 @@ const Spinner = props => {
                         className={props.spinnerClass}
                     />
             </SpinnerWrapper>
-            <Backdrop/>
+            <SpinnerBackdrop/>
         </React.Fragment>
     );
 };

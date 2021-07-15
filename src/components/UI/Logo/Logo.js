@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
-import posed from 'react-pose';
+
 
 import logoFrame1 from '../../../assets/images/glider1.svg';
 import logoFrame2 from '../../../assets/images/glider2.svg';
@@ -12,50 +11,8 @@ import invLogoFrame2 from '../../../assets/images/inv-glider2.svg';
 import invLogoFrame3 from '../../../assets/images/inv-glider3.svg';
 import invLogoFrame4 from '../../../assets/images/inv-glider4.svg';
 
-/* STYLED COMPONENTS */
-const LogoWrapper = styled.div`
-  border: 10px solid ${props => props.theme.themeColor};
-  padding: 12px;
-  z-index: 160;
-  user-select: none;
-  
-  @media all and (max-width: ${props => props.theme.smallScr}) {
-      display: inline-block;
-      margin-bottom: 24px;
-    }
-  
-`;
-
-const InvertedLogoWrapper = styled.div`
-  border: 10px solid ${props => props.theme.lightColor};
-  padding: 12px;
-  z-index: 160;
-  
-    
-  @media all and (max-width: ${props => props.theme.smallScr}) {
-      display: inline-block;
-      margin-bottom: 24px;
-    }
-`;
-
-/* POSE */
-
-const AnimatedLogo = posed.div({
-    visible: {
-        transform: 'scale(1, 1)',
-        opacity: 1,
-        duration: 200,
-        delay: 500,
-        transition: {
-            type: 'spring',
-            stiffness: 100
-        }
-    },
-    hidden: {
-        transform: 'scale(1, 0)',
-        opacity: 0
-    }
-});
+import {LogoWrapper, InvertedLogoWrapper} from "../../../styled";
+import {AnimatedLogo} from "../../../posed";
 
 const Logo = props => {
 
