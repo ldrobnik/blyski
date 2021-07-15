@@ -590,3 +590,50 @@ export const WorksHeading = styled.div`
   font-family: ${props => props.theme.serif};
   margin-top: 0.5em;
 `;
+
+/* AuthorLink.js */
+
+export const AuthorStyledLink = styled.a`
+font-weight: bold;
+font-size: 1em;
+text-align: center;
+color: ${props => props.theme.themeColor};
+display: inline-block;
+position: relative;
+padding: 6px 10px;
+margin: 3px 0;
+overflow: hidden;
+cursor: pointer;
+transition: all 0.2s ease-in;
+z-index: 50;
+
+&:hover {
+color: ${props => props.theme.lightColor};
+}
+
+&:before {
+  content: '';
+  background-color: ${props => props.theme.themeColor};
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  left: 0;
+  top: 0;
+  z-index: -20;
+  transform: translateY(100%);
+  transition: all 0.2s ease-in;
+}
+
+  &:hover:before {
+  transform: translateY(-2px);
+  }
+
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+  font-size: 1em;
+  }
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+      font-size: 0.8em;
+    }
+
+`;
