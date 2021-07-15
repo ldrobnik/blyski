@@ -253,3 +253,101 @@ export const ListOfIssues = styled.div`
   padding-bottom: 20px;
 
 `;
+
+/* IssuePanel.js */
+
+export const IssueWrapper = styled.div`
+ border: 10px solid ${props => props.theme.themeColor};
+ text-align: center;
+ width: 85%;
+ padding: 15px;
+ margin: 10px 0;
+ max-width: 800px;
+ 
+ *::selection {
+        color: ${props => props.theme.lightColor};
+        background-color: ${props => props.theme.themeColor};
+     }
+ 
+ @media all and (min-width: ${props => props.theme.smallScr}) {
+  width: 90%;
+  padding:30px 15px;
+  margin: 10px 0;
+ } 
+ 
+  
+ @media all and (min-width: ${props => props.theme.mediumScr}) {
+  width: 70%;
+  padding: 20px;
+  margin: 30px 10px;
+ } 
+ 
+ @media all and (min-width: ${props => props.theme.largeScr}) {
+  width: 60%;
+  padding:30px;
+  margin: 30px;
+ } 
+ 
+ @media all and (min-width: ${props => props.theme.extraLargeScr}) {
+  width: 50%;
+  padding:40px;
+  margin: 30px;
+ } 
+`;
+
+export const IssueTexts = styled.div`
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+/* AuthorCredits.js */
+
+export const CreditsWrapper = styled.div`
+  padding-top: 20px;
+  margin-bottom: 15px;
+`;
+
+export const AuthorName = styled.div`
+  font-size: 3.2em;
+  font-weight: bold;
+  color: ${props => props.theme.themeColor};
+  
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+  font-size: 2.7em;
+  }
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+      font-size: 2em;
+    }
+
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
+      font-size: 1.7em;
+    }
+    
+   @media all and (max-width: ${props => props.veryTinyScr}) {
+      font-size: 1.2em;
+    }
+  
+`;
+
+export const TranslatorName = styled.div`
+  color: ${props => props.theme.themeColor};
+  font-size: 1em;
+  font-weight: bold;
+  
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+  font-size: 0.8em;
+  }
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+      font-size: 0.7em;
+    }
+
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
+      font-size: 0.6em;
+    }
+
+`;
