@@ -16,3 +16,22 @@ export const AnimatedContent = posed.div({
         opacity: 0
     }
 });
+
+/* AuthorPhoto.js */
+
+export const AnimatedAuthorPic = posed.div({
+    visible: {
+        transform: 'scale(1, 1)',
+        opacity: 1,
+        duration: 200,
+        delay: 500,
+        transition: {
+            type: 'spring',
+            stiffness: 100
+        }
+    },
+    hidden: {
+        transform: 'scale(1, 0)',
+        opacity: 0
+    }
+});

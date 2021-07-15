@@ -533,3 +533,34 @@ export const BioHeading = styled.div`
   padding: 5px;
   font-family: ${props => props.theme.serif};
 `;
+
+/* AuthorPhoto.js */
+
+export const AuthorPhotoWrapper = styled.div`
+  text-align: center;
+  padding: 2em;
+  position: relative; 
+`;
+
+export const AuthorPhotoContainer = styled.div`
+  height: 420px;
+  z-index: 60;
+  
+  img {
+      height: 100%;
+  }
+  
+  
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+   height: 300px;
+  }
+  
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+      height: 240px;
+    }
+    
+  @media all and (max-width: ${props => props.theme.extraSmallScr}) {
+      height: 180px;
+    }
+  
+`;
