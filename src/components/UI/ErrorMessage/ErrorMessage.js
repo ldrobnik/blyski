@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
-import {ErrorMessageWrapper, ErrorMessageContent} from "../../../styled";
-import {WEBSITE_TEXT} from "../../../data/constants";
+import {ErrorMessageWrapper, ErrorMessageContent} from '../../../styled';
+import {WEBSITE_TEXT} from '../../../data/constants';
 
 const ErrorMessage = (props) => {
 

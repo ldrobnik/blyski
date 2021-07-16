@@ -7,7 +7,6 @@ const Spinner = props => {
     return (
         <React.Fragment>
             <SpinnerWrapper>
-
                 <img
                     src={animatedLogo}
                     alt='loading spinner'

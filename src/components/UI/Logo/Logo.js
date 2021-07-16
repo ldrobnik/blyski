@@ -1,23 +1,19 @@
 import React, {useState, useEffect} from 'react';
-
-
 import logoFrame1 from '../../../assets/images/glider1.svg';
 import logoFrame2 from '../../../assets/images/glider2.svg';
 import logoFrame3 from '../../../assets/images/glider3.svg';
 import logoFrame4 from '../../../assets/images/glider4.svg';
-
 import invLogoFrame1 from '../../../assets/images/inv-glider1.svg';
 import invLogoFrame2 from '../../../assets/images/inv-glider2.svg';
 import invLogoFrame3 from '../../../assets/images/inv-glider3.svg';
 import invLogoFrame4 from '../../../assets/images/inv-glider4.svg';
-
-import {LogoWrapper, InvertedLogoWrapper} from "../../../styled";
-import {AnimatedLogo} from "../../../posed";
+import {LogoWrapper, InvertedLogoWrapper} from '../../../styled';
+import {AnimatedLogo} from '../../../posed';
 
 const Logo = props => {
 
     // Specifies the current window width
-    const [logoWidth, setLogoWidth] = useState("100px");
+    const [logoWidth, setLogoWidth] = useState('100px');
 
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);
@@ -25,11 +21,11 @@ const Logo = props => {
     //updates window width
     const handleResize = () => {
         if (window.innerWidth < 350) {
-            setLogoWidth("40px");
+            setLogoWidth('40px');
         } else if (window.innerWidth < 630) {
-            setLogoWidth("80px");
+            setLogoWidth('80px');
         } else {
-            setLogoWidth("100px");
+            setLogoWidth('100px');
         }
     };
 
@@ -41,10 +37,10 @@ const Logo = props => {
     //adds/removes event listener for resize
     useEffect(() => {
 
-        window.addEventListener("resize", handleResize, false);
+        window.addEventListener('resize', handleResize, false);
 
         return () => {
-            window.removeEventListener("resize", handleResize, false);
+            window.removeEventListener('resize', handleResize, false);
         };
     }, []);
 

@@ -1,6 +1,5 @@
 import React from 'react';
-
-import {InactiveButtonWrapper, InvertedInactiveButtonWrapper} from "../../../styled";
+import {InactiveButtonWrapper, InvertedInactiveButtonWrapper} from '../../../styled';
 
 const InactiveButton = (props) => {
 

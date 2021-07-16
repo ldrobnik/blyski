@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
-import {HoverableButtonWrapper, InvertedHoverableButtonWrapper} from "../../../styled";
+import {HoverableButtonWrapper, InvertedHoverableButtonWrapper} from '../../../styled';
 
 const HoverableButton = props => {
 
@@ -10,10 +9,10 @@ const HoverableButton = props => {
 
     //the content of the button; for inverted button switch colors
     const buttonContent = props.inverted ? (
-        <InvertedHoverableButtonWrapper>
-            {buttonMessage}
-        </InvertedHoverableButtonWrapper>
-    ) : (
+            <InvertedHoverableButtonWrapper>
+                {buttonMessage}
+            </InvertedHoverableButtonWrapper>
+        ) : (
             <HoverableButtonWrapper>
                 {buttonMessage}
             </HoverableButtonWrapper>

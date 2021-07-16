@@ -1,6 +1,5 @@
 import React from 'react';
-
-import {SeparatorWrapper, SeparatorContent, InvertedSeparatorContent} from "../../../styled";
+import {SeparatorWrapper, SeparatorContent, InvertedSeparatorContent} from '../../../styled';
 
 const Separator = (props) => {
 

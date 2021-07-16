@@ -1,9 +1,7 @@
 import React from 'react';
-
-import HoverableButton from "../../UI/HoverableButton/HoverableButton";
-
-import {TextButtonWrapper} from "../../../styled";
-import {WEBSITE_TEXT} from "../../../data/constants";
+import HoverableButton from '../../UI/HoverableButton/HoverableButton';
+import {TextButtonWrapper} from '../../../styled';
+import {WEBSITE_TEXT} from '../../../data/constants';
 
 const TextButton = props => {
 

@@ -1,11 +1,9 @@
 import React from 'react';
-
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import InactiveButton from '../../UI/InactiveButton/InactiveButton';
-import IssueButton from "../IssueButton/IssueButton";
-
-import {TextNavTitleWrapper, TextNavTitle, TextNavWrapper, TextNav} from "../../../styled";
-import {WEBSITE_TEXT, formatIssueNumber} from "../../../data/constants";
+import IssueButton from '../IssueButton/IssueButton';
+import {TextNavTitleWrapper, TextNavTitle, TextNavWrapper, TextNav} from '../../../styled';
+import {WEBSITE_TEXT, formatIssueNumber} from '../../../data/constants';
 
 const TextNavbar = props => {
 
