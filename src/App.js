@@ -1,7 +1,6 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
 import ReactGA from 'react-ga';
-
 import Home from './components/Home/Home';
 
 //Google Analytics code
