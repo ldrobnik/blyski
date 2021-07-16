@@ -1,8 +1,6 @@
 import React from 'react';
-
 import AuthorLink from './TextLink/AuthorLink';
-
-import {WorksListWrapper, WorksLinkWrapper, WorksLinkList, WorksHeading} from "../../../../styled";
+import {WorksListWrapper, WorksLinkWrapper, WorksLinkList, WorksHeading} from '../../../../styled';
 
 const AuthorWorks = props => {
 

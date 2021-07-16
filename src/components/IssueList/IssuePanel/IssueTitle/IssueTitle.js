@@ -1,9 +1,7 @@
 import React from 'react';
-
 import Logo from '../../../UI/Logo/Logo';
-
-import {TitleOfIssue, IssueName, IssueDate} from "../../../../styled";
-import {formatIssueNumber} from "../../../../data/constants";
+import {TitleOfIssue, IssueName, IssueDate} from '../../../../styled';
+import {formatIssueNumber} from '../../../../data/constants';
 
 const IssueTitle = (props) => {
 

@@ -1,15 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from "redux";
+import {bindActionCreators} from 'redux';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import {Redirect} from 'react-router';
-
 import IssueList from '../IssueList/IssueList';
 import Text from '../Text/Text';
 import About from '../About/About';
 import Spinner from '../UI/Spinner/Spinner';
-
-import {GlobalStyle} from "../../styled";
+import {GlobalStyle} from '../../styled';
 import {WP_URL_FRAGMENT, FALLBACK_ISSUE, getRandomRotationClass} from '../../data/constants';
 import {setPageLoaded, setIssues, setError} from '../../actions/index';
 
@@ -89,7 +87,7 @@ const Home = (props) => {
             // Split the Wordpress post title which has the format:
             // X_Some text, at "_" and retrieve
             // the issue number (X) and text title (Some text)
-            const [issue, title] = texts[i].title.rendered.split("_");
+            const [issue, title] = texts[i].title.rendered.split('_');
 
             //content of the text
             const content = addLinkAttributes(texts[i].content.rendered);
@@ -182,7 +180,7 @@ const Home = (props) => {
 
     return (
         <React.Fragment>
-            <GlobalStyle />
+            <GlobalStyle/>
             <Switch>
                 <Route path="/" exact component={IssueList} key="home"/>
                 <Route path="/info" exact component={About} key="about"/>

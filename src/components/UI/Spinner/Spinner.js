@@ -1,7 +1,5 @@
 import React from 'react';
-
-import {SpinnerWrapper, SpinnerBackdrop} from "../../../styled";
-
+import {SpinnerBackdrop, SpinnerWrapper} from '../../../styled';
 import animatedLogo from '../../../assets/images/animatedGlider.png';
 
 const Spinner = props => {
@@ -10,11 +8,11 @@ const Spinner = props => {
         <React.Fragment>
             <SpinnerWrapper>
 
-                    <img
-                        src={animatedLogo}
-                        alt='loading spinner'
-                        className={props.spinnerClass}
-                    />
+                <img
+                    src={animatedLogo}
+                    alt='loading spinner'
+                    className={props.spinnerClass}
+                />
             </SpinnerWrapper>
             <SpinnerBackdrop/>
         </React.Fragment>

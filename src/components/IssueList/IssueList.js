@@ -1,15 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import 'moment/locale/pl';
-
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
-import HoverableButton from "../UI/HoverableButton/HoverableButton";
+import HoverableButton from '../UI/HoverableButton/HoverableButton';
 import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
-
-import {ListOfIssues} from "../../styled";
-import {WEBSITE_TEXT, AnimatedContent, fadeTimeout} from "../../data/constants";
-
+import {ListOfIssues} from '../../styled';
+import {AnimatedContent} from '../../posed';
+import {WEBSITE_TEXT, fadeTimeout} from '../../data/constants';
 
 const IssueList = (props) => {
 

@@ -1,12 +1,10 @@
 import React from 'react';
-
 import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
 import AuthorLinks from './SocialLinks/AuthorLinks';
 import AuthorWorks from './SelectedWorks/AuthorWorks';
 import Separator from '../../UI/Separator/Separator';
-
-import {BioAuthor, BioTextBody, BioHeading} from "../../../styled";
-import {WEBSITE_TEXT, AUTHOR_LINKS} from "../../../data/constants";
+import {BioAuthor, BioTextBody, BioHeading} from '../../../styled';
+import {WEBSITE_TEXT, AUTHOR_LINKS} from '../../../data/constants';
 
 const Bio = (props) => {
 

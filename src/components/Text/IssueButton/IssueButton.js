@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import {IssueButtonWrapper, IssueInvertedButtonWrapper} from "../../../styled";
+import {IssueButtonWrapper, IssueInvertedButtonWrapper} from '../../../styled';
 
 const IssueButton = props => {
 

@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
-
 import TextNavbar from './TextNavbar/TextNavbar';
 import Story from './Story/Story';
 import Bio from './Bio/Bio';
 import TextButton from './TextButton/TextButton';
 import Separator from '../UI/Separator/Separator';
-
-import {TextContentWrapper, TextWrapper} from "../../styled";
-import {AnimatedContent, fadeTimeout, formatIssueNumber} from "../../data/constants";
+import {TextContentWrapper, TextWrapper} from '../../styled';
+import {AnimatedContent} from '../../posed';
+import {fadeTimeout, formatIssueNumber} from '../../data/constants';
 
 const Text = (props) => {
 
@@ -60,10 +59,10 @@ const Text = (props) => {
             //update document title
             if ((textID === -2) && props.issues[issueNumber - 1]) {
                 //title for bio
-                document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author + " – biogram";
+                document.title = formatIssueNumber(issueNumber) + ' – ' + props.issues[issueNumber - 1].author + ' – biogram';
             } else if (props.issues[issueNumber - 1]) {
                 //title for literary pieces
-                document.title = formatIssueNumber(issueNumber) + " – " + props.issues[issueNumber - 1].author + " – " + props.issues[issueNumber - 1].texts[textID].title;
+                document.title = formatIssueNumber(issueNumber) + ' – ' + props.issues[issueNumber - 1].author + ' – ' + props.issues[issueNumber - 1].texts[textID].title;
             }
 
         }
@@ -97,11 +96,11 @@ const Text = (props) => {
     }, [props.match.params]);
 
     //text title to be displayed - author name for bio, text title for pieces
-    let textTitle = "";
+    let textTitle = '';
     if (props.pageLoaded && props.issues[issueNumber - 1]) textTitle = (textID === -2) ? props.issues[issueNumber - 1].bio.title : props.issues[issueNumber - 1].texts[textID].title;
 
     //content to be displayed - different for bio
-    let textContent = "";
+    let textContent = '';
     if (props.pageLoaded && props.issues[issueNumber - 1]) textContent = (textID === -2) ? props.issues[issueNumber - 1].bio.content : props.issues[issueNumber - 1].texts[textID].content;
 
     return (

@@ -1,8 +1,6 @@
 import React from 'react';
-
-import {WEBSITE_TEXT} from "../../../data/constants";
-
-import {StoryTextTitle, StoryAuthor, StoryTranslatedBy, StoryTextBody} from "../../../styled";
+import {WEBSITE_TEXT} from '../../../data/constants';
+import {StoryTextTitle, StoryAuthor, StoryTranslatedBy, StoryTextBody} from '../../../styled';
 
 const Story = props => {
 

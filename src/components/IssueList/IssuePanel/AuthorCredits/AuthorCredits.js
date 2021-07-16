@@ -1,8 +1,6 @@
 import React from 'react';
-
-import {CreditsWrapper, AuthorName, TranslatorName} from "../../../../styled";
-import {WEBSITE_TEXT} from "../../../../data/constants";
-
+import {CreditsWrapper, AuthorName, TranslatorName} from '../../../../styled';
+import {WEBSITE_TEXT} from '../../../../data/constants';
 
 const AuthorCredits = (props) => {
 

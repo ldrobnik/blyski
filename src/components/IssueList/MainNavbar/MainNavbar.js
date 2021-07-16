@@ -1,9 +1,7 @@
 import React from 'react';
-
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
-
-import {MainNavbarWrapper, MainNavbarBody} from "../../../styled";
-import {WEBSITE_TEXT} from "../../../data/constants";
+import {MainNavbarWrapper, MainNavbarBody} from '../../../styled';
+import {WEBSITE_TEXT} from '../../../data/constants';
 
 
 const MainNavbar = props => {

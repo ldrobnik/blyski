@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
-import {AboutPanelWrapper, AboutBackdrop} from "../../styled";
-import {AnimatedContent} from "../../posed";
 import AboutPanel from './AboutPanel/AboutPanel';
-import {WEBSITE_TEXT, fadeTimeout} from "../../data/constants";
+import {AboutBackdrop, AboutPanelWrapper} from '../../styled';
+import {AnimatedContent} from '../../posed';
+import {fadeTimeout, WEBSITE_TEXT} from '../../data/constants';
 
 const About = (props) => {
 

@@ -1,8 +1,6 @@
 import React from 'react';
-
 import HoverableButton from '../../../UI/HoverableButton/HoverableButton';
-
-import {AuthorMenuWrapper, AuthorSocialIcons} from "../../../../styled";
+import {AuthorMenuWrapper, AuthorSocialIcons} from '../../../../styled';
 
 const AuthorLinks = props => {
 
