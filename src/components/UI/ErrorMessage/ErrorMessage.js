@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {ErrorMessageWrapper, ErrorMessageContent} from '../../../styled';
 import {WEBSITE_TEXT} from '../../../data/constants';
 
-const ErrorMessage = (props) => {
+const ErrorMessage = props => {
 
     return (
         props.error && props.pageLoaded && (props.issues.length > 1) &&

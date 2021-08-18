@@ -5,7 +5,7 @@ import {AboutBackdrop, AboutPanelWrapper} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {fadeTimeout, WEBSITE_TEXT} from '../../data/constants';
 
-const About = (props) => {
+const About = props => {
 
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);

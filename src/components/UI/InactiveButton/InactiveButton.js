@@ -1,7 +1,7 @@
 import React from 'react';
 import {InactiveButtonWrapper, InvertedInactiveButtonWrapper} from '../../../styled';
 
-const InactiveButton = (props) => {
+const InactiveButton = props => {
 
     //constant holding the button content
     const buttonMessage = props.message;

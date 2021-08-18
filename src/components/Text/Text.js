@@ -10,7 +10,7 @@ import {TextContentWrapper, TextWrapper} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {fadeTimeout, formatIssueNumber} from '../../data/constants';
 
-const Text = (props) => {
+const Text = props => {
 
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);

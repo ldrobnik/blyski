@@ -6,7 +6,7 @@ import Separator from '../../UI/Separator/Separator';
 import {BioAuthor, BioTextBody, BioHeading} from '../../../styled';
 import {WEBSITE_TEXT, AUTHOR_LINKS} from '../../../data/constants';
 
-const Bio = (props) => {
+const Bio = props => {
 
     return (
         <React.Fragment>

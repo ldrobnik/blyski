@@ -1,7 +1,7 @@
 import React from 'react';
 import {SeparatorWrapper, SeparatorContent, InvertedSeparatorContent} from '../../../styled';
 
-const Separator = (props) => {
+const Separator = props => {
 
     return (
         <SeparatorWrapper>

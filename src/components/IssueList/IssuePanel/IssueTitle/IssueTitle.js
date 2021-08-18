@@ -3,7 +3,7 @@ import Logo from '../../../UI/Logo/Logo';
 import {TitleOfIssue, IssueName, IssueDate} from '../../../../styled';
 import {formatIssueNumber} from '../../../../data/constants';
 
-const IssueTitle = (props) => {
+const IssueTitle = props => {
 
     return (
         <React.Fragment>

@@ -11,7 +11,7 @@ import {GlobalStyle} from '../../styled';
 import {WP_URL_FRAGMENT, FALLBACK_ISSUE, getRandomRotationClass} from '../../data/constants';
 import {setPageLoaded, setIssues, setError} from '../../actions/index';
 
-const Home = (props) => {
+const Home = props => {
 
     //Class to be applied to the spinner depending on the current time
     const [spinnerClass, setSpinnerClass] = useState(getRandomRotationClass());

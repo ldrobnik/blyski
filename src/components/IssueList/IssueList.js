@@ -9,7 +9,7 @@ import {ListOfIssues} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {WEBSITE_TEXT, fadeTimeout} from '../../data/constants';
 
-const IssueList = (props) => {
+const IssueList = props => {
 
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);

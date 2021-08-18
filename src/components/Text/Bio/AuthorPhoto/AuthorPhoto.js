@@ -7,7 +7,7 @@ import photo3 from '../../../../assets/images/authorPhotos/3.jpg';
 import photo4 from '../../../../assets/images/authorPhotos/4.jpg';
 import photo5 from '../../../../assets/images/authorPhotos/5.jpg';
 
-const AuthorPhoto = (props) => {
+const AuthorPhoto = props => {
 
     //specifies whether the photo is visible (it is turn visible when the photo is loaded
     const [visible, setVisible] = useState(false);
