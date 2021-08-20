@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import AboutPanel from './AboutPanel/AboutPanel';
+import TermsPanel from './TermsPanel/TermsPanel';
 import {AboutBackdrop, AboutPanelWrapper} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {fadeTimeout, WEBSITE_TEXT} from '../../data/constants';
@@ -10,12 +11,28 @@ const About = props => {
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);
 
+    //specifies whether publication terms for authors should be displayed in place of the regular about page
+    const [pubTerms, setPubTerms] = useState(false);
+
+    //checks whether the url contains the 'pub-terms' slug
+    const checkPubTerms = () => {
+        if (props.location.pathname.includes('pub-terms')) {
+            setPubTerms(true);
+        } else {
+            setPubTerms(false);
+        }
+    };
+
     useEffect(() => {
         //Scroll to top
         window.scrollTo(0, 0);
 
         //update document title
         document.title = WEBSITE_TEXT.title.main + WEBSITE_TEXT.title.about;
+
+        //check the url and display publication terms if the pathname contains 'pub-terms'
+        checkPubTerms();
+
     }, []);
 
     useEffect(() => {
@@ -29,7 +46,10 @@ const About = props => {
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
             <AboutPanelWrapper>
-                <AboutPanel/>
+                {pubTerms ?
+                    <TermsPanel/> :
+                    <AboutPanel/>
+                }
             </AboutPanelWrapper>
             <AboutBackdrop/>
         </AnimatedContent>

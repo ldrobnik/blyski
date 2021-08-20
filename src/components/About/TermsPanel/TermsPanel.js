@@ -2,7 +2,7 @@ import React from 'react';
 import HoverableButton from '../../UI/HoverableButton/HoverableButton';
 import Logo from '../../UI/Logo/Logo';
 import Separator from '../../UI/Separator/Separator';
-import CopyrightNote from './CopyrightNote/CopyrightNote';
+import CopyrightNote from '../AboutPanel/CopyrightNote/CopyrightNote';
 import {
     AboutBox,
     AboutTitle,
@@ -14,7 +14,7 @@ import {
 } from '../../../styled';
 import {WEBSITE_TEXT} from '../../../data/constants';
 
-const AboutPanel = props => {
+const TermsPanel = props => {
 
     return (
         <AboutBox>
@@ -27,36 +27,24 @@ const AboutPanel = props => {
                         {WEBSITE_TEXT.about.title}
                     </AboutJournalName>
                     <AboutJournalSubtitle>
-                        {WEBSITE_TEXT.about.subtitle}
+                        {WEBSITE_TEXT.pubTerms.subtitle}
                     </AboutJournalSubtitle>
                 </div>
             </AboutTitle>
             <AboutMainContent>
-                {WEBSITE_TEXT.about.content}
+                {WEBSITE_TEXT.pubTerms.content}
+            </AboutMainContent>
+            <Separator inverted={true}/>
+            <AboutMainContent>
+                {WEBSITE_TEXT.pubTerms.deal}
             </AboutMainContent>
             <Separator inverted={true}/>
             <AboutSecondaryContent>
-                <p>{WEBSITE_TEXT.about.contact}</p>
+                <p>{WEBSITE_TEXT.pubTerms.contact}</p>
             </AboutSecondaryContent>
-            <AboutTernaryContent>
-                <p>{WEBSITE_TEXT.about.disclaimer}</p>
-            </AboutTernaryContent>
-            <Separator inverted={true}/>
-            <AboutSecondaryContent>
-                <p>{WEBSITE_TEXT.about.credits}</p>
-            </AboutSecondaryContent>
-            <AboutTernaryContent>
-                <p>{WEBSITE_TEXT.about.footnote}</p>
-            </AboutTernaryContent>
             <CopyrightNote/>
-            <Separator inverted={true}/>
-            <HoverableButton
-                path="/"
-                message={WEBSITE_TEXT.about.button}
-                inverted={true}
-            />
         </AboutBox>
     );
 };
 
-export default AboutPanel;
+export default TermsPanel;

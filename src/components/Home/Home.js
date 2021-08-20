@@ -184,6 +184,7 @@ const Home = props => {
             <Switch>
                 <Route path="/" exact component={IssueList} key="home"/>
                 <Route path="/info" exact component={About} key="about"/>
+                <Route path="/pub-terms" exact component={About} key="pub-terms"/>
                 <Route path="/:issue" exact component={IssueList} key="issue"/>
                 <Route path="/:issue/:slug" exact component={Text} key="text"/>
                 <Route render={() => (<Redirect to="/"/>)} key="default"/>
