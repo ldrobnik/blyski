@@ -19,6 +19,45 @@ export const GlobalStyle = createGlobalStyle`
     
 `;
 
+/* General */
+
+export //hover text effect
+const HoverableLink = styled.span`
+  a, Link {
+
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    vertical-align: middle;
+    transform: translateY(-2px);
+
+
+    &:hover {
+      color: ${props => props.theme.themeColor};
+    }
+
+    &:before {
+      content: '';
+      background-color: ${props => props.theme.lightColor};
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      left: 0;
+      top: 0;
+      z-index: -20;
+      transform: translateY(100%);
+      transition: all 0.2s ease-in;
+    }
+
+    &:hover:before {
+      transform: translateY(-2px);
+    }
+  }
+`;
+
+
 /* About.js */
 
 export const AboutPanelWrapper = styled.div`
