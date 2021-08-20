@@ -27,13 +27,19 @@ const About = props => {
         //Scroll to top
         window.scrollTo(0, 0);
 
-        //update document title
-        document.title = WEBSITE_TEXT.title.main + WEBSITE_TEXT.title.about;
-
         //check the url and display publication terms if the pathname contains 'pub-terms'
         checkPubTerms();
 
+        //update document title - different for publication terms
+        document.title = pubTerms ? WEBSITE_TEXT.title.english : WEBSITE_TEXT.title.main + WEBSITE_TEXT.title.about;
+
+
     }, []);
+
+    useEffect(() => {
+        //update document title - different for publication terms
+        document.title = pubTerms ? WEBSITE_TEXT.title.english : WEBSITE_TEXT.title.main + WEBSITE_TEXT.title.about;
+    }, [pubTerms]);
 
     useEffect(() => {
         //when page loads, trigger fade-in animation after a while

@@ -129,7 +129,8 @@ const patreonIcon = (
 export const WEBSITE_TEXT = {
     title: {
         main: 'błyski – flash fiction w przekładzie',
-        about: ' – informacje'
+        about: ' – informacje',
+        english: 'błyski – flash fiction in Polish translation'
     },
     mainNavbar: [
         {
