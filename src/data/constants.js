@@ -210,7 +210,7 @@ export const WEBSITE_TEXT = {
             <p>The first issue is dedicated to <HoverableLink><a href="https://blyski.org" target="_blank" rel="noopener noreferrer"><strong>Megan Pillow</strong></a></HoverableLink>.</p>
         </React.Fragment>,
         deal: <React.Fragment>
-            <p>We offer <strong>an honorarium of 50 USD</strong>, payable before the issue goes live, via PayPal or other agreed service. (Fees may apply).</p>
+            <p>We offer an <strong>honorarium of 50 USD</strong>, payable before the issue goes live, via PayPal or other agreed service. (Fees may apply).</p>
             <p>We ask for <strong>one-time Polish translation rights</strong> to publish your pieces on the website and, possibly, in a future anthology.</p>
         </React.Fragment>,
         contact: <React.Fragment>
