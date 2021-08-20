@@ -27,34 +27,22 @@ const TermsPanel = props => {
                         {WEBSITE_TEXT.about.title}
                     </AboutJournalName>
                     <AboutJournalSubtitle>
-                        {WEBSITE_TEXT.about.subtitle}
+                        {WEBSITE_TEXT.pubTerms.subtitle}
                     </AboutJournalSubtitle>
                 </div>
             </AboutTitle>
             <AboutMainContent>
-                Terms
+                {WEBSITE_TEXT.pubTerms.content}
+            </AboutMainContent>
+            <Separator inverted={true}/>
+            <AboutMainContent>
+                {WEBSITE_TEXT.pubTerms.deal}
             </AboutMainContent>
             <Separator inverted={true}/>
             <AboutSecondaryContent>
-                <p>{WEBSITE_TEXT.about.contact}</p>
+                <p>{WEBSITE_TEXT.pubTerms.contact}</p>
             </AboutSecondaryContent>
-            <AboutTernaryContent>
-                <p>{WEBSITE_TEXT.about.desclaimer}</p>
-            </AboutTernaryContent>
-            <Separator inverted={true}/>
-            <AboutSecondaryContent>
-                <p>{WEBSITE_TEXT.about.credits}</p>
-            </AboutSecondaryContent>
-            <AboutTernaryContent>
-                <p>{WEBSITE_TEXT.about.footnote}</p>
-            </AboutTernaryContent>
             <CopyrightNote/>
-            <Separator inverted={true}/>
-            <HoverableButton
-                path="/"
-                message={WEBSITE_TEXT.about.button}
-                inverted={true}
-            />
         </AboutBox>
     );
 };

@@ -210,7 +210,7 @@ export const WEBSITE_TEXT = {
         </React.Fragment>,
         contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski.pismo [at] gmail [dot]
             com.</React.Fragment>,
-        desclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich przekłady
+        disclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich przekłady
             tekstów napisanych
             po angielsku, dlatego niestety nie rozpatruję propozycji wydawniczych, choć do samego pisania flash fiction
             gorąco zachęcam!</React.Fragment>,
@@ -235,6 +235,23 @@ export const WEBSITE_TEXT = {
             moreInfo: 'Więcej informacji:',
             selectedWorks: 'Wybrane utwory:'
         }
+    },
+    pubTerms: {
+        title: 'błyski',
+        subtitle: <React.Fragment>flash fiction in Polish translation</React.Fragment>,
+        content: <React.Fragment>
+            <p><HoverableLink><a href="https://blyski.org" target="_blank" rel="noopener noreferrer"><strong>błyski</strong></a></HoverableLink> (Polish for <em>flashes</em>) is a journal publishing solicited flash fiction in Polish translation. It is run by <HoverableLink><a href="https://drobnik.co" target="_blank" rel="noopener noreferrer"><strong>Łukasz Drobnik</strong></a></HoverableLink>.</p>
+            <p>The journal is a minimalist affair—each issue comprises five flashes by one author and their bio. That’s it.</p>
+            <p>The first issue is dedicated to <HoverableLink><a href="https://blyski.org" target="_blank" rel="noopener noreferrer"><strong>Megan Pillow</strong></a></HoverableLink>.</p>
+        </React.Fragment>,
+        deal: <React.Fragment>
+            <p>We offer <strong>a honorarium of 50 USD</strong>, payable before the issue goes live, via PayPal or other agreed service. (Fees may apply).</p>
+            <p>We ask for <strong>one-time Polish translation rights</strong> to feature your pieces on the website and, possibly, in a future anthology.</p>
+        </React.Fragment>,
+        contact: <React.Fragment>
+            <p><strong>Contact:</strong> blyski.pismo [at] gmail [dot]
+                com.</p>
+            </React.Fragment>
     },
     error: 'Błąd połączenia. Starsze numery chwilowo niedostępne.'
 };

@@ -39,7 +39,7 @@ const AboutPanel = props => {
                 <p>{WEBSITE_TEXT.about.contact}</p>
             </AboutSecondaryContent>
             <AboutTernaryContent>
-                <p>{WEBSITE_TEXT.about.desclaimer}</p>
+                <p>{WEBSITE_TEXT.about.disclaimer}</p>
             </AboutTernaryContent>
             <Separator inverted={true}/>
             <AboutSecondaryContent>
