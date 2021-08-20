@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFacebookSquare, faInstagram, faMedium, faPatreon, faTwitterSquare} from '@fortawesome/free-brands-svg-icons';
 import {faAngleDoubleLeft, faGlobe, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
+import {HoverableLink} from '../styled';
 
 //Url fragment used for fetching data from Wodpress API
 export const WP_URL_FRAGMENT = 'wp-json/wp/v2/posts?per_page=100';
@@ -36,42 +36,6 @@ export const getRandomRotationClass = () => {
 
     return getRotationClass(classNumber);
 };
-
-//hover text effect
-const HoverableLink = styled.span`
-  a, Link {
-
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-    padding: 5px 1px;
-    transform: translateY(10px);
-
-
-    &:hover {
-      color: ${props => props.theme.themeColor};
-    }
-
-    &:before {
-      content: '';
-      background-color: ${props => props.theme.lightColor};
-      position: absolute;
-      width: 120%;
-      height: 120%;
-      left: 0;
-      top: 0;
-      z-index: -20;
-      transform: translateY(100%);
-      transition: all 0.2s ease-in;
-    }
-
-    &:hover:before {
-      transform: translateY(-2px);
-    }
-  }
-`;
 
 
 //Fontawesome icons
