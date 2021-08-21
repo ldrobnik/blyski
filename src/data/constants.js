@@ -211,7 +211,7 @@ export const WEBSITE_TEXT = {
         </React.Fragment>,
         deal: <React.Fragment>
             <p>We offer <strong>50&nbsp;USD</strong>, payable before the issue goes live, via PayPal or other agreed service. (Fees may apply).</p>
-            <p>We ask for <strong>one-time Polish translation rights</strong> to publish your pieces on the website and, possibly, in a future anthology.</p>
+            <p>We ask for <strong>one-time Polish translation rights</strong> to publish your stories on the website and, possibly, in a future anthology.</p>
         </React.Fragment>,
         contact: <React.Fragment>
             <p><strong>Contact:</strong> blyski.pismo [at] gmail [dot]
