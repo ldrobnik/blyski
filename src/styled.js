@@ -23,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export //hover text effect
 const HoverableLink = styled.span`
+  
   a, Link {
 
     display: inline-block;
