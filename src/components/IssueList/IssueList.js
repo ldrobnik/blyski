@@ -45,11 +45,11 @@ const IssueList = props => {
                 {
                     props.pageLoaded
                     && !props.issues[props.match.params.issue - 1]
-                    && [...props.issues].reverse().map((issue) => {
+                    && ISSUES.map((issue, k) => {
                         return (
-                            issue && <IssuePanel
-                                key={issue.issue}
-                                issue={issue.issue}
+                            issue.published && <IssuePanel
+                                key={k}
+                                issue={k + 1}
                                 author={issue.author}
                                 date={issue.date}
                                 texts={issue.texts}
