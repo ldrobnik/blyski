@@ -15,9 +15,11 @@ const Bio = props => {
                 issueNumber={props.issueNumber}
                 author={props.author}
             />
-            <BioTextBody
-                dangerouslySetInnerHTML={{__html: props.textContent}}
-            />
+                <BioTextBody>
+                        <Markdown>
+                                {props.textContent}
+                        </Markdown>
+                </BioTextBody>
             <Separator/>
             <BioHeading>{WEBSITE_TEXT.text.bio.moreInfo}</BioHeading>
             <AuthorLinks

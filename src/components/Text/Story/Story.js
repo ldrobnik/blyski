@@ -10,7 +10,11 @@ const Story = props => {
             <StoryAuthor>{props.author}</StoryAuthor>
             <StoryTextTitle>{props.textTitle}</StoryTextTitle>
             <StoryTranslatedBy>{WEBSITE_TEXT.issueList.translator}</StoryTranslatedBy>
-            <StoryTextBody dangerouslySetInnerHTML={{__html: props.textContent}}/>
+            <StoryTextBody>
+                <Markdown>
+                    {props.textContent}
+                </Markdown>
+            </StoryTextBody>
         </React.Fragment>
     );
 };
