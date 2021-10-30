@@ -8,9 +8,19 @@ import TextButton from './TextButton/TextButton';
 import Separator from '../UI/Separator/Separator';
 import {TextContentWrapper, TextWrapper} from '../../styled';
 import {AnimatedContent} from '../../posed';
-import {fadeTimeout, formatIssueNumber} from '../../data/constants';
+import {ISSUES, fadeTimeout, formatIssueNumber} from '../../data/constants';
+import {text} from '@fortawesome/fontawesome-svg-core';
 
 const Text = props => {
+
+    //text content to be displayed - either a story or a bio
+    const [textContent, setTextContent] = useState('');
+    
+    //the id of the text to be displayed
+    const [textId, setTextId] = useState(-1);
+
+    //the number of the issue to be displayed
+    const [issueNumber, setIssueNumber] = useState(0);
 
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);
@@ -18,51 +28,87 @@ const Text = props => {
     let history = useHistory();
 
     //based on the url, checks which text from which issue should be displayed
-    const checkTextID = (issue, slug) => {
+    const checkTextId = (issue, slug) => {
 
-        //if text data cannot be accessed (in case of connection error), return '-1'
-        if (!props.issues[issue - 1]) return -1;
+        //if the issue hasn't been published, return '-1'
+        if (!ISSUES[issue - 1].published) return -1;
 
-        //if slug is 'bio', return '-2'
+        //if slug is 'bio', set text id to '-2'
         if (slug === 'bio') return -2;
 
-        //loop through the text of a given issue and return its idea if there's a match
-        for (let i = 0; i < props.issues[issue - 1].texts.length; i++) {
-            if (props.issues[issue - 1].texts[i].slug === slug) {
+        //loop through the text of a given issue and if there's a match, return the id of text to be displayed
+        for (let i = 0; i < ISSUES[issue - 1].texts.length; i++) {
+            if (ISSUES[issue - 1].texts[i].slug === slug) {
+                console.log(i, ISSUES[issue - 1].texts[i].slug, slug);
                 return i;
             }
         }
-
 
         //if there's no match, return '-1'
         return -1;
     };
 
+    //convert text id into part of file name
+    const convertTextId = textId => {
+      if (textId === -2) return 'bio';
+      if (textId >= 0 && textId <= 4) return textId + 1;
+    };
 
-    //get issue number based on url parameter
-    let issueNumber = props.match.params.issue;
+    //imports text to be displayed
+    const importText = (issueNo, textId) => {
 
-
-    //if issue number doesn't exceed array length get text id based on url parameters
-    let textID = (issueNumber <= props.issues.length) ? checkTextID(issueNumber, props.match.params.slug) : -1;
+        //imports markdown document and coverts it into text
+        import(`./../../data/texts/${issueNo}-${textId}.md`)
+            .then(res => {
+                fetch(res.default)
+                    .then(res => res.text())
+                    .then(res => setTextContent(res))
+                    .then(() => setContentVisible(true))
+                    .catch(err => console.log(err));
+            })
+            .catch(err => console.log(err));
+    }
 
 
     useEffect(() => {
 
+
+        //set issue number
+        setIssueNumber(Number(props.match.params.issue));
+
+        //set the id of text to be displayed
+        setTextId(checkTextId(props.match.params.issue, props.match.params.slug));
+
+
+    }, [props.match.params.issue, props.match.params.slug])
+
+
+    useEffect(() => {
+        importText(issueNumber, convertTextId(textId));
+    }, [issueNumber, textId])
+
+    useEffect(() => {
+
+        //set issue number
+        setIssueNumber(Number(props.match.params.issue));
+
+        //set the id of text to be displayed
+        setTextId(checkTextId(props.match.params.issue, props.match.params.slug))
+
         if (props.pageLoaded) {
 
             //if text data cannot be accessed (wrong slug or connection error), redirect to home page
-            if ((textID === -1) || (props.issues[issueNumber - 1] === null)) {
+            if ((textId === -1) || (props.issues[issueNumber - 1] === null)) {
                 history.push('/');
             }
 
             //update document title
-            if ((textID === -2) && props.issues[issueNumber - 1]) {
+            if ((textId === -2) && props.issues[issueNumber - 1]) {
                 //title for bio
                 document.title = formatIssueNumber(issueNumber) + ' – ' + props.issues[issueNumber - 1].author + ' – biogram';
             } else if (props.issues[issueNumber - 1]) {
                 //title for literary pieces
-                document.title = formatIssueNumber(issueNumber) + ' – ' + props.issues[issueNumber - 1].author + ' – ' + props.issues[issueNumber - 1].texts[textID].title;
+                document.title = formatIssueNumber(issueNumber) + ' – ' + props.issues[issueNumber - 1].author + ' – ' + props.issues[issueNumber - 1].texts[textId].title;
             }
 
         }
@@ -76,7 +122,7 @@ const Text = props => {
     useEffect(() => {
         //Scroll to top when text ID changes
         window.scrollTo(0, 0);
-    }, [textID]);
+    }, [textId]);
 
 
     useEffect(() => {
@@ -90,36 +136,36 @@ const Text = props => {
         //when path changes, make content invisible, then turn it on
         setContentVisible(false);
 
-        if (props.pageLoaded) {
-            setTimeout(() => setContentVisible(true), fadeTimeout);
-        }
+        // if (props.pageLoaded) {
+        //     setTimeout(() => setContentVisible(true), fadeTimeout);
+        // }
     }, [props.match.params]);
 
     //text title to be displayed - author name for bio, text title for pieces
     let textTitle = '';
-    if (props.pageLoaded && props.issues[issueNumber - 1]) textTitle = (textID === -2) ? props.issues[issueNumber - 1].bio.title : props.issues[issueNumber - 1].texts[textID].title;
+    if (props.pageLoaded && props.issues[issueNumber - 1]) textTitle = (textId === -2) ? props.issues[issueNumber - 1].bio.title : props.issues[issueNumber - 1].texts[textId].title;
 
     //content to be displayed - different for bio
-    let textContent = '';
-    if (props.pageLoaded && props.issues[issueNumber - 1]) textContent = (textID === -2) ? props.issues[issueNumber - 1].bio.content : props.issues[issueNumber - 1].texts[textID].content;
+    // let textContent = '';
+    // if (props.pageLoaded && props.issues[issueNumber - 1]) textContent = (textId === -2) ? props.issues[issueNumber - 1].bio.content : props.issues[issueNumber - 1].texts[textId].content;
 
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
             {(props.pageLoaded && props.issues[issueNumber - 1]) && <TextNavbar
                 issueNumber={issueNumber}
-                textID={textID}
+                textId={textId}
                 texts={props.issues[issueNumber - 1].texts}
             />}
             <TextContentWrapper>
                 <TextWrapper>
-                    {(props.pageLoaded && (textID !== -1) && props.issues[issueNumber - 1]) && (textID !== -2) &&
+                    {(props.pageLoaded && (textId !== -1) && props.issues[issueNumber - 1]) && (textId !== -2) &&
                     <Story
                         author={props.issues[issueNumber - 1].author}
                         textTitle={textTitle}
                         textContent={textContent}
                     />}
-                    {(props.pageLoaded) && (textID === -2) && props.issues[issueNumber - 1] &&
+                    {(props.pageLoaded) && (textId === -2) && props.issues[issueNumber - 1] &&
                     <Bio
                         author={props.issues[issueNumber - 1].author}
                         issueNumber={issueNumber}
@@ -129,9 +175,9 @@ const Text = props => {
                     <React.Fragment>
                         <Separator/>
                         <TextButton
-                            textID={textID}
+                            textId={textId}
                             issueNumber={issueNumber}
-                            slug={((textID < 4) && (textID !== -2)) ? props.issues[issueNumber - 1].texts[textID + 1].slug : null}
+                            slug={((textId < 4) && (textId !== -2)) ? props.issues[issueNumber - 1].texts[textId + 1].slug : null}
                         />
                     </React.Fragment>
                     }

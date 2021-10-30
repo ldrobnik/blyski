@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx/dist/index.js';
 import {WEBSITE_TEXT} from '../../../data/constants';
 import {StoryTextTitle, StoryAuthor, StoryTranslatedBy, StoryTextBody} from '../../../styled';
 
