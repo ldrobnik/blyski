@@ -97,18 +97,18 @@ const Text = props => {
 
         if (props.pageLoaded) {
 
-            //if text data cannot be accessed (wrong slug or connection error), redirect to home page
-            if ((textId === -1) || (props.issues[issueNumber - 1] === null)) {
+            //if text data cannot be accessed (wrong slug, connection error or the issue hasn't been published), redirect to home page
+            if ((textId === -1) || (!ISSUES[issueNumber - 1].published)) {
                 history.push('/');
             }
 
             //update document title
-            if ((textId === -2) && props.issues[issueNumber - 1]) {
+            if ((textId === -2) && ISSUES[issueNumber - 1].published) {
                 //title for bio
-                document.title = formatIssueNumber(issueNumber) + ' – ' + props.issues[issueNumber - 1].author + ' – biogram';
-            } else if (props.issues[issueNumber - 1]) {
+                document.title = formatIssueNumber(issueNumber) + ' – ' + ISSUES[issueNumber - 1].author + ' – biogram';
+            } else if (ISSUES[issueNumber - 1].published) {
                 //title for literary pieces
-                document.title = formatIssueNumber(issueNumber) + ' – ' + props.issues[issueNumber - 1].author + ' – ' + props.issues[issueNumber - 1].texts[textId].title;
+                document.title = formatIssueNumber(issueNumber) + ' – ' + ISSUES[issueNumber - 1].author + ' – ' + ISSUES[issueNumber - 1].texts[textId].title;
             }
 
         }
@@ -143,41 +143,37 @@ const Text = props => {
 
     //text title to be displayed - author name for bio, text title for pieces
     let textTitle = '';
-    if (props.pageLoaded && props.issues[issueNumber - 1]) textTitle = (textId === -2) ? props.issues[issueNumber - 1].bio.title : props.issues[issueNumber - 1].texts[textId].title;
-
-    //content to be displayed - different for bio
-    // let textContent = '';
-    // if (props.pageLoaded && props.issues[issueNumber - 1]) textContent = (textId === -2) ? props.issues[issueNumber - 1].bio.content : props.issues[issueNumber - 1].texts[textId].content;
+    if (props.pageLoaded && ISSUES[issueNumber - 1].published) textTitle = (textId === -2) ? ISSUES[issueNumber - 1].author : ISSUES[issueNumber - 1].texts[textId].title;
 
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
-            {(props.pageLoaded && props.issues[issueNumber - 1]) && <TextNavbar
+            {(props.pageLoaded && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && <TextNavbar
                 issueNumber={issueNumber}
                 textId={textId}
-                texts={props.issues[issueNumber - 1].texts}
+                texts={ISSUES[issueNumber - 1].texts}
             />}
             <TextContentWrapper>
                 <TextWrapper>
-                    {(props.pageLoaded && (textId !== -1) && props.issues[issueNumber - 1]) && (textId !== -2) &&
+                    {(props.pageLoaded && (textId !== -1) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && (textId !== -2) &&
                     <Story
-                        author={props.issues[issueNumber - 1].author}
+                        author={ISSUES[issueNumber - 1].author}
                         textTitle={textTitle}
                         textContent={textContent}
                     />}
-                    {(props.pageLoaded) && (textId === -2) && props.issues[issueNumber - 1] &&
+                    {(props.pageLoaded) && (textId === -2) && ISSUES[issueNumber - 1].published  && (textContent.length > 0) &&
                     <Bio
-                        author={props.issues[issueNumber - 1].author}
+                        author={ISSUES[issueNumber - 1].author}
                         issueNumber={issueNumber}
                         textContent={textContent}
                     />}
-                    {(props.pageLoaded && props.issues[issueNumber - 1]) &&
+                    {(props.pageLoaded && ISSUES[issueNumber - 1].published) &&
                     <React.Fragment>
                         <Separator/>
                         <TextButton
                             textId={textId}
                             issueNumber={issueNumber}
-                            slug={((textId < 4) && (textId !== -2)) ? props.issues[issueNumber - 1].texts[textId + 1].slug : null}
+                            slug={((textId < 4) && (textId !== -2)) ? ISSUES[issueNumber - 1].texts[textId + 1].slug : null}
                         />
                     </React.Fragment>
                     }
