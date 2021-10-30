@@ -13,14 +13,19 @@ import {text} from '@fortawesome/fontawesome-svg-core';
 
 const Text = props => {
 
-    //text content to be displayed - either a story or a bio
-    const [textContent, setTextContent] = useState('');
-    
-    //the id of the text to be displayed
-    const [textId, setTextId] = useState(-1);
 
     //the number of the issue to be displayed
     const [issueNumber, setIssueNumber] = useState(0);
+
+
+    //text title to be displayed - author name for bio, text title for pieces
+    const [textTitle, setTextTitle] = useState('');
+
+    //the id of the text to be displayed
+    const [textId, setTextId] = useState(-1);
+
+    //text content to be displayed - either a story or a bio
+    const [textContent, setTextContent] = useState('');
 
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);
@@ -72,7 +77,6 @@ const Text = props => {
 
     useEffect(() => {
 
-
         //set issue number
         setIssueNumber(Number(props.match.params.issue));
 
@@ -84,6 +88,14 @@ const Text = props => {
 
 
     useEffect(() => {
+        //set text title - author name for bio, story name for story
+
+        //set text title
+        if ((issueNumber > 0) && ISSUES[issueNumber - 1].published) {
+            setTextTitle((textId === -2) ? ISSUES[issueNumber - 1].author : ISSUES[issueNumber - 1].texts[textId].title);
+        }
+
+        //import text to be displayed
         importText(issueNumber, convertTextId(textId));
     }, [issueNumber, textId])
 
@@ -95,7 +107,7 @@ const Text = props => {
         //set the id of text to be displayed
         setTextId(checkTextId(props.match.params.issue, props.match.params.slug))
 
-        if (props.pageLoaded) {
+        if (props.pageLoaded && (issueNumber > 0)) {
 
             //if text data cannot be accessed (wrong slug, connection error or the issue hasn't been published), redirect to home page
             if ((textId === -1) || (!ISSUES[issueNumber - 1].published)) {
@@ -141,33 +153,31 @@ const Text = props => {
         // }
     }, [props.match.params]);
 
-    //text title to be displayed - author name for bio, text title for pieces
-    let textTitle = '';
-    if (props.pageLoaded && ISSUES[issueNumber - 1].published) textTitle = (textId === -2) ? ISSUES[issueNumber - 1].author : ISSUES[issueNumber - 1].texts[textId].title;
+
 
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
-            {(props.pageLoaded && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && <TextNavbar
+            {(props.pageLoaded && contentVisible && (issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && <TextNavbar
                 issueNumber={issueNumber}
                 textId={textId}
                 texts={ISSUES[issueNumber - 1].texts}
             />}
             <TextContentWrapper>
                 <TextWrapper>
-                    {(props.pageLoaded && (textId !== -1) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && (textId !== -2) &&
+                    {(props.pageLoaded && (textId !== -1) && (issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && (textId !== -2) &&
                     <Story
                         author={ISSUES[issueNumber - 1].author}
                         textTitle={textTitle}
                         textContent={textContent}
                     />}
-                    {(props.pageLoaded) && (textId === -2) && ISSUES[issueNumber - 1].published  && (textContent.length > 0) &&
+                    {(props.pageLoaded) && (textId === -2) && (issueNumber > 0) && ISSUES[issueNumber - 1].published  && (textContent.length > 0) &&
                     <Bio
                         author={ISSUES[issueNumber - 1].author}
                         issueNumber={issueNumber}
                         textContent={textContent}
                     />}
-                    {(props.pageLoaded && ISSUES[issueNumber - 1].published) &&
+                    {(props.pageLoaded && (issueNumber > 0) && (issueNumber > 0) && ISSUES[issueNumber - 1].published) &&
                     <React.Fragment>
                         <Separator/>
                         <TextButton
