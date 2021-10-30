@@ -221,7 +221,39 @@ export const WEBSITE_TEXT = {
     error: 'Błąd połączenia. Starsze numery chwilowo niedostępne.'
 };
 
-//constant containing authors' social media links and links to their work to be used in bio
+//details of all issues
+export const ISSUES = [
+    {
+        published: true,
+        date: '2021-06-06',
+        author: 'Megan Pillow',
+        texts: [
+            {
+                title: 'Wszyscy wiemy o Margo',
+                slug: 'wszyscy-wiemy-o-margo'
+            },
+            {
+                title: 'W nowym świecie',
+                slug: 'w-nowym-swiecie'
+            },
+            {
+                title: 'Kiedy w twoim mieście zamkną Wal-Mart',
+                slug: 'kiedy-w-twoim-miescie-zamkna-wal-mart'
+            },
+            {
+                title: 'Lily w świetle',
+                slug: 'lily-w-swietle'
+            },
+            {
+                title: 'Margo. Skręć w lewo.',
+                slug: 'margo-skrec-w-lewo'
+            }
+        ]
+    }
+];
+
+
+//authors' social media links and links to their work to be used in bio
 export const AUTHOR_LINKS = [
     {
         links: [
@@ -321,7 +353,6 @@ export const AUTHOR_LINKS = [
         ]
     }
 ];
-
 
 //data of last issue to be used in case of connection error
 export const FALLBACK_ISSUE = [

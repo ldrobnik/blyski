@@ -7,7 +7,7 @@ import HoverableButton from '../UI/HoverableButton/HoverableButton';
 import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 import {ListOfIssues} from '../../styled';
 import {AnimatedContent} from '../../posed';
-import {WEBSITE_TEXT, fadeTimeout} from '../../data/constants';
+import {WEBSITE_TEXT, ISSUES, fadeTimeout} from '../../data/constants';
 
 const IssueList = props => {
 
