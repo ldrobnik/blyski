@@ -35,7 +35,6 @@ const TextNavbar = props => {
                         )
                     })}
                     {(props.textId === -2) ?
-
                         <InactiveButton
                             message={WEBSITE_TEXT.text.navbar.bio}
                         />
