@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {connect} from 'react-redux';
 import 'moment/locale/pl';
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
-import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 import {ListOfIssues} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {WEBSITE_TEXT, ISSUES, fadeTimeout} from '../../data/constants';
@@ -78,19 +76,10 @@ const IssueList = props => {
                         />
                     }
                 </ListOfIssues>
-                <ErrorMessage/>
             </AnimatedContent>
             {spinnerVisible && <Spinner/>}
         </React.Fragment>
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        pageLoaded: state.pageLoaded,
-        error: state.error,
-        issues: state.issues
-    }
-};
-
-export default connect(mapStateToProps)(IssueList);
+export default IssueList;
