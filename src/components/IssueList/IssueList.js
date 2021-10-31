@@ -93,8 +93,8 @@ const IssueList = props => {
                     />
                     }
                     {
-                        props.match.params.issue && ISSUES.length >= Number(props.match.params.issue) && ISSUES[props.match.params.issue - 1].published &&
-                        (ISSUES.length > 1)
+                        props.match.params.issue && publishedIssues.length >= Number(props.match.params.issue) && ISSUES[props.match.params.issue - 1].published &&
+                        (publishedIssues.length > 1)
                         && <HoverableButton
                             path='/'
                             message={WEBSITE_TEXT.issueList.homeButton}
