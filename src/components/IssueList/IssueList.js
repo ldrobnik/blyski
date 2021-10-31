@@ -25,6 +25,10 @@ const IssueList = props => {
     //Array containing only published issues
     const publishedIssues = ISSUES.filter(issue => issue.published);
 
+    //Array of issues in reversed order so that the newest issue is displayed first
+    const reversedIssues = ISSUES.slice().reverse();
+    console.log(ISSUES, reversedIssues);
+
     useEffect(() => {
         //Scroll to top
         window.scrollTo(0, 0);
@@ -71,11 +75,11 @@ const IssueList = props => {
                 <MainNavbar/>
                 <ListOfIssues>
                     {!props.match.params.issue &&
-                    ISSUES.map((issue, k) => {
+                    reversedIssues.map((issue, k) => {
                         return (
                             issue.published && <IssuePanel
                                 key={k}
-                                issue={k + 1}
+                                issue={reversedIssues.length - k}
                                 author={issue.author}
                                 date={issue.date}
                                 texts={issue.texts}
@@ -83,33 +87,7 @@ const IssueList = props => {
                         )
                     })
                     }
-                    {props.match.params.issue && ISSUES.length < Number(props.match.params.issue) &&
-                    ISSUES.map((issue, k) => {
-                        return (
-                            issue.published && <IssuePanel
-                                key={k}
-                                issue={k + 1}
-                                author={issue.author}
-                                date={issue.date}
-                                texts={issue.texts}
-                            />
-                        )
-                    })
-                    }
-                    {props.match.params.issue && ISSUES.length >= Number(props.match.params.issue) && !ISSUES[props.match.params.issue - 1].published &&
-                    ISSUES.map((issue, k) => {
-                        return (
-                            issue.published && <IssuePanel
-                                key={k}
-                                issue={k + 1}
-                                author={issue.author}
-                                date={issue.date}
-                                texts={issue.texts}
-                            />
-                        )
-                    })
-                    }
-                    {props.match.params.issue && ISSUES.length >= Number(props.match.params.issue) && ISSUES[props.match.params.issue - 1].published &&
+                    {props.match.params.issue && publishedIssues.length >= Number(props.match.params.issue) && ISSUES[props.match.params.issue - 1].published &&
                     <IssuePanel
                         issue={props.match.params.issue}
                         author={ISSUES[props.match.params.issue - 1].author}
