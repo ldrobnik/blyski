@@ -3,6 +3,7 @@ import {Route, Switch, withRouter} from 'react-router-dom';
 import {Redirect} from 'react-router';
 import Spinner from '../UI/Spinner/Spinner';
 import {GlobalStyle} from '../../styled';
+import {getRandomRotationClass} from '../../data/constants';
 
 const IssueList = lazy(() => import('../IssueList/IssueList'));
 const Text = lazy(() => import('../Text/Text'));
@@ -10,10 +11,13 @@ const About = lazy(() => import('../About/About'));
 
 const Home = () => {
 
+    //class specifying spinner orientation
+    const spinnerClass = getRandomRotationClass();
+
     return (
         <React.Fragment>
             <GlobalStyle/>
-            <Suspense fallback={<Spinner/>}>
+            <Suspense fallback={<Spinner spinnerClass={spinnerClass}/>}>
                 <Switch>
                     <Route path="/" exact component={IssueList} key="home"/>
                     <Route path="/info" exact component={About} key="about"/>

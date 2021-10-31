@@ -5,7 +5,7 @@ import IssuePanel from './IssuePanel/IssuePanel';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
 import {ListOfIssues} from '../../styled';
 import {AnimatedContent} from '../../posed';
-import {WEBSITE_TEXT, ISSUES, fadeTimeout} from '../../data/constants';
+import {WEBSITE_TEXT, ISSUES, fadeTimeout, getRandomRotationClass} from '../../data/constants';
 import Spinner from '../UI/Spinner/Spinner';
 
 const IssueList = props => {
@@ -15,6 +15,9 @@ const IssueList = props => {
 
     //specifies whether the spinner should be visible
     const [spinnerVisible, setSpinnerVisible] = useState(true);
+
+    //class specifying spinner orientation
+    const spinnerClass = getRandomRotationClass();
 
     useEffect(() => {
         //Scroll to top
@@ -77,7 +80,7 @@ const IssueList = props => {
                     }
                 </ListOfIssues>
             </AnimatedContent>
-            {spinnerVisible && <Spinner/>}
+            {spinnerVisible && <Spinner spinnerClass={spinnerClass}/>}
         </React.Fragment>
     );
 };

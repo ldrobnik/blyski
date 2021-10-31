@@ -8,10 +8,9 @@ import Separator from '../UI/Separator/Separator';
 import Spinner from '../UI/Spinner/Spinner';
 import {TextContentWrapper, TextWrapper} from '../../styled';
 import {AnimatedContent} from '../../posed';
-import {ISSUES, fadeTimeout, formatIssueNumber} from '../../data/constants';
+import {ISSUES, fadeTimeout, formatIssueNumber, getRandomRotationClass} from '../../data/constants';
 
 const Text = props => {
-
 
     //the number of the issue to be displayed
     const [issueNumber, setIssueNumber] = useState(0);
@@ -36,6 +35,8 @@ const Text = props => {
 
     let history = useHistory();
 
+    //class specifying spinner orientation
+    const spinnerClass = getRandomRotationClass();
 
     //based on the url, checks which text from which issue should be displayed
     const checkTextId = (issue, slug) => {
@@ -207,7 +208,7 @@ const Text = props => {
                     </TextWrapper>
                 </TextContentWrapper>
             </AnimatedContent>
-            {spinnerVisible && <Spinner/>}
+            {spinnerVisible && <Spinner spinnerClass={spinnerClass}/>}
         </React.Fragment>
     );
 };
