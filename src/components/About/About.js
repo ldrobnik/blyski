@@ -3,7 +3,7 @@ import AboutPanel from './AboutPanel/AboutPanel';
 import TermsPanel from './TermsPanel/TermsPanel';
 import {AboutBackdrop, AboutPanelWrapper} from '../../styled';
 import {AnimatedContent} from '../../posed';
-import {fadeTimeout, WEBSITE_TEXT} from '../../data/constants';
+import {fadeTimeout, getRandomRotationClass, WEBSITE_TEXT} from '../../data/constants';
 import Spinner from '../UI/Spinner/Spinner';
 
 const About = props => {
@@ -16,6 +16,9 @@ const About = props => {
 
     //specifies whether the spinner should be visible
     const [spinnerVisible, setSpinnerVisible] = useState(true);
+
+    //class specifying spinner orientation
+    const spinnerClass = getRandomRotationClass();
 
     //checks whether the url contains the 'pub-terms' slug
     const checkPubTerms = () => {
@@ -62,7 +65,7 @@ const About = props => {
                 </AboutPanelWrapper>
                 <AboutBackdrop/>
             </AnimatedContent>
-            {spinnerVisible && <Spinner/>}
+            {spinnerVisible && <Spinner spinnerClass={spinnerClass}/>}
         </React.Fragment>
     );
 };

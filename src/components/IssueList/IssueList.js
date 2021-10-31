@@ -27,7 +27,6 @@ const IssueList = props => {
 
     //Array of issues in reversed order so that the newest issue is displayed first
     const reversedIssues = ISSUES.slice().reverse();
-    console.log(ISSUES, reversedIssues);
 
     useEffect(() => {
         //Scroll to top
@@ -42,8 +41,6 @@ const IssueList = props => {
         if (props.match.params.issue) {
             //issue number present in the path converted into a number
             const issueNumber = Number(props.match.params.issue);
-
-            console.log(issueNumber, publishedIssues);
 
             //if path leads to a non-existing issue, go to the main page
             if (issueNumber > publishedIssues.length || Number.isNaN(issueNumber)) {
