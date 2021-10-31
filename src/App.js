@@ -24,7 +24,6 @@ function App() {
         //fonts
         sansSerif: `'Maven Pro', sans-serif`,
         serif: `'Roboto Slab', serif`,
-        cursive: `'Molle', cursive`,
 
         //font sizes
         titleSize: '5em',
