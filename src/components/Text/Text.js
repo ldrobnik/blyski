@@ -106,7 +106,12 @@ const Text = props => {
 
         //set text title
         if ((issueNumber > 0) && ISSUES[issueNumber - 1].published) {
-            setTextTitle((textId === -2) ? ISSUES[issueNumber - 1].author : ISSUES[issueNumber - 1].texts[textId].title);
+            if (textId !== -1) {
+                setTextTitle((textId === -2) ? ISSUES[issueNumber - 1].author : ISSUES[issueNumber - 1].texts[textId].title);
+            } else {
+                //if the slug is wrong, go to home page
+                history.push('/');
+            }
         }
 
         //import text to be displayed
