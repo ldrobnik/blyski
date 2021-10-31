@@ -159,7 +159,7 @@ const Text = props => {
     useEffect(() => {
         //when text loads, trigger fade-in animation after a while and hide spinner
         if (textLoaded) {
-            setTimeout(() => setContentVisible(true), fadeTimeout);
+            setTimeout(() => setContentVisible(true), fadeTimeout*0.9);
             setTimeout(() => setSpinnerVisible(false), fadeTimeout);
         }
     });
