@@ -6,10 +6,10 @@ import Story from './Story/Story';
 import Bio from './Bio/Bio';
 import TextButton from './TextButton/TextButton';
 import Separator from '../UI/Separator/Separator';
+import Spinner from '../UI/Spinner/Spinner';
 import {TextContentWrapper, TextWrapper} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {ISSUES, fadeTimeout, formatIssueNumber} from '../../data/constants';
-import {text} from '@fortawesome/fontawesome-svg-core';
 
 const Text = props => {
 
@@ -32,7 +32,11 @@ const Text = props => {
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);
 
+    //specifies whether the spinner should be visible
+    const [spinnerVisible, setSpinnerVisible] = useState(true);
+
     let history = useHistory();
+
 
     //based on the url, checks which text from which issue should be displayed
     const checkTextId = (issue, slug) => {
@@ -56,8 +60,8 @@ const Text = props => {
 
     //convert text id into part of file name
     const convertTextId = textId => {
-      if (textId === -2) return 'bio';
-      if (textId >= 0 && textId <= 4) return textId + 1;
+        if (textId === -2) return 'bio';
+        if (textId >= 0 && textId <= 4) return textId + 1;
     };
 
     //imports text to be displayed
@@ -86,6 +90,15 @@ const Text = props => {
 
 
     }, [props.match.params.issue, props.match.params.slug])
+
+    useEffect(() => {
+        //clear text content when the path changes
+        setTextContent('');
+
+        //show spinner when the path changes
+        setSpinnerVisible(true);
+
+    }, [props.match.params.slug])
 
 
     useEffect(() => {
@@ -139,15 +152,16 @@ const Text = props => {
 
 
     useEffect(() => {
-        //when text loads, trigger fade-in animation after a while
+        //when text loads, trigger fade-in animation after a while and hide spinner
         if (textLoaded) {
             setTimeout(() => setContentVisible(true), fadeTimeout);
+            setTimeout(() => setSpinnerVisible(false), fadeTimeout);
         }
     });
 
     useEffect(() => {
-       //if the content of the text is not empty, set the text as loaded
-       if (textContent > 0) setTextLoaded(true);
+        //if the content of the text is not empty, set the text as loaded
+        if (textContent > 0) setTextLoaded(true);
     });
 
     useEffect(() => {
@@ -158,42 +172,44 @@ const Text = props => {
     }, [props.match.params]);
 
 
-
     return (
-        <AnimatedContent
-            pose={contentVisible ? 'visible' : 'hidden'}>
-            {((issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && <TextNavbar
-                issueNumber={issueNumber}
-                textId={textId}
-                texts={ISSUES[issueNumber - 1].texts}
-            />}
-            <TextContentWrapper>
-                <TextWrapper>
-                    {((textId !== -1) && (issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && (textId !== -2) &&
-                    <Story
-                        author={ISSUES[issueNumber - 1].author}
-                        textTitle={textTitle}
-                        textContent={textContent}
-                    />}
-                    {(textId === -2) && (issueNumber > 0) && ISSUES[issueNumber - 1].published  && (textContent.length > 0) &&
-                    <Bio
-                        author={ISSUES[issueNumber - 1].author}
-                        issueNumber={issueNumber}
-                        textContent={textContent}
-                    />}
-                    {((issueNumber > 0) && (issueNumber > 0) && ISSUES[issueNumber - 1].published) &&
-                    <React.Fragment>
-                        <Separator/>
-                        <TextButton
-                            textId={textId}
+        <React.Fragment>
+            <AnimatedContent
+                pose={contentVisible ? 'visible' : 'hidden'}>
+                {((issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && <TextNavbar
+                    issueNumber={issueNumber}
+                    textId={textId}
+                    texts={ISSUES[issueNumber - 1].texts}
+                />}
+                <TextContentWrapper>
+                    <TextWrapper>
+                        {((textId !== -1) && (issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && (textId !== -2) &&
+                        <Story
+                            author={ISSUES[issueNumber - 1].author}
+                            textTitle={textTitle}
+                            textContent={textContent}
+                        />}
+                        {(textId === -2) && (issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0) &&
+                        <Bio
+                            author={ISSUES[issueNumber - 1].author}
                             issueNumber={issueNumber}
-                            slug={((textId < 4) && (textId !== -2)) ? ISSUES[issueNumber - 1].texts[textId + 1].slug : null}
-                        />
-                    </React.Fragment>
-                    }
-                </TextWrapper>
-            </TextContentWrapper>
-        </AnimatedContent>
+                            textContent={textContent}
+                        />}
+                        {((issueNumber > 0) && (issueNumber > 0) && ISSUES[issueNumber - 1].published) &&
+                        <React.Fragment>
+                            <Separator/>
+                            <TextButton
+                                textId={textId}
+                                issueNumber={issueNumber}
+                                slug={((textId < 4) && (textId !== -2)) ? ISSUES[issueNumber - 1].texts[textId + 1].slug : null}
+                            />
+                        </React.Fragment>
+                        }
+                    </TextWrapper>
+                </TextContentWrapper>
+            </AnimatedContent>
+            {spinnerVisible && <Spinner/>}
+        </React.Fragment>
     );
 };
 
