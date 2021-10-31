@@ -17,12 +17,14 @@ const Text = props => {
     //the number of the issue to be displayed
     const [issueNumber, setIssueNumber] = useState(0);
 
-
     //text title to be displayed - author name for bio, text title for pieces
     const [textTitle, setTextTitle] = useState('');
 
     //the id of the text to be displayed
     const [textId, setTextId] = useState(-1);
+
+    //specifies whether the text has been loaded
+    const [textLoaded, setTextLoaded] = useState(false);
 
     //text content to be displayed - either a story or a bio
     const [textContent, setTextContent] = useState('');
@@ -44,7 +46,6 @@ const Text = props => {
         //loop through the text of a given issue and if there's a match, return the id of text to be displayed
         for (let i = 0; i < ISSUES[issue - 1].texts.length; i++) {
             if (ISSUES[issue - 1].texts[i].slug === slug) {
-                console.log(i, ISSUES[issue - 1].texts[i].slug, slug);
                 return i;
             }
         }
@@ -68,7 +69,7 @@ const Text = props => {
                 fetch(res.default)
                     .then(res => res.text())
                     .then(res => setTextContent(res))
-                    .then(() => setContentVisible(true))
+                    .then(() => setTextLoaded(true))
                     .catch(err => console.log(err));
             })
             .catch(err => console.log(err));
@@ -107,7 +108,7 @@ const Text = props => {
         //set the id of text to be displayed
         setTextId(checkTextId(props.match.params.issue, props.match.params.slug))
 
-        if (props.pageLoaded && (issueNumber > 0)) {
+        if (contentVisible && (issueNumber > 0)) {
 
             //if text data cannot be accessed (wrong slug, connection error or the issue hasn't been published), redirect to home page
             if ((textId === -1) || (!ISSUES[issueNumber - 1].published)) {
@@ -138,19 +139,22 @@ const Text = props => {
 
 
     useEffect(() => {
-        //when page loads, trigger fade-in animation after a while
-        if (props.pageLoaded) {
+        //when text loads, trigger fade-in animation after a while
+        if (textLoaded) {
             setTimeout(() => setContentVisible(true), fadeTimeout);
         }
     });
 
     useEffect(() => {
-        //when path changes, make content invisible, then turn it on
-        setContentVisible(false);
+       //if the content of the text is not empty, set the text as loaded
+       if (textContent > 0) setTextLoaded(true);
+    });
 
-        // if (props.pageLoaded) {
-        //     setTimeout(() => setContentVisible(true), fadeTimeout);
-        // }
+    useEffect(() => {
+        //when path changes, make content invisible, clear the text and set it as not loaded
+        setContentVisible(false);
+        setTextLoaded(false);
+
     }, [props.match.params]);
 
 
@@ -158,26 +162,26 @@ const Text = props => {
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
-            {(props.pageLoaded && contentVisible && (issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && <TextNavbar
+            {((issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && <TextNavbar
                 issueNumber={issueNumber}
                 textId={textId}
                 texts={ISSUES[issueNumber - 1].texts}
             />}
             <TextContentWrapper>
                 <TextWrapper>
-                    {(props.pageLoaded && (textId !== -1) && (issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && (textId !== -2) &&
+                    {((textId !== -1) && (issueNumber > 0) && ISSUES[issueNumber - 1].published && (textContent.length > 0)) && (textId !== -2) &&
                     <Story
                         author={ISSUES[issueNumber - 1].author}
                         textTitle={textTitle}
                         textContent={textContent}
                     />}
-                    {(props.pageLoaded) && (textId === -2) && (issueNumber > 0) && ISSUES[issueNumber - 1].published  && (textContent.length > 0) &&
+                    {(textId === -2) && (issueNumber > 0) && ISSUES[issueNumber - 1].published  && (textContent.length > 0) &&
                     <Bio
                         author={ISSUES[issueNumber - 1].author}
                         issueNumber={issueNumber}
                         textContent={textContent}
                     />}
-                    {(props.pageLoaded && (issueNumber > 0) && (issueNumber > 0) && ISSUES[issueNumber - 1].published) &&
+                    {((issueNumber > 0) && (issueNumber > 0) && ISSUES[issueNumber - 1].published) &&
                     <React.Fragment>
                         <Separator/>
                         <TextButton
