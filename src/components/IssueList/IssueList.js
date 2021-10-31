@@ -8,11 +8,15 @@ import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 import {ListOfIssues} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {WEBSITE_TEXT, ISSUES, fadeTimeout} from '../../data/constants';
+import Spinner from '../UI/Spinner/Spinner';
 
 const IssueList = props => {
 
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);
+
+    //specifies whether the spinner should be visible
+    const [spinnerVisible, setSpinnerVisible] = useState(true);
 
     useEffect(() => {
         //Scroll to top
@@ -24,9 +28,9 @@ const IssueList = props => {
     }, []);
 
     useEffect(() => {
-        //when page loads, trigger fade-in animation after a while
-
-            setTimeout(() => setContentVisible(true), fadeTimeout);
+        //when page loads, trigger fade-in animation and hide spinner
+        setTimeout(() => setContentVisible(true), fadeTimeout);
+        setTimeout(() => setSpinnerVisible(false), fadeTimeout);
 
     });
 
@@ -38,24 +42,25 @@ const IssueList = props => {
     */
 
     return (
-        <AnimatedContent
-            pose={contentVisible ? 'visible' : 'hidden'}>
-            <MainNavbar/>
-            <ListOfIssues>
-                {
-                    ISSUES.map((issue, k) => {
-                        return (
-                            issue.published && <IssuePanel
-                                key={k}
-                                issue={k + 1}
-                                author={issue.author}
-                                date={issue.date}
-                                texts={issue.texts}
-                            />
-                        )
-                    })
-                }
-                {props.match.params.issue &&
+        <React.Fragment>
+            <AnimatedContent
+                pose={contentVisible ? 'visible' : 'hidden'}>
+                <MainNavbar/>
+                <ListOfIssues>
+                    {
+                        ISSUES.map((issue, k) => {
+                            return (
+                                issue.published && <IssuePanel
+                                    key={k}
+                                    issue={k + 1}
+                                    author={issue.author}
+                                    date={issue.date}
+                                    texts={issue.texts}
+                                />
+                            )
+                        })
+                    }
+                    {props.match.params.issue &&
                     <IssuePanel
                         key={props.issues[props.match.params.issue - 1].issue}
                         issue={props.issues[props.match.params.issue - 1].issue}
@@ -63,18 +68,20 @@ const IssueList = props => {
                         date={props.issues[props.match.params.issue - 1].date}
                         texts={props.issues[props.match.params.issue - 1].texts}
                     />
-                }
-                {
-                    props.match.params.issue &&
-                    (ISSUES.length > 1)
-                    && <HoverableButton
-                        path='/'
-                        message={WEBSITE_TEXT.issueList.homeButton}
-                    />
-                }
-            </ListOfIssues>
-            <ErrorMessage/>
-        </AnimatedContent>
+                    }
+                    {
+                        props.match.params.issue &&
+                        (ISSUES.length > 1)
+                        && <HoverableButton
+                            path='/'
+                            message={WEBSITE_TEXT.issueList.homeButton}
+                        />
+                    }
+                </ListOfIssues>
+                <ErrorMessage/>
+            </AnimatedContent>
+            {spinnerVisible && <Spinner/>}
+        </React.Fragment>
     );
 };
 
