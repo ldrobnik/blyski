@@ -21,7 +21,7 @@ const TextNavbar = props => {
                     {WEBSITE_TEXT.text.navbar.textNumbers.map((navlink, index) => {
                         return (
                             <React.Fragment key={index}>
-                                {(index === props.textID) ?
+                                {(index === props.textId) ?
 
                                     <InactiveButton
                                         message={navlink}
@@ -34,7 +34,7 @@ const TextNavbar = props => {
                             </React.Fragment>
                         )
                     })}
-                    {(props.textID === -2) ?
+                    {(props.textId === -2) ?
 
                         <InactiveButton
                             message={WEBSITE_TEXT.text.navbar.bio}
