@@ -7,6 +7,7 @@ import {ListOfIssues} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {WEBSITE_TEXT, ISSUES, fadeTimeout, getRandomRotationClass} from '../../data/constants';
 import Spinner from '../UI/Spinner/Spinner';
+import {useHistory} from 'react-router-dom';
 
 const IssueList = props => {
 
@@ -19,6 +20,11 @@ const IssueList = props => {
     //class specifying spinner orientation
     const spinnerClass = getRandomRotationClass();
 
+    let history = useHistory();
+
+    //Array containing only published issues
+    const publishedIssues = ISSUES.filter(issue => issue.published);
+
     useEffect(() => {
         //Scroll to top
         window.scrollTo(0, 0);
@@ -27,6 +33,22 @@ const IssueList = props => {
         document.title = WEBSITE_TEXT.title.main;
 
     }, []);
+
+    useEffect(() => {
+        if (props.match.params.issue) {
+            //issue number present in the path converted into a number
+            const issueNumber = Number(props.match.params.issue);
+
+            console.log(issueNumber, publishedIssues);
+
+            //if path leads to a non-existing issue, go to the main page
+            if (issueNumber > publishedIssues.length || Number.isNaN(issueNumber)) {
+
+                history.push('/');
+
+            }
+        }
+    });
 
     useEffect(() => {
         //when page loads, trigger fade-in animation and hide spinner
@@ -49,17 +71,17 @@ const IssueList = props => {
                 <MainNavbar/>
                 <ListOfIssues>
                     {!props.match.params.issue &&
-                        ISSUES.map((issue, k) => {
-                            return (
-                                issue.published && <IssuePanel
-                                    key={k}
-                                    issue={k + 1}
-                                    author={issue.author}
-                                    date={issue.date}
-                                    texts={issue.texts}
-                                />
-                            )
-                        })
+                    ISSUES.map((issue, k) => {
+                        return (
+                            issue.published && <IssuePanel
+                                key={k}
+                                issue={k + 1}
+                                author={issue.author}
+                                date={issue.date}
+                                texts={issue.texts}
+                            />
+                        )
+                    })
                     }
                     {props.match.params.issue && ISSUES.length < Number(props.match.params.issue) &&
                     ISSUES.map((issue, k) => {
