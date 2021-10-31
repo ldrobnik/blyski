@@ -17,5 +17,4 @@ The website uses a **React-based frontend** and **Wordpress as a headless CMS**.
 
 * A single-page app created with **React.js**
 * Routing managed with **React-Router**
-* App state controlled with **Redux**
-* Content managed with **Wordpress API**
+* Content loaded dynamically from Markdown files with **markdown-to-jsx**
