@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import {connect} from 'react-redux';
 import TextNavbar from './TextNavbar/TextNavbar';
 import Story from './Story/Story';
 import Bio from './Bio/Bio';
@@ -213,11 +212,4 @@ const Text = props => {
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        pageLoaded: state.pageLoaded,
-        issues: state.issues
-    }
-};
-
-export default connect(mapStateToProps)(Text);
+export default Text;
