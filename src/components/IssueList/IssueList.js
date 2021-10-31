@@ -25,9 +25,9 @@ const IssueList = props => {
 
     useEffect(() => {
         //when page loads, trigger fade-in animation after a while
-        if (props.pageLoaded) {
+
             setTimeout(() => setContentVisible(true), fadeTimeout);
-        }
+
     });
 
     /*The code below displays a list of all issues is the route is '/'
@@ -40,12 +40,10 @@ const IssueList = props => {
     return (
         <AnimatedContent
             pose={contentVisible ? 'visible' : 'hidden'}>
-            {props.pageLoaded && <MainNavbar/>}
+            <MainNavbar/>
             <ListOfIssues>
                 {
-                    props.pageLoaded
-                    && !props.issues[props.match.params.issue - 1]
-                    && ISSUES.map((issue, k) => {
+                    ISSUES.map((issue, k) => {
                         return (
                             issue.published && <IssuePanel
                                 key={k}
@@ -57,11 +55,8 @@ const IssueList = props => {
                         )
                     })
                 }
-                {
-                    props.pageLoaded
-                    && props.match.params.issue
-                    && props.issues[props.match.params.issue - 1]
-                    && <IssuePanel
+                {props.match.params.issue &&
+                    <IssuePanel
                         key={props.issues[props.match.params.issue - 1].issue}
                         issue={props.issues[props.match.params.issue - 1].issue}
                         author={props.issues[props.match.params.issue - 1].author}
@@ -70,10 +65,8 @@ const IssueList = props => {
                     />
                 }
                 {
-                    props.pageLoaded
-                    && props.match.params.issue
-                    && props.issues[props.match.params.issue - 1]
-                    && (props.issues.length > 1)
+                    props.match.params.issue &&
+                    (ISSUES.length > 1)
                     && <HoverableButton
                         path='/'
                         message={WEBSITE_TEXT.issueList.homeButton}
