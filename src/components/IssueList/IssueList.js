@@ -48,7 +48,7 @@ const IssueList = props => {
                 pose={contentVisible ? 'visible' : 'hidden'}>
                 <MainNavbar/>
                 <ListOfIssues>
-                    {
+                    {!props.match.params.issue &&
                         ISSUES.map((issue, k) => {
                             return (
                                 issue.published && <IssuePanel
@@ -61,17 +61,42 @@ const IssueList = props => {
                             )
                         })
                     }
-                    {props.match.params.issue &&
+                    {props.match.params.issue && ISSUES.length < Number(props.match.params.issue) &&
+                    ISSUES.map((issue, k) => {
+                        return (
+                            issue.published && <IssuePanel
+                                key={k}
+                                issue={k + 1}
+                                author={issue.author}
+                                date={issue.date}
+                                texts={issue.texts}
+                            />
+                        )
+                    })
+                    }
+                    {props.match.params.issue && ISSUES.length >= Number(props.match.params.issue) && !ISSUES[props.match.params.issue - 1].published &&
+                    ISSUES.map((issue, k) => {
+                        return (
+                            issue.published && <IssuePanel
+                                key={k}
+                                issue={k + 1}
+                                author={issue.author}
+                                date={issue.date}
+                                texts={issue.texts}
+                            />
+                        )
+                    })
+                    }
+                    {props.match.params.issue && ISSUES.length >= Number(props.match.params.issue) && ISSUES[props.match.params.issue - 1].published &&
                     <IssuePanel
-                        key={props.issues[props.match.params.issue - 1].issue}
-                        issue={props.issues[props.match.params.issue - 1].issue}
-                        author={props.issues[props.match.params.issue - 1].author}
-                        date={props.issues[props.match.params.issue - 1].date}
-                        texts={props.issues[props.match.params.issue - 1].texts}
+                        issue={props.match.params.issue}
+                        author={ISSUES[props.match.params.issue - 1].author}
+                        date={ISSUES[props.match.params.issue - 1].date}
+                        texts={ISSUES[props.match.params.issue - 1].texts}
                     />
                     }
                     {
-                        props.match.params.issue &&
+                        props.match.params.issue && ISSUES.length >= Number(props.match.params.issue) && ISSUES[props.match.params.issue - 1].published &&
                         (ISSUES.length > 1)
                         && <HoverableButton
                             path='/'
