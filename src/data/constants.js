@@ -249,6 +249,33 @@ export const ISSUES = [
                 slug: 'margo-skrec-w-lewo'
             }
         ]
+    },
+    {
+        published: false,
+        date: '2021-12-06',
+        author: 'Cathy Ulrich',
+        texts: [
+            {
+                title: 'Być zamordowaną dziewczyną',
+                slug: 'byc-zamordowana-dziewczyna'
+            },
+            {
+                title: 'Być zamordowaną żoną',
+                slug: 'byc-zamordowana-zona'
+            },
+            {
+                title: 'Być zamordowaną kochanką',
+                slug: 'byc-zamordowana-kochanka'
+            },
+            {
+                title: 'Być zamordowaną syreną',
+                slug: 'byc-zamordowana-syrena'
+            },
+            {
+                title: 'Być zamordowaną we śnie',
+                slug: 'byc-zamordowana-we-snie'
+            }
+        ]
     }
 ];
 
