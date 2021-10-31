@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Markdown from 'markdown-to-jsx/dist/index.js';
 import AuthorPhoto from './AuthorPhoto/AuthorPhoto';
 import AuthorLinks from './SocialLinks/AuthorLinks';
 import AuthorWorks from './SelectedWorks/AuthorWorks';
@@ -7,7 +8,6 @@ import {BioAuthor, BioTextBody, BioHeading} from '../../../styled';
 import {WEBSITE_TEXT, AUTHOR_LINKS} from '../../../data/constants';
 
 const Bio = props => {
-
     return (
         <React.Fragment>
             <BioAuthor>{props.author}</BioAuthor>
@@ -15,9 +15,11 @@ const Bio = props => {
                 issueNumber={props.issueNumber}
                 author={props.author}
             />
-            <BioTextBody
-                dangerouslySetInnerHTML={{__html: props.textContent}}
-            />
+                <BioTextBody>
+                        <Markdown>
+                                {props.textContent}
+                        </Markdown>
+                </BioTextBody>
             <Separator/>
             <BioHeading>{WEBSITE_TEXT.text.bio.moreInfo}</BioHeading>
             <AuthorLinks

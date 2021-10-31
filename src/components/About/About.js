@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {connect} from 'react-redux';
 import AboutPanel from './AboutPanel/AboutPanel';
 import TermsPanel from './TermsPanel/TermsPanel';
 import {AboutBackdrop, AboutPanelWrapper} from '../../styled';
 import {AnimatedContent} from '../../posed';
 import {fadeTimeout, WEBSITE_TEXT} from '../../data/constants';
+import Spinner from '../UI/Spinner/Spinner';
 
 const About = props => {
 
@@ -13,6 +13,9 @@ const About = props => {
 
     //specifies whether publication terms for authors should be displayed in place of the regular about page
     const [pubTerms, setPubTerms] = useState(false);
+
+    //specifies whether the spinner should be visible
+    const [spinnerVisible, setSpinnerVisible] = useState(true);
 
     //checks whether the url contains the 'pub-terms' slug
     const checkPubTerms = () => {
@@ -42,30 +45,26 @@ const About = props => {
     }, [pubTerms]);
 
     useEffect(() => {
-        //when page loads, trigger fade-in animation after a while
-        if (props.pageLoaded) {
-            setTimeout(() => setContentVisible(true), fadeTimeout);
-        }
+        //when page loads, trigger fade-in animation and hide spinner
+        setTimeout(() => setContentVisible(true), fadeTimeout);
+        setTimeout(() => setSpinnerVisible(false), fadeTimeout);
     });
 
     return (
-        <AnimatedContent
-            pose={contentVisible ? 'visible' : 'hidden'}>
-            <AboutPanelWrapper>
-                {pubTerms ?
-                    <TermsPanel/> :
-                    <AboutPanel/>
-                }
-            </AboutPanelWrapper>
-            <AboutBackdrop/>
-        </AnimatedContent>
+        <React.Fragment>
+            <AnimatedContent
+                pose={contentVisible ? 'visible' : 'hidden'}>
+                <AboutPanelWrapper>
+                    {pubTerms ?
+                        <TermsPanel/> :
+                        <AboutPanel/>
+                    }
+                </AboutPanelWrapper>
+                <AboutBackdrop/>
+            </AnimatedContent>
+            {spinnerVisible && <Spinner/>}
+        </React.Fragment>
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        pageLoaded: state.pageLoaded
-    }
-};
-
-export default connect(mapStateToProps)(About);
+export default About;

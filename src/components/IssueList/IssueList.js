@@ -1,18 +1,23 @@
 import React, {useState, useEffect} from 'react';
-import {connect} from 'react-redux';
 import 'moment/locale/pl';
 import MainNavbar from './MainNavbar/MainNavbar';
 import IssuePanel from './IssuePanel/IssuePanel';
 import HoverableButton from '../UI/HoverableButton/HoverableButton';
-import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 import {ListOfIssues} from '../../styled';
 import {AnimatedContent} from '../../posed';
-import {WEBSITE_TEXT, fadeTimeout} from '../../data/constants';
+import {WEBSITE_TEXT, ISSUES, fadeTimeout, getRandomRotationClass} from '../../data/constants';
+import Spinner from '../UI/Spinner/Spinner';
 
 const IssueList = props => {
 
     //specifies whether the content should be shown
     const [contentVisible, setContentVisible] = useState(false);
+
+    //specifies whether the spinner should be visible
+    const [spinnerVisible, setSpinnerVisible] = useState(true);
+
+    //class specifying spinner orientation
+    const spinnerClass = getRandomRotationClass();
 
     useEffect(() => {
         //Scroll to top
@@ -24,10 +29,10 @@ const IssueList = props => {
     }, []);
 
     useEffect(() => {
-        //when page loads, trigger fade-in animation after a while
-        if (props.pageLoaded) {
-            setTimeout(() => setContentVisible(true), fadeTimeout);
-        }
+        //when page loads, trigger fade-in animation and hide spinner
+        setTimeout(() => setContentVisible(true), fadeTimeout);
+        setTimeout(() => setSpinnerVisible(false), fadeTimeout);
+
     });
 
     /*The code below displays a list of all issues is the route is '/'
@@ -38,59 +43,46 @@ const IssueList = props => {
     */
 
     return (
-        <AnimatedContent
-            pose={contentVisible ? 'visible' : 'hidden'}>
-            {props.pageLoaded && <MainNavbar/>}
-            <ListOfIssues>
-                {
-                    props.pageLoaded
-                    && !props.issues[props.match.params.issue - 1]
-                    && [...props.issues].reverse().map((issue) => {
-                        return (
-                            issue && <IssuePanel
-                                key={issue.issue}
-                                issue={issue.issue}
-                                author={issue.author}
-                                date={issue.date}
-                                texts={issue.texts}
-                            />
-                        )
-                    })
-                }
-                {
-                    props.pageLoaded
-                    && props.match.params.issue
-                    && props.issues[props.match.params.issue - 1]
-                    && <IssuePanel
+        <React.Fragment>
+            <AnimatedContent
+                pose={contentVisible ? 'visible' : 'hidden'}>
+                <MainNavbar/>
+                <ListOfIssues>
+                    {
+                        ISSUES.map((issue, k) => {
+                            return (
+                                issue.published && <IssuePanel
+                                    key={k}
+                                    issue={k + 1}
+                                    author={issue.author}
+                                    date={issue.date}
+                                    texts={issue.texts}
+                                />
+                            )
+                        })
+                    }
+                    {props.match.params.issue &&
+                    <IssuePanel
                         key={props.issues[props.match.params.issue - 1].issue}
                         issue={props.issues[props.match.params.issue - 1].issue}
                         author={props.issues[props.match.params.issue - 1].author}
                         date={props.issues[props.match.params.issue - 1].date}
                         texts={props.issues[props.match.params.issue - 1].texts}
                     />
-                }
-                {
-                    props.pageLoaded
-                    && props.match.params.issue
-                    && props.issues[props.match.params.issue - 1]
-                    && (props.issues.length > 1)
-                    && <HoverableButton
-                        path='/'
-                        message={WEBSITE_TEXT.issueList.homeButton}
-                    />
-                }
-            </ListOfIssues>
-            <ErrorMessage/>
-        </AnimatedContent>
+                    }
+                    {
+                        props.match.params.issue &&
+                        (ISSUES.length > 1)
+                        && <HoverableButton
+                            path='/'
+                            message={WEBSITE_TEXT.issueList.homeButton}
+                        />
+                    }
+                </ListOfIssues>
+            </AnimatedContent>
+            {spinnerVisible && <Spinner spinnerClass={spinnerClass}/>}
+        </React.Fragment>
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        pageLoaded: state.pageLoaded,
-        error: state.error,
-        issues: state.issues
-    }
-};
-
-export default connect(mapStateToProps)(IssueList);
+export default IssueList;

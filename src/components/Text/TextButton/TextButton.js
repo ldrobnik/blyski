@@ -7,17 +7,17 @@ const TextButton = props => {
 
     return (
         <TextButtonWrapper>
-            {((props.textID < 4) && (props.textID !== -2)) &&
+            {((props.textId < 4) && (props.textId !== -2)) &&
             <HoverableButton
                 path={`/${props.issueNumber}/${props.slug}`}
                 message={WEBSITE_TEXT.text.nextButton}
             />}
-            {(props.textID === 4) &&
+            {(props.textId === 4) &&
             <HoverableButton
                 path={`/${props.issueNumber}/bio`}
                 message={WEBSITE_TEXT.text.bioButton}
             />}
-            {(props.textID === -2) &&
+            {(props.textId === -2) &&
             <HoverableButton
                 path="/"
                 message={WEBSITE_TEXT.text.homeButton}
