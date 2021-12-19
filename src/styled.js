@@ -678,8 +678,9 @@ export const WorksFootnote = styled.div`
   font-style: italic;
   padding: 5px;
   font-family: ${props => props.theme.serif};
-  margin-botton: 0.5em;
+  margin: 0 auto 0.5em;
   font-size: 0.7em;
+  max-width: 25em;
 `;
 
 /* AuthorLink.js */
