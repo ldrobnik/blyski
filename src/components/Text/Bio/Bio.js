@@ -16,7 +16,18 @@ const Bio = props => {
                 author={props.author}
             />
                 <BioTextBody>
-                        <Markdown>
+                        <Markdown
+                            options={{
+                                overrides: {
+                                    a: {
+                                        props: {
+                                            target: '_blank',
+                                            rel: 'noopener noreferrer'
+                                        },
+                                    }
+                                }
+                            }}
+                        >
                                 {props.textContent}
                         </Markdown>
                 </BioTextBody>

@@ -5,25 +5,25 @@ import styled, {createGlobalStyle} from 'styled-components';
 /* Global */
 
 export const GlobalStyle = createGlobalStyle`
-    body {
-        font-family: ${props => props.theme.sansSerif};
-        color: ${props => props.theme.darkColor};
-        background-color: ${props => props.theme.lightColor};
-        min-height: 100vh;
-        }
-        
-    a {
-        text-decoration: none;
+  body {
+    font-family: ${props => props.theme.sansSerif};
+    color: ${props => props.theme.darkColor};
+    background-color: ${props => props.theme.lightColor};
+    min-height: 100vh;
+  }
 
-    }
-    
+  a {
+    text-decoration: none;
+
+  }
+
 `;
 
 /* General */
 
 export //hover text effect
 const HoverableLink = styled.span`
-  
+
   a, Link {
 
     display: inline-block;
@@ -70,11 +70,11 @@ export const AboutPanelWrapper = styled.div`
 
   top: 0;
   left: 0;
-  
-   *::selection {
-        color: ${props => props.theme.themeColor};
-        background-color: ${props => props.theme.lightColor};
-     }
+
+  *::selection {
+    color: ${props => props.theme.themeColor};
+    background-color: ${props => props.theme.lightColor};
+  }
 `;
 
 export const AboutBackdrop = styled.div`
@@ -97,66 +97,69 @@ export const AboutBox = styled.div`
   border: 10px solid ${props => props.theme.lightColor};
   color: ${props => props.theme.lightColor};
   text-align: center;
-    a {
+
+  a {
     color: ${props => props.theme.lightColor};
     transition: all 0.2s ease-in;
-    
+
     &:link {
       color: ${props => props.theme.lightColor};
     }
-    
+
     &:visited {
       color: ${props => props.theme.lightColor};
     }
-    
+
     &:hover {
       color: ${props => props.theme.themeColor};
     }
-    
+
     &:active {
-      color: ${props => props.theme.themeColor}};
+      color: ${props => props.theme.themeColor}
     }
+  ;
   }
-  
- @media all and (min-width: ${props => props.theme.smallScr}) {
+}
+
+@media all and (min-width: ${props => props.theme.smallScr}) {
   width: 90%;
-  padding:30px 15px;
+  padding: 30px 15px;
   margin: 10px;
- } 
- 
-  
- @media all and (min-width: ${props => props.theme.mediumScr}) {
+}
+
+
+@media all and (min-width: ${props => props.theme.mediumScr}) {
   width: 70%;
   padding: 30px;
   margin: 20px;
- } 
- 
- @media all and (min-width: ${props => props.theme.largeScr}) {
+}
+
+@media all and (min-width: ${props => props.theme.largeScr}) {
   width: 60%;
-  padding:30px;
+  padding: 30px;
   margin: 30px;
- } 
- 
- @media all and (min-width: ${props => props.theme.extraLargeScr}) {
+}
+
+@media all and (min-width: ${props => props.theme.extraLargeScr}) {
   width: 50%;
-  padding:40px;
+  padding: 40px;
   margin: 30px;
- } 
-  
+}
+
 `;
 
 export const AboutTitle = styled.div`
 
-width: 100%;
-padding: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-@media all and (max-width: ${props => props.theme.smallScr}) {
-      padding: 5px;
-      display: block;
-    }
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+    padding: 5px;
+    display: block;
+  }
 `;
 
 export const AboutJournalName = styled.div`
@@ -164,93 +167,93 @@ export const AboutJournalName = styled.div`
   font-weight: bold;
   padding-left: 10px;
   transform: translateY(-8px);
-  
+
   @media all and (max-width: ${props => props.theme.largeScr}) {
-  font-size: 4em;
-  padding-left: 8px;
+    font-size: 4em;
+    padding-left: 8px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 3.5em;
-  padding-left: 6px;
+    font-size: 3.5em;
+    padding-left: 6px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 3.5em;
-      padding-left: 4px;
-    }
-    
+    font-size: 3.5em;
+    padding-left: 4px;
+  }
+
   @media all and (max-width: ${props => props.theme.extraSmallScr}) {
-      font-size: 3.5em;
-      padding-left: 4px;
-    }
-    
+    font-size: 3.5em;
+    padding-left: 4px;
+  }
+
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 3em;
-      padding-left: 4px;
-    }
-    
-        
+    font-size: 3em;
+    padding-left: 4px;
+  }
+
+
   @media all and (max-width: ${props => props.theme.veryTinyScr}) {
-      font-size: 2.5em;
-      padding-left: 4px;
-    }
+    font-size: 2.5em;
+    padding-left: 4px;
+  }
 `;
 
 export const AboutJournalSubtitle = styled.div`
   text-align: center;
-font-weight: bold;
+  font-weight: bold;
   padding: 12px;
   font-size: 1em;
   transform: translateY(-20px);
-  
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1em;
+    font-size: 1em;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.8em;
-    }
-    
+    font-size: 0.8em;
+  }
+
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.7em;
-    }
-  
+    font-size: 0.7em;
+  }
+
 `;
 
 export const AboutMainContent = styled.div`
 
-font-size: 1.3em;
+  font-size: 1.3em;
 
-@media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1.2em;
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+    font-size: 1.2em;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 1.1em;
-    }
+    font-size: 1.1em;
+  }
 
 `;
 
 export const AboutSecondaryContent = styled.div`
 
-font-size: 1em;
+  font-size: 1em;
 
-@media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 0.9em;
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+    font-size: 0.9em;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.8em;
-    }
+    font-size: 0.8em;
+  }
 `;
 
 export const AboutTernaryContent = styled.div`
 
-font-size: 0.8em;
+  font-size: 0.8em;
 
-@media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 0.7em;
+  @media all and (max-width: ${props => props.theme.mediumScr}) {
+    font-size: 0.7em;
   }
 
 `;
@@ -260,27 +263,30 @@ font-size: 0.8em;
 export const CopyrightNoteWrapper = styled.div`
   padding-top: 10px;
   padding-bottom: 20px;
-font-size: 10px;
+  font-size: 10px;
 
-a {
+  a {
     color: ${props => props.theme.lightColor};
     transition: all 0.2s ease-in;
-    
+
     &:link {
       color: ${props => props.theme.lightColor};
     }
-    
+
     &:visited {
       color: ${props => props.theme.lightColor};
     }
-    
+
     &:hover {
       color: ${props => props.theme.lightColor} !important;
     }
-    
+
     &:active {
-      color: ${props => props.theme.lightColor}} !important;
+      color: ${props => props.theme.lightColor}
     }
+
+  !important;
+  }
 `;
 
 /* IssueList.js */
@@ -297,42 +303,42 @@ export const ListOfIssues = styled.div`
 /* IssuePanel.js */
 
 export const IssueWrapper = styled.div`
- border: 10px solid ${props => props.theme.themeColor};
- text-align: center;
- width: 85%;
- padding: 15px;
- margin: 10px 0;
- max-width: 800px;
- 
- *::selection {
-        color: ${props => props.theme.lightColor};
-        background-color: ${props => props.theme.themeColor};
-     }
- 
- @media all and (min-width: ${props => props.theme.smallScr}) {
-  width: 90%;
-  padding:30px 15px;
+  border: 10px solid ${props => props.theme.themeColor};
+  text-align: center;
+  width: 85%;
+  padding: 15px;
   margin: 10px 0;
- } 
- 
-  
- @media all and (min-width: ${props => props.theme.mediumScr}) {
-  width: 70%;
-  padding: 20px;
-  margin: 30px 10px;
- } 
- 
- @media all and (min-width: ${props => props.theme.largeScr}) {
-  width: 60%;
-  padding:30px;
-  margin: 30px;
- } 
- 
- @media all and (min-width: ${props => props.theme.extraLargeScr}) {
-  width: 50%;
-  padding:40px;
-  margin: 30px;
- } 
+  max-width: 800px;
+
+  *::selection {
+    color: ${props => props.theme.lightColor};
+    background-color: ${props => props.theme.themeColor};
+  }
+
+  @media all and (min-width: ${props => props.theme.smallScr}) {
+    width: 90%;
+    padding: 30px 15px;
+    margin: 10px 0;
+  }
+
+
+  @media all and (min-width: ${props => props.theme.mediumScr}) {
+    width: 70%;
+    padding: 20px;
+    margin: 30px 10px;
+  }
+
+  @media all and (min-width: ${props => props.theme.largeScr}) {
+    width: 60%;
+    padding: 30px;
+    margin: 30px;
+  }
+
+  @media all and (min-width: ${props => props.theme.extraLargeScr}) {
+    width: 50%;
+    padding: 40px;
+    margin: 30px;
+  }
 `;
 
 export const IssueTexts = styled.div`
@@ -354,41 +360,41 @@ export const AuthorName = styled.div`
   font-size: 3.2em;
   font-weight: bold;
   color: ${props => props.theme.themeColor};
-  
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 2.7em;
+    font-size: 2.7em;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 2em;
-    }
+    font-size: 2em;
+  }
 
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 1.7em;
-    }
-    
-   @media all and (max-width: ${props => props.veryTinyScr}) {
-      font-size: 1.2em;
-    }
-  
+    font-size: 1.7em;
+  }
+
+  @media all and (max-width: ${props => props.veryTinyScr}) {
+    font-size: 1.2em;
+  }
+
 `;
 
 export const TranslatorName = styled.div`
   color: ${props => props.theme.themeColor};
   font-size: 1em;
   font-weight: bold;
-  
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 0.8em;
+    font-size: 0.8em;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.7em;
-    }
+    font-size: 0.7em;
+  }
 
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.6em;
-    }
+    font-size: 0.6em;
+  }
 
 `;
 
@@ -396,16 +402,16 @@ export const TranslatorName = styled.div`
 
 export const TitleOfIssue = styled.div`
 
-width: 100%;
-padding: 10px;
-align-items: center;
-justify-content: center;
-display: flex;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 
-@media all and (max-width: ${props => props.theme.smallScr}) {
-      padding: 5px;
-      display: block;
-    }
+  @media all and (max-width: ${props => props.theme.smallScr}) {
+    padding: 5px;
+    display: block;
+  }
 `;
 
 export const IssueName = styled.div`
@@ -414,36 +420,36 @@ export const IssueName = styled.div`
   color: ${props => props.theme.themeColor};
   padding-left: 10px;
   //transform: translateY(-4px);
-  
+
   @media all and (max-width: ${props => props.theme.largeScr}) {
-  font-size: 4em;
-  padding-left: 8px;
+    font-size: 4em;
+    padding-left: 8px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 3em;
-  padding-left: 6px;
+    font-size: 3em;
+    padding-left: 6px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 3em;
-      padding-left: 4px;
-    }
-    
+    font-size: 3em;
+    padding-left: 4px;
+  }
+
   @media all and (max-width: ${props => props.theme.extraSmallScr}) {
-      font-size: 2.5em;
-      padding-left: 4px;
-    }
-    
+    font-size: 2.5em;
+    padding-left: 4px;
+  }
+
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 2em;
-      padding-left: 4px;
-    }
-    
-    @media all and (max-width: ${props => props.theme.veryTinyScr}) {
-      font-size: 1.5em;
-      padding-left: 4px;
-    }
+    font-size: 2em;
+    padding-left: 4px;
+  }
+
+  @media all and (max-width: ${props => props.theme.veryTinyScr}) {
+    font-size: 1.5em;
+    padding-left: 4px;
+  }
 `;
 
 export const IssueDate = styled.div`
@@ -453,24 +459,24 @@ export const IssueDate = styled.div`
   font-weight: bold;
   color: ${props => props.theme.themeColor};
   transform: translateY(-14px);
-  
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1em;
-  transform: translateY(-10px);
-  padding: 0;
+    font-size: 1em;
+    transform: translateY(-10px);
+    padding: 0;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.8em;
-      transform: translateY(-2px);
-      text-align: center;
-    }
-    
+    font-size: 0.8em;
+    transform: translateY(-2px);
+    text-align: center;
+  }
+
   @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.7em;
-      transform: translateY(-2px);
-    }
-  
+    font-size: 0.7em;
+    transform: translateY(-2px);
+  }
+
 `;
 
 /* MainNavbar.js */
@@ -486,16 +492,16 @@ export const MainNavbarBody = styled.div`
   margin: 5px;
   padding: 10px;
   display: inline-block;
-  
+
   div, a {
-  max-height: 30px;
+    max-height: 30px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
     padding: 0;
     margin: 2px;
   }
-  
+
 `;
 
 /* Text.js */
@@ -556,16 +562,52 @@ export const TextWrapper = styled.div`
 /* Bio.js */
 
 export const BioAuthor = styled.div`
- text-align: center;
- color: ${props => props.theme.themeColor};
- font-size: 1.8em;
- font-weight: bold;
- padding: 5px 0;
+  text-align: center;
+  color: ${props => props.theme.themeColor};
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 5px 0;
 `;
 
 export const BioTextBody = styled.div`
   text-align: center;
   font-family: ${props => props.theme.serif};
+  
+
+  a {
+    font-family: ${props => props.theme.sansSerif};
+    font-weight: bold;
+    color: ${props => props.theme.themeColor};
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    vertical-align: middle;
+    transform: translateY(-2px);
+
+
+    &:hover {
+      color: ${props => props.theme.lightColor};
+    }
+
+    &:before {
+      content: '';
+      background-color: ${props => props.theme.themeColor};
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      left: 0;
+      top: 0;
+      z-index: -20;
+      transform: translateY(100%);
+      transition: all 0.2s ease-in;
+    }
+
+    &:hover:before {
+      transform: translateY(-2px);
+    }
+  }
 `;
 
 export const BioHeading = styled.div`
@@ -579,30 +621,30 @@ export const BioHeading = styled.div`
 export const AuthorPhotoWrapper = styled.div`
   text-align: center;
   padding: 2em;
-  position: relative; 
+  position: relative;
 `;
 
 export const AuthorPhotoContainer = styled.div`
   height: 420px;
   z-index: 60;
-  
+
   img {
-      height: 100%;
+    height: 100%;
   }
-  
-  
+
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-   height: 300px;
+    height: 300px;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      height: 240px;
-    }
-    
+    height: 240px;
+  }
+
   @media all and (max-width: ${props => props.theme.extraSmallScr}) {
-      height: 180px;
-    }
-  
+    height: 180px;
+  }
+
 `;
 
 /* AuthorWorks */
@@ -634,47 +676,47 @@ export const WorksHeading = styled.div`
 /* AuthorLink.js */
 
 export const AuthorStyledLink = styled.a`
-font-weight: bold;
-font-size: 1em;
-text-align: center;
-color: ${props => props.theme.themeColor};
-display: inline-block;
-position: relative;
-padding: 6px 10px;
-margin: 3px 0;
-overflow: hidden;
-cursor: pointer;
-transition: all 0.2s ease-in;
-z-index: 50;
-
-&:hover {
-color: ${props => props.theme.lightColor};
-}
-
-&:before {
-  content: '';
-  background-color: ${props => props.theme.themeColor};
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  left: 0;
-  top: 0;
-  z-index: -20;
-  transform: translateY(100%);
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  color: ${props => props.theme.themeColor};
+  display: inline-block;
+  position: relative;
+  padding: 6px 10px;
+  margin: 3px 0;
+  overflow: hidden;
+  cursor: pointer;
   transition: all 0.2s ease-in;
-}
+  z-index: 50;
+
+  &:hover {
+    color: ${props => props.theme.lightColor};
+  }
+
+  &:before {
+    content: '';
+    background-color: ${props => props.theme.themeColor};
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    left: 0;
+    top: 0;
+    z-index: -20;
+    transform: translateY(100%);
+    transition: all 0.2s ease-in;
+  }
 
   &:hover:before {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
   }
 
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1em;
+    font-size: 1em;
   }
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 0.8em;
-    }
+    font-size: 0.8em;
+  }
 
 `;
 
@@ -690,9 +732,9 @@ export const AuthorSocialIcons = styled.div`
   margin: 5px;
   padding: 10px;
   display: inline-block;
-  
+
   div, a {
-  max-height: 30px;
+    max-height: 30px;
   }
 `;
 
@@ -772,26 +814,26 @@ export const IssueInvertedButtonWrapper = styled.div`
 /* Story.js */
 
 export const StoryTextTitle = styled.div`
- color: ${props => props.theme.themeColor};
- font-size: 2.5em;
- font-weight: bold;
- padding: 10px 0;
+  color: ${props => props.theme.themeColor};
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 10px 0;
   line-height: 1em;
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
     font-size: 1.8em;
- }
-  
+  }
+
 `;
 
 export const StoryAuthor = styled.div`
- font-size: 1.2em;
- font-weight: bold;
+  font-size: 1.2em;
+  font-weight: bold;
 `;
 
 export const StoryTranslatedBy = styled.div`
- font-style: italic;
- font-size: 0.8em;
+  font-style: italic;
+  font-size: 0.8em;
 `;
 
 export const StoryTextBody = styled.div`
@@ -830,9 +872,9 @@ export const TextNav = styled.div`
   margin: 5px;
   padding: 10px;
   display: flex;
-  
+
   div, a {
-  max-height: 30px;
+    max-height: 30px;
   }
 `;
 
@@ -850,196 +892,196 @@ export const ErrorMessageContent = styled.div`
   border: 6px solid ${props => props.theme.themeColor};
   color: ${props => props.theme.themeColor};
   font-weight: bold;
-  
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
     margin: 0 20px;
     font-size: 0.8em;
-    
+
   }
 `;
 
 /* HoverableButton */
 
 export const HoverableButtonWrapper = styled.div`
-font-weight: bold;
-font-size: 1.2em;
-color: ${props => props.theme.themeColor};
-display: inline-block;
-position: relative;
-margin: 1px 0;
-padding: 10px 20px;
-overflow: hidden;
-cursor: pointer;
-transition: all 0.2s ease-in;
-z-index: 50;
-
-&:hover {
-color: ${props => props.theme.lightColor};
-}
-
-&:before {
-  content: '';
-  background-color: ${props => props.theme.themeColor};
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  left: 0;
-  top: 0;
-  z-index: -20;
-  transform: translateY(100%);
+  font-weight: bold;
+  font-size: 1.2em;
+  color: ${props => props.theme.themeColor};
+  display: inline-block;
+  position: relative;
+  margin: 1px 0;
+  padding: 10px 20px;
+  overflow: hidden;
+  cursor: pointer;
   transition: all 0.2s ease-in;
-}
+  z-index: 50;
+
+  &:hover {
+    color: ${props => props.theme.lightColor};
+  }
+
+  &:before {
+    content: '';
+    background-color: ${props => props.theme.themeColor};
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    left: 0;
+    top: 0;
+    z-index: -20;
+    transform: translateY(100%);
+    transition: all 0.2s ease-in;
+  }
 
   &:hover:before {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
   }
 
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1.1em;
-  padding: 10px 10px;
+    font-size: 1.1em;
+    padding: 10px 10px;
   }
 
-    @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.9em;
-      padding: 6px 10px;
-    }
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
+    font-size: 0.9em;
+    padding: 6px 10px;
+  }
 `;
 
 export const InvertedHoverableButtonWrapper = styled.div`
-font-weight: bold;
-font-size: 1.2em;
-color: ${props => props.theme.lightColor};
-display: inline-block;
-position: relative;
-margin: 1px 0;
-padding: 10px 20px;
-overflow: hidden;
-cursor: pointer;
-transition: all 0.2s ease-in;
-z-index: 50;
-
-&:hover {
-color: ${props => props.theme.themeColor};
-}
-
-&:before {
-  content: '';
-  background-color: ${props => props.theme.lightColor};
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  left: 0;
-  top: 0;
-  z-index: -20;
-  transform: translateY(100%);
+  font-weight: bold;
+  font-size: 1.2em;
+  color: ${props => props.theme.lightColor};
+  display: inline-block;
+  position: relative;
+  margin: 1px 0;
+  padding: 10px 20px;
+  overflow: hidden;
+  cursor: pointer;
   transition: all 0.2s ease-in;
-}
+  z-index: 50;
+
+  &:hover {
+    color: ${props => props.theme.themeColor};
+  }
+
+  &:before {
+    content: '';
+    background-color: ${props => props.theme.lightColor};
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    left: 0;
+    top: 0;
+    z-index: -20;
+    transform: translateY(100%);
+    transition: all 0.2s ease-in;
+  }
 
   &:hover:before {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
   }
 
 
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1.1em;
-  padding: 10px 10px;
+    font-size: 1.1em;
+    padding: 10px 10px;
   }
 
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 1em;
-      padding: 10px 6px;
-    }
-    @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.9em;
-      padding: 6px 4px;
-    }
+    font-size: 1em;
+    padding: 10px 6px;
+  }
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
+    font-size: 0.9em;
+    padding: 6px 4px;
+  }
 
 `;
 
 /* InactiveButton.js */
 
 export const InactiveButtonWrapper = styled.div`
-font-weight: bold;
-font-size: 1.2em;
-color: ${props => props.theme.themeColor};
-display: inline-block;
-position: relative;
-margin: 1px 0;
-padding: 10px 20px;
-overflow: hidden;
-transition: all 0.2s ease-in;
-z-index: 50;
-
-color: ${props => props.theme.lightColor};
-
-&:before {
-  content: '';
-  background-color: ${props => props.theme.themeColor};
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  left: 0;
-  top: 0;
-  z-index: -20;
-  transform: translateY(-2px);
+  font-weight: bold;
+  font-size: 1.2em;
+  color: ${props => props.theme.themeColor};
+  display: inline-block;
+  position: relative;
+  margin: 1px 0;
+  padding: 10px 20px;
+  overflow: hidden;
   transition: all 0.2s ease-in;
-}
+  z-index: 50;
 
- 
+  color: ${props => props.theme.lightColor};
+
+  &:before {
+    content: '';
+    background-color: ${props => props.theme.themeColor};
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    left: 0;
+    top: 0;
+    z-index: -20;
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in;
+  }
+
+
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1.1em;
-  padding: 10px 10px;
+    font-size: 1.1em;
+    padding: 10px 10px;
   }
 
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 1em;
-      padding: 10px 6px;
-    }
-    @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.9em;
-      padding: 6px 4px;
-    }
+    font-size: 1em;
+    padding: 10px 6px;
+  }
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
+    font-size: 0.9em;
+    padding: 6px 4px;
+  }
 `;
 
 export const InvertedInactiveButtonWrapper = styled.div`
-font-weight: bold;
-font-size: 1.2em;
-color: ${props => props.theme.themeColor};
-display: inline-block;
-position: relative;
-margin: 1px 0;
-padding: 10px 20px;
-overflow: hidden;
-transition: all 0.2s ease-in;
-z-index: 50;
-
-&:before {
-  content: '';
-  background-color: ${props => props.theme.lightColor};
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  left: 0;
-  top: 0;
-  z-index: -20;
-  transform: translateY(-2px);
+  font-weight: bold;
+  font-size: 1.2em;
+  color: ${props => props.theme.themeColor};
+  display: inline-block;
+  position: relative;
+  margin: 1px 0;
+  padding: 10px 20px;
+  overflow: hidden;
   transition: all 0.2s ease-in;
-}
+  z-index: 50;
+
+  &:before {
+    content: '';
+    background-color: ${props => props.theme.lightColor};
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    left: 0;
+    top: 0;
+    z-index: -20;
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in;
+  }
 
 
   @media all and (max-width: ${props => props.theme.mediumScr}) {
-  font-size: 1.1em;
-  padding: 10px 10px;
+    font-size: 1.1em;
+    padding: 10px 10px;
   }
 
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      font-size: 1em;
-      padding: 10px 6px;
-    }
-    @media all and (max-width: ${props => props.theme.tinyScr}) {
-      font-size: 0.9em;
-      padding: 6px 4px;
-    }
+    font-size: 1em;
+    padding: 10px 6px;
+  }
+  @media all and (max-width: ${props => props.theme.tinyScr}) {
+    font-size: 0.9em;
+    padding: 6px 4px;
+  }
 
 `;
 
@@ -1050,24 +1092,24 @@ export const LogoWrapper = styled.div`
   padding: 12px;
   z-index: 160;
   user-select: none;
-  
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      display: inline-block;
-      margin-bottom: 24px;
-    }
-  
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+
 `;
 
 export const InvertedLogoWrapper = styled.div`
   border: 10px solid ${props => props.theme.lightColor};
   padding: 12px;
   z-index: 160;
-  
-    
+
+
   @media all and (max-width: ${props => props.theme.smallScr}) {
-      display: inline-block;
-      margin-bottom: 24px;
-    }
+    display: inline-block;
+    margin-bottom: 24px;
+  }
 `;
 
 /* Separator.js */
@@ -1100,7 +1142,7 @@ export const SpinnerWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   user-select: none;
-  
+
   img {
     height: 150px;
   }
