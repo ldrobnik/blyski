@@ -670,7 +670,7 @@ export const WorksHeading = styled.div`
   font-style: italic;
   padding: 5px;
   font-family: ${props => props.theme.serif};
-  margin-top: 0.5em;
+  margin-top: 1em;
 `;
 
 export const WorksFootnote = styled.div`
