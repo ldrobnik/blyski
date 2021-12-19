@@ -248,7 +248,7 @@ export const ISSUES = [
         ]
     },
     {
-        published: false,
+        published: true,
         date: '2021-12-24',
         author: 'Cathy Ulrich',
         texts: [
@@ -380,20 +380,26 @@ export const AUTHOR_LINKS = [
         links: [
             {
                 icon: websiteIcon,
-                url: 'https://www.meganpillow.com/'
-            },
-            {
-                icon: patreonIcon,
-                url: 'https://www.patreon.com/submergedarchive/'
+                url: 'https://cathyulrichwriter.wordpress.com/'
             },
             {
                 icon: twitterIcon,
-                url: 'https://twitter.com/megpillow'
+                url: 'https://twitter.com/loki_writes'
             }
         ],
         works: [
             {
-                heading: 'Tymczasowe — teksty z numeru',
+                heading: 'Zbiór opowiadań',
+                links: [
+                    {
+                        title: '„Ghosts of You” [Okay Donkey]',
+                        url: 'https://www.amazon.pl/Ghosts-You-Cathy-Ulrich/dp/1733244107/ref=sr_1_1?__mk_pl_PL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=ghosts+of+you&qid=1639923520&sr=8-1'
+                    }
+                ],
+                footnote: 'Zawiera cztery pierwsze teksty z numeru'
+            },
+            {
+                heading: 'Seria Murdered Ladies (teksty z numeru)',
                 links: [
                     {
                         title: '„We All Know About Margo” [SmokeLong Quarterly]',

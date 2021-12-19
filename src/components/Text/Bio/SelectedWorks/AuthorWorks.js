@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthorLink from './TextLink/AuthorLink';
-import {WorksListWrapper, WorksLinkWrapper, WorksLinkList, WorksHeading} from '../../../../styled';
+import {WorksListWrapper, WorksLinkWrapper, WorksLinkList, WorksHeading, WorksFootnote} from '../../../../styled';
 
 const AuthorWorks = props => {
 
@@ -22,6 +22,9 @@ const AuthorWorks = props => {
                                     );
                                 })}
                             </WorksLinkList>
+                            {selection.footnote &&
+                                <WorksFootnote>{selection.footnote}</WorksFootnote>
+                            }
 
                         </div>
                     )
