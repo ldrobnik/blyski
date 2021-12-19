@@ -402,81 +402,94 @@ export const AUTHOR_LINKS = [
                 heading: 'Seria Murdered Ladies (teksty z numeru)',
                 links: [
                     {
-                        title: '„We All Know About Margo” [SmokeLong Quarterly]',
-                        url: 'http://www.smokelong.com/we-all-know-about-margo/'
+                        title: '„Being the Murdered Girl” [Crab Fat magazine nr 2 s. 55]',
+                        url: 'https://www.crabfatmagazine.com/wp-content/uploads/Crab-Fat-Issue-2.pdf'
                     },
                     {
-                        title: '„In the New World” [Longleaf Review]',
-                        url: 'http://longleafreview.com/in-the-new-world/'
+                        title: '„Being the Murdered Lover” [Cotton Xenomorph]',
+                        url: 'https://www.cottonxenomorph.com/journal/2018/3/27/being-the-murdered-lover'
                     },
                     {
-                        title: '„After the Wal-Mart Closes in Your Hometown” [Pithead Chapel]',
-                        url: 'https://pitheadchapel.com/after-the-wal-mart-closes-in-your-hometown/'
+                        title: '„Being the Murdered Mermaid” [Gordon Square Review]',
+                        url: 'http://www.gordonsquarereview.org/being-the-murdered-mermaid.html'
                     },
                     {
-                        title: '„Lily in the Light” [X-R-A-Y Literary Magazine]',
-                        url: 'http://x-r-a-y.com/lily-in-the-light-by-megan-pillow-davis-2/fiction/'
+                        title: '„Being the Murdered Sleeper” [Barzakh]',
+                        url: 'https://www.barzakhmag.net/spring-2021-prose/2021/6/2/v5ymzixbhlgwm1kx01d5a45lbmq47l-8ezn4-ls96r'
+                    }
+                ],
+                footnote: 'Opowiadanie „Being the Murdered Wife” można przeczytać w zbiorze „Ghosts of You”'
+            },
+            {
+                heading: 'Seria Japan',
+                links: [
+                    {
+                        title: '„Where the Drowned Ride” [Wigleaf]',
+                        url: 'http://wigleaf.com/201708drowned.htm'
                     },
                     {
-                        title: '„Margo. Turn Left.” [Passages North]',
-                        url: 'https://www.passagesnorth.com/passagesnorthcom/2019/9/13/margo-turn-left-by-megan-pillow-davis'
+                        title: '„Cliffs of Tojinbo” [Booth]',
+                        url: 'https://booth.butler.edu/2016/11/18/cliffs-of-tojinbo/'
+                    },
+                    {
+                        title: '„Between the Liking and the Pretending” [Ghost Parachute]',
+                        url: 'http://ghostparachute.com/issue/february-2019-issue/between-the-liking-and-the-pretending/'
                     }
                 ]
             },
             {
-                heading: 'Inna proza',
+                heading: 'Seria Girl Detective',
                 links: [
                     {
-                        title: '„Long Live the Girl Detective” [Electric Lit]',
-                        url: 'https://electricliterature.com/long-live-the-girl-detective-by-megan-pillow/'
+                        title: '„The Whole Girl Detective Thing” [Black Warrior Review]',
+                        url: 'https://bwr.ua.edu/45-1-sneak-peek-the-whole-girl-detective-thing-by-cathy-ulrich/'
                     },
                     {
-                        title: '„Margo on the Hunt” [Pithead Chapel]',
-                        url: 'https://pitheadchapel.com/margo-on-the-hunt/'
+                        title: '„In All That Light” [Empty House Press]',
+                        url: 'https://www.emptyhousepress.com/issue-four/cathy-ulrich'
                     },
                     {
-                        title: '„Water in the Blood” [Triquarterly]',
-                        url: 'https://triquarterly.org/issues/issue-159/water-blood'
-                    },
-                    {
-                        title: '„While the Men Go Hunt the Shark, Mrs. Brody Meets Her Lover” [Hobart]',
-                        url: 'https://www.hobartpulp.com/web_features/while-the-men-go-hunt-the-shark-mrs-brody-meets-her-lover'
-                    },
-                    {
-                        title: '„Look What You Made Me Do” [BULL]',
-                        url: 'http://bullmensfiction.com/fiction/look-what-you-made-me-do/'
-                    },
-                    {
-                        title: '„Yell Louder” [Atticus Review]',
-                        url: 'https://atticusreview.org/yell-louder/'
+                        title: '„A Girl Detective Decides” [Pigeon Pages]',
+                        url: 'https://pigeonpagesnyc.com/a-girl-detective-decides'
                     }
                 ]
             },
             {
-                heading: 'Non-fiction',
+                heading: 'Seria Apocalypse Girlfriend',
                 links: [
                     {
-                        title: '„Instructions for Fucking Your Postpartum Wife” [Lost Balloon]',
-                        url: 'https://lost-balloon.com/2021/02/03/your-postpartum-wife-megan-pillow/'
+                        title: '„Your Girlfriend as a Weapon of Mass Destruction” [100 word story]',
+                        url: 'http://100wordstory.org/your-girlfriend-as-a-weapon-of-mass-destruction/'
                     },
                     {
-                        title: '„Once I Was an Animal” [JMWW]',
-                        url: 'https://jmwwblog.wordpress.com/2020/12/31/creative-nonfiction-once-i-was-an-animal-after-mary-oliver-by-megan-pillow/'
+                        title: '„Your Girlfriend as a Radium Watch Face” [The Citron Review]',
+                        url: 'https://citronreview.com/2020/06/21/your-girlfriend-as-a-radium-watch-face/'
                     },
                     {
-                        title: '„The Settle Point” [Gay Magazine]',
-                        url: 'https://gay.medium.com/the-settle-point-a0c5dc767c4c'
+                        title: '„Your Girlfriend as the American Dream” [(mac)ro(mic)]',
+                        url: 'https://macromic.org/2020/09/21/your-girlfriend-as-the-american-dream-by-cathy-ulrich/'
+                    }
+                ]
+            },
+
+            {
+                heading: 'Seria Astronaut Love Stories',
+                links: [
+                    {
+                        title: '„Closer to the Moon” [Longleaf Review]',
+                        url: 'https://longleafreview.com/closer-to-the-moon/'
                     },
                     {
-                        title: '„Whenever Men Think I’m Smiling” [Brevity]',
-                        url: 'https://brevitymag.com/nonfiction/whenever-men-think-im-smiling/'
+                        title: '„All the Stars We Contain” [Jet Fuel Review]',
+                        url: 'https://www.jetfuelreview.com/cathy-ulrich-spring-2021.html'
                     },
                     {
-                        title: '„Horror Lives in the Body” [Electric Lit]',
-                        url: 'https://electricliterature.com/horror-lives-in-the-body/'
+                        title: '„The Sky Is Nothing at All” [Former Cactus]',
+                        url: 'https://formercactus.wordpress.com/2018/07/15/cathy-ulrich-the-sky-is-nothing-at-all/'
                     }
                 ]
             }
+
         ]
     }
 ];
