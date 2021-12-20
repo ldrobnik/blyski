@@ -402,7 +402,7 @@ export const AUTHOR_LINKS = [
                 heading: 'Seria Murdered Ladies (teksty z numeru)',
                 links: [
                     {
-                        title: '„Being the Murdered Girl” [Crab Fat magazine nr 2 s. 55]',
+                        title: '„Being the Murdered Girl” [Crab Fat Magazine nr 2 s. 55]',
                         url: 'https://www.crabfatmagazine.com/wp-content/uploads/Crab-Fat-Issue-2.pdf'
                     },
                     {

@@ -676,6 +676,7 @@ export const WorksHeading = styled.div`
 export const WorksFootnote = styled.div`
   text-align: center;
   font-style: italic;
+  line-height: 1.5em;
   padding: 5px;
   font-family: ${props => props.theme.serif};
   margin: 0 auto 0.5em;
