@@ -1,7 +1,7 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx/dist/index.js';
 import {WEBSITE_TEXT} from '../../../data/constants';
-import {StoryTextTitle, StoryAuthor, StoryTranslatedBy, StoryTextBody} from '../../../styled';
+import {StoryTextTitle, StoryAuthor, StoryTranslatedBy, StoryTextBody, StoryCredits} from '../../../styled';
 
 const Story = props => {
 
@@ -11,7 +11,15 @@ const Story = props => {
             <StoryTextTitle>{props.textTitle}</StoryTextTitle>
             <StoryTranslatedBy>{WEBSITE_TEXT.issueList.translator}</StoryTranslatedBy>
             <StoryTextBody>
-                <Markdown>
+                <Markdown
+                    options={{
+                        overrides: {
+                            credits: {
+                                component: StoryCredits
+                            },
+                        }
+                    }}
+                >
                     {props.textContent}
                 </Markdown>
             </StoryTextBody>

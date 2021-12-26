@@ -559,6 +559,7 @@ export const TextWrapper = styled.div`
   }
 `;
 
+
 /* Bio.js */
 
 export const BioAuthor = styled.div`
@@ -850,6 +851,12 @@ export const StoryTranslatedBy = styled.div`
 export const StoryTextBody = styled.div`
   font-family: ${props => props.theme.serif};
   font-size: 1.1em;
+`;
+
+
+export const StoryCredits = styled.p`
+  font-size: 0.9em;
+  font-style: italic;
 `;
 
 /* TextButton */
