@@ -857,6 +857,7 @@ export const StoryTextBody = styled.div`
 export const StoryCredits = styled.p`
   font-size: 0.9em;
   font-style: italic;
+  padding-top: 1em;
 `;
 
 /* TextButton */
