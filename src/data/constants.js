@@ -248,7 +248,7 @@ export const ISSUES = [
         ]
     },
     {
-        published: false,
+        published: true,
         date: '2021-12-24',
         author: 'Cathy Ulrich',
         texts: [
