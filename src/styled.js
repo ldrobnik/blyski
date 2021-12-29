@@ -855,7 +855,7 @@ export const StoryTextBody = styled.div`
 
 
 export const StoryCredits = styled.p`
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-style: italic;
   padding-top: 1em;
 `;
