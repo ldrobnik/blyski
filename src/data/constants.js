@@ -276,6 +276,25 @@ export const ISSUES = [
     }
 ];
 
+//checks which glider frame should be displayed in the logo based on the number of published issues
+const checkGliderFrame = () => {
+    //number of published issues
+    let publishedIssues = 0;
+
+    //checks how many issues have been published
+    for (let issue of ISSUES) {
+        if (issue.published) publishedIssues++
+    }
+
+    //return one of the four glider frames depending on the number of published issues (counting from 0)
+    return (publishedIssues - 1) % 4;
+}
+
+//the number of glider frame to be displayed in the logo, based on the number of published issues
+export const GLIDER_FRAME = checkGliderFrame();
+
+console.log(GLIDER_FRAME);
+
 
 //authors' social media links and links to their work to be used in bio
 export const AUTHOR_LINKS = [

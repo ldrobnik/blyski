@@ -12,7 +12,7 @@ import {
     AboutSecondaryContent,
     AboutTernaryContent
 } from '../../../styled';
-import {WEBSITE_TEXT} from '../../../data/constants';
+import {WEBSITE_TEXT, GLIDER_FRAME} from '../../../data/constants';
 
 const AboutPanel = props => {
 
@@ -20,7 +20,7 @@ const AboutPanel = props => {
         <AboutBox>
             <AboutTitle>
                 <Logo
-                    logoFrame={0}
+                    logoFrame={GLIDER_FRAME}
                     inverted={true}/>
                 <div>
                     <AboutJournalName>
