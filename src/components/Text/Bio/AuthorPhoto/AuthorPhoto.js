@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {AuthorPhotoWrapper, AuthorPhotoContainer} from '../../../../styled';
 import {AnimatedAuthorPic} from '../../../../posed';
+import {ISSUES} from '../../../../data/constants';
 import photo1 from '../../../../assets/images/authorPhotos/1.jpg';
 import photo2 from '../../../../assets/images/authorPhotos/2.jpg';
 import photo3 from '../../../../assets/images/authorPhotos/3.jpg';
@@ -27,7 +28,7 @@ const AuthorPhoto = props => {
                 <AuthorPhotoContainer>
                     <img
                         src={authorPhotos[props.issueNumber - 1]}
-                        alt={`Zdjęcie autora: ${props.author}`}
+                        alt={`Zdjęcie autora: ${props.author}. ${ISSUES[props.issueNumber - 1].alt}`}
                         onLoad={showPhoto}
                     />
                 </AuthorPhotoContainer>

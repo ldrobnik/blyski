@@ -244,7 +244,8 @@ export const ISSUES = [
                 title: 'Margo. Skręć w lewo.',
                 slug: 'margo-skrec-w-lewo'
             }
-        ]
+        ],
+        alt: 'Biała kobieta z włosami przystrzyżonymi w boba i wyrazistą szminką'
     },
     {
         published: true,
@@ -271,7 +272,8 @@ export const ISSUES = [
                 title: 'Być zamordowaną we śnie',
                 slug: 'byc-zamordowana-we-snie'
             }
-        ]
+        ],
+        alt: 'Kobieta mieszanej rasy z kręconymi włosami i w okularach, pozująca na tle ściany obwieszonej zdjęciami aktorów'
     }
 ];
 
