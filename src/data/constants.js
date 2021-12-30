@@ -166,9 +166,8 @@ export const WEBSITE_TEXT = {
             <p>Każdy numer <HoverableLink><Link to='/'><strong>błysków</strong></Link></HoverableLink> jest poświęcony
                 jednemu autorowi: zawiera pięć
                 jego tekstów plus biogram – i&nbsp;tyle.</p>
-            <p>Bohaterką <HoverableLink><Link to='/1/wszyscy-wiemy-o-margo'><strong>pierwszego
-                numeru </strong></Link></HoverableLink> jest <HoverableLink><Link to='/1/bio'><strong>Megan
-                Pillow</strong></Link></HoverableLink>.</p>
+            <p>Bohaterką <HoverableLink><Link to='/2/byc-zamordowana-dziewczyna'><strong>najnowszego
+                numeru</strong></Link></HoverableLink> jest <HoverableLink><Link to='/2/bio'><strong>Cathy Ulrich</strong></Link></HoverableLink>.</p>
         </React.Fragment>,
         contact: <React.Fragment><strong>Kontakt z&nbsp;redakcją:</strong> blyski.pismo [at] gmail [dot]
             com.</React.Fragment>,
@@ -248,7 +247,7 @@ export const ISSUES = [
         ]
     },
     {
-        published: false,
+        published: true,
         date: '2021-12-31',
         author: 'Cathy Ulrich',
         texts: [
