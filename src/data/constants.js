@@ -203,7 +203,7 @@ export const WEBSITE_TEXT = {
         content: <React.Fragment>
             <p><HoverableLink><a href="https://blyski.org" target="_blank" rel="noopener noreferrer" className={'underlined'}><strong>błyski</strong></a></HoverableLink> (Polish for <em>flashes</em>) is a journal publishing solicited flash fiction in Polish translation. It is run by <HoverableLink><a href="https://drobnik.co" target="_blank" rel="noopener noreferrer" className={'underlined'}><strong>Łukasz Drobnik</strong></a></HoverableLink>.</p>
             <p>The journal is a minimalist affair—each issue is made of five flashes by one author and their bio. That’s it.</p>
-            <p>The newest issue is dedicated to <HoverableLink><a href="https://blyski.org/2" target="_blank" rel="noopener noreferrer" className={'underlined'}><strong>Cathy Ulrich</strong></a></HoverableLink>.</p>
+            <p>The latest issue is dedicated to <HoverableLink><a href="https://blyski.org/2" target="_blank" rel="noopener noreferrer" className={'underlined'}><strong>Cathy Ulrich</strong></a></HoverableLink>.</p>
         </React.Fragment>,
         deal: <React.Fragment>
             <p>We offer <strong>50&nbsp;USD</strong>, payable before the issue goes live, via PayPal or other agreed service.</p>
