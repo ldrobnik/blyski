@@ -174,7 +174,7 @@ export const WEBSITE_TEXT = {
         disclaimer: <React.Fragment>Idea <strong>błysków</strong> jest taka, by ukazywały się w nich przekłady
             tekstów napisanych
             po angielsku, dlatego niestety nie rozpatruję propozycji wydawniczych, choć do samego pisania flash fiction
-            gorąco zachęcam!</React.Fragment>,
+            gorąco zachęcam! Obecnie <strong>błyski</strong> nie szukają też do współpracy tłumaczy.</React.Fragment>,
         credits: <React.Fragment>red. nacz. –&nbsp;ja, dobór tekstów –&nbsp;ja, przekłady –&nbsp;ja, projekt strony
             –&nbsp;ja*</React.Fragment>,
         footnote: <React.Fragment><HoverableLink><a href="https://drobnik.co/" target="_blank"
