@@ -9,11 +9,13 @@ const TextNavbar = props => {
 
     return (
         <React.Fragment>
-            <TextNavTitleWrapper>
+            <TextNavTitleWrapper
+                title={WEBSITE_TEXT.text.issueButton} >
                 <TextNavTitle>
                     <IssueButton
                         path={`/${props.issueNumber}`}
                         message={formatIssueNumber(props.issueNumber)}/>
+                    <span className="sr-only">WEBSITE_TEXT.text.issueButton</span>
                 </TextNavTitle>
             </TextNavTitleWrapper>
             <TextNavWrapper>
