@@ -89,6 +89,60 @@ const mediumIcon = (
         <span className="sr-only">Medium</span>
     </React.Fragment>);
 
+const text1 = (
+    <React.Fragment>
+        <div title="Pierwszy tekst">
+            i
+        </div>
+        <span className="sr-only">Pierwszy tekst</span>
+    </React.Fragment>
+);
+
+const text2 = (
+    <React.Fragment>
+        <div title="Drugi tekst">
+            ii
+        </div>
+        <span className="sr-only">Drugi tekst</span>
+    </React.Fragment>
+);
+
+const text3 = (
+    <React.Fragment>
+        <div title="Trzeci tekst">
+            iii
+        </div>
+        <span className="sr-only">Trzeci tekst</span>
+    </React.Fragment>
+);
+
+const text4 = (
+    <React.Fragment>
+        <div title="Czwarty tekst">
+            iv
+        </div>
+        <span className="sr-only">Czwarty tekst</span>
+    </React.Fragment>
+);
+
+const text5 = (
+    <React.Fragment>
+        <div title="Piąty tekst">
+            v
+        </div>
+        <span className="sr-only">Piąty tekst</span>
+    </React.Fragment>
+);
+
+const bio = (
+    <React.Fragment>
+        <div title="Biogram">
+            bio
+        </div>
+        <span className="sr-only">Biogram</span>
+    </React.Fragment>
+);
+
 const backIcon = (
     <React.Fragment>
         <FontAwesomeIcon
@@ -185,8 +239,8 @@ export const WEBSITE_TEXT = {
     },
     text: {
         navbar: {
-            textNumbers: ['i', 'ii', 'iii', 'iv', 'v'],
-            bio: 'bio',
+            textNumbers: [text1, text2, text3, text4, text5],
+            bio: bio,
             home: backIcon
         },
         nextButton: 'następny tekst',
