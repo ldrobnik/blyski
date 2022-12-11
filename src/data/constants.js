@@ -635,7 +635,7 @@ export const AUTHOR_LINKS = [
           },
         ],
         footnote:
-          "Opowiadanie „Being the Murdered Wife” można przeczytać w zbiorze „Ghosts of You”",
+          "Opowiadanie „Being the Murdered Wife” można przeczytać w zbiorze „Ghosts of You”",
       },
       {
         heading: "Seria Japan",
@@ -758,7 +758,7 @@ export const AUTHOR_LINKS = [
           },
         ],
         footnote:
-          "Opowiadanie „Shedding” można przeczytać w zbiorze „Death, Desire, and Other Destinations”",
+          "Opowiadanie „Shedding” można przeczytać w zbiorze „Death, Desire, and Other Destinations”",
       },
       {
         heading: "Inne teksty ze zbioru",
