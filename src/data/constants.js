@@ -239,14 +239,14 @@ export const WEBSITE_TEXT = {
         <p>
           Bohaterką{" "}
           <HoverableLink>
-            <Link to="/2/byc-zamordowana-dziewczyna">
+            <Link to="/3/aligatory">
               <strong>najnowszego numeru</strong>
             </Link>
           </HoverableLink>{" "}
           jest{" "}
           <HoverableLink>
-            <Link to="/2/bio">
-              <strong>Cathy Ulrich</strong>
+            <Link to="/3/bio">
+              <strong>Tara Isabel Zambrano</strong>
             </Link>
           </HoverableLink>
           .
@@ -288,7 +288,9 @@ export const WEBSITE_TEXT = {
       </React.Fragment>
     ),
     button: "strona główna",
-    copyright: <React.Fragment>&copy; 2021 Łukasz Drobnik</React.Fragment>,
+    copyright: (
+      <React.Fragment>&copy; 2021&ndash;2022 Łukasz Drobnik</React.Fragment>
+    ),
   },
   text: {
     issueButton: "Spis treści",
@@ -440,7 +442,7 @@ export const ISSUES = [
     alt: "Kobieta mieszanej rasy z kręconymi włosami i w okularach, pozująca na tle ściany obwieszonej zdjęciami aktorów",
   },
   {
-    published: false,
+    published: true,
     date: "2022-12-30",
     author: "Tara Isabel Zambrano",
     texts: [
